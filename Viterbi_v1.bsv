@@ -68,33 +68,54 @@ module mkViterbi(Ifc_Viterbi);
 
     rule init_v(t_ctr==0 && !init_done_flag && n_and_m_loaded);
         //  want to read memory so issue request
-        if(!transition_ready &&!read_transition)begin
+        if(!transition_ready &&!read_transition && !emission_ready && !read_emission)begin
             read_transition<=True;
-            // read_emission<=True;
-            // $display("asdfadsI: %d, P : %h", i_ctr, prev[i_ctr]);
+            read_emission<=True;
 
             transition_idx<=i_ctr;
             emission_idx<=i_ctr*m_reg + outcome_reg;
         end
-        else if(transition_ready)begin
+        else if(transition_ready && emission_ready)begin
             // can do addition
-            let data = transition_buffer;
-            prev[i_ctr]<=data;
-            // $display("NYEGA, %d", i_ctr);
-
+            let data1 = transition_buffer;
+            let data2 = emission_buffer;
+            // $display("NYEGA");
             
-            read_transition<=False;
-            // read_emission<=False;
-            transition_ready<=False;
-
-            if(i_ctr<n_reg-1)begin
-                i_ctr<=i_ctr+1;
-                // $display("VALUE of I : %d",i_ctr);
+            if(!adder.state_1_done())begin
+                adder.match_exponents(data1, data2);
+                // $display("Matching exponents...");
+                // started <= True;
             end
-            else begin
-                i_ctr<=0;
-                init_done_flag<=True;
-                t_ctr<=t_ctr+1;
+            else if(adder.state_1_done && !adder.state_2_done())begin
+                adder.add_mantissa();     
+                // $display("Mantissas added");
+            end
+            else if(adder.state_2_done() && !adder.state_3_done())begin
+                adder.normalise();
+                // $display("Normalization done");
+            end
+            else if(adder.state_3_done()) begin
+        // Step 2: wait for state_1_done
+                let data = adder.get_res();
+                adder.clear_adder();
+                prev[i_ctr]<=data;
+                $display("A: %h, B : %h, S: %h", data1, data2, data);
+
+                // $display("NYEGA, %d", i_ctr);
+                read_transition<=False;
+                read_emission<=False;
+                transition_ready<=False;
+                emission_ready<=False;
+
+                if(i_ctr<n_reg-1)begin
+                    i_ctr<=i_ctr+1;
+                    // $display("VALUE of I : %d",i_ctr);
+                end
+                else begin
+                    i_ctr<=0;
+                    init_done_flag<=True;
+                    t_ctr<=t_ctr+1;
+                end
             end
         end
     endrule 
@@ -121,7 +142,7 @@ module mkViterbi(Ifc_Viterbi);
         $display("N and M = %d, %d", n_reg, m_reg);
 
         for (Integer i = 0; fromInteger(i) < 8; i = i + 1) begin
-            $display("I: %d, P : %h", i, prev[i]);
+            // $display("I: %d, P : %h", i, prev[i]);
         end
 
         $finish(0);
@@ -139,7 +160,7 @@ module mkViterbi(Ifc_Viterbi);
     method Action n_and_m_load(Bit#(32) n, Bit#(32) m,Bit#(32)outcome1);
         n_reg <= n;
         m_reg <= m;
-        outcome_reg<=outcome1;
+        outcome_reg<=outcome1-1;
         n_and_m_loaded <= True;
     endmethod
 

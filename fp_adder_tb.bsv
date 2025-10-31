@@ -5,8 +5,8 @@ module mkTestbench();
 
     Ifc_FP32_Adder adder <- mkFP32_Adder();
 
-    Bit#(32) neg1 = 32'hfb710048; // -1.0
-    Bit#(32) neg2 = 32'hfb7fc09f; // -1.46
+    Bit#(32) neg1 = 32'hc02b7b98; // -1.0
+    Bit#(32) neg2 = 32'hbf5f8135; // -1.46
 
     Reg#(Bit#(32)) res <- mkReg(0);
 

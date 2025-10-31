@@ -9,6 +9,7 @@ interface Ifc_FP32_Adder;
     method Bool state_1_done();
     method Bool state_2_done();
     method Bool state_3_done();  
+    method Action clear_adder();
 endinterface
 
 (* synthesize *)
@@ -41,6 +42,7 @@ module mkFP32_Adder(Ifc_FP32_Adder);
         Bit#(8) newExp=0;
         Bit#(24) sm1=0;
         Bit#(24) sm2=0;
+        
 
         sm1 = {1'b1, man1};
         sm2 = {1'b1, man2};
@@ -160,6 +162,12 @@ module mkFP32_Adder(Ifc_FP32_Adder);
 
     method Bool state_3_done();
         return done3;   
+    endmethod
+
+    method Action clear_adder();
+        done1<=False;
+        done2<=False;
+        done3<=False;
     endmethod
 
 endmodule : mkFP32_Adder
