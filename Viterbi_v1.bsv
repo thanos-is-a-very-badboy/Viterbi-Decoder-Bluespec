@@ -24,8 +24,21 @@ interface Ifc_Viterbi;
     method Bool get_read_emission();
     method Bool get_read_outcome();
 
+    // --- Load values into Registers ---
+    method Action load_from_outcome(Bit#(32) idx);
+    method Action load_from_emission(Bit#(32) idx);
+    method Action load_from_transition(Bit#(32) idx);
+
 endinterface
 
+typedef enum {
+    Load_outcome,
+    Load_emission,
+    Load_trans,
+    Sum_and_max,
+    Final_sum,
+    Final_store
+} State deriving (Bits, Eq, FShow);
 
 (* synthesize *)
 module mkViterbi(Ifc_Viterbi);
@@ -52,6 +65,8 @@ module mkViterbi(Ifc_Viterbi);
     Vector#(32, Reg#(Bit#(32))) prev <- replicateM(mkReg(32'h0));
     Vector#(32, Reg#(Bit#(32))) curr <- replicateM(mkReg(32'h0));
 
+    Vector#(64, Vector#(32, Reg#(Bit#(32)))) bt <- replicateM(replicateM(mkReg(0)));
+
     // status flags 
     Reg#(Bool) read_transition <- mkReg(False);
     Reg#(Bool) read_emission <- mkReg(False);
@@ -60,13 +75,16 @@ module mkViterbi(Ifc_Viterbi);
 
     Reg#(Bool) transition_ready <- mkReg(False);
     Reg#(Bool) emission_ready <- mkReg(False);
+    Reg#(Bool) outcome_ready <- mkReg(False);
 
     Reg#(Bool) init_in_progress <- mkReg(False);
     Reg#(Bool) init_done_flag <- mkReg(False);               
+    Reg#(Bool) loop_done_flag <- mkReg(False);               
    
+   Reg#(State) machine_state <- mkReg(Load_outcome);
     // --- rules ---
 
-    rule init_v(t_ctr==0 && !init_done_flag && n_and_m_loaded);
+    rule init_v(!init_done_flag && n_and_m_loaded);
         //  want to read memory so issue request
         if(!transition_ready &&!read_transition && !emission_ready && !read_emission)begin
             read_transition<=True;
@@ -86,7 +104,7 @@ module mkViterbi(Ifc_Viterbi);
                 // $display("Matching exponents...");
                 // started <= True;
             end
-            else if(adder.state_1_done && !adder.state_2_done())begin
+            else if(adder.state_1_done() && !adder.state_2_done())begin
                 adder.add_mantissa();     
                 // $display("Mantissas added");
             end
@@ -120,36 +138,60 @@ module mkViterbi(Ifc_Viterbi);
         end
     endrule 
 
-    // rule intit_v_iter(!init_done_flag && n_and_m_loaded);
-    //     read_transition<=True;
-    //     transition_idx<=i_ctr;
-    // endrule 
-
-    // rule init_v_iter_2(!init_done_flag && transition_ready);
-    //     Bit#(32) data = transition_buffer;
-    //     prev[i_ctr] <= data;
-    //     transition_ready<=False;
-    //     i_ctr <= i_ctr + 1;
-    //     if(i_ctr==n_reg-1)begin
-    //         init_done_flag<=True;
-    //         read_transition<=False;
-    //     end
-    // endrule
-    //     // Load transition data into internal structures
-    
     rule done_init (init_done_flag);
         $display("Viterbi Initialization completed.");
         $display("N and M = %d, %d", n_reg, m_reg);
 
-        for (Integer i = 0; fromInteger(i) < 8; i = i + 1) begin
-            // $display("I: %d, P : %h", i, prev[i]);
-        end
+        // for (Integer i = 0; fromInteger(i) < 8; i = i + 1) begin
+        //     // $display("I: %d, P : %h", i, prev[i]);
+        // end
 
-        $finish(0);
+        
     endrule
 
+    rule loop_rule(init_done_flag && !loop_done_flag);
+        // $display("Boooyeahhh");
+
+        if(machine_state == Load_outcome) begin
+            read_outcome<=True;
+            outcome_idx <= t_ctr;
+            // load_from_outcome(t_ctr);
+            if(outcome_ready) begin
+                machine_state <= Load_emission;
+            end
+        end
+        else if(machine_state == Load_emission)begin
+            $display("Loading emission in loop");
+            read_emission<=True;
+            let temp = outcome_buffer - 1;
+            emission_idx <= i_ctr*m_reg + temp;
+            if(emission_ready)begin
+                machine_state <= Load_trans;
+            end
+        end
+        else begin
+            $display("EMISSION VALUE = %h",emission_buffer);
+            $finish(0);
+        end
+    endrule
+
+    
 
     // --- methods ---
+
+    method Action load_from_outcome(Bit#(32) idx);
+        read_outcome<=True;
+        outcome_idx <= idx;
+    endmethod
+    
+    method Action load_from_transition(Bit#(32) idx);
+        read_transition<=True;
+        transition_idx <= idx;
+    endmethod
+    
+    method Action load_from_emission(Bit#(32) idx);
+
+    endmethod
 
     method ActionValue#(Bool) get_n_and_m_loaded();
         // read_transition<=True;
@@ -178,6 +220,8 @@ module mkViterbi(Ifc_Viterbi);
 
     method Action send_outcome_data(Bit#(32) data);
         outcome_buffer <= data;
+        outcome_ready <= True;
+        read_outcome <= False;
     endmethod
 
     method Bit#(32) read_transition_idx();

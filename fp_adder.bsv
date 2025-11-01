@@ -42,6 +42,7 @@ module mkFP32_Adder(Ifc_FP32_Adder);
         Bit#(8) newExp=0;
         Bit#(24) sm1=0;
         Bit#(24) sm2=0;
+        
 
         sm1 = {1'b1, man1};
         sm2 = {1'b1, man2};
@@ -83,6 +84,7 @@ module mkFP32_Adder(Ifc_FP32_Adder);
         new_exp <= newExp;
         diff_reg <= diff;
         done1 <= True;
+        // $display("exp: %h; mant: %h, %h; diff: %h", newExp, sm1, sm2, diff);
     endmethod
 
     // stub for now
@@ -100,49 +102,78 @@ module mkFP32_Adder(Ifc_FP32_Adder);
             if(guard2==1'b0) begin
                 // no rounding
                 final_mantissa <= temp2_sum_mantissa[23:1];
+                // $display("final_mant: %h", temp2_sum_mantissa[23:1]);
+
             end
             else if(sticky2==1'b1)begin
                 final_mantissa <= temp2_sum_mantissa[23:1] + 1;
+                // $display("final_mant: %h", temp2_sum_mantissa[23:1]+1);
+
             end
             else begin
                 if(temp_sum_mantissa[diff_reg+1]==1) begin
                     final_mantissa <= temp2_sum_mantissa[23:1] + 1;
+                    // $display("final_mant: %h", temp2_sum_mantissa[23:1]+1);
+
                 end
                 else begin
                     final_mantissa <= temp2_sum_mantissa[23:1];
+                    // $display("final_mant: %h", temp2_sum_mantissa[23:1]);
+
                 end
             end
         end
         else begin
             // no more shift needed
+            man_carry <= 1'b0;
             // only info of prev lowest diff bits needed for rounding
             if(guard1==1'b0)begin
                 // no rounding
                 final_mantissa <= temp_sum_mantissa[22:0];
+                // $display("final_mant: %h", temp_sum_mantissa[22:0]);
+
             end
             else if(sticky1==1'b1)begin
                 final_mantissa <= temp_sum_mantissa[22:0] + 1;
+                // $display("final_mant: %h", temp_sum_mantissa[22:0] + 1);
+
             end
             else begin
                 if(temp_sum_mantissa[diff_reg]==1) begin
                     final_mantissa <= temp_sum_mantissa[22:0] + 1;
+                    // $display("final_mant: %h", temp_sum_mantissa[22:0] + 1);
                 end
                 else begin
                     final_mantissa <= temp_sum_mantissa[22:0];
+                    // $display("final_mant: %h", temp_sum_mantissa[22:0]);
+
                 end
             end
         end
-
+        // $display("exp_addMan: %h", new_exp);
+        
         done2<=True;
     endmethod
 
     // stub for now
     method Action normalise();
+        // $display("exp_Norm: %h", new_exp);
+
+        // $display("final_mantossaa: %h", final_mantissa);
+
         if(man_carry==1'b0) begin
             res <= {1'b1,new_exp,final_mantissa};
+            // $display("No_Cout");
+
+            // $display("Final_Result: %h", {1'b1,new_exp,final_mantissa});
+            
         end
         else begin
             res <= {1'b1,new_exp+1,final_mantissa};
+            // $display("Cout");
+
+            // $display("Final_Result: %h", {1'b1,new_exp + 1,final_mantissa});
+
         end
         done3<=True;
     endmethod

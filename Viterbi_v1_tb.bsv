@@ -17,8 +17,11 @@ module mkViterbiTestbench();
 
     Reg#(Bool) read_transition_tb <- mkReg(False);
     Reg#(Bool) read_emission_tb <- mkReg(False);
+    Reg#(Bool) read_outcome_tb <- mkReg(False);
+    
     Reg#(Bit#(32)) transition_idx_tb <- mkReg(32'h0);
     Reg#(Bit#(32)) emission_idx_tb <- mkReg(32'h0);
+    Reg#(Bit#(32)) outcome_idx_tb <- mkReg(32'h0);
 
     rule load_m_and_n;
         let loaded <- viterbi.get_n_and_m_loaded();
@@ -57,20 +60,17 @@ module mkViterbiTestbench();
         // $display("Viterbi Initialization started with n=%0d, m=%0d, outcome=%0d", n, m, outcome);
     endrule
 
-    
-    // rule read_emission_matrix (viterbi.get_read_emission());
-    //     let transition_idx = viterbi.read_emission_idx();
-    //     Bit#(32) data = p_emission.sub(transition_idx);
-    //     viterbi.send_emission_data(data);
-    //     // $display("Viterbi Initialization started with n=%0d, m=%0d, outcome=%0d", n, m, outcome);
-    // endrule
+    rule read_88(viterbi.get_read_outcome() && !read_outcome_tb);
+       read_outcome_tb <= True;
+       outcome_idx_tb <= viterbi.read_outcome_idx();
+    endrule
 
-    
-    // rule read_outcome_matrix (viterbi.get_read_outcome());
-    //     let transition_idx = viterbi.read_outcome_idx();
-    //     Bit#(32) data = p_transition.sub(transition_idx);
-    //     viterbi.send_outcome_data(data);
-    //     // $display("Viterbi Initialization started with n=%0d, m=%0d, outcome=%0d", n, m, outcome);
-    // endrule
+    rule read_outcome_matrix(read_outcome_tb == True);
+        $display("Index: %h", outcome_idx_tb);
+        Bit#(32) data = inputs.sub(outcome_idx_tb);
+        // Bit#(32) data = p_transition.sub(0);
+        viterbi.send_outcome_data(data);
+        read_outcome_tb <= False;
+    endrule
 
 endmodule
