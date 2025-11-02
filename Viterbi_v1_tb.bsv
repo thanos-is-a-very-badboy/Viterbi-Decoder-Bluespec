@@ -38,6 +38,7 @@ module mkViterbiTestbench();
     rule read_transition_matrix(read_transition_tb == True);
         Bit#(32) data = p_transition.sub(transition_idx_tb);
         // Bit#(32) data = p_transition.sub(0);
+        // $display("In TB: tran_id: %d, prob: %h", transition_idx_tb, data);
         viterbi.send_transition_data(data);
         read_transition_tb <= False;
     endrule
@@ -53,6 +54,7 @@ module mkViterbiTestbench();
             // $display("I  = %d",transition_idx_tb);
             Bit#(32) data = p_emission.sub(emission_idx_tb);
             // Bit#(32) data = p_transition.sub(0);
+            // $display("EMISSION BEING READ with ADDR = %d",emission_idx_tb);
             viterbi.send_emission_data(data);
             read_emission_tb <= False;
             // $display("NYEGA");
@@ -66,8 +68,9 @@ module mkViterbiTestbench();
     endrule
 
     rule read_outcome_matrix(read_outcome_tb == True);
-        $display("Index: %h", outcome_idx_tb);
+        // $display("Index: %h", outcome_idx_tb);
         Bit#(32) data = inputs.sub(outcome_idx_tb);
+        // $display("OUTCOME BEING READ with ADDR = %d",outcome_idx_tb);
         // Bit#(32) data = p_transition.sub(0);
         viterbi.send_outcome_data(data);
         read_outcome_tb <= False;
