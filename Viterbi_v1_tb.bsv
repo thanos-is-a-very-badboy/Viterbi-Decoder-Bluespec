@@ -13,7 +13,7 @@ module mkViterbiTestbench();
 
     Bit#(32) n = n_and_m.sub(0);
     Bit#(32) m = n_and_m.sub(1);
-    Bit#(32) outcome = inputs.sub(0);
+    // Bit#(32) outcome = inputs.sub(0);
 
     Reg#(Bool) read_transition_tb <- mkReg(False);
     Reg#(Bool) read_emission_tb <- mkReg(False);
@@ -26,7 +26,7 @@ module mkViterbiTestbench();
     rule load_m_and_n;
         let loaded <- viterbi.get_n_and_m_loaded();
         if(!loaded)begin
-            viterbi.n_and_m_load(n,m,outcome);
+            viterbi.n_and_m_load(n,m);
         end
     endrule
 

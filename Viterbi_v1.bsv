@@ -6,7 +6,7 @@ interface Ifc_Viterbi;
 
     // --- Setup and state loading ---
     method ActionValue#(Bool) get_n_and_m_loaded();
-    method Action n_and_m_load(Bit#(32) n, Bit#(32) m ,Bit#(32)outcome1);
+    method Action n_and_m_load(Bit#(32) n, Bit#(32) m);
 
 
     // --- Transition / Emission / Outcome data ---
@@ -24,11 +24,6 @@ interface Ifc_Viterbi;
     method Bool get_read_emission();
     method Bool get_read_outcome();
 
-    // --- Load values into Registers ---
-    method Action load_from_outcome(Bit#(32) idx);
-    method Action load_from_emission(Bit#(32) idx);
-    method Action load_from_transition(Bit#(32) idx);
-
 endinterface
 
 typedef enum {
@@ -43,6 +38,14 @@ typedef enum {
     Finish
 } State deriving (Bits, Eq, FShow);
 
+typedef enum {
+    Init_outcome,
+    Read_values,
+    Loop,
+    Done
+} Init_State deriving (Bits, Eq, FShow);
+
+
 (* synthesize *)
 module mkViterbi(Ifc_Viterbi);
 
@@ -54,7 +57,6 @@ module mkViterbi(Ifc_Viterbi);
     Reg#(Bit#(32)) j_ctr <- mkReg(0);
     Reg#(Bit#(32)) t_ctr <- mkReg(0);
     Reg#(Bit#(32)) input_idx_ctr <- mkReg(0);
-    Reg#(Bit#(32)) outcome_reg <- mkReg(0);
     Reg#(Bit#(32)) max_reg <- mkReg(32'hFFFFFFFF);
     Reg#(Bit#(32)) max_state_reg <- mkReg(32'hFFFFFFFF);
 
@@ -88,67 +90,76 @@ module mkViterbi(Ifc_Viterbi);
     Reg#(Bool) loop_done_flag <- mkReg(False);               
    
    Reg#(State) machine_state <- mkReg(Load_outcome);
+   Reg#(Init_State) init_state <- mkReg(Init_outcome);
+
     // --- rules ---
 
     rule init_v(!init_done_flag && n_and_m_loaded);
-        //  want to read memory so issue request
-        if(!transition_ready &&!read_transition && !emission_ready && !read_emission)begin
-            read_transition<=True;
-            read_emission<=True;
-
-            transition_idx<=i_ctr;
-            emission_idx<=i_ctr*m_reg + outcome_reg;
+        if(init_state==Init_outcome)begin
+            if(!read_outcome && !outcome_ready)begin
+                read_outcome<=True;
+                outcome_idx<=t_ctr;
+            end
+            if(outcome_ready)begin
+                init_state<=Read_values;
+                outcome_ready<=False;
+            end
         end
-        else if(transition_ready && emission_ready)begin
-            // can do addition
+        else if(init_state == Read_values)begin
+            // $display("OUTCOME 1 : %d",outcome_buffer);
+            if(!transition_ready &&!read_transition && !emission_ready && !read_emission)begin
+                read_transition<=True;
+                read_emission<=True;
+
+                transition_idx<=i_ctr;
+                emission_idx<=i_ctr*m_reg + (outcome_buffer-1);
+            end
+            else if(transition_ready && emission_ready)begin
+                // $display("I : %d, TRANSITION :%h , EMISSION : %h, TRANS IDX : %d, EMI IDX : %d",i_ctr,transition_buffer,emission_buffer,transition_idx,emission_idx);
+                init_state <= Loop;
+                transition_ready<=False;
+                emission_ready<=False;
+            end
+        end
+        else if(init_state == Loop)begin
             let data1 = transition_buffer;
             let data2 = emission_buffer;
             // //$display("NYEGA");
             
             if(!adder.state_1_done())begin
                 adder.match_exponents(data1, data2);
-                // //$display("Matching exponents...");
-                // started <= True;
             end
             else if(adder.state_1_done() && !adder.state_2_done())begin
                 adder.add_mantissa();     
-                // //$display("Mantissas added");
             end
             else if(adder.state_2_done() && !adder.state_3_done())begin
                 adder.normalise();
-                // //$display("Normalization done");
             end
             else if(adder.state_3_done()) begin
-        // Step 2: wait for state_1_done
-                
+         
                 let data = adder.get_res();
                 adder.clear_adder();
                 prev[i_ctr]<=data;
-                // $display("A: %h, B : %h, S: %h", data1, data2, data);
-
-                // //$display("NYEGA, %d", i_ctr);
-                read_transition<=False;
-                read_emission<=False;
-                transition_ready<=False;
-                emission_ready<=False;
 
                 if(i_ctr<n_reg-1)begin
                     i_ctr<=i_ctr+1;
+                    init_state<=Read_values;
                     // //$display("VALUE of I : %d",i_ctr);
                 end
                 else begin
                     i_ctr<=0;
                     init_done_flag<=True;
                     t_ctr<=t_ctr+1;
+                    machine_state<=Load_outcome;
+                    // read_outcome<=False;
                 end
             end
         end
     endrule 
 
-    // rule done_init (init_done_flag && machine_state == Load_outcome);
+    // rule done_init (init_done_flag && t_ctr==1);
     //     $display("Viterbi Initialization completed.");
     //     // $display("N and M = %d, %d", n_reg, m_reg);
-
     //     // $finish(0);
         
     //     for (Integer i = 0; fromInteger(i) < 2; i = i + 1) begin
@@ -162,12 +173,15 @@ module mkViterbi(Ifc_Viterbi);
         // //$display("Loop Begins");
 
         if(machine_state == Load_outcome) begin
+            // $display("READ,Ready : %d %d %d",pack(read_outcome),pack(outcome_ready),t_ctr);
             if(!read_outcome && !outcome_ready)begin
+                // $display("YOOOOO %d",t_ctr);
                 read_outcome<=True;
                 outcome_idx <= t_ctr;
             end
             // load_from_outcome(t_ctr);
             else if(outcome_ready) begin
+                // $display("TIME : %d, OUTCOME : %h, IDX : %d",t_ctr,outcome_buffer,outcome_idx);
                 machine_state <= Load_emission;
                 outcome_ready<=False;
             end
@@ -182,7 +196,6 @@ module mkViterbi(Ifc_Viterbi);
             end
             //$display("Loading emission in loop");
             else begin
-                
                 Bit#(32) temp=0;
 
                 if(!read_emission && !emission_ready)begin
@@ -204,6 +217,7 @@ module mkViterbi(Ifc_Viterbi);
         else if(machine_state==Load_trans) begin
             //$display("Loading transition in loop");
             if(!read_transition && !transition_ready)begin
+                // $display("JHAATU");
                 read_transition<=True;
                 transition_idx <= (j_ctr+1)*n_reg + i_ctr;
             end
@@ -334,30 +348,22 @@ module mkViterbi(Ifc_Viterbi);
                 $display("I: %d, P : %h", i, curr[i]);
             end
             $finish(0);
+            // machine_state<=Load_outcome;
+            // init_done_flag<=False;
+            // read_emission<=False;
+            // read_transition<=False;
+            // read_outcome<=False;
         end
     endrule
     // --- methods ---
-
-    method Action load_from_outcome(Bit#(32) idx);
-        read_outcome<=True;
-        outcome_idx <= idx;
-    endmethod
-    
-    method Action load_from_transition(Bit#(32) idx);
-        read_transition<=True;
-        transition_idx <= idx;
-    endmethod
     
     method ActionValue#(Bool) get_n_and_m_loaded();
-        // read_transition<=True;
-        // read_emission<=True;
         return n_and_m_loaded;
     endmethod 
 
-    method Action n_and_m_load(Bit#(32) n, Bit#(32) m,Bit#(32)outcome1);
+    method Action n_and_m_load(Bit#(32) n, Bit#(32) m);
         n_reg <= n;
         m_reg <= m;
-        outcome_reg<=outcome1-1;
         n_and_m_loaded <= True;
     endmethod
 
