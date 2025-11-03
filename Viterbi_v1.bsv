@@ -23,7 +23,7 @@ interface Ifc_Viterbi;
     method Action set_read_transition(Bool val);
     method Bool get_read_emission();
     method Bool get_read_outcome();
-
+    method Bool get_reset_decoder();
 endinterface
 
 typedef enum {
@@ -56,7 +56,6 @@ module mkViterbi(Ifc_Viterbi);
     Reg#(Bit#(32)) i_ctr <- mkReg(0);
     Reg#(Bit#(32)) j_ctr <- mkReg(0);
     Reg#(Bit#(32)) t_ctr <- mkReg(0);
-    Reg#(Bit#(32)) input_idx_ctr <- mkReg(0);
     Reg#(Bit#(32)) max_reg <- mkReg(32'hFFFFFFFF);
     Reg#(Bit#(32)) max_state_reg <- mkReg(32'hFFFFFFFF);
 
@@ -85,12 +84,11 @@ module mkViterbi(Ifc_Viterbi);
     Reg#(Bool) emission_ready <- mkReg(False);
     Reg#(Bool) outcome_ready <- mkReg(False);
 
-    Reg#(Bool) init_in_progress <- mkReg(False);
     Reg#(Bool) init_done_flag <- mkReg(False);               
-    Reg#(Bool) loop_done_flag <- mkReg(False);               
-   
-   Reg#(State) machine_state <- mkReg(Load_outcome);
-   Reg#(Init_State) init_state <- mkReg(Init_outcome);
+    Reg#(Bool) reset_machine_flag <- mkReg(False);               
+    
+    Reg#(State) machine_state <- mkReg(Load_outcome);
+    Reg#(Init_State) init_state <- mkReg(Init_outcome);
 
     // --- rules ---
 
@@ -107,7 +105,11 @@ module mkViterbi(Ifc_Viterbi);
         end
         else if(init_state == Read_values)begin
             // $display("OUTCOME 1 : %d",outcome_buffer);
-            if(!transition_ready &&!read_transition && !emission_ready && !read_emission)begin
+           if(outcome_buffer==0 && t_ctr!=0) begin
+                $display("....................END OF ALL SEQUENCES.......................");
+                $finish(0);
+           end
+           else if(!transition_ready &&!read_transition && !emission_ready && !read_emission)begin
                 read_transition<=True;
                 read_emission<=True;
 
@@ -151,6 +153,7 @@ module mkViterbi(Ifc_Viterbi);
                     init_done_flag<=True;
                     t_ctr<=t_ctr+1;
                     machine_state<=Load_outcome;
+                    $display("INIT_DONE");
                     // read_outcome<=False;
                 end
             end
@@ -192,6 +195,7 @@ module mkViterbi(Ifc_Viterbi);
             // $display("T: %d| i: %d, Outcome : %h",t_ctr, i_ctr, outcome_buffer, outcome_idx);
             if(outcome_buffer==32'hFFFFFFFF)begin
                 $display("...................EOS REACHED...................");
+                reset_machine_flag<=True;
                 machine_state<=Print_res;
             end
             //$display("Loading emission in loop");
@@ -347,12 +351,33 @@ module mkViterbi(Ifc_Viterbi);
             for (Integer i = 0; fromInteger(i) < 2; i = i + 1) begin
                 $display("I: %d, P : %h", i, curr[i]);
             end
-            $finish(0);
-            // machine_state<=Load_outcome;
-            // init_done_flag<=False;
-            // read_emission<=False;
-            // read_transition<=False;
-            // read_outcome<=False;
+            // $finish(0);
+            
+            // reset decoder state
+            i_ctr <= 0;
+            j_ctr <= 0;
+            t_ctr <= t_ctr+1;
+            max_reg <= 32'hFFFFFFFF;
+            max_state_reg <= 0;
+
+            // read_transition <= False;
+            // read_emission <= False;
+            // read_outcome <= False;
+            // n_and_m_loaded <= False;
+
+            // transition_ready <= False;
+            // emission_ready <= False;
+            // outcome_ready <= False;
+
+            // $display("read : %d, ready : %d",read_transition,transition_ready);
+            // $display("read : %d, ready : %d",read_emission,emission_ready);
+            // $display("read : %d, ready : %d",read_outcome,outcome_ready);
+
+            init_done_flag <= False;               
+    
+            machine_state <= Load_outcome;
+            init_state <= Init_outcome;
+            // $finish(0);
         end
     endrule
     // --- methods ---
@@ -411,6 +436,10 @@ module mkViterbi(Ifc_Viterbi);
 
     method Bool get_read_outcome();
         return read_outcome;
+    endmethod
+
+    method Bool get_reset_decoder();
+        return reset_machine_flag;
     endmethod
 
 endmodule : mkViterbi
