@@ -62,6 +62,7 @@ module mkViterbi(Ifc_Viterbi);
     Reg#(Bit#(32)) j_ctr <- mkReg(0);
     Reg#(Bit#(32)) t_ctr <- mkReg(0);
     Reg#(Bit#(32)) t_start <- mkReg(0);
+    Reg#(Bit#(32)) bt_t_ctr <- mkReg(0);
     Reg#(Bit#(32)) max_reg <- mkReg(32'hFFFFFFFF);
     Reg#(Bit#(32)) max_state_reg <- mkReg(32'hFFFFFFFF);
 
@@ -167,7 +168,7 @@ module mkViterbi(Ifc_Viterbi);
                     t_ctr<=t_ctr+1;
                     machine_state<=Load_outcome;
                     loop_done_flag <= False;
-                    $display("INIT_DONE");
+                    // $display("INIT_DONE");
                     // read_outcome<=False;
                 end
             end
@@ -208,7 +209,7 @@ module mkViterbi(Ifc_Viterbi);
             // $display("T: %d| i: %d, Emission : %h",t_ctr, i_ctr, emission_buffer, emission_idx);
             // $display("T: %d| i: %d, Outcome : %h",t_ctr, i_ctr, outcome_buffer, outcome_idx);
             if(outcome_buffer==32'hFFFFFFFF)begin
-                $display("...................EOS REACHED...................");
+                // $display("...................EOS REACHED...................");
                 reset_machine_flag<=True;
                 machine_state<=Print_res;
             end
@@ -332,8 +333,9 @@ module mkViterbi(Ifc_Viterbi);
 
                 curr[i_ctr] <= data_dup;
                 
-                let bt_index = t_ctr*n_reg + i_ctr;
-                bt[bt_index] <= max_state_reg;
+                let bt_index = (t_ctr-t_start)*n_reg + i_ctr;
+                // $display("t: %d | i: %d | max: %h", t_ctr-t_start, i_ctr, max_state_reg);
+                bt[bt_index] <= max_state_reg + 1;
                 
                 max_reg<=32'hFFFFFFFF;
                 max_state_reg<=0;
@@ -368,16 +370,16 @@ module mkViterbi(Ifc_Viterbi);
         end
         else if(machine_state==Print_res)begin
             // loop_done_flag<=True;
-            for (Integer i = 0; fromInteger(i) < 2; i = i + 1) begin
-                $display("I: %d, P : %h", i, curr[i]);
-            end
-            // $finish(0);
-            // for (Integer t = 0; fromInteger(t) < 64; t = t + 1) begin
-            //     for (Integer i = 0; fromInteger(i) < 32; i = i + 1) begin
-            //         $display("BT: %d", bt[fromInteger(t)*n_reg + fromInteger(i)]);
-            //     end
+            // for (Integer i = 0; fromInteger(i) < 2; i = i + 1) begin
+            //     $display("I: %d, P : %h", i, curr[i]);
             // end
-            
+            // $finish(0);
+            // $display("-----------------------------------------------------");
+            // for (Integer t = 0; fromInteger(t) < 15; t = t + 1) begin  
+            //     $display("BT[%d]: %d", t,bt[fromInteger(t)]);
+            // end
+            // $finish(0);
+
             // reset decoder state
             loop_done_flag<=True;
             i_ctr <= 0;
@@ -394,33 +396,69 @@ module mkViterbi(Ifc_Viterbi);
                 let currval = curr[i_ctr];
                 if(currval < bt_max) begin
                     bt_max <= currval;
-                    path[t_ctr-t_start] <= i_ctr;
+                    path[t_ctr-t_start] <= i_ctr + 1;
+                    // $display("ctr: %d, start: %d", t_ctr, t_start);
                 end
                 i_ctr <= i_ctr + 1;
             end
             else begin
-                $display("Start: %d, Prob: %h", path[t_ctr-t_start], curr[path[t_ctr-t_start]]);
-                
-                print_state <=Make_path;
+                // $display("- - - - - - - - - - - - - - - - - - - - - - - - - -");
+                // for (Integer i = 0; fromInteger(i) < 8; i = i + 1) begin
+                //     $display("Path: %d", path[fromInteger(i)]);
+                // end
+                bt_t_ctr <= t_ctr - t_start - 1;
+                print_state <= Make_path;
+                // $finish(0);
+
             end
         end
 
         else if (print_state == Make_path) begin
-            $display("B");
-            print_state <= Go_init;
+            // $display("B");
+            // $display("%d", bt_t_ctr);
+            if(bt_t_ctr > 0) begin
+                let bt_index = (bt_t_ctr)*n_reg + (path[bt_t_ctr + 1] -1);
+                // $display("t_ctr: %d | path[x]: %d| ind: %d |",bt_t_ctr, path[bt_t_ctr + 1],  bt_index);
+                path[bt_t_ctr] <= bt[bt_index];
+                bt_t_ctr <= bt_t_ctr - 1;
+            end
+            
+            else begin
+                if(t_ctr-t_start > 63) begin
+                    $display("T:%d,Base:%d", t_ctr, t_start);
+                    $finish(0);
+                end
+                
+                Bit#(6) diff = truncate(t_ctr - t_start+1);
+                
+                for (Integer i = 0; fromInteger(i) < diff; i = i + 1) begin
+                    $display("Path: %h", path[fromInteger(i)]);
+                end 
+                $display("- - - - - - - - - - - - - - - - - - - - - - - - - -");
+                $display("Probability: %h", bt_max);
+                $display("- - - - - - - - - - - - - - - - - - - - - - - - - -");
+                print_state <= Go_init;
+                // $finish(0);
+
+            end
         end
 
         else if (print_state == Go_init) begin
-            $display("C");
+            // $display("C");
             i_ctr <= 0;
             j_ctr <= 0;
             t_ctr <= t_ctr+1;
             t_start <= t_ctr + 1;
             max_reg <= 32'hFFFFFFFF;
+            bt_max <= 32'hFFFFFFFF;
             max_state_reg <= 0;
             init_done_flag <= False;               
             machine_state <= Load_outcome;
             init_state <= Init_outcome;
+
+            for (Integer i = 0; i < 64; i = i + 1) begin
+                path[i] <= 0;
+            end
         end
         
         // $display("Start: %d", t_start);
