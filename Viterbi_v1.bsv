@@ -45,6 +45,11 @@ typedef enum {
     Done
 } Init_State deriving (Bits, Eq, FShow);
 
+typedef enum {
+    Find_max,
+    Make_path,
+    Go_init
+} Print_State deriving (Bits, Eq, FShow);
 
 (* synthesize *)
 module mkViterbi(Ifc_Viterbi);
@@ -56,8 +61,11 @@ module mkViterbi(Ifc_Viterbi);
     Reg#(Bit#(32)) i_ctr <- mkReg(0);
     Reg#(Bit#(32)) j_ctr <- mkReg(0);
     Reg#(Bit#(32)) t_ctr <- mkReg(0);
+    Reg#(Bit#(32)) t_start <- mkReg(0);
     Reg#(Bit#(32)) max_reg <- mkReg(32'hFFFFFFFF);
     Reg#(Bit#(32)) max_state_reg <- mkReg(32'hFFFFFFFF);
+
+    Reg#(Bit#(32)) bt_max <- mkReg(32'hFFFFFFFF);
 
 
     Reg#(Bit#(32)) transition_buffer <- mkReg(0);
@@ -71,8 +79,11 @@ module mkViterbi(Ifc_Viterbi);
     // prev and curr state vectors
     Vector#(32, Reg#(Bit#(32))) prev <- replicateM(mkReg(32'h0));
     Vector#(32, Reg#(Bit#(32))) curr <- replicateM(mkReg(32'h0));
+    Vector#(64, Reg#(Bit#(32))) path <- replicateM(mkReg(32'h0));
 
-    Vector#(64, Vector#(32, Reg#(Bit#(32)))) bt <- replicateM(replicateM(mkReg(0)));
+    // Vector#(64, Vector#(32, Reg#(Bit#(32)))) bt <- replicateM(replicateM(mkReg(0)));
+    //BackTracking Vector
+    Vector#(2048, Reg#(Bit#(32))) bt <- replicateM(mkReg(32'h0));
 
     // status flags 
     Reg#(Bool) read_transition <- mkReg(False);
@@ -86,9 +97,11 @@ module mkViterbi(Ifc_Viterbi);
 
     Reg#(Bool) init_done_flag <- mkReg(False);               
     Reg#(Bool) reset_machine_flag <- mkReg(False);               
+    Reg#(Bool) loop_done_flag <- mkReg(False);               
     
     Reg#(State) machine_state <- mkReg(Load_outcome);
     Reg#(Init_State) init_state <- mkReg(Init_outcome);
+    Reg#(Print_State) print_state <- mkReg(Find_max);
 
     // --- rules ---
 
@@ -153,6 +166,7 @@ module mkViterbi(Ifc_Viterbi);
                     init_done_flag<=True;
                     t_ctr<=t_ctr+1;
                     machine_state<=Load_outcome;
+                    loop_done_flag <= False;
                     $display("INIT_DONE");
                     // read_outcome<=False;
                 end
@@ -172,8 +186,8 @@ module mkViterbi(Ifc_Viterbi);
     //     $display("----------------------------------------------------------");
     // endrule
 
-    rule loop_rule(init_done_flag);
-        // //$display("Loop Begins");
+    rule loop_rule(init_done_flag && !loop_done_flag);
+        // $display("Loop Begins");
 
         if(machine_state == Load_outcome) begin
             // $display("READ,Ready : %d %d %d",pack(read_outcome),pack(outcome_ready),t_ctr);
@@ -276,6 +290,7 @@ module mkViterbi(Ifc_Viterbi);
                 end
                 else begin
                     machine_state<=Final_sum;
+                    
                     // if(i_ctr == 0) begin
                     // end
                 end
@@ -309,12 +324,17 @@ module mkViterbi(Ifc_Viterbi);
         // // Step 2: wait for state_1_done
                 //$display("MAA KI CHEW");
                 let data_dup = adder.get_res();
-
+                // if(i_ctr == 0) begin
+                //     $display("%h, %h, %h",data1_dup, data2_dup, data_dup);
+                // end
                 // $display("data no : %h | I: %d",data_dup, i_ctr);
                 // $display("State: %d, Prob: %h, max_reg:%h, em_buff:%h",i_ctr, data_dup, max_reg, emission_buffer);
 
                 curr[i_ctr] <= data_dup;
-                // bt[t_ctr][i_ctr] <= max_state_reg;
+                
+                let bt_index = t_ctr*n_reg + i_ctr;
+                bt[bt_index] <= max_state_reg;
+                
                 max_reg<=32'hFFFFFFFF;
                 max_state_reg<=0;
                 adder.clear_adder();
@@ -352,34 +372,61 @@ module mkViterbi(Ifc_Viterbi);
                 $display("I: %d, P : %h", i, curr[i]);
             end
             // $finish(0);
+            // for (Integer t = 0; fromInteger(t) < 64; t = t + 1) begin
+            //     for (Integer i = 0; fromInteger(i) < 32; i = i + 1) begin
+            //         $display("BT: %d", bt[fromInteger(t)*n_reg + fromInteger(i)]);
+            //     end
+            // end
             
             // reset decoder state
+            loop_done_flag<=True;
             i_ctr <= 0;
-            j_ctr <= 0;
-            t_ctr <= t_ctr+1;
-            max_reg <= 32'hFFFFFFFF;
-            max_state_reg <= 0;
-
-            // read_transition <= False;
-            // read_emission <= False;
-            // read_outcome <= False;
-            // n_and_m_loaded <= False;
-
-            // transition_ready <= False;
-            // emission_ready <= False;
-            // outcome_ready <= False;
-
-            // $display("read : %d, ready : %d",read_transition,transition_ready);
-            // $display("read : %d, ready : %d",read_emission,emission_ready);
-            // $display("read : %d, ready : %d",read_outcome,outcome_ready);
-
-            init_done_flag <= False;               
-    
-            machine_state <= Load_outcome;
-            init_state <= Init_outcome;
+            print_state <= Find_max;
             // $finish(0);
         end
     endrule
+
+    rule print_rule(loop_done_flag && init_done_flag);
+        if(print_state == Find_max) begin
+            // $display("A");
+            
+            if(i_ctr < n_reg - 1) begin
+                let currval = curr[i_ctr];
+                if(currval < bt_max) begin
+                    bt_max <= currval;
+                    path[t_ctr-t_start] <= i_ctr;
+                end
+                i_ctr <= i_ctr + 1;
+            end
+            else begin
+                $display("Start: %d, Prob: %h", path[t_ctr-t_start], curr[path[t_ctr-t_start]]);
+                
+                print_state <=Make_path;
+            end
+        end
+
+        else if (print_state == Make_path) begin
+            $display("B");
+            print_state <= Go_init;
+        end
+
+        else if (print_state == Go_init) begin
+            $display("C");
+            i_ctr <= 0;
+            j_ctr <= 0;
+            t_ctr <= t_ctr+1;
+            t_start <= t_ctr + 1;
+            max_reg <= 32'hFFFFFFFF;
+            max_state_reg <= 0;
+            init_done_flag <= False;               
+            machine_state <= Load_outcome;
+            init_state <= Init_outcome;
+        end
+        
+        // $display("Start: %d", t_start);
+
+        
+endrule
     // --- methods ---
     
     method ActionValue#(Bool) get_n_and_m_loaded();

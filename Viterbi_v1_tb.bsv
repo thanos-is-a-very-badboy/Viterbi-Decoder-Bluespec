@@ -6,15 +6,15 @@ module mkViterbiTestbench();
 
     Ifc_Viterbi viterbi <- mkViterbi();
 
-    // RegFile#(Bit#(32), Bit#(32)) p_transition <- mkRegFileLoad("./Inputs/A_small.dat", 0, 1023);
-    // RegFile#(Bit#(32), Bit#(32)) p_emission <- mkRegFileLoad("./Inputs/B_small.dat", 0, 1023);
-    // RegFile#(Bit#(32), Bit#(32)) inputs <- mkRegFileLoad("./Inputs/input_small.dat", 0, 1023);
-    // RegFile#(Bit#(32), Bit#(32)) n_and_m <- mkRegFileLoad("./Inputs/N_small.dat", 0, 1023);
+    RegFile#(Bit#(32), Bit#(32)) p_transition <- mkRegFileLoad("./Inputs/A_small.dat", 0, 1023);
+    RegFile#(Bit#(32), Bit#(32)) p_emission <- mkRegFileLoad("./Inputs/B_small.dat", 0, 1023);
+    RegFile#(Bit#(32), Bit#(32)) inputs <- mkRegFileLoad("./Inputs/input_small.dat", 0, 1023);
+    RegFile#(Bit#(32), Bit#(32)) n_and_m <- mkRegFileLoad("./Inputs/N_small.dat", 0, 1023);
     
-    RegFile#(Bit#(32), Bit#(32)) p_transition <- mkRegFileLoad("./Huge_Ip/A_huge.dat", 0, 1023);
-    RegFile#(Bit#(32), Bit#(32)) p_emission <- mkRegFileLoad("./Huge_Ip/B_huge.dat", 0, 1023);
-    RegFile#(Bit#(32), Bit#(32)) inputs <- mkRegFileLoad("./Huge_Ip/input_huge.dat", 0, 1023);
-    RegFile#(Bit#(32), Bit#(32)) n_and_m <- mkRegFileLoad("./Huge_Ip/N_huge.dat", 0, 1023);
+    // RegFile#(Bit#(32), Bit#(32)) p_transition <- mkRegFileLoad("./Huge_Ip/A_huge.dat", 0, 1023);
+    // RegFile#(Bit#(32), Bit#(32)) p_emission <- mkRegFileLoad("./Huge_Ip/B_huge.dat", 0, 1023);
+    // RegFile#(Bit#(32), Bit#(32)) inputs <- mkRegFileLoad("./Huge_Ip/input_huge.dat", 0, 1023);
+    // RegFile#(Bit#(32), Bit#(32)) n_and_m <- mkRegFileLoad("./Huge_Ip/N_huge.dat", 0, 1023);
 
     
     Bit#(32) n = n_and_m.sub(0);
@@ -56,14 +56,13 @@ module mkViterbiTestbench();
 
     rule read_emission_matrix(read_emission_tb == True);
         // if(viterbi.get_read_transition())begin
-            
-            // $display("I  = %d",transition_idx_tb);
-            Bit#(32) data = p_emission.sub(emission_idx_tb);
-            // Bit#(32) data = p_transition.sub(0);
-            // $display("EMISSION BEING READ with ADDR = %d",emission_idx_tb);
-            viterbi.send_emission_data(data);
-            read_emission_tb <= False;
-            // $display("NYEGA");
+        // $display("I  = %d",transition_idx_tb);
+        Bit#(32) data = p_emission.sub(emission_idx_tb);
+        // Bit#(32) data = p_transition.sub(0);
+        // $display("EMISSION BEING READ with ADDR = %d",emission_idx_tb);
+        viterbi.send_emission_data(data);
+        read_emission_tb <= False;
+        // $display("NYEGA");
         // end
         // $display("Viterbi Initialization started with n=%0d, m=%0d, outcome=%0d", n, m, outcome);
     endrule

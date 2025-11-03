@@ -60,7 +60,7 @@ module mkFP32_Adder(Ifc_FP32_Adder);
             if(diff>0)guard1 <= man2[diff-1];
             else guard1 <= 0;
 
-            let shifted_part = copy_man2 & (24'hFFFFFF >> (24 - diff));
+            let shifted_part = copy_man2 & (24'hFFFFFF >> (25 - diff));
             sticky1 <= |shifted_part;
             //  update exponent
             newExp = exp1;
@@ -73,7 +73,7 @@ module mkFP32_Adder(Ifc_FP32_Adder);
             if(diff>0) guard1 <= man1[diff-1];
             else guard1 <= 0;
 
-            let shifted_part = copy_man2 & (24'hFFFFFF >> (24 - diff));
+            let shifted_part = copy_man2 & (24'hFFFFFF >> (25 - diff));
             sticky1 <= |shifted_part;
             //  update exponent
             newExp = exp2;  
@@ -95,7 +95,7 @@ module mkFP32_Adder(Ifc_FP32_Adder);
         if(temp_sum_mantissa[24]==1) begin
             // need to shift right by 1
             man_carry <= 1'b1;
-            Bit#(1) guard2 = temp_sum_mantissa[diff_reg];
+            Bit#(1) guard2 = temp_sum_mantissa[0];
             Bit#(1) sticky2 = guard1 | sticky1;
             let temp2_sum_mantissa = temp_sum_mantissa;
 
@@ -111,7 +111,7 @@ module mkFP32_Adder(Ifc_FP32_Adder);
 
             end
             else begin
-                if(temp_sum_mantissa[diff_reg+1]==1) begin
+                if(temp_sum_mantissa[1]==1) begin
                     final_mantissa <= temp2_sum_mantissa[23:1] + 1;
                     // $display("final_mant: %h", temp2_sum_mantissa[23:1]+1);
 
@@ -139,7 +139,7 @@ module mkFP32_Adder(Ifc_FP32_Adder);
 
             end
             else begin
-                if(temp_sum_mantissa[diff_reg]==1) begin
+                if(temp_sum_mantissa[0]==1) begin
                     final_mantissa <= temp_sum_mantissa[22:0] + 1;
                     // $display("final_mant: %h", temp_sum_mantissa[22:0] + 1);
                 end
