@@ -8,7 +8,6 @@ interface Ifc_Viterbi;
     method ActionValue#(Bool) get_n_and_m_loaded();
     method Action n_and_m_load(Bit#(32) n, Bit#(32) m);
 
-
     // --- Transition / Emission / Outcome data ---
     method Bit#(32) read_transition_idx();
     method Bit#(32) read_emission_idx();
@@ -121,6 +120,10 @@ module mkViterbi(Ifc_Viterbi);
             // $display("OUTCOME 1 : %d",outcome_buffer);
            if(outcome_buffer==0 && t_ctr!=0) begin
                 $display("....................END OF ALL SEQUENCES.......................");
+                let file <- $fopen("Outcome.dat", "a");
+                $fdisplay(file, "00000000");
+                $fclose(file);
+                
                 $finish(0);
            end
            else if(!transition_ready &&!read_transition && !emission_ready && !read_emission)begin
@@ -416,6 +419,7 @@ module mkViterbi(Ifc_Viterbi);
         else if (print_state == Make_path) begin
             // $display("B");
             // $display("%d", bt_t_ctr);
+            let file <- $fopen("Outcome.dat", "a");
             if(bt_t_ctr > 0) begin
                 let bt_index = (bt_t_ctr)*n_reg + (path[bt_t_ctr + 1] -1);
                 // $display("t_ctr: %d | path[x]: %d| ind: %d |",bt_t_ctr, path[bt_t_ctr + 1],  bt_index);
@@ -423,24 +427,23 @@ module mkViterbi(Ifc_Viterbi);
                 bt_t_ctr <= bt_t_ctr - 1;
             end
             
-            else begin
-                if(t_ctr-t_start > 63) begin
-                    $display("T:%d,Base:%d", t_ctr, t_start);
-                    $finish(0);
-                end
-                
+            else begin                
                 Bit#(6) diff = truncate(t_ctr - t_start+1);
                 
-                for (Integer i = 0; fromInteger(i) < diff; i = i + 1) begin
+                for (Integer i = 1; fromInteger(i) < diff; i = i + 1) begin
                     $display("Path: %h", path[fromInteger(i)]);
+                    $fdisplay(file, "%h", path[fromInteger(i)]);
                 end 
                 $display("- - - - - - - - - - - - - - - - - - - - - - - - - -");
                 $display("Probability: %h", bt_max);
+                $fdisplay(file, "%h",bt_max);
+                $fdisplay(file, "ffffffff");
                 $display("- - - - - - - - - - - - - - - - - - - - - - - - - -");
                 print_state <= Go_init;
                 // $finish(0);
 
             end
+            $fclose(file);
         end
 
         else if (print_state == Go_init) begin
