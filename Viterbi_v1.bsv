@@ -120,7 +120,7 @@ module mkViterbi(Ifc_Viterbi);
             // $display("OUTCOME 1 : %d",outcome_buffer);
            if(outcome_buffer==0 && t_ctr!=0) begin
                 $display("....................END OF ALL SEQUENCES.......................");
-                let file <- $fopen("Outcome.dat", "a");
+                let file <- $fopen("Output.dat", "a");
                 $fdisplay(file, "00000000");
                 $fclose(file);
                 
@@ -398,6 +398,7 @@ module mkViterbi(Ifc_Viterbi);
             if(i_ctr < n_reg - 1) begin
                 let currval = curr[i_ctr];
                 if(currval < bt_max) begin
+                    
                     bt_max <= currval;
                     path[t_ctr-t_start] <= i_ctr + 1;
                     // $display("ctr: %d, start: %d", t_ctr, t_start);
@@ -419,7 +420,7 @@ module mkViterbi(Ifc_Viterbi);
         else if (print_state == Make_path) begin
             // $display("B");
             // $display("%d", bt_t_ctr);
-            let file <- $fopen("Outcome.dat", "a");
+            let file <- $fopen("Output.dat", "a");
             if(bt_t_ctr > 0) begin
                 let bt_index = (bt_t_ctr)*n_reg + (path[bt_t_ctr + 1] -1);
                 // $display("t_ctr: %d | path[x]: %d| ind: %d |",bt_t_ctr, path[bt_t_ctr + 1],  bt_index);
