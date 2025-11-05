@@ -1,5 +1,8 @@
 package fp_adder;
 
+import RippleCarryAdder::*;
+import RippleCarrySubtractor :: *;
+
 interface Ifc_FP32_Adder;
     method Action match_exponents(Bit#(32) num1, Bit#(32) num2);
     method Action add_mantissa();
@@ -14,6 +17,9 @@ endinterface
 
 (* synthesize *)
 module mkFP32_Adder(Ifc_FP32_Adder);
+    RCA_ifc rca <- mkRippleCarryAdder();
+    SUB_ifc rcs1 <- mkRippleCarrySubtractor();
+    SUB_ifc rcs2 <- mkRippleCarrySubtractor();
 
     Reg#(Bool) done1 <- mkReg(False);
     Reg#(Bool) done2 <- mkReg(False);
@@ -53,7 +59,9 @@ module mkFP32_Adder(Ifc_FP32_Adder);
             newExp = exp1;
         end
         else if (exp1 > exp2) begin
-            diff = exp1 - exp2;
+            let result = rcs1.calculate(exp1, exp2);
+            diff = result.diff; 
+            // diff = exp1 - exp2;
             // this time shift man2
             sm2 = sm2 >> diff;
             // guard and sticky for round off info later
@@ -66,7 +74,9 @@ module mkFP32_Adder(Ifc_FP32_Adder);
             newExp = exp1;
         end
         else begin
-            diff = exp2 - exp1;
+            let result = rcs2.calculate(exp2, exp1);
+            diff = result.diff; 
+            // diff = exp2 - exp1;
             // this time shift man1
             sm1 = sm1 >> diff;
             // guard and sticky for round off info later
@@ -90,7 +100,8 @@ module mkFP32_Adder(Ifc_FP32_Adder);
     // stub for now
     method Action add_mantissa();
         // to be implemented later
-        let temp_sum_mantissa = {1'b0,shifted_mantissa_1} + {1'b0,shifted_mantissa_2};
+        let result = rca.calculate(shifted_mantissa_1, shifted_mantissa_2);
+        let temp_sum_mantissa = {result.overflow, result.sum}; 
         // check carry out
         if(temp_sum_mantissa[24]==1) begin
             // need to shift right by 1
