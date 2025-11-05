@@ -1,0 +1,243 @@
+=== Generated schedule for mkViterbi ===
+
+Method schedule
+---------------
+Method: get_n_and_m_loaded
+Ready signal: True
+Conflict-free: get_n_and_m_loaded,
+	       read_transition_idx,
+	       read_emission_idx,
+	       read_outcome_idx,
+	       send_transition_data,
+	       send_emission_data,
+	       send_outcome_data,
+	       get_read_transition,
+	       set_read_transition,
+	       get_read_emission,
+	       get_read_outcome,
+	       get_reset_decoder
+Sequenced before: n_and_m_load
+ 
+Method: n_and_m_load
+Ready signal: True
+Conflict-free: send_transition_data,
+	       send_emission_data,
+	       send_outcome_data,
+	       set_read_transition
+Sequenced before (restricted): n_and_m_load
+Sequenced after: get_n_and_m_loaded
+Sequenced after (restricted): read_transition_idx,
+			      read_emission_idx,
+			      read_outcome_idx,
+			      get_read_transition,
+			      get_read_emission,
+			      get_read_outcome,
+			      get_reset_decoder
+ 
+Method: read_transition_idx
+Ready signal: True
+Conflict-free: get_n_and_m_loaded,
+	       read_transition_idx,
+	       read_emission_idx,
+	       read_outcome_idx,
+	       get_read_transition,
+	       get_read_emission,
+	       get_read_outcome,
+	       get_reset_decoder
+Sequenced before (restricted): n_and_m_load,
+			       send_transition_data,
+			       send_emission_data,
+			       send_outcome_data,
+			       set_read_transition
+ 
+Method: read_emission_idx
+Ready signal: True
+Conflict-free: get_n_and_m_loaded,
+	       read_transition_idx,
+	       read_emission_idx,
+	       read_outcome_idx,
+	       get_read_transition,
+	       get_read_emission,
+	       get_read_outcome,
+	       get_reset_decoder
+Sequenced before (restricted): n_and_m_load,
+			       send_transition_data,
+			       send_emission_data,
+			       send_outcome_data,
+			       set_read_transition
+ 
+Method: read_outcome_idx
+Ready signal: True
+Conflict-free: get_n_and_m_loaded,
+	       read_transition_idx,
+	       read_emission_idx,
+	       read_outcome_idx,
+	       get_read_transition,
+	       get_read_emission,
+	       get_read_outcome,
+	       get_reset_decoder
+Sequenced before (restricted): n_and_m_load,
+			       send_transition_data,
+			       send_emission_data,
+			       send_outcome_data,
+			       set_read_transition
+ 
+Method: send_transition_data
+Ready signal: True
+Conflict-free: get_n_and_m_loaded,
+	       n_and_m_load,
+	       send_emission_data,
+	       send_outcome_data
+Sequenced before (restricted): send_transition_data, set_read_transition
+Sequenced after (restricted): read_transition_idx,
+			      read_emission_idx,
+			      read_outcome_idx,
+			      get_read_transition,
+			      get_read_emission,
+			      get_read_outcome,
+			      get_reset_decoder
+ 
+Method: send_emission_data
+Ready signal: True
+Conflict-free: get_n_and_m_loaded,
+	       n_and_m_load,
+	       send_transition_data,
+	       send_outcome_data,
+	       set_read_transition
+Sequenced before (restricted): send_emission_data
+Sequenced after (restricted): read_transition_idx,
+			      read_emission_idx,
+			      read_outcome_idx,
+			      get_read_transition,
+			      get_read_emission,
+			      get_read_outcome,
+			      get_reset_decoder
+ 
+Method: send_outcome_data
+Ready signal: True
+Conflict-free: get_n_and_m_loaded,
+	       n_and_m_load,
+	       send_transition_data,
+	       send_emission_data,
+	       set_read_transition
+Sequenced before (restricted): send_outcome_data
+Sequenced after (restricted): read_transition_idx,
+			      read_emission_idx,
+			      read_outcome_idx,
+			      get_read_transition,
+			      get_read_emission,
+			      get_read_outcome,
+			      get_reset_decoder
+ 
+Method: get_read_transition
+Ready signal: True
+Conflict-free: get_n_and_m_loaded,
+	       read_transition_idx,
+	       read_emission_idx,
+	       read_outcome_idx,
+	       get_read_transition,
+	       get_read_emission,
+	       get_read_outcome,
+	       get_reset_decoder
+Sequenced before (restricted): n_and_m_load,
+			       send_transition_data,
+			       send_emission_data,
+			       send_outcome_data,
+			       set_read_transition
+ 
+Method: set_read_transition
+Ready signal: True
+Conflict-free: get_n_and_m_loaded,
+	       n_and_m_load,
+	       send_emission_data,
+	       send_outcome_data
+Sequenced before (restricted): set_read_transition
+Sequenced after (restricted): read_transition_idx,
+			      read_emission_idx,
+			      read_outcome_idx,
+			      send_transition_data,
+			      get_read_transition,
+			      get_read_emission,
+			      get_read_outcome,
+			      get_reset_decoder
+ 
+Method: get_read_emission
+Ready signal: True
+Conflict-free: get_n_and_m_loaded,
+	       read_transition_idx,
+	       read_emission_idx,
+	       read_outcome_idx,
+	       get_read_transition,
+	       get_read_emission,
+	       get_read_outcome,
+	       get_reset_decoder
+Sequenced before (restricted): n_and_m_load,
+			       send_transition_data,
+			       send_emission_data,
+			       send_outcome_data,
+			       set_read_transition
+ 
+Method: get_read_outcome
+Ready signal: True
+Conflict-free: get_n_and_m_loaded,
+	       read_transition_idx,
+	       read_emission_idx,
+	       read_outcome_idx,
+	       get_read_transition,
+	       get_read_emission,
+	       get_read_outcome,
+	       get_reset_decoder
+Sequenced before (restricted): n_and_m_load,
+			       send_transition_data,
+			       send_emission_data,
+			       send_outcome_data,
+			       set_read_transition
+ 
+Method: get_reset_decoder
+Ready signal: True
+Conflict-free: get_n_and_m_loaded,
+	       read_transition_idx,
+	       read_emission_idx,
+	       read_outcome_idx,
+	       get_read_transition,
+	       get_read_emission,
+	       get_read_outcome,
+	       get_reset_decoder
+Sequenced before (restricted): n_and_m_load,
+			       send_transition_data,
+			       send_emission_data,
+			       send_outcome_data,
+			       set_read_transition
+ 
+Rule schedule
+-------------
+Rule: init_v
+Predicate: (! init_done_flag) && n_and_m_loaded
+Blocking rules: (none)
+ 
+Rule: loop_rule
+Predicate: init_done_flag && (! loop_done_flag)
+Blocking rules: (none)
+ 
+Rule: print_rule
+Predicate: loop_done_flag && init_done_flag
+Blocking rules: (none)
+ 
+Logical execution order: get_n_and_m_loaded,
+			 read_transition_idx,
+			 read_emission_idx,
+			 read_outcome_idx,
+			 get_read_transition,
+			 get_read_emission,
+			 get_read_outcome,
+			 get_reset_decoder,
+			 init_v,
+			 loop_rule,
+			 send_transition_data,
+			 send_emission_data,
+			 send_outcome_data,
+			 set_read_transition,
+			 print_rule,
+			 n_and_m_load
+
+=========================================

@@ -1,0 +1,82 @@
+=== Generated schedule for mkFP32_Adder ===
+
+Method schedule
+---------------
+Method: match_exponents
+Ready signal: True
+Conflict-free: get_res, state_2_done, state_3_done
+Sequenced before (restricted): match_exponents, clear_adder
+Sequenced after: add_mantissa, normalise, state_1_done
+ 
+Method: add_mantissa
+Ready signal: True
+Conflict-free: get_res, state_1_done, state_3_done
+Sequenced before: match_exponents
+Sequenced before (restricted): add_mantissa, clear_adder
+Sequenced after: normalise, state_2_done
+ 
+Method: normalise
+Ready signal: True
+Conflict-free: state_1_done, state_2_done
+Sequenced before: match_exponents, add_mantissa
+Sequenced before (restricted): normalise, clear_adder
+Sequenced after: get_res, state_3_done
+ 
+Method: get_res
+Ready signal: True
+Conflict-free: match_exponents,
+	       add_mantissa,
+	       get_res,
+	       state_1_done,
+	       state_2_done,
+	       state_3_done,
+	       clear_adder
+Sequenced before: normalise
+ 
+Method: state_1_done
+Ready signal: True
+Conflict-free: add_mantissa,
+	       normalise,
+	       get_res,
+	       state_1_done,
+	       state_2_done,
+	       state_3_done
+Sequenced before: match_exponents, clear_adder
+ 
+Method: state_2_done
+Ready signal: True
+Conflict-free: match_exponents,
+	       normalise,
+	       get_res,
+	       state_1_done,
+	       state_2_done,
+	       state_3_done
+Sequenced before: add_mantissa, clear_adder
+ 
+Method: state_3_done
+Ready signal: True
+Conflict-free: match_exponents,
+	       add_mantissa,
+	       get_res,
+	       state_1_done,
+	       state_2_done,
+	       state_3_done
+Sequenced before: normalise, clear_adder
+ 
+Method: clear_adder
+Ready signal: True
+Conflict-free: get_res
+Sequenced before (restricted): clear_adder
+Sequenced after: state_1_done, state_2_done, state_3_done
+Sequenced after (restricted): match_exponents, add_mantissa, normalise
+ 
+Logical execution order: get_res,
+			 state_1_done,
+			 state_2_done,
+			 state_3_done,
+			 normalise,
+			 add_mantissa,
+			 match_exponents,
+			 clear_adder
+
+============================================
