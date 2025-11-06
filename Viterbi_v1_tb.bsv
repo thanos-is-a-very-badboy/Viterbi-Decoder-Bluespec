@@ -11,12 +11,14 @@ module mkViterbiTestbench();
     // RegFile#(Bit#(32), Bit#(32)) inputs <- mkRegFileLoad("./Inputs/input_small.dat", 0, 1023);
     // RegFile#(Bit#(32), Bit#(32)) n_and_m <- mkRegFileLoad("./Inputs/N_small.dat", 0, 1023);
     
+    Reg#(File) file <- mkRegU;
+
     RegFile#(Bit#(32), Bit#(32)) p_transition <- mkRegFileLoad("./Huge_Ip/A_huge.dat", 0, 1023);
     RegFile#(Bit#(32), Bit#(32)) p_emission <- mkRegFileLoad("./Huge_Ip/B_huge.dat", 0, 1023);
     RegFile#(Bit#(32), Bit#(32)) inputs <- mkRegFileLoad("./Huge_Ip/input_huge.dat", 0, 1023);
     RegFile#(Bit#(32), Bit#(32)) n_and_m <- mkRegFileLoad("./Huge_Ip/N_huge.dat", 0, 1023);
-
     
+
     Bit#(32) n = n_and_m.sub(0);
     Bit#(32) m = n_and_m.sub(1);
     // Bit#(32) outcome = inputs.sub(0);
@@ -24,10 +26,19 @@ module mkViterbiTestbench();
     Reg#(Bool) read_transition_tb <- mkReg(False);
     Reg#(Bool) read_emission_tb <- mkReg(False);
     Reg#(Bool) read_outcome_tb <- mkReg(False);
-    
+    Reg#(Bool) print_done <- mkReg(True);
+    Reg#(Bool) file_opened <- mkReg(False);
+
+
     Reg#(Bit#(32)) transition_idx_tb <- mkReg(32'h0);
     Reg#(Bit#(32)) emission_idx_tb <- mkReg(32'h0);
     Reg#(Bit#(32)) outcome_idx_tb <- mkReg(32'h0);
+
+    rule open_file(!file_opened);
+        let f <- $fopen("tb_output.dat", "w");
+        file <= f;
+        file_opened <= True;
+    endrule
 
     rule load_m_and_n;
         let loaded <- viterbi.get_n_and_m_loaded();
@@ -81,4 +92,40 @@ module mkViterbiTestbench();
         read_outcome_tb <= False;
     endrule
 
+    rule print_final_result;
+        let print_state = viterbi.get_print_state();
+        
+        if(print_state == Make_path && print_done == True) begin
+            // $display("Getting Ready to Print");
+            print_done <= False;
+        end
+
+        else if(print_state == Go_init && print_done == False) begin
+            let path = viterbi.get_path();
+            let diff = viterbi.get_num_obs();
+            let probab = viterbi.get_probab();
+
+            for (Integer i = 1; fromInteger(i) < diff; i = i + 1) begin
+                // $display("Path: %h", path[fromInteger(i)]);
+                $fwrite(file, "%h\n", path[fromInteger(i)]);
+                // $fdisplay(file, "%h", path[fromInteger(i)]);
+            end
+            // $display("- - - - - - - - - - - - - - - - - - - - - - - - - -");
+
+            // $display("Probab:  %h", probab);
+            $fwrite(file, "%h\n", probab);
+            $fwrite(file, "ffffffff\n");
+            // $display("- - - - - - - - - - - - - - - - - - - - - - - - - -");
+
+            print_done <= True;
+        end
+
+        else if (print_state == All_done) begin
+            $display("All Inputs Done");
+            $fwrite(file, "00000000\n");
+            $fclose(file);
+            $finish(0);
+        end
+        
+    endrule
 endmodule

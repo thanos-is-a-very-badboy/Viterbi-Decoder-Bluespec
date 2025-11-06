@@ -23,6 +23,13 @@ interface Ifc_Viterbi;
     method Bool get_read_emission();
     method Bool get_read_outcome();
     method Bool get_reset_decoder();
+
+    // --- For Final Print ---
+    method Print_State get_print_state();
+    method Vector#(64, Reg#(Bit#(32))) get_path();
+    method Bit#(6) get_num_obs();
+    method Bit#(32) get_probab();
+    
 endinterface
 
 typedef enum {
@@ -47,7 +54,8 @@ typedef enum {
 typedef enum {
     Find_max,
     Make_path,
-    Go_init
+    Go_init,
+    All_done
 } Print_State deriving (Bits, Eq, FShow);
 
 (* synthesize *)
@@ -119,12 +127,14 @@ module mkViterbi(Ifc_Viterbi);
         else if(init_state == Read_values)begin
             // $display("OUTCOME 1 : %d",outcome_buffer);
            if(outcome_buffer==0 && t_ctr!=0) begin
-                $display("....................END OF ALL SEQUENCES.......................");
-                let file <- $fopen("Output.dat", "a");
-                $fdisplay(file, "00000000");
-                $fclose(file);
-                
-                $finish(0);
+                // $display("....................END OF ALL SEQUENCES.......................");
+                // let file <- $fopen("Output.dat", "a");
+                // $fdisplay(file, "00000000");
+                // $fclose(file);
+                init_done_flag <= True;
+                loop_done_flag <= True;
+                print_state <= All_done;
+                // $finish(0);
            end
            else if(!transition_ready &&!read_transition && !emission_ready && !read_emission)begin
                 read_transition<=True;
@@ -420,7 +430,7 @@ module mkViterbi(Ifc_Viterbi);
         else if (print_state == Make_path) begin
             // $display("B");
             // $display("%d", bt_t_ctr);
-            let file <- $fopen("Output.dat", "a");
+            // let file <- $fopen("Output.dat", "a");
             if(bt_t_ctr > 0) begin
                 let bt_index = (bt_t_ctr)*n_reg + (path[bt_t_ctr + 1] -1);
                 // $display("t_ctr: %d | path[x]: %d| ind: %d |",bt_t_ctr, path[bt_t_ctr + 1],  bt_index);
@@ -429,22 +439,22 @@ module mkViterbi(Ifc_Viterbi);
             end
             
             else begin                
-                Bit#(6) diff = truncate(t_ctr - t_start+1);
+                Bit#(6) diff = truncate(t_ctr - t_start + 1);
                 
-                for (Integer i = 1; fromInteger(i) < diff; i = i + 1) begin
-                    $display("Path: %h", path[fromInteger(i)]);
-                    $fdisplay(file, "%h", path[fromInteger(i)]);
-                end 
-                $display("- - - - - - - - - - - - - - - - - - - - - - - - - -");
-                $display("Probability: %h", bt_max);
-                $fdisplay(file, "%h",bt_max);
-                $fdisplay(file, "ffffffff");
-                $display("- - - - - - - - - - - - - - - - - - - - - - - - - -");
+                // for (Integer i = 1; fromInteger(i) < diff; i = i + 1) begin
+                //     $display("Path: %h", path[fromInteger(i)]);
+                //     $fdisplay(file, "%h", path[fromInteger(i)]);
+                // end 
+                // $display("- - - - - - - - - - - - - - - - - - - - - - - - - -");
+                // $display("Probability: %h", bt_max);
+                // $fdisplay(file, "%h",bt_max);
+                // $fdisplay(file, "ffffffff");
+                // $display("- - - - - - - - - - - - - - - - - - - - - - - - - -");
                 print_state <= Go_init;
                 // $finish(0);
 
             end
-            $fclose(file);
+            // $fclose(file);
         end
 
         else if (print_state == Go_init) begin
@@ -465,6 +475,10 @@ module mkViterbi(Ifc_Viterbi);
             end
         end
         
+        // else if (print_state == All_done) begin
+        //     $display("Actual Finish");
+        //     $finish(0);
+        // end
         // $display("Start: %d", t_start);
 
         
@@ -529,6 +543,22 @@ endrule
 
     method Bool get_reset_decoder();
         return reset_machine_flag;
+    endmethod
+
+    method Vector#(64, Reg#(Bit#(32))) get_path();
+        return path;
+    endmethod
+
+    method Print_State get_print_state();
+        return print_state;
+    endmethod
+
+    method Bit#(6) get_num_obs();
+        return truncate(t_ctr - t_start + 1);    
+    endmethod
+
+    method Bit#(32) get_probab();
+        return bt_max;
     endmethod
 
 endmodule : mkViterbi
