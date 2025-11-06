@@ -106,16 +106,15 @@ module mkViterbiTestbench();
             let probab = viterbi.get_probab();
 
             for (Integer i = 1; fromInteger(i) < diff; i = i + 1) begin
-                // $display("Path: %h", path[fromInteger(i)]);
+                $display("Path: %h", path[fromInteger(i)]);
                 $fwrite(file, "%h\n", path[fromInteger(i)]);
-                // $fdisplay(file, "%h", path[fromInteger(i)]);
             end
-            // $display("- - - - - - - - - - - - - - - - - - - - - - - - - -");
+            $display("- - - - - - - - - - - - - - - - - - - - - - - - - -");
 
-            // $display("Probab:  %h", probab);
+            $display("Probab:  %h", probab);
             $fwrite(file, "%h\n", probab);
             $fwrite(file, "ffffffff\n");
-            // $display("- - - - - - - - - - - - - - - - - - - - - - - - - -");
+            $display("- - - - - - - - - - - - - - - - - - - - - - - - - -");
 
             print_done <= True;
         end
