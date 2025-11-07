@@ -36,6 +36,16 @@ interface Ifc_Viterbi;
     method Bit#(5) get_j_ctr();
     method Bit#(32) get_outcome();
 
+    // --- To Write into BT Memory ---
+    // method State get_machine_state();
+    method Bool get_write_to_bt_flag();
+    method Bit#(5) get_max_stage_reg();
+
+    method Bool get_read_bt();
+
+    method Bit#(10) get_bt_t_ctr();
+    method Action send_bt_data(Bit#(5) data);
+    method Bit#(5) get_path_buffer();
 endinterface
 
 typedef enum {
@@ -86,6 +96,9 @@ module mkViterbi(Ifc_Viterbi);
     Reg#(Bit#(32)) emission_buffer <- mkReg(0);
     Reg#(Bit#(32)) outcome_buffer <- mkReg(0);
 
+    Reg#(Bit#(5)) bt_buffer <- mkReg(0);
+
+
     Reg#(Bit#(10)) outcome_idx <- mkReg(0);
 
     // prev and curr state vectors
@@ -93,13 +106,15 @@ module mkViterbi(Ifc_Viterbi);
     Vector#(32, Reg#(Bit#(32))) curr <- replicateM(mkReg(32'h0));
     Vector#(64, Reg#(Bit#(5))) path <- replicateM(mkReg(0));
 
+    Reg#(Bit#(5)) path_buffer <- mkReg(0);
     //BackTracking Vector
-    Vector#(2048, Reg#(Bit#(5))) bt <- replicateM(mkReg(0));
+    // Vector#(2048, Reg#(Bit#(5))) bt <- replicateM(mkReg(0));
 
     // status flags 
     Reg#(Bool) read_transition <- mkReg(False);
     Reg#(Bool) read_emission <- mkReg(False);
     Reg#(Bool) read_outcome <- mkReg(False);
+
     Reg#(Bool) n_and_m_loaded <- mkReg(False);
 
     Reg#(Bool) transition_ready <- mkReg(False);
@@ -110,6 +125,11 @@ module mkViterbi(Ifc_Viterbi);
     Reg#(Bool) reset_machine_flag <- mkReg(False);               
     Reg#(Bool) loop_done_flag <- mkReg(False);               
     
+    Reg#(Bool) read_bt <- mkReg(False);
+    Reg#(Bool) bt_ready <- mkReg(False);
+
+    Reg#(Bool) write_to_bt_flag <- mkReg(False);               
+
     Reg#(State) machine_state <- mkReg(Load_outcome);
     Reg#(Init_State) init_state <- mkReg(Init_outcome);
     Reg#(Print_State) print_state <- mkReg(Find_max);
@@ -132,6 +152,10 @@ module mkViterbi(Ifc_Viterbi);
                 init_done_flag <= True;
                 loop_done_flag <= True;
                 print_state <= All_done;
+                // $display("In Module");
+                // for (Integer i = 0; fromInteger(i) < 32; i = i + 1) begin
+                //     $display("BT[%d]: %d",i, bt[i] );
+                // end
            end
            else if(!transition_ready &&!read_transition && !emission_ready && !read_emission)begin
                 read_transition<=True;
@@ -272,17 +296,19 @@ module mkViterbi(Ifc_Viterbi);
 
                 curr[i_ctr] <= data_dup;
                 
-                Bit#(11) bt_index = zeroExtend(t_ctr-t_start)*zeroExtend(n_reg) + zeroExtend(i_ctr);
-                bt[bt_index] <= max_state_reg + 1;
-                
+                // Bit#(11) bt_index = zeroExtend(t_ctr-t_start)*zeroExtend(n_reg) + zeroExtend(i_ctr);
+                // bt[bt_index] <= max_state_reg + 1;
+                write_to_bt_flag <= True;
+
                 max_reg<=32'hFFFFFFFF;
-                max_state_reg<=0;
                 adder.clear_adder();
                 machine_state<=Final_store;
 
             end
         end
         else if(machine_state==Final_store)begin
+            max_state_reg<=0;
+            write_to_bt_flag <= False;
             if(i_ctr < n_reg - 1) begin
                 machine_state<=Load_emission;
                 i_ctr<=i_ctr+1;
@@ -325,13 +351,25 @@ module mkViterbi(Ifc_Viterbi);
 
         else if (print_state == Make_path) begin
             if(bt_t_ctr > 0) begin
-                let bt_index = (bt_t_ctr)*zeroExtend(n_reg) + zeroExtend(path[bt_t_ctr + 1] -1);
-                path[bt_t_ctr] <= bt[bt_index];
-                bt_t_ctr <= bt_t_ctr - 1;
+                if(!read_bt && !bt_ready)begin
+                    read_bt<=True;
+                    path_buffer <= path[bt_t_ctr+1];
+                    // outcome_idx<=t_ctr;
+                end
+                
+                if(bt_ready)begin
+                    path[bt_t_ctr] <= bt_buffer;
+                    bt_ready<=False;
+                    bt_t_ctr <= bt_t_ctr - 1;
+                end
+
+                // let bt_index = (bt_t_ctr)*zeroExtend(n_reg) + zeroExtend(path[bt_t_ctr + 1] -1);
+                // path[bt_t_ctr] <= bt[bt_index];
+                // bt_t_ctr <= bt_t_ctr - 1;
             end
             
             else begin                
-                Bit#(6) diff = truncate(t_ctr - t_start + 1);
+                // Bit#(6) diff = truncate(t_ctr - t_start + 1);
                 
                 print_state <= Go_init;
 
@@ -443,5 +481,34 @@ endrule
         return outcome_buffer;
     endmethod
 
+    // method State get_machine_state();
+    //     return machine_state;
+    // endmethod
+
+    method Bit#(5) get_max_stage_reg();
+        return max_state_reg;
+    endmethod
+
+    method Bool get_write_to_bt_flag();
+        return write_to_bt_flag;
+    endmethod
+
+    method Bool get_read_bt();
+        return read_bt;
+    endmethod
+
+    method Bit#(10) get_bt_t_ctr();
+        return bt_t_ctr;
+    endmethod
+
+    method Bit#(5) get_path_buffer();
+        return path_buffer;
+    endmethod
+
+    method Action send_bt_data(Bit#(5) data);
+        bt_buffer <= data;
+        bt_ready <= True;
+        read_bt <= False;
+    endmethod
 endmodule : mkViterbi
 endpackage : Viterbi_v1
