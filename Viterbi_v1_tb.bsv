@@ -29,6 +29,9 @@ module mkViterbiTestbench();
     Reg#(Bool) read_emission_tb <- mkReg(False);
     Reg#(Bool) read_outcome_tb <- mkReg(False);
     Reg#(Bool) read_bt_tb <- mkReg(False);
+    Reg#(Bool) read_curr_tb <- mkReg(False);
+    Reg#(Bool) read_prev_tb <- mkReg(False);
+
 
     Reg#(Bool) print_done <- mkReg(True);
     Reg#(Bool) file_opened <- mkReg(False);
@@ -39,7 +42,13 @@ module mkViterbiTestbench();
     Reg#(Bit#(10)) outcome_idx_tb <- mkReg(0);
     Reg#(Bit#(10)) bt_idx_tb <- mkReg(0);
 
+    Reg#(Bit#(5)) i_reg <- mkReg(0);
+    Reg#(Bit#(5)) j_reg <- mkReg(0);
+
     Vector#(64, Reg#(Bit#(5))) path_alt <- replicateM(mkReg(0));
+    
+    Vector#(32, Reg#(Bit#(32))) curr_tb <- replicateM(mkReg(0));
+    Vector#(32, Reg#(Bit#(32))) prev_tb <- replicateM(mkReg(0));
     
     rule open_file(!file_opened);
         let f <- $fopen("tb_output.dat", "w");
@@ -161,4 +170,50 @@ module mkViterbiTestbench();
         let bt_t_ctr = viterbi.get_bt_t_ctr();
         path_alt[bt_t_ctr+1] <= viterbi.get_path_buffer();
     endrule
+
+    rule write_to_curr(viterbi.get_write_to_curr_flag());
+        let curr_buffer = viterbi.get_curr_buffer();
+        let i_ctr = viterbi.get_i_ctr();
+        curr_tb[i_ctr] <= curr_buffer;
+    endrule
+
+    rule read_55(viterbi.get_read_curr() && !read_curr_tb);
+       read_curr_tb <= True;
+       i_reg <= viterbi.get_i_ctr();
+    endrule
+
+    rule read_curr(read_curr_tb == True);
+        Bit#(32) data = curr_tb[i_reg];
+        viterbi.send_curr_data(data);
+        read_curr_tb <= False;
+    endrule
+
+    rule read_44(viterbi.get_read_prev() && !read_prev_tb);
+        read_prev_tb <= True;
+        j_reg <= viterbi.get_j_ctr();
+    endrule
+
+    rule read_prev(read_prev_tb == True);
+        Bit#(32) data = prev_tb[j_reg];
+        viterbi.send_prev_data(data);
+        read_prev_tb <= False;
+    endrule
+
+    rule write_to_prev(viterbi.get_write_to_prev_flag());
+        let prev_buffer = viterbi.get_prev_buffer();
+        let i_ctr = viterbi.get_i_ctr();
+        if(i_ctr == 0 && viterbi.get_init_done_flag() == True) begin
+            prev_tb[n-1] <= prev_buffer;
+        end
+        else begin
+            prev_tb[i_ctr-1] <= prev_buffer;
+        end
+    endrule
+
+    rule switch_prev_curr(viterbi.get_switch_prev_curr());
+        for (Integer i = 0; fromInteger(i) < 32; i = i + 1) begin
+            prev_tb[i] <= curr_tb[i];
+        end
+    endrule
+
 endmodule

@@ -44,6 +44,20 @@ interface Ifc_Viterbi;
     method Action send_bt_data(Bit#(5) data);
     method Bit#(5) get_path_buffer();
     method Bool get_path_ready();
+        
+    method Bit#(32) get_curr_buffer();
+    method Bool get_write_to_curr_flag();
+
+    method Bool get_read_curr();
+    method Bool get_read_prev();
+    method Action send_prev_data(Bit#(32) data);
+    method Action send_curr_data(Bit#(32) data);
+
+    method Bool get_switch_prev_curr();
+    method Bool get_write_to_prev_flag();
+    method Bit#(32) get_prev_buffer();
+
+
 
 endinterface
 
@@ -99,10 +113,6 @@ module mkViterbi(Ifc_Viterbi);
 
     Reg#(Bit#(10)) outcome_idx <- mkReg(0);
 
-    // prev and curr state vectors
-    Vector#(32, Reg#(Bit#(32))) prev <- replicateM(mkReg(32'h0));
-    Vector#(32, Reg#(Bit#(32))) curr <- replicateM(mkReg(32'h0));
-
     Reg#(Bit#(5)) path_buffer <- mkReg(0);
     Reg#(Bit#(5)) max_path <- mkReg(0);
 
@@ -132,6 +142,19 @@ module mkViterbi(Ifc_Viterbi);
 
     Reg#(Bool) path_ready <- mkReg(False);
 
+    Reg#(Bit#(32)) curr_buffer <- mkReg(0);
+    Reg#(Bit#(32)) prev_buffer <- mkReg(0);
+    
+    Reg#(Bool) write_to_curr_flag <- mkReg(False);
+    Reg#(Bool) write_to_prev_flag <- mkReg(False);
+    Reg#(Bool) curr_ready <- mkReg(False);
+    Reg#(Bool) read_curr <- mkReg(False);
+
+    Reg#(Bool) read_prev <- mkReg(False);
+    Reg#(Bool) prev_ready <- mkReg(False);
+    Reg#(Bool) switch_prev_curr <- mkReg(False);
+
+
     // --- rules ---
 
     rule init_v(!init_done_flag && n_and_m_loaded);
@@ -146,14 +169,11 @@ module mkViterbi(Ifc_Viterbi);
             end
         end
         else if(init_state == Read_values)begin
+            write_to_prev_flag <= False;
            if(outcome_buffer==0 && t_ctr!=0) begin
                 init_done_flag <= True;
                 loop_done_flag <= True;
                 print_state <= All_done;
-                // $display("In Module");
-                // for (Integer i = 0; fromInteger(i) < 32; i = i + 1) begin
-                //     $display("BT[%d]: %d",i, bt[i] );
-                // end
            end
            else if(!transition_ready &&!read_transition && !emission_ready && !read_emission)begin
                 read_transition<=True;
@@ -182,12 +202,15 @@ module mkViterbi(Ifc_Viterbi);
          
                 let data = adder.get_res();
                 adder.clear_adder();
-                prev[i_ctr]<=data;
+                
+                prev_buffer <= data;
+                write_to_prev_flag <= True;
+                
+                // prev[i_ctr]<=data;
 
                 if(i_ctr<n_reg-1)begin
                     i_ctr<=i_ctr+1;
                     init_state<=Read_values;
-
                 end
                 else begin
                     i_ctr<=0;
@@ -204,6 +227,8 @@ module mkViterbi(Ifc_Viterbi);
     rule loop_rule(init_done_flag && !loop_done_flag);
 
         if(machine_state == Load_outcome) begin
+            write_to_prev_flag <= False;
+            switch_prev_curr <= False;
             if(!read_outcome && !outcome_ready)begin
                 read_outcome<=True;
                 outcome_idx <= t_ctr;
@@ -242,37 +267,45 @@ module mkViterbi(Ifc_Viterbi);
             end
         end
         else if(machine_state==Sum_and_max)begin
-            let data1 = prev[j_ctr];
-            let data2 = transition_buffer;
+            
+            if(!read_prev && !prev_ready)begin
+                    read_prev <= True;
+                end
+                
+                if(prev_ready)begin
+                    prev_ready <= False;
+                    let data1 = prev_buffer;
+                    let data2 = transition_buffer;
 
 
-            if(!adder.state_1_done())begin
-                adder.match_exponents(data1, data2);
-            end
-            else if(adder.state_1_done() && !adder.state_2_done())begin
-                adder.add_mantissa();     
-            end
-            else if(adder.state_2_done() && !adder.state_3_done())begin
-                adder.normalise();
-            end
-            else if(adder.state_3_done()) begin
-                let data = adder.get_res();
-                adder.clear_adder();
-                if(i_ctr == 0) begin
-                end
-                if(data<max_reg && j_ctr<n_reg)begin
-                    max_reg <= data;
-                    max_state_reg <= j_ctr; 
-                end
+                    if(!adder.state_1_done())begin
+                        adder.match_exponents(data1, data2);
+                    end
+                    else if(adder.state_1_done() && !adder.state_2_done())begin
+                        adder.add_mantissa();     
+                    end
+                    else if(adder.state_2_done() && !adder.state_3_done())begin
+                        adder.normalise();
+                    end
+                    else if(adder.state_3_done()) begin
+                        let data = adder.get_res();
+                        adder.clear_adder();
+                        if(i_ctr == 0) begin
+                        end
+                        if(data<max_reg && j_ctr<n_reg)begin
+                            max_reg <= data;
+                            max_state_reg <= j_ctr; 
+                        end
 
-                if(j_ctr<n_reg-1) begin
-                    j_ctr<=j_ctr+1;
-                    machine_state<=Load_trans; //might have to remove
+                        if(j_ctr<n_reg-1) begin
+                            j_ctr<=j_ctr+1;
+                            machine_state<=Load_trans; //might have to remove
+                        end
+                        else begin
+                            machine_state<=Final_sum;
+                        end
+                    end
                 end
-                else begin
-                    machine_state<=Final_sum;
-                end
-            end
         end
         else if(machine_state==Final_sum)begin
             j_ctr<=0;
@@ -292,7 +325,8 @@ module mkViterbi(Ifc_Viterbi);
             else if(adder.state_3_done()) begin
                 let data_dup = adder.get_res();
 
-                curr[i_ctr] <= data_dup;
+                curr_buffer <= data_dup;
+                write_to_curr_flag <= True;
                 
                 write_to_bt_flag <= True;
 
@@ -304,16 +338,14 @@ module mkViterbi(Ifc_Viterbi);
         end
         else if(machine_state==Final_store)begin
             max_state_reg<=0;
+            write_to_curr_flag <= False;
             write_to_bt_flag <= False;
             if(i_ctr < n_reg - 1) begin
                 machine_state<=Load_emission;
                 i_ctr<=i_ctr+1;
             end
             else begin
-                
-                for (Integer i = 0; fromInteger(i) < 32; i = i + 1) begin
-                    prev[i] <= curr[i];
-                end
+                switch_prev_curr <= True;
                 
                 machine_state<=Load_outcome;
                 i_ctr <=0;
@@ -330,15 +362,27 @@ module mkViterbi(Ifc_Viterbi);
     rule print_rule(loop_done_flag && init_done_flag);
         if(print_state == Find_max) begin
             if(i_ctr < n_reg - 1) begin
-                let currval = curr[i_ctr];
-                if(currval < bt_max) begin
-                    
-                    bt_max <= currval;
-                    // path[t_ctr-t_start] <= i_ctr + 1;
-                    max_path <= i_ctr + 1;
-                    path_buffer <= i_ctr + 1;
+                
+                if(!read_curr && !curr_ready)begin
+                    read_curr <= True;
                 end
-                i_ctr <= i_ctr + 1;
+                
+                if(curr_ready)begin
+                    curr_ready <= False;
+                    let currval = curr_buffer;
+
+                    if(currval < bt_max) begin
+                        
+                        bt_max <= currval;
+
+                        max_path <= i_ctr + 1;
+                        path_buffer <= i_ctr + 1;
+                    end
+                    i_ctr <= i_ctr + 1;
+                end
+
+
+                
             end
             else begin
                 bt_t_ctr <= t_ctr - t_start - 1;
@@ -499,6 +543,46 @@ endrule
 
     method Bool get_path_ready();
         return path_ready;    
+    endmethod
+
+    method Bool get_write_to_curr_flag();
+        return write_to_curr_flag;
+    endmethod
+
+    method Bit#(32) get_curr_buffer();
+        return curr_buffer;
+    endmethod
+
+    method Bool get_read_curr();
+        return read_curr;
+    endmethod
+    
+    method Action send_curr_data(Bit#(32) data);
+        curr_buffer <= data;
+        curr_ready <= True;
+        read_curr <= False;
+    endmethod
+
+    method Bool get_write_to_prev_flag();
+        return write_to_prev_flag;
+    endmethod
+
+    method Bool get_read_prev();
+        return read_prev;
+    endmethod
+    
+    method Action send_prev_data(Bit#(32) data);
+        prev_buffer <= data;
+        prev_ready <= True;
+        read_prev <= False;
+    endmethod
+    
+    method Bool get_switch_prev_curr();
+        return switch_prev_curr;
+    endmethod
+
+    method Bit#(32) get_prev_buffer();
+        return prev_buffer;
     endmethod
 
 endmodule : mkViterbi
