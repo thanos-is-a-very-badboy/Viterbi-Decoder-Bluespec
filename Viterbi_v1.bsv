@@ -6,12 +6,12 @@ interface Ifc_Viterbi;
 
     // --- Setup and state loading ---
     method ActionValue#(Bool) get_n_and_m_loaded();
-    method Action n_and_m_load(Bit#(32) n, Bit#(32) m);
+    method Action n_and_m_load(Bit#(5) n, Bit#(5) m);
 
     // --- Transition / Emission / Outcome data ---
-    method Bit#(32) read_transition_idx();
-    method Bit#(32) read_emission_idx();
-    method Bit#(32) read_outcome_idx();
+    method Bit#(10) read_transition_idx();
+    method Bit#(10) read_emission_idx();
+    method Bit#(10) read_outcome_idx();
 
     method Action send_transition_data(Bit#(32) data);
     method Action send_emission_data(Bit#(32) data);
@@ -26,7 +26,7 @@ interface Ifc_Viterbi;
 
     // --- For Final Print ---
     method Print_State get_print_state();
-    method Vector#(64, Reg#(Bit#(32))) get_path();
+    method Vector#(64, Reg#(Bit#(5))) get_path();
     method Bit#(6) get_num_obs();
     method Bit#(32) get_probab();
     
@@ -63,15 +63,15 @@ module mkViterbi(Ifc_Viterbi);
 
     Ifc_FP32_Adder adder <- mkFP32_Adder(); // internal FP adder
 
-    Reg#(Bit#(32)) n_reg <- mkReg(0);
-    Reg#(Bit#(32)) m_reg <- mkReg(0);
-    Reg#(Bit#(32)) i_ctr <- mkReg(0);
-    Reg#(Bit#(32)) j_ctr <- mkReg(0);
-    Reg#(Bit#(32)) t_ctr <- mkReg(0);
-    Reg#(Bit#(32)) t_start <- mkReg(0);
-    Reg#(Bit#(32)) bt_t_ctr <- mkReg(0);
+    Reg#(Bit#(5)) n_reg <- mkReg(0);
+    Reg#(Bit#(5)) m_reg <- mkReg(0);
+    Reg#(Bit#(5)) i_ctr <- mkReg(0);
+    Reg#(Bit#(5)) j_ctr <- mkReg(0);
+    Reg#(Bit#(10)) t_ctr <- mkReg(0);
+    Reg#(Bit#(10)) t_start <- mkReg(0);
+    Reg#(Bit#(10)) bt_t_ctr <- mkReg(0);
     Reg#(Bit#(32)) max_reg <- mkReg(32'hFFFFFFFF);
-    Reg#(Bit#(32)) max_state_reg <- mkReg(32'hFFFFFFFF);
+    Reg#(Bit#(5)) max_state_reg <- mkReg(0);
 
     Reg#(Bit#(32)) bt_max <- mkReg(32'hFFFFFFFF);
 
@@ -80,18 +80,17 @@ module mkViterbi(Ifc_Viterbi);
     Reg#(Bit#(32)) emission_buffer <- mkReg(0);
     Reg#(Bit#(32)) outcome_buffer <- mkReg(0);
 
-    Reg#(Bit#(32)) transition_idx <- mkReg(0);
-    Reg#(Bit#(32)) emission_idx <- mkReg(0);
-    Reg#(Bit#(32)) outcome_idx <- mkReg(0);
+    Reg#(Bit#(10)) transition_idx <- mkReg(0);
+    Reg#(Bit#(10)) emission_idx <- mkReg(0);
+    Reg#(Bit#(10)) outcome_idx <- mkReg(0);
 
     // prev and curr state vectors
     Vector#(32, Reg#(Bit#(32))) prev <- replicateM(mkReg(32'h0));
     Vector#(32, Reg#(Bit#(32))) curr <- replicateM(mkReg(32'h0));
-    Vector#(64, Reg#(Bit#(32))) path <- replicateM(mkReg(32'h0));
+    Vector#(64, Reg#(Bit#(5))) path <- replicateM(mkReg(0));
 
-    // Vector#(64, Vector#(32, Reg#(Bit#(32)))) bt <- replicateM(replicateM(mkReg(0)));
     //BackTracking Vector
-    Vector#(2048, Reg#(Bit#(32))) bt <- replicateM(mkReg(32'h0));
+    Vector#(2048, Reg#(Bit#(5))) bt <- replicateM(mkReg(0));
 
     // status flags 
     Reg#(Bool) read_transition <- mkReg(False);
@@ -125,26 +124,19 @@ module mkViterbi(Ifc_Viterbi);
             end
         end
         else if(init_state == Read_values)begin
-            // $display("OUTCOME 1 : %d",outcome_buffer);
            if(outcome_buffer==0 && t_ctr!=0) begin
-                // $display("....................END OF ALL SEQUENCES.......................");
-                // let file <- $fopen("Output.dat", "a");
-                // $fdisplay(file, "00000000");
-                // $fclose(file);
                 init_done_flag <= True;
                 loop_done_flag <= True;
                 print_state <= All_done;
-                // $finish(0);
            end
            else if(!transition_ready &&!read_transition && !emission_ready && !read_emission)begin
                 read_transition<=True;
                 read_emission<=True;
 
-                transition_idx <= i_ctr;
-                emission_idx <= i_ctr*m_reg + (outcome_buffer-1);
+                transition_idx <= zeroExtend(i_ctr);
+                emission_idx <= zeroExtend(i_ctr)*zeroExtend(m_reg) + truncate(outcome_buffer-1);
             end
             else if(transition_ready && emission_ready)begin
-                // $display("I : %d, TRANSITION :%h , EMISSION : %h, TRANS IDX : %d, EMI IDX : %d",i_ctr,transition_buffer,emission_buffer,transition_idx,emission_idx);
                 init_state <= Loop;
                 transition_ready<=False;
                 emission_ready<=False;
@@ -153,7 +145,6 @@ module mkViterbi(Ifc_Viterbi);
         else if(init_state == Loop)begin
             let data1 = transition_buffer;
             let data2 = emission_buffer;
-            // //$display("NYEGA");
             
             if(!adder.state_1_done())begin
                 adder.match_exponents(data1, data2);
@@ -173,7 +164,7 @@ module mkViterbi(Ifc_Viterbi);
                 if(i_ctr<n_reg-1)begin
                     i_ctr<=i_ctr+1;
                     init_state<=Read_values;
-                    // //$display("VALUE of I : %d",i_ctr);
+
                 end
                 else begin
                     i_ctr<=0;
@@ -181,65 +172,39 @@ module mkViterbi(Ifc_Viterbi);
                     t_ctr<=t_ctr+1;
                     machine_state<=Load_outcome;
                     loop_done_flag <= False;
-                    // $display("INIT_DONE");
-                    // read_outcome<=False;
                 end
             end
         end
     endrule 
 
-    // rule done_init (init_done_flag && t_ctr==1);
-    //     $display("Viterbi Initialization completed.");
-    //     // $display("N and M = %d, %d", n_reg, m_reg);
-    //     // $finish(0);
-        
-    //     for (Integer i = 0; fromInteger(i) < 2; i = i + 1) begin
-    //         $display("I: %d, P : %h", i, prev[i]);
-    //     end
-
-    //     $display("----------------------------------------------------------");
-    // endrule
 
     rule loop_rule(init_done_flag && !loop_done_flag);
-        // $display("Loop Begins");
 
         if(machine_state == Load_outcome) begin
-            // $display("READ,Ready : %d %d %d",pack(read_outcome),pack(outcome_ready),t_ctr);
             if(!read_outcome && !outcome_ready)begin
-                // $display("YOOOOO %d",t_ctr);
                 read_outcome<=True;
                 outcome_idx <= t_ctr;
             end
-            // load_from_outcome(t_ctr);
             else if(outcome_ready) begin
-                // $display("TIME : %d, OUTCOME : %h, IDX : %d",t_ctr,outcome_buffer,outcome_idx);
                 machine_state <= Load_emission;
                 outcome_ready<=False;
             end
         end
         else if(machine_state == Load_emission)begin
-            // $display("Outcome: %h", outcome_buffer);
-            // $display("T: %d| i: %d, Emission : %h",t_ctr, i_ctr, emission_buffer, emission_idx);
-            // $display("T: %d| i: %d, Outcome : %h",t_ctr, i_ctr, outcome_buffer, outcome_idx);
             if(outcome_buffer==32'hFFFFFFFF)begin
-                // $display("...................EOS REACHED...................");
                 reset_machine_flag<=True;
                 machine_state<=Print_res;
             end
-            //$display("Loading emission in loop");
             else begin
                 Bit#(32) temp=0;
 
                 if(!read_emission && !emission_ready)begin
                     read_emission<=True;
                     temp = outcome_buffer - 1;
-                    // $display("I CTR : %d, temp : %d",i_ctr,temp);
-                    emission_idx <= i_ctr*m_reg + temp;
+                    emission_idx <= zeroExtend(i_ctr)*zeroExtend(m_reg) + truncate(temp);
                 end
 
                 else if(emission_ready)begin
-                    // $display("------------------------------------------------");
-                    // $display("T: %d| i: %d, Emission : %h, Outcome_buffer : %d , Outcome_idx : %d",t_ctr, i_ctr, emission_buffer, outcome_buffer,outcome_idx);
                     machine_state <= Load_trans;
                     emission_ready<=False;
                 end
@@ -247,15 +212,11 @@ module mkViterbi(Ifc_Viterbi);
         end
 
         else if(machine_state==Load_trans) begin
-            //$display("Loading transition in loop");
             if(!read_transition && !transition_ready)begin
-                // $display("JHAATU");
                 read_transition<=True;
-                transition_idx <= (j_ctr+1)*n_reg + i_ctr;
+                transition_idx <= zeroExtend(j_ctr+1)*zeroExtend(n_reg) + zeroExtend(i_ctr);
             end
-            // $display("WTF: %d, %d", i_ctr, j_ctr);
             else if(transition_ready)begin
-                // $display("tran_in_load_trans_state: %h, idx: %d, (i, j): (%d,%d)", transition_buffer, (j_ctr+1)*n_reg + i_ctr, i_ctr, j_ctr);
                 machine_state <= Sum_and_max;
                 transition_ready<=False;
             end
@@ -264,35 +225,22 @@ module mkViterbi(Ifc_Viterbi);
             let data1 = prev[j_ctr];
             let data2 = transition_buffer;
 
-            // $display("READ TRANSITION : %d TRANSITION READY : %d ",pack(read_transition),pack(transition_ready));
-            // $display("READ EMISSION : %d EMISSION READY : %d ",pack(read_emission),pack(emission_ready));
-            // $display("READ OUTCOME : %d OUTCOME READY : %d ",pack(read_outcome),pack(outcome_ready));
 
             if(!adder.state_1_done())begin
                 adder.match_exponents(data1, data2);
-                // //$display("Matching exponents...");
-                // started <= True;
             end
             else if(adder.state_1_done() && !adder.state_2_done())begin
                 adder.add_mantissa();     
-                // //$display("Mantissas added");
             end
             else if(adder.state_2_done() && !adder.state_3_done())begin
                 adder.normalise();
-                // //$display("Normalization done");
             end
             else if(adder.state_3_done()) begin
-        // Step 2: wait for state_1_done
                 let data = adder.get_res();
                 adder.clear_adder();
-                // $display("T: %d | i: %d,j : %d, curr : %h, prev: %h, tran : %h ", t_ctr, i_ctr, j_ctr,  data, prev[j_ctr], transition_buffer);
                 if(i_ctr == 0) begin
-                // $display("%h, %h, %h |  %d, %d, %d",prev[j_ctr], transition_buffer, data, t_ctr, i_ctr, j_ctr);
                 end
                 if(data<max_reg && j_ctr<n_reg)begin
-                    // if(i_ctr == 0) begin
-                    //     $display("YooHoo");
-                    // end
                     max_reg <= data;
                     max_state_reg <= j_ctr; 
                 end
@@ -300,17 +248,10 @@ module mkViterbi(Ifc_Viterbi);
                 if(j_ctr<n_reg-1) begin
                     j_ctr<=j_ctr+1;
                     machine_state<=Load_trans; //might have to remove
-                    // //$display("J counter val : %h",j_ctr);
                 end
                 else begin
                     machine_state<=Final_sum;
-                    
-                    // if(i_ctr == 0) begin
-                    // end
                 end
-                    // //$display(machine_state);
-                    //$display("Sum and Max Stage Done");
-                // $display("MAX REG: %h | DATA: %h", max_reg, data);
             end
         end
         else if(machine_state==Final_sum)begin
@@ -319,35 +260,21 @@ module mkViterbi(Ifc_Viterbi);
             let data1_dup = max_reg;
             let data2_dup = emission_buffer;
 
-            // $display("MAX REG : %h",max_reg);
-            
             if(!adder.state_1_done())begin
                 adder.match_exponents(data1_dup, data2_dup);
-                //$display("Matching exponents...");
-                // started <= True;
             end
             else if(adder.state_1_done() && !adder.state_2_done())begin
                 adder.add_mantissa();     
-                //$display("Mantissas added");
             end
             else if(adder.state_2_done() && !adder.state_3_done())begin
                 adder.normalise();
-                //$display("Normalization done");
             end
             else if(adder.state_3_done()) begin
-        // // Step 2: wait for state_1_done
-                //$display("MAA KI CHEW");
                 let data_dup = adder.get_res();
-                // if(i_ctr == 0) begin
-                //     $display("%h, %h, %h",data1_dup, data2_dup, data_dup);
-                // end
-                // $display("data no : %h | I: %d",data_dup, i_ctr);
-                // $display("State: %d, Prob: %h, max_reg:%h, em_buff:%h",i_ctr, data_dup, max_reg, emission_buffer);
 
                 curr[i_ctr] <= data_dup;
                 
-                let bt_index = (t_ctr-t_start)*n_reg + i_ctr;
-                // $display("t: %d | i: %d | max: %h", t_ctr-t_start, i_ctr, max_state_reg);
+                Bit#(11) bt_index = zeroExtend(t_ctr-t_start)*zeroExtend(n_reg) + zeroExtend(i_ctr);
                 bt[bt_index] <= max_state_reg + 1;
                 
                 max_reg<=32'hFFFFFFFF;
@@ -355,15 +282,9 @@ module mkViterbi(Ifc_Viterbi);
                 adder.clear_adder();
                 machine_state<=Final_store;
 
-                // $display("I: %d, curr : %h, inA: %h, inB : %h ", i_ctr, data_dup, data1_dup, data2_dup);
-
             end
-            //$display("NYEGA");
         end
         else if(machine_state==Final_store)begin
-            // $finish(0);
-            // $display("I: %d, curr : %h, prev: %h ", i_ctr, curr[i_ctr], prev[i_ctr]);
-            
             if(i_ctr < n_reg - 1) begin
                 machine_state<=Load_emission;
                 i_ctr<=i_ctr+1;
@@ -377,63 +298,36 @@ module mkViterbi(Ifc_Viterbi);
                 machine_state<=Load_outcome;
                 i_ctr <=0;
                 t_ctr<=t_ctr+1;
-                // $display("YOOHOOO T %d", t_ctr);
-                // $finish(0);
             end
         end
         else if(machine_state==Print_res)begin
-            // loop_done_flag<=True;
-            // for (Integer i = 0; fromInteger(i) < 2; i = i + 1) begin
-            //     $display("I: %d, P : %h", i, curr[i]);
-            // end
-            // $finish(0);
-            // $display("-----------------------------------------------------");
-            // for (Integer t = 0; fromInteger(t) < 15; t = t + 1) begin  
-            //     $display("BT[%d]: %d", t,bt[fromInteger(t)]);
-            // end
-            // $finish(0);
-
-            // reset decoder state
             loop_done_flag<=True;
             i_ctr <= 0;
             print_state <= Find_max;
-            // $finish(0);
         end
     endrule
 
     rule print_rule(loop_done_flag && init_done_flag);
         if(print_state == Find_max) begin
-            // $display("A");
-            
             if(i_ctr < n_reg - 1) begin
                 let currval = curr[i_ctr];
                 if(currval < bt_max) begin
                     
                     bt_max <= currval;
                     path[t_ctr-t_start] <= i_ctr + 1;
-                    // $display("ctr: %d, start: %d", t_ctr, t_start);
                 end
                 i_ctr <= i_ctr + 1;
             end
             else begin
-                // $display("- - - - - - - - - - - - - - - - - - - - - - - - - -");
-                // for (Integer i = 0; fromInteger(i) < 8; i = i + 1) begin
-                //     $display("Path: %d", path[fromInteger(i)]);
-                // end
                 bt_t_ctr <= t_ctr - t_start - 1;
                 print_state <= Make_path;
-                // $finish(0);
 
             end
         end
 
         else if (print_state == Make_path) begin
-            // $display("B");
-            // $display("%d", bt_t_ctr);
-            // let file <- $fopen("Output.dat", "a");
             if(bt_t_ctr > 0) begin
-                let bt_index = (bt_t_ctr)*n_reg + (path[bt_t_ctr + 1] -1);
-                // $display("t_ctr: %d | path[x]: %d| ind: %d |",bt_t_ctr, path[bt_t_ctr + 1],  bt_index);
+                let bt_index = (bt_t_ctr)*zeroExtend(n_reg) + zeroExtend(path[bt_t_ctr + 1] -1);
                 path[bt_t_ctr] <= bt[bt_index];
                 bt_t_ctr <= bt_t_ctr - 1;
             end
@@ -441,24 +335,12 @@ module mkViterbi(Ifc_Viterbi);
             else begin                
                 Bit#(6) diff = truncate(t_ctr - t_start + 1);
                 
-                // for (Integer i = 1; fromInteger(i) < diff; i = i + 1) begin
-                //     $display("Path: %h", path[fromInteger(i)]);
-                //     $fdisplay(file, "%h", path[fromInteger(i)]);
-                // end 
-                // $display("- - - - - - - - - - - - - - - - - - - - - - - - - -");
-                // $display("Probability: %h", bt_max);
-                // $fdisplay(file, "%h",bt_max);
-                // $fdisplay(file, "ffffffff");
-                // $display("- - - - - - - - - - - - - - - - - - - - - - - - - -");
                 print_state <= Go_init;
-                // $finish(0);
 
             end
-            // $fclose(file);
         end
 
         else if (print_state == Go_init) begin
-            // $display("C");
             i_ctr <= 0;
             j_ctr <= 0;
             t_ctr <= t_ctr+1;
@@ -475,12 +357,6 @@ module mkViterbi(Ifc_Viterbi);
             end
         end
         
-        // else if (print_state == All_done) begin
-        //     $display("Actual Finish");
-        //     $finish(0);
-        // end
-        // $display("Start: %d", t_start);
-
         
 endrule
     // --- methods ---
@@ -489,7 +365,7 @@ endrule
         return n_and_m_loaded;
     endmethod 
 
-    method Action n_and_m_load(Bit#(32) n, Bit#(32) m);
+    method Action n_and_m_load(Bit#(5) n, Bit#(5) m);
         n_reg <= n;
         m_reg <= m;
         n_and_m_loaded <= True;
@@ -513,15 +389,15 @@ endrule
         read_outcome <= False;
     endmethod
 
-    method Bit#(32) read_transition_idx();
+    method Bit#(10) read_transition_idx();
         return transition_idx;
     endmethod
 
-    method Bit#(32) read_emission_idx();
+    method Bit#(10) read_emission_idx();
         return emission_idx;
     endmethod
 
-    method Bit#(32) read_outcome_idx();
+    method Bit#(10) read_outcome_idx();
         return outcome_idx;
     endmethod
 
@@ -545,7 +421,7 @@ endrule
         return reset_machine_flag;
     endmethod
 
-    method Vector#(64, Reg#(Bit#(32))) get_path();
+    method Vector#(64, Reg#(Bit#(5))) get_path();
         return path;
     endmethod
 

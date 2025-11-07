@@ -57,7 +57,7 @@ function Vector#(6, GP) mergeLevel_12_to_6(Vector#(12, GP) in);
   return out;
 endfunction
 
-// Replaces mergeLevel for 6 -> 3
+// Third Merge Level - fine
 function Vector#(3, GP) mergeLevel_6_to_3(Vector#(6, GP) in);
   Vector#(3, GP) out = newVector();
   for (Integer i = 0; i < 3; i = i + 1) begin
@@ -66,7 +66,7 @@ function Vector#(3, GP) mergeLevel_6_to_3(Vector#(6, GP) in);
   return out;
 endfunction
 
-// Replaces mergeLevel for 2 -> 1
+// Fourth Merge Level - fine
 function Vector#(1, GP) mergeLevel_2_to_1(Vector#(2, GP) in);
   Vector#(1, GP) out = newVector();
   out[0] = gpCombine(in[0], in[1]);
@@ -75,8 +75,8 @@ endfunction
 
 
 // Replaces C_calc (Unchanged)
-function Vector#(25, Bool) calcCarries24(
-    Bool            cin,
+function Bit#(25) calcCarries24(
+    Bit#(1)            cin,
     Vector#(24, GP) gp0, // G, P (24 groups of 1)
     Vector#(12, GP) gp1, // G1, P1 (12 groups of 2)
     Vector#(6, GP)  gp2, // G2, P2 (6 groups of 4)
@@ -84,7 +84,8 @@ function Vector#(25, Bool) calcCarries24(
     Vector#(2, GP)  gp4, // G4, P4 (1 group of 16, 1 group of 8)
     GP              gp5  // G5, P5 (1 group of 24)
 );
-  Vector#(25, Bool) c = newVector(); // c[0]...c[23] are carries, c[24] is Cout
+  
+    Bit#(25) c = 0; // c[0]...c[23] are carries, c[24] is Cout
 
   function Bool carryOut(GP gp, Bool carry_in);
      return gp.g | (gp.p & carry_in);

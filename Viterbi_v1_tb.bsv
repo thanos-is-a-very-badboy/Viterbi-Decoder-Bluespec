@@ -6,21 +6,21 @@ module mkViterbiTestbench();
 
     Ifc_Viterbi viterbi <- mkViterbi();
 
-    RegFile#(Bit#(32), Bit#(32)) p_transition <- mkRegFileLoad("./Inputs/A_small.dat", 0, 1023);
-    RegFile#(Bit#(32), Bit#(32)) p_emission <- mkRegFileLoad("./Inputs/B_small.dat", 0, 1023);
-    RegFile#(Bit#(32), Bit#(32)) inputs <- mkRegFileLoad("./Inputs/input_small.dat", 0, 1023);
-    RegFile#(Bit#(32), Bit#(32)) n_and_m <- mkRegFileLoad("./Inputs/N_small.dat", 0, 1023);
+    // RegFile#(Bit#(10), Bit#(32)) p_transition <- mkRegFileLoad("./Inputs/A_small.dat", 0, 1023);
+    // RegFile#(Bit#(10), Bit#(32)) p_emission <- mkRegFileLoad("./Inputs/B_small.dat", 0, 1023);
+    // RegFile#(Bit#(10), Bit#(32)) inputs <- mkRegFileLoad("./Inputs/input_small.dat", 0, 1023);
+    // RegFile#(Bit#(32), Bit#(5)) n_and_m <- mkRegFileLoad("./Inputs/N_small.dat", 0, 1023);
     
     Reg#(File) file <- mkRegU;
 
-    // RegFile#(Bit#(32), Bit#(32)) p_transition <- mkRegFileLoad("./Huge_Ip/A_huge.dat", 0, 1023);
-    // RegFile#(Bit#(32), Bit#(32)) p_emission <- mkRegFileLoad("./Huge_Ip/B_huge.dat", 0, 1023);
-    // RegFile#(Bit#(32), Bit#(32)) inputs <- mkRegFileLoad("./Huge_Ip/input_huge.dat", 0, 1023);
-    // RegFile#(Bit#(32), Bit#(32)) n_and_m <- mkRegFileLoad("./Huge_Ip/N_huge.dat", 0, 1023);
+    RegFile#(Bit#(10), Bit#(32)) p_transition <- mkRegFileLoad("./Huge_Ip/A_huge.dat", 0, 1023);
+    RegFile#(Bit#(10), Bit#(32)) p_emission <- mkRegFileLoad("./Huge_Ip/B_huge.dat", 0, 1023);
+    RegFile#(Bit#(10), Bit#(32)) inputs <- mkRegFileLoad("./Huge_Ip/input_huge.dat", 0, 1023);
+    RegFile#(Bit#(32), Bit#(5)) n_and_m <- mkRegFileLoad("./Huge_Ip/N_huge.dat", 0, 1023);
     
 
-    Bit#(32) n = n_and_m.sub(0);
-    Bit#(32) m = n_and_m.sub(1);
+    Bit#(5) n = n_and_m.sub(0);
+    Bit#(5) m = n_and_m.sub(1);
     // Bit#(32) outcome = inputs.sub(0);
 
     Reg#(Bool) read_transition_tb <- mkReg(False);
@@ -30,9 +30,9 @@ module mkViterbiTestbench();
     Reg#(Bool) file_opened <- mkReg(False);
 
 
-    Reg#(Bit#(32)) transition_idx_tb <- mkReg(32'h0);
-    Reg#(Bit#(32)) emission_idx_tb <- mkReg(32'h0);
-    Reg#(Bit#(32)) outcome_idx_tb <- mkReg(32'h0);
+    Reg#(Bit#(10)) transition_idx_tb <- mkReg(0);
+    Reg#(Bit#(10)) emission_idx_tb <- mkReg(0);
+    Reg#(Bit#(10)) outcome_idx_tb <- mkReg(0);
 
     rule open_file(!file_opened);
         let f <- $fopen("tb_output.dat", "w");
@@ -106,8 +106,9 @@ module mkViterbiTestbench();
             let probab = viterbi.get_probab();
 
             for (Integer i = 1; fromInteger(i) < diff; i = i + 1) begin
-                $display("Path: %h", path[fromInteger(i)]);
-                $fwrite(file, "%h\n", path[fromInteger(i)]);
+                Bit#(32) ext  = zeroExtend(path[fromInteger(i)]);
+                $display("Path: %h", ext);
+                $fwrite(file, "%h\n", ext);
             end
             $display("- - - - - - - - - - - - - - - - - - - - - - - - - -");
 
