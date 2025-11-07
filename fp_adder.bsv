@@ -1,8 +1,9 @@
 package fp_adder;
 
-import RippleCarryAdder::*;
+// import RippleCarryAdder::*;
+import BK_Adder :: *;
 import RippleCarrySubtractor :: *;
-// import BK_Adder :: *;
+
 
 interface Ifc_FP32_Adder;
     method Action match_exponents(Bit#(32) num1, Bit#(32) num2);
@@ -18,9 +19,9 @@ endinterface
 
 (* synthesize *)
 module mkFP32_Adder(Ifc_FP32_Adder);
-    RCA_ifc rca <- mkRippleCarryAdder();
     
-    // Ifc_BrentKungAdder24 rca <- mkBrentKungAdder24();
+    // RCA_ifc rca <- mkRippleCarryAdder();
+    BrentKungAdder24_IFC rca <- mkBrentKungAdder24();
 
     SUB_ifc rcs1 <- mkRippleCarrySubtractor();
     SUB_ifc rcs2 <- mkRippleCarrySubtractor();
@@ -103,16 +104,11 @@ module mkFP32_Adder(Ifc_FP32_Adder);
 
     // stub for now
     method Action add_mantissa();
-        // to be implemented later
-        // let result = rca.calculate(shifted_mantissa_1, shifted_mantissa_2);
-        let result = rca.calculate(shifted_mantissa_1, shifted_mantissa_2);
-        // let sum_temp = rca.sum(shifted_mantissa_1, shifted_mantissa_2);
-        // let carry_temp = rca.carry(shifted_mantissa_1, shifted_mantissa_2);
+        // let result = rca.calculate(shifted_mantissa_1, shifted_mantissa_2); //Ripple Carry Adder
+        // let temp_sum_mantissa = {result.overflow, result.sum};  //Ripple Carry Adder
 
-        // let temp_sum_mantissa = {result.cout, result.sum}; 
-        let temp_sum_mantissa = {result.overflow, result.sum}; 
-
-        // let temp_sum_mantissa = {carry_temp, sum_temp}; 
+        let result = rca.calculate(shifted_mantissa_1, shifted_mantissa_2, 0); //Brent Kung
+        let temp_sum_mantissa = {result.cout, result.sum}; //Brent Kung
         
         // check carry out
         if(temp_sum_mantissa[24]==1) begin

@@ -21,6 +21,12 @@ endfunction
 typedef struct {
     Bit#(24) sum;
     Bit#(1)     cout;
+    Bit#(25) debug_carries;
+    Vector#(24, GP) gp0;
+    Vector#(12, GP) gp1;
+    Vector#(6, GP) gp2;
+    Vector#(3, GP) gp3;
+    Vector#(1, GP) gp4;
 } AdderResult24 deriving (Bits);
 
 
@@ -84,7 +90,7 @@ function Bit#(25) calcCarries24(
     Vector#(1, GP)  gp4 // Only for 16
 );
   
-    Bit#(25) c = 0; // c[0]...c[23] are carries, c[24] is Cout
+  Bit#(25) c = 0; // c[0]...c[23] are carries, c[24] is Cout
 
   function Bit#(1) carryOut(GP gp, Bit#(1) carry_in);
      return gp.g | (gp.p & carry_in);
@@ -144,11 +150,11 @@ endfunction
 // -------------------------------------------------------------------
 // --- Top-Level Module (Modified to call new functions) ---
 // -------------------------------------------------------------------
-(* synthesize *)
-module mkBrentKungAdder24(BrentKungAdder24_IFC);
 
+module mkBrentKungAdder24(BrentKungAdder24_IFC);
+  
   method AdderResult24 calculate(Bit#(24) a, Bit#(24) b, Bit#(1) cin);
-      
+      // $display("AAAA");
       // Convert A and B to bit vectors
     //   Vector#(24, Bool) a_bits = vectorFromBits(a);
     //   Vector#(24, Bool) b_bits = vectorFromBits(b);
@@ -182,6 +188,7 @@ module mkBrentKungAdder24(BrentKungAdder24_IFC);
       // --- Step 2: Down-Sweep (Carry Calculation) ---
     Bit#(25) all_carries = calcCarries24(cin, gp0, gp1, gp2, gp3, gp4);
 
+    
       // Extract carries for sum (C[23:0])
     //   Vector#(24, Bool) sum_carries = newVector();
     //   for(Integer i=0; i<24; i=i+1) {
@@ -194,7 +201,9 @@ module mkBrentKungAdder24(BrentKungAdder24_IFC);
     Bit#(24) sum = calcSum(gp0, all_carries[23:0]);
       
     // Bit#(24) sum = bitsFromVector(sum_bits);
-    return AdderResult24 { sum: sum, cout: cout };
+    // $display("%h",all_carries);
+    return AdderResult24 { sum: sum, cout: cout , debug_carries: all_carries, gp0: gp0, gp1: gp1, gp2: gp2, gp3: gp3, gp4: gp4};
+
   endmethod
 
 endmodule
