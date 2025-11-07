@@ -6,17 +6,17 @@ module mkViterbiTestbench();
 
     Ifc_Viterbi viterbi <- mkViterbi();
 
-    // RegFile#(Bit#(10), Bit#(32)) p_transition <- mkRegFileLoad("./Inputs/A_small.dat", 0, 1023);
-    // RegFile#(Bit#(10), Bit#(32)) p_emission <- mkRegFileLoad("./Inputs/B_small.dat", 0, 1023);
-    // RegFile#(Bit#(10), Bit#(32)) inputs <- mkRegFileLoad("./Inputs/input_small.dat", 0, 1023);
-    // RegFile#(Bit#(32), Bit#(5)) n_and_m <- mkRegFileLoad("./Inputs/N_small.dat", 0, 1023);
+    RegFile#(Bit#(10), Bit#(32)) p_transition <- mkRegFileLoad("./Inputs/A_small.dat", 0, 1023);
+    RegFile#(Bit#(10), Bit#(32)) p_emission <- mkRegFileLoad("./Inputs/B_small.dat", 0, 1023);
+    RegFile#(Bit#(10), Bit#(32)) inputs <- mkRegFileLoad("./Inputs/input_small.dat", 0, 1023);
+    RegFile#(Bit#(32), Bit#(5)) n_and_m <- mkRegFileLoad("./Inputs/N_small.dat", 0, 1023);
     
     Reg#(File) file <- mkRegU;
 
-    RegFile#(Bit#(10), Bit#(32)) p_transition <- mkRegFileLoad("./Huge_Ip/A_huge.dat", 0, 1023);
-    RegFile#(Bit#(10), Bit#(32)) p_emission <- mkRegFileLoad("./Huge_Ip/B_huge.dat", 0, 1023);
-    RegFile#(Bit#(10), Bit#(32)) inputs <- mkRegFileLoad("./Huge_Ip/input_huge.dat", 0, 1023);
-    RegFile#(Bit#(32), Bit#(5)) n_and_m <- mkRegFileLoad("./Huge_Ip/N_huge.dat", 0, 1023);
+    // RegFile#(Bit#(10), Bit#(32)) p_transition <- mkRegFileLoad("./Huge_Ip/A_huge.dat", 0, 1023);
+    // RegFile#(Bit#(10), Bit#(32)) p_emission <- mkRegFileLoad("./Huge_Ip/B_huge.dat", 0, 1023);
+    // RegFile#(Bit#(10), Bit#(32)) inputs <- mkRegFileLoad("./Huge_Ip/input_huge.dat", 0, 1023);
+    // RegFile#(Bit#(32), Bit#(5)) n_and_m <- mkRegFileLoad("./Huge_Ip/N_huge.dat", 0, 1023);
     
 
     Bit#(5) n = n_and_m.sub(0);
@@ -34,6 +34,9 @@ module mkViterbiTestbench();
     Reg#(Bit#(10)) emission_idx_tb <- mkReg(0);
     Reg#(Bit#(10)) outcome_idx_tb <- mkReg(0);
 
+    // Reg#(Bit#(5)) i_ctr <- mkReg(0);
+    // Reg#(Bit#(5)) j_ctr <- mkReg(0);
+
     rule open_file(!file_opened);
         let f <- $fopen("tb_output.dat", "w");
         file <= f;
@@ -48,8 +51,17 @@ module mkViterbiTestbench();
     endrule
 
     rule read_66(viterbi.get_read_transition() && !read_transition_tb);
-       read_transition_tb <= True;
-       transition_idx_tb <= viterbi.read_transition_idx();
+        read_transition_tb <= True;
+
+        if(!viterbi.get_init_done_flag()) begin
+            let i_ctr = viterbi.get_i_ctr();
+            transition_idx_tb <= zeroExtend(i_ctr);
+        end
+        else begin
+            let i_ctr = viterbi.get_i_ctr();
+            let j_ctr = viterbi.get_j_ctr();
+            transition_idx_tb <= zeroExtend(j_ctr+1)*zeroExtend(n) + zeroExtend(i_ctr);
+        end
     endrule
 
     rule read_transition_matrix(read_transition_tb == True);

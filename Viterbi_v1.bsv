@@ -30,6 +30,11 @@ interface Ifc_Viterbi;
     method Bit#(6) get_num_obs();
     method Bit#(32) get_probab();
     
+    // --- For Address Translation ---
+    method Bool get_init_done_flag();
+    method Bit#(5) get_i_ctr();
+    method Bit#(5) get_j_ctr();
+
 endinterface
 
 typedef enum {
@@ -133,7 +138,7 @@ module mkViterbi(Ifc_Viterbi);
                 read_transition<=True;
                 read_emission<=True;
 
-                transition_idx <= zeroExtend(i_ctr);
+                // transition_idx <= zeroExtend(i_ctr);
                 emission_idx <= zeroExtend(i_ctr)*zeroExtend(m_reg) + truncate(outcome_buffer-1);
             end
             else if(transition_ready && emission_ready)begin
@@ -214,7 +219,7 @@ module mkViterbi(Ifc_Viterbi);
         else if(machine_state==Load_trans) begin
             if(!read_transition && !transition_ready)begin
                 read_transition<=True;
-                transition_idx <= zeroExtend(j_ctr+1)*zeroExtend(n_reg) + zeroExtend(i_ctr);
+                // transition_idx <= zeroExtend(j_ctr+1)*zeroExtend(n_reg) + zeroExtend(i_ctr);
             end
             else if(transition_ready)begin
                 machine_state <= Sum_and_max;
@@ -437,5 +442,16 @@ endrule
         return bt_max;
     endmethod
 
+    method Bool get_init_done_flag();
+        return init_done_flag;
+    endmethod
+
+    method Bit#(5) get_i_ctr();
+        return i_ctr;
+    endmethod
+
+    method Bit#(5) get_j_ctr();
+        return j_ctr;
+    endmethod
 endmodule : mkViterbi
 endpackage : Viterbi_v1
