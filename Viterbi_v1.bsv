@@ -9,8 +9,8 @@ interface Ifc_Viterbi;
     method Action n_and_m_load(Bit#(5) n, Bit#(5) m);
 
     // --- Transition / Emission / Outcome data ---
-    method Bit#(10) read_transition_idx();
-    method Bit#(10) read_emission_idx();
+    // method Bit#(10) read_transition_idx();
+    // method Bit#(10) read_emission_idx();
     method Bit#(10) read_outcome_idx();
 
     method Action send_transition_data(Bit#(32) data);
@@ -34,6 +34,7 @@ interface Ifc_Viterbi;
     method Bool get_init_done_flag();
     method Bit#(5) get_i_ctr();
     method Bit#(5) get_j_ctr();
+    method Bit#(32) get_outcome();
 
 endinterface
 
@@ -85,8 +86,6 @@ module mkViterbi(Ifc_Viterbi);
     Reg#(Bit#(32)) emission_buffer <- mkReg(0);
     Reg#(Bit#(32)) outcome_buffer <- mkReg(0);
 
-    Reg#(Bit#(10)) transition_idx <- mkReg(0);
-    Reg#(Bit#(10)) emission_idx <- mkReg(0);
     Reg#(Bit#(10)) outcome_idx <- mkReg(0);
 
     // prev and curr state vectors
@@ -137,9 +136,6 @@ module mkViterbi(Ifc_Viterbi);
            else if(!transition_ready &&!read_transition && !emission_ready && !read_emission)begin
                 read_transition<=True;
                 read_emission<=True;
-
-                // transition_idx <= zeroExtend(i_ctr);
-                emission_idx <= zeroExtend(i_ctr)*zeroExtend(m_reg) + truncate(outcome_buffer-1);
             end
             else if(transition_ready && emission_ready)begin
                 init_state <= Loop;
@@ -205,8 +201,6 @@ module mkViterbi(Ifc_Viterbi);
 
                 if(!read_emission && !emission_ready)begin
                     read_emission<=True;
-                    temp = outcome_buffer - 1;
-                    emission_idx <= zeroExtend(i_ctr)*zeroExtend(m_reg) + truncate(temp);
                 end
 
                 else if(emission_ready)begin
@@ -219,7 +213,6 @@ module mkViterbi(Ifc_Viterbi);
         else if(machine_state==Load_trans) begin
             if(!read_transition && !transition_ready)begin
                 read_transition<=True;
-                // transition_idx <= zeroExtend(j_ctr+1)*zeroExtend(n_reg) + zeroExtend(i_ctr);
             end
             else if(transition_ready)begin
                 machine_state <= Sum_and_max;
@@ -394,14 +387,6 @@ endrule
         read_outcome <= False;
     endmethod
 
-    method Bit#(10) read_transition_idx();
-        return transition_idx;
-    endmethod
-
-    method Bit#(10) read_emission_idx();
-        return emission_idx;
-    endmethod
-
     method Bit#(10) read_outcome_idx();
         return outcome_idx;
     endmethod
@@ -453,5 +438,10 @@ endrule
     method Bit#(5) get_j_ctr();
         return j_ctr;
     endmethod
+
+    method Bit#(32) get_outcome();
+        return outcome_buffer;
+    endmethod
+
 endmodule : mkViterbi
 endpackage : Viterbi_v1

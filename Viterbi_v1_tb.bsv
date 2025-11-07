@@ -34,9 +34,6 @@ module mkViterbiTestbench();
     Reg#(Bit#(10)) emission_idx_tb <- mkReg(0);
     Reg#(Bit#(10)) outcome_idx_tb <- mkReg(0);
 
-    // Reg#(Bit#(5)) i_ctr <- mkReg(0);
-    // Reg#(Bit#(5)) j_ctr <- mkReg(0);
-
     rule open_file(!file_opened);
         let f <- $fopen("tb_output.dat", "w");
         file <= f;
@@ -74,7 +71,9 @@ module mkViterbiTestbench();
 
     rule read_77(viterbi.get_read_emission() && !read_emission_tb);
        read_emission_tb <= True;
-       emission_idx_tb <= viterbi.read_emission_idx();
+        let i_ctr = viterbi.get_i_ctr();
+        let outcome = viterbi.get_outcome();
+        emission_idx_tb <= zeroExtend(i_ctr)*zeroExtend(m) + truncate(outcome-1);
     endrule
 
     rule read_emission_matrix(read_emission_tb == True);
