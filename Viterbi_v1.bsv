@@ -140,8 +140,8 @@ module mkViterbi(Ifc_Viterbi);
                 read_transition<=True;
                 read_emission<=True;
 
-                transition_idx<=i_ctr;
-                emission_idx<=i_ctr*m_reg + (outcome_buffer-1);
+                transition_idx <= i_ctr;
+                emission_idx <= i_ctr*m_reg + (outcome_buffer-1);
             end
             else if(transition_ready && emission_ready)begin
                 // $display("I : %d, TRANSITION :%h , EMISSION : %h, TRANS IDX : %d, EMI IDX : %d",i_ctr,transition_buffer,emission_buffer,transition_idx,emission_idx);
@@ -559,6 +559,14 @@ endrule
 
     method Bit#(32) get_probab();
         return bt_max;
+    endmethod
+
+    method Bit#(32) get_i_ctr();
+        return i_ctr;
+    endmethod
+
+    method Bit#(32) get_j_ctr();
+        return j_ctr;
     endmethod
 
 endmodule : mkViterbi

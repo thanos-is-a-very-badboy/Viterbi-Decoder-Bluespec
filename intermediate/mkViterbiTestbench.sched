@@ -2,6 +2,10 @@
 
 Rule schedule
 -------------
+Rule: open_file
+Predicate: ! file_opened
+Blocking rules: (none)
+ 
 Rule: load_m_and_n
 Predicate: True
 Blocking rules: (none)
@@ -30,9 +34,15 @@ Rule: read_outcome_matrix
 Predicate: read_outcome_tb
 Blocking rules: (none)
  
+Rule: print_final_result
+Predicate: True
+Blocking rules: (none)
+ 
 Logical execution order: read_66,
 			 read_77,
 			 read_88,
+			 print_final_result,
+			 open_file,
 			 load_m_and_n,
 			 read_transition_matrix,
 			 read_emission_matrix,
