@@ -561,13 +561,5 @@ endrule
         return bt_max;
     endmethod
 
-    method Bit#(32) get_i_ctr();
-        return i_ctr;
-    endmethod
-
-    method Bit#(32) get_j_ctr();
-        return j_ctr;
-    endmethod
-
 endmodule : mkViterbi
 endpackage : Viterbi_v1
