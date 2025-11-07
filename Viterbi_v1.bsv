@@ -9,8 +9,6 @@ interface Ifc_Viterbi;
     method Action n_and_m_load(Bit#(5) n, Bit#(5) m);
 
     // --- Transition / Emission / Outcome data ---
-    // method Bit#(10) read_transition_idx();
-    // method Bit#(10) read_emission_idx();
     method Bit#(10) read_outcome_idx();
 
     method Action send_transition_data(Bit#(32) data);
@@ -26,7 +24,6 @@ interface Ifc_Viterbi;
 
     // --- For Final Print ---
     method Print_State get_print_state();
-    method Vector#(64, Reg#(Bit#(5))) get_path();
     method Bit#(6) get_num_obs();
     method Bit#(32) get_probab();
     
@@ -46,6 +43,8 @@ interface Ifc_Viterbi;
     method Bit#(10) get_bt_t_ctr();
     method Action send_bt_data(Bit#(5) data);
     method Bit#(5) get_path_buffer();
+    method Bool get_path_ready();
+
 endinterface
 
 typedef enum {
@@ -98,17 +97,14 @@ module mkViterbi(Ifc_Viterbi);
 
     Reg#(Bit#(5)) bt_buffer <- mkReg(0);
 
-
     Reg#(Bit#(10)) outcome_idx <- mkReg(0);
 
     // prev and curr state vectors
     Vector#(32, Reg#(Bit#(32))) prev <- replicateM(mkReg(32'h0));
     Vector#(32, Reg#(Bit#(32))) curr <- replicateM(mkReg(32'h0));
-    Vector#(64, Reg#(Bit#(5))) path <- replicateM(mkReg(0));
 
     Reg#(Bit#(5)) path_buffer <- mkReg(0);
-    //BackTracking Vector
-    // Vector#(2048, Reg#(Bit#(5))) bt <- replicateM(mkReg(0));
+    Reg#(Bit#(5)) max_path <- mkReg(0);
 
     // status flags 
     Reg#(Bool) read_transition <- mkReg(False);
@@ -133,6 +129,8 @@ module mkViterbi(Ifc_Viterbi);
     Reg#(State) machine_state <- mkReg(Load_outcome);
     Reg#(Init_State) init_state <- mkReg(Init_outcome);
     Reg#(Print_State) print_state <- mkReg(Find_max);
+
+    Reg#(Bool) path_ready <- mkReg(False);
 
     // --- rules ---
 
@@ -296,8 +294,6 @@ module mkViterbi(Ifc_Viterbi);
 
                 curr[i_ctr] <= data_dup;
                 
-                // Bit#(11) bt_index = zeroExtend(t_ctr-t_start)*zeroExtend(n_reg) + zeroExtend(i_ctr);
-                // bt[bt_index] <= max_state_reg + 1;
                 write_to_bt_flag <= True;
 
                 max_reg<=32'hFFFFFFFF;
@@ -338,41 +334,38 @@ module mkViterbi(Ifc_Viterbi);
                 if(currval < bt_max) begin
                     
                     bt_max <= currval;
-                    path[t_ctr-t_start] <= i_ctr + 1;
+                    // path[t_ctr-t_start] <= i_ctr + 1;
+                    max_path <= i_ctr + 1;
+                    path_buffer <= i_ctr + 1;
                 end
                 i_ctr <= i_ctr + 1;
             end
             else begin
                 bt_t_ctr <= t_ctr - t_start - 1;
                 print_state <= Make_path;
-
+                path_ready <= True;
             end
         end
 
         else if (print_state == Make_path) begin
             if(bt_t_ctr > 0) begin
                 if(!read_bt && !bt_ready)begin
-                    read_bt<=True;
-                    path_buffer <= path[bt_t_ctr+1];
-                    // outcome_idx<=t_ctr;
+                    read_bt <= True;
+                    path_buffer <= max_path;
+                    path_ready <= False;
                 end
                 
                 if(bt_ready)begin
-                    path[bt_t_ctr] <= bt_buffer;
-                    bt_ready<=False;
+                    max_path <= bt_buffer;
+                    bt_ready <= False;
+                    path_ready <= True;
+                    path_buffer <= bt_buffer;
                     bt_t_ctr <= bt_t_ctr - 1;
                 end
-
-                // let bt_index = (bt_t_ctr)*zeroExtend(n_reg) + zeroExtend(path[bt_t_ctr + 1] -1);
-                // path[bt_t_ctr] <= bt[bt_index];
-                // bt_t_ctr <= bt_t_ctr - 1;
             end
             
             else begin                
-                // Bit#(6) diff = truncate(t_ctr - t_start + 1);
-                
                 print_state <= Go_init;
-
             end
         end
 
@@ -387,10 +380,7 @@ module mkViterbi(Ifc_Viterbi);
             init_done_flag <= False;               
             machine_state <= Load_outcome;
             init_state <= Init_outcome;
-
-            for (Integer i = 0; i < 64; i = i + 1) begin
-                path[i] <= 0;
-            end
+            path_ready <= False;
         end
         
         
@@ -447,10 +437,6 @@ endrule
 
     method Bool get_reset_decoder();
         return reset_machine_flag;
-    endmethod
-
-    method Vector#(64, Reg#(Bit#(5))) get_path();
-        return path;
     endmethod
 
     method Print_State get_print_state();
@@ -510,5 +496,10 @@ endrule
         bt_ready <= True;
         read_bt <= False;
     endmethod
+
+    method Bool get_path_ready();
+        return path_ready;    
+    endmethod
+
 endmodule : mkViterbi
 endpackage : Viterbi_v1
