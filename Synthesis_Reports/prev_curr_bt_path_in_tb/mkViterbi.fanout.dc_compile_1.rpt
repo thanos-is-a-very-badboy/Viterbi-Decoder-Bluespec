@@ -1,0 +1,61 @@
+ 
+****************************************
+Report : net fanout
+        -threshold 50
+Design : mkViterbi
+Version: U-2022.12
+Date   : Fri Nov  7 18:28:30 2025
+****************************************
+
+
+Operating Conditions: ss0p75v25c   Library: saed32lvt_ss0p75v25c
+Wire Load Model Mode: enclosed
+
+Design        Wire Load Model            Library
+------------------------------------------------
+mkViterbi              8000              saed32lvt_ss0p75v25c
+mkFP32_Adder           8000              saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_18 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_17 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_16 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_15 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_14 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_13 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_12 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_11 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_10 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_9 ForQA   saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_8 ForQA   saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_7 ForQA   saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_6 ForQA   saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_5 ForQA   saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_4 ForQA   saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_3 ForQA   saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_2 ForQA   saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_1 ForQA   saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_0 ForQA   saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_0_1 ForQA saed32lvt_ss0p75v25c
+mkBrentKungAdder24     8000              saed32lvt_ss0p75v25c
+mkRippleCarrySubtractor_1 ForQA          saed32lvt_ss0p75v25c
+mkRippleCarrySubtractor_0 ForQA          saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkFP32_Adder_2 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkFP32_Adder_1 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkFP32_Adder_0 ForQA saed32lvt_ss0p75v25c
+
+
+Attributes:
+   dr - drc disabled
+    c - annotated capacitance
+    d - dont_touch
+    i - ideal_net
+    I - ideal_network
+    p - includes pin load
+    r - annotated resistance
+    h - high fanout
+
+Net                 Fanout   Attributes   Capacitance   Driver
+--------------------------------------------------------------------------------
+CLK                     62   dr              32.83      CLK
+RST_N                  153                   73.48      RST_N
+adder/net1392           58   dr              35.87      adder/clk_gate_shifted_mantissa_2_reg/main_gate/Y
+1

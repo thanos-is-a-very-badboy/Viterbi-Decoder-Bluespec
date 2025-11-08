@@ -1,0 +1,632 @@
+Information: Checking out the license 'DesignWare'. (SEC-104)
+Information: Changed wire load model for 'mkRippleCarrySubtractor' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'mkRippleCarrySubtractor' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'mkBrentKungAdder24' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'mkFP32_Adder' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'alt1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'astr' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_dec_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*SUB_UNS_OP_10_1_10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_inc_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*ADD_UNS_OP_10_1_10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_inc_width5' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*ADD_UNS_OP_5_1_5' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_inc_width5' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*ADD_UNS_OP_5_1_5' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_dec_width5' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*SUB_UNS_OP_5_1_5' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_inc_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*ADD_UNS_OP_10_1_10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_inc_width6' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*ADD_UNS_OP_6_1_6' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_dec_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*SUB_UNS_OP_10_1_10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_sub_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*SUB_UNS_OP_10_10_10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp2_width32' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*LT_UNS_OP_32_32_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp2_width5' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*LT_UNS_OP_5_5_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp2_width5' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*LT_UNS_OP_5_5_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp2_width5' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*LT_UNS_OP_5_5_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp2_width32' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*LT_UNS_OP_32_32_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_1_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_1_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_2_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_2_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_3_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_3_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_3_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_3_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_4_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_4_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_4_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_4_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_4_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_4_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_4_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_4_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_5_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_5_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_5_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_5_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_5_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_5_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_5_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_5_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_5_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_5_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_5_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_5_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_5_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_5_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_5_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_5_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_4_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_4_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_3_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_3_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_3_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_3_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_6_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_5_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_5_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_2_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_5_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_5_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_5_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_5_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_5_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_5_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_5_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_5_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_5_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_5_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_2_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_5_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_5_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_5_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_5_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_4_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_4_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_4_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_4_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_4_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_4_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_1_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width10' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_10_1_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_inc_width8' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*ADD_UNS_OP_8_1_8' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_dec_width5' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*SUB_UNS_OP_5_1_5' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_dec_width5' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*SUB_UNS_OP_5_1_5' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_sub_width8' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*SUB_UNS_OP_5_8_8' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_sub_width8' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*SUB_UNS_OP_5_8_8' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_inc_width23' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*ADD_UNS_OP_23_1_23' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_inc_width23' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*ADD_UNS_OP_23_1_23' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW_rightsh' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*ASHR_UNS_UNS_OP_24_8_24' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW_rightsh' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*ASHR_UNS_UNS_OP_24_8_24' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW_rightsh' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*ASHR_UNS_UNS_OP_24_8_24' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW_rightsh' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*ASHR_UNS_UNS_OP_24_8_24' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp2_width8' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*LEQ_UNS_OP_8_8_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'DW01_cmp6_width8' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for '*EQ_UNS_OP_8_8_1' from '(none)' to 'ForQA'. (OPT-170)
+Information: Updating graph... (UID-83)
+Warning: Design 'mkViterbi' contains 3 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : net fanout
+        -threshold 50
+Design : mkViterbi
+Version: U-2022.12
+Date   : Fri Nov  7 14:25:16 2025
+****************************************
+
+
+Operating Conditions: ss0p75v25c   Library: saed32lvt_ss0p75v25c
+Wire Load Model Mode: enclosed
+
+Design        Wire Load Model            Library
+------------------------------------------------
+mkViterbi              ForQA             saed32lvt_ss0p75v25c
+mkFP32_Adder           ForQA             saed32lvt_ss0p75v25c
+mkBrentKungAdder24     ForQA             saed32lvt_ss0p75v25c
+mkRippleCarrySubtractor ForQA            saed32lvt_ss0p75v25c
+*EQ_UNS_OP_10_1_1      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+*EQ_UNS_OP_10_4_1      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+*EQ_UNS_OP_10_5_1      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+*EQ_UNS_OP_10_2_1      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+*EQ_UNS_OP_10_6_1      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+*EQ_UNS_OP_10_3_1      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+*ADD_UNS_OP_10_1_10    ForQA             saed32lvt_ss0p75v25c
+DW01_inc_width10       ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width10      ForQA             saed32lvt_ss0p75v25c
+*LT_UNS_OP_32_32_1     ForQA             saed32lvt_ss0p75v25c
+DW01_cmp2_width32      ForQA             saed32lvt_ss0p75v25c
+*LT_UNS_OP_5_5_1       ForQA             saed32lvt_ss0p75v25c
+DW01_cmp2_width5       ForQA             saed32lvt_ss0p75v25c
+DW01_cmp2_width5       ForQA             saed32lvt_ss0p75v25c
+DW01_cmp2_width5       ForQA             saed32lvt_ss0p75v25c
+DW01_cmp2_width32      ForQA             saed32lvt_ss0p75v25c
+*ADD_UNS_OP_5_1_5      ForQA             saed32lvt_ss0p75v25c
+DW01_inc_width5        ForQA             saed32lvt_ss0p75v25c
+*SUB_UNS_OP_10_1_10    ForQA             saed32lvt_ss0p75v25c
+DW01_dec_width10       ForQA             saed32lvt_ss0p75v25c
+DW01_inc_width10       ForQA             saed32lvt_ss0p75v25c
+DW01_inc_width5        ForQA             saed32lvt_ss0p75v25c
+DW01_dec_width10       ForQA             saed32lvt_ss0p75v25c
+*ADD_UNS_OP_6_1_6      ForQA             saed32lvt_ss0p75v25c
+DW01_inc_width6        ForQA             saed32lvt_ss0p75v25c
+*SUB_UNS_OP_10_10_10   ForQA             saed32lvt_ss0p75v25c
+DW01_sub_width10       ForQA             saed32lvt_ss0p75v25c
+*SUB_UNS_OP_5_1_5      ForQA             saed32lvt_ss0p75v25c
+DW01_dec_width5        ForQA             saed32lvt_ss0p75v25c
+*ADD_UNS_OP_8_1_8      ForQA             saed32lvt_ss0p75v25c
+DW01_inc_width8        ForQA             saed32lvt_ss0p75v25c
+DW01_dec_width5        ForQA             saed32lvt_ss0p75v25c
+DW01_dec_width5        ForQA             saed32lvt_ss0p75v25c
+*EQ_UNS_OP_8_8_1       ForQA             saed32lvt_ss0p75v25c
+DW01_cmp6_width8       ForQA             saed32lvt_ss0p75v25c
+*LEQ_UNS_OP_8_8_1      ForQA             saed32lvt_ss0p75v25c
+DW01_cmp2_width8       ForQA             saed32lvt_ss0p75v25c
+*ADD_UNS_OP_23_1_23    ForQA             saed32lvt_ss0p75v25c
+DW01_inc_width23       ForQA             saed32lvt_ss0p75v25c
+DW01_inc_width23       ForQA             saed32lvt_ss0p75v25c
+*ASHR_UNS_UNS_OP_24_8_24 ForQA           saed32lvt_ss0p75v25c
+DW_rightsh             ForQA             saed32lvt_ss0p75v25c
+*SUB_UNS_OP_5_8_8      ForQA             saed32lvt_ss0p75v25c
+DW01_sub_width8        ForQA             saed32lvt_ss0p75v25c
+DW_rightsh             ForQA             saed32lvt_ss0p75v25c
+DW01_sub_width8        ForQA             saed32lvt_ss0p75v25c
+DW_rightsh             ForQA             saed32lvt_ss0p75v25c
+DW_rightsh             ForQA             saed32lvt_ss0p75v25c
+
+
+Attributes:
+   dr - drc disabled
+    c - annotated capacitance
+    d - dont_touch
+    i - ideal_net
+    I - ideal_network
+    p - includes pin load
+    r - annotated resistance
+    h - high fanout
+
+Net                 Fanout   Attributes   Capacitance   Driver
+--------------------------------------------------------------------------------
+N488                   315                  273.40      B_498/Z
+N489                   315                  273.40      B_499/Z
+*Logic1*              1568   dr, h        1001883.19    U1/**logic_1**
+*Logic0*             21977   dr, h        1001883.19    U2/**logic_0**
+CLK                   2736   dr, h        1001883.19    CLK
+get_print_state[1]     141                  118.49      print_state_reg[1]/Q
+get_print_state[0]      86                   69.52      print_state_reg[0]/Q
+get_i_ctr[4]            72                   57.06      i_ctr_reg[4]/Q
+get_i_ctr[3]            72                   57.06      i_ctr_reg[3]/Q
+get_i_ctr[2]            72                   57.06      i_ctr_reg[2]/Q
+get_i_ctr[1]            72                   57.06      i_ctr_reg[1]/Q
+get_i_ctr[0]            73                   57.95      i_ctr_reg[0]/Q
+get_bt_t_ctr[9]        134                  112.26      bt_t_ctr_reg[9]/Q
+get_bt_t_ctr[8]        134                  112.26      bt_t_ctr_reg[8]/Q
+get_bt_t_ctr[7]        134                  112.26      bt_t_ctr_reg[7]/Q
+get_bt_t_ctr[6]        134                  112.26      bt_t_ctr_reg[6]/Q
+get_bt_t_ctr[5]         71                   56.17      bt_t_ctr_reg[5]/Q
+get_bt_t_ctr[4]         71                   56.17      bt_t_ctr_reg[4]/Q
+get_bt_t_ctr[3]         71                   56.17      bt_t_ctr_reg[3]/Q
+get_bt_t_ctr[2]         71                   56.17      bt_t_ctr_reg[2]/Q
+get_bt_t_ctr[1]         71                   56.17      bt_t_ctr_reg[1]/Q
+get_bt_t_ctr[0]         72                   57.06      bt_t_ctr_reg[0]/Q
+adder_get_res[31]       67                   52.61      adder/res_reg[31]/Q
+adder_get_res[30]       67                   52.61      adder/res_reg[30]/Q
+adder_get_res[29]       67                   52.61      adder/res_reg[29]/Q
+adder_get_res[28]       67                   52.61      adder/res_reg[28]/Q
+adder_get_res[27]       67                   52.61      adder/res_reg[27]/Q
+adder_get_res[26]       67                   52.61      adder/res_reg[26]/Q
+adder_get_res[25]       67                   52.61      adder/res_reg[25]/Q
+adder_get_res[24]       67                   52.61      adder/res_reg[24]/Q
+adder_get_res[23]       67                   52.61      adder/res_reg[23]/Q
+adder_get_res[22]       67                   52.61      adder/res_reg[22]/Q
+adder_get_res[21]       67                   52.61      adder/res_reg[21]/Q
+adder_get_res[20]       67                   52.61      adder/res_reg[20]/Q
+adder_get_res[19]       67                   52.61      adder/res_reg[19]/Q
+adder_get_res[18]       67                   52.61      adder/res_reg[18]/Q
+adder_get_res[17]       67                   52.61      adder/res_reg[17]/Q
+adder_get_res[16]       67                   52.61      adder/res_reg[16]/Q
+adder_get_res[15]       67                   52.61      adder/res_reg[15]/Q
+adder_get_res[14]       67                   52.61      adder/res_reg[14]/Q
+adder_get_res[13]       67                   52.61      adder/res_reg[13]/Q
+adder_get_res[12]       67                   52.61      adder/res_reg[12]/Q
+adder_get_res[11]       67                   52.61      adder/res_reg[11]/Q
+adder_get_res[10]       67                   52.61      adder/res_reg[10]/Q
+adder_get_res[9]        67                   52.61      adder/res_reg[9]/Q
+adder_get_res[8]        67                   52.61      adder/res_reg[8]/Q
+adder_get_res[7]        67                   52.61      adder/res_reg[7]/Q
+adder_get_res[6]        67                   52.61      adder/res_reg[6]/Q
+adder_get_res[5]        67                   52.61      adder/res_reg[5]/Q
+adder_get_res[4]        67                   52.61      adder/res_reg[4]/Q
+adder_get_res[3]        67                   52.61      adder/res_reg[3]/Q
+adder_get_res[2]        67                   52.61      adder/res_reg[2]/Q
+adder_get_res[1]        67                   52.61      adder/res_reg[1]/Q
+adder_get_res[0]        67                   52.61      adder/res_reg[0]/Q
+CAN_FIRE_RL_init_v      86                   69.52      C21241/Z
+CAN_FIRE_RL_loop_rule     88                 71.31      C21243/Z
+CAN_FIRE_RL_print_rule     80                64.18      C21245/Z
+init_state_EQ_2_2_AND_adder_state_1_done__3_AN_ETC___d67     67    52.61 C23396/Z
+machine_state[3]        95                   77.54      machine_state_reg[3]/Q
+machine_state[0]        57                   43.71      machine_state_reg[0]/Q
+x__h19830[4]            67                   52.61      add_6386/*cell*425/U2/Z
+x__h19830[3]            67                   52.61      add_6386/*cell*425/U1_1_3/S
+x__h19830[2]            67                   52.61      add_6386/*cell*425/U1_1_2/S
+x__h19830[1]            67                   52.61      add_6386/*cell*425/U1_1_1/S
+x__h19830[0]            67                   52.61      add_6386/*cell*425/U0/Z
+x__h27694[9]           258                  222.65      sub_6389/*cell*431/U2_9/S
+x__h27694[8]           386                  336.61      sub_6389/*cell*431/U2_8/S
+x__h27694[7]           386                  336.61      sub_6389/*cell*431/U2_7/S
+x__h27694[6]           386                  336.61      sub_6389/*cell*431/U2_6/S
+x__h27694[5]           387                  337.50      sub_6389/*cell*431/U2_5/S
+x__h27694[4]           387                  337.50      sub_6389/*cell*431/U2_4/S
+x__h27694[3]           387                  337.50      sub_6389/*cell*431/U2_3/S
+x__h27694[2]           387                  337.50      sub_6389/*cell*431/U2_2/S
+x__h27694[1]           387                  337.50      sub_6389/*cell*431/U2_1/S
+x__h27694[0]           260                  224.43      sub_6389/*cell*431/U2_0/S
+print_state_56_EQ_0_57_AND_i_ctr_6_ULT_n_reg_7_ETC___d363    129   107.81 C23416/Z
+bt_ready               129                  107.81      bt_ready_reg/Q
+bt_buffer[4]            63                   49.05      bt_buffer_reg[4]/Q
+bt_buffer[3]            63                   49.05      bt_buffer_reg[3]/Q
+bt_buffer[2]            63                   49.05      bt_buffer_reg[2]/Q
+bt_buffer[1]            63                   49.05      bt_buffer_reg[1]/Q
+bt_buffer[0]            63                   49.05      bt_buffer_reg[0]/Q
+N4503                   69                   54.39      I_2/Z
+N4509                   53                   40.15      I_5/Z
+N4582                   75                   59.73      I_25/Z
+N4728                   61                   47.27      I_38/Z
+N4729                   61                   47.27      I_39/Z
+N4748                   61                   47.27      I_44/Z
+N4749                   61                   47.27      I_45/Z
+N4794                   61                   47.27      I_55/Z
+N5294                  130                  108.70      I_163/Z
+N5545                   64                   49.94      I_207/Z
+N5546                   64                   49.94      I_208/Z
+N5575                   64                   49.94      I_215/Z
+N5576                   64                   49.94      I_216/Z
+N5591                   64                   49.94      I_220/Z
+N5592                   64                   49.94      I_221/Z
+adder/*Logic1*         121   dr              99.79      adder/U1/**logic_1**
+adder/*Logic0*         940   dr             828.93      adder/U2/**logic_0**
+adder/N368              56                   42.82      adder/C1176/Z_0
+adder/srl_409/*cell*454/n126     52          39.26      adder/srl_409/*cell*454/U150/Z
+adder/srl_411/*cell*460/n126     52          39.26      adder/srl_411/*cell*460/U150/Z
+adder/srl_425/*cell*466/n126     52          39.26      adder/srl_425/*cell*466/U150/Z
+adder/srl_426/*cell*469/n126     52          39.26      adder/srl_426/*cell*469/U150/Z
+1

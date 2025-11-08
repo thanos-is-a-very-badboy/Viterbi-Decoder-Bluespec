@@ -1,0 +1,98 @@
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : mkViterbi
+Version: U-2022.12
+Date   : Fri Nov  7 18:28:31 2025
+****************************************
+
+
+Library(s) Used:
+
+    saed32lvt_ss0p75v25c (File: /home/tools/pdk/SAED32nm_EDK_02_2024/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p75v25c.db)
+
+
+Operating Conditions: ss0p75v25c   Library: saed32lvt_ss0p75v25c
+Wire Load Model Mode: enclosed
+
+Design        Wire Load Model            Library
+------------------------------------------------
+mkViterbi              8000              saed32lvt_ss0p75v25c
+mkFP32_Adder           8000              saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_18
+                       ForQA             saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_17
+                       ForQA             saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_16
+                       ForQA             saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_15
+                       ForQA             saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_14
+                       ForQA             saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_13
+                       ForQA             saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_12
+                       ForQA             saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_11
+                       ForQA             saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_10
+                       ForQA             saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_9
+                       ForQA             saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_8
+                       ForQA             saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_7
+                       ForQA             saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_6
+                       ForQA             saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_5
+                       ForQA             saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_4
+                       ForQA             saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_3
+                       ForQA             saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_2
+                       ForQA             saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_1
+                       ForQA             saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_0
+                       ForQA             saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_0_1
+                       ForQA             saed32lvt_ss0p75v25c
+mkBrentKungAdder24     8000              saed32lvt_ss0p75v25c
+mkRippleCarrySubtractor_1
+                       ForQA             saed32lvt_ss0p75v25c
+mkRippleCarrySubtractor_0
+                       ForQA             saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkFP32_Adder_2
+                       ForQA             saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkFP32_Adder_1
+                       ForQA             saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkFP32_Adder_0
+                       ForQA             saed32lvt_ss0p75v25c
+
+
+Global Operating Voltage = 0.75 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+mkViterbi                                27.697  178.315 1.72e+08  377.767 100.0
+  adder (mkFP32_Adder)                    8.710   44.633 6.15e+07  114.876  30.4
+    rcs2 (mkRippleCarrySubtractor_0)      0.164    0.275 6.84e+05    1.122   0.3
+    rcs1 (mkRippleCarrySubtractor_1)      0.171    0.251 1.00e+06    1.423   0.4
+    rca (mkBrentKungAdder24)              0.236    0.644 4.15e+06    5.029   1.3
+1

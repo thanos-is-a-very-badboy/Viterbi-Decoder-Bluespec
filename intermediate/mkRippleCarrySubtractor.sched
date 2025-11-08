@@ -1,0 +1,11 @@
+=== Generated schedule for mkRippleCarrySubtractor ===
+
+Method schedule
+---------------
+Method: calculate
+Ready signal: True
+Conflict-free: calculate
+ 
+Logical execution order: calculate
+
+=======================================================

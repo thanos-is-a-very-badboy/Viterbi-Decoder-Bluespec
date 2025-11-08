@@ -1,0 +1,168 @@
+ 
+****************************************
+Report : resources
+Design : mkViterbi
+Version: U-2022.12
+Date   : Fri Nov  7 18:28:30 2025
+****************************************
+
+
+Resource Report for this hierarchy in file
+        /scratch/EE22B086/CS6230/new/synth/rtl/mkViterbi.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| add_x_12       | DW01_inc       | width=10   | add_989 (mkViterbi.v:989)  |
+| lt_x_26        | DW_cmp         | width=32   | lt_1459 (mkViterbi.v:1459) |
+| lt_x_27        | DW_cmp         | width=5    | lt_1459_2 (mkViterbi.v:1459) |
+| lt_x_28        | DW_cmp         | width=32   | lt_1461 (mkViterbi.v:1461) |
+| lt_x_29        | DW_cmp         | width=5    | lt_1464 (mkViterbi.v:1464) |
+| lt_x_30        | DW_cmp         | width=5    | lt_1493 (mkViterbi.v:1493) |
+| add_x_31       | DW01_inc       | width=5    | add_1526 (mkViterbi.v:1526) |
+| add_x_32       | DW01_inc       | width=5    | add_1528 (mkViterbi.v:1528) |
+| sub_x_33       | DW01_dec       | width=5    | sub_1532 (mkViterbi.v:1532) |
+| DP_OP_133J1_122_4543            |            |                            |
+|                | DP_OP_133J1_122_4543 |      |                            |
+=============================================================================
+
+Datapath Report for DP_OP_133J1_122_4543
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_133J1_122_4543 | sub_1531 (mkViterbi.v:1531)                         |
+|                      | add_1530 (mkViterbi.v:1530)                         |
+|                      | C3315 (mkViterbi.v:1012)                            |
+|                      | sub_1527 (mkViterbi.v:1527)                         |
+|                      | sub_1529 (mkViterbi.v:1529)                         |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 10    |                                          |
+| I2    | PI   | Unsigned | 10    |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| I4    | PI   | Signed   | 10    |                                          |
+| I5    | PI   | Unsigned | 1     |                                          |
+| T36   | IFO  | Signed   | 10    | I1 - I2 (mkViterbi.v:1531)               |
+| T125  | IFO  | Signed   | 6     | T36[5:0]                                 |
+| T128  | IFO  | Signed   | 10    | { I3, I5 } ? T36 : I4 (mkViterbi.v:1012) |
+| O1    | PO   | Unsigned | 6     | T125 + $unsigned(1'b1) (mkViterbi.v:1530) |
+| O2    | PO   | Signed   | 10    | T128 - $unsigned(1'b1) ( mkViterbi.v:1527 mkViterbi.v:1529 ) |
+==============================================================================
+
+
+Datapath Extraction Report
+
+Information: Operator associated with resources 'sub_1532 (mkViterbi.v:1532)' in design 'mkViterbi' breaks the datapath extraction because there is leakage due to truncation on its fanout to operator of resources 'lt_1464 (mkViterbi.v:1464)'.  (HDL-120)
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| add_x_12           | DW01_inc         | apparch (area)     |                |
+| lt_x_26            | DW_cmp           | apparch (area)     |                |
+| lt_x_27            | DW_cmp           | apparch (area)     |                |
+| lt_x_28            | DW_cmp           | apparch (area)     |                |
+| lt_x_29            | DW_cmp           | apparch (area)     |                |
+| lt_x_30            | DW_cmp           | apparch (area)     |                |
+| add_x_31           | DW01_inc         | apparch (area)     |                |
+| add_x_32           | DW01_inc         | apparch (area)     |                |
+| sub_x_33           | DW01_dec         | apparch (area)     |                |
+| DP_OP_133J1_122_4543                  |                    |                |
+|                    | DP_OP_133J1_122_4543 | str (area)     |                |
+===============================================================================
+
+ 
+****************************************
+Design : mkFP32_Adder
+****************************************
+
+Resource Report for this hierarchy in file
+        /scratch/EE22B086/CS6230/new/synth/rtl/mkFP32_Adder.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| add_x_4        | DW01_inc       | width=8    | add_345 (mkFP32_Adder.v:345) |
+| sub_x_9        | DW01_dec       | width=5    | sub_391 (mkFP32_Adder.v:391) |
+| sub_x_10       | DW01_dec       | width=5    | sub_392 (mkFP32_Adder.v:392) |
+| eq_x_11        | DW_cmp         | width=8    | eq_394 (mkFP32_Adder.v:394) |
+| lte_x_12       | DW_cmp         | width=8    | lte_396 (mkFP32_Adder.v:396) |
+| ashr_13        | DW_rightsh     | A_width=24 | srl_409 (mkFP32_Adder.v:409) |
+               |                | SH_width=8 |                            |
+| sub_x_14       | DW01_sub       | width=8    | sub_410 (mkFP32_Adder.v:410) |
+| ashr_15        | DW_rightsh     | A_width=24 | srl_411 (mkFP32_Adder.v:411) |
+               |                | SH_width=8 |                            |
+| sub_x_16       | DW01_sub       | width=8    | sub_412 (mkFP32_Adder.v:412) |
+| ashr_19        | DW_rightsh     | A_width=24 | srl_425 (mkFP32_Adder.v:425) |
+               |                | SH_width=8 |                            |
+| ashr_20        | DW_rightsh     | A_width=24 | srl_426 (mkFP32_Adder.v:426) |
+               |                | SH_width=8 |                            |
+| DP_OP_134_128_6507              |            |                            |
+|                | DP_OP_134_128_6507 |        |                            |
+=============================================================================
+
+Datapath Report for DP_OP_134_128_6507
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_134_128_6507   | add_405 (mkFP32_Adder.v:405)                        |
+|                      | add_404 (mkFP32_Adder.v:404)                        |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 23    |                                          |
+| O1    | PO   | Unsigned | 23    | I1 + $unsigned(1'b1) ( mkFP32_Adder.v:404 mkFP32_Adder.v:405 ) |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| add_x_4            | DW01_inc         | apparch (area)     |                |
+| sub_x_9            | DW01_dec         | apparch (area)     |                |
+| sub_x_10           | DW01_dec         | apparch (area)     |                |
+| eq_x_11            | DW_cmp           | apparch (area)     |                |
+| lte_x_12           | DW_cmp           | apparch (area)     |                |
+| ashr_13            | DW_rightsh       | astr (area)        |                |
+| sub_x_14           | DW01_sub         | apparch (area)     |                |
+| ashr_15            | DW_rightsh       | astr (area)        |                |
+| sub_x_16           | DW01_sub         | apparch (area)     |                |
+| ashr_19            | DW_rightsh       | astr (area)        |                |
+| ashr_20            | DW_rightsh       | astr (area)        |                |
+| DP_OP_134_128_6507 | DP_OP_134_128_6507 | str (area)       |                |
+===============================================================================
+
+
+No resource sharing information to report.
+ 
+****************************************
+Design : mkRippleCarrySubtractor_0
+****************************************
+
+No implementations to report
+
+No resource sharing information to report.
+ 
+****************************************
+Design : mkRippleCarrySubtractor_1
+****************************************
+
+No implementations to report
+
+No resource sharing information to report.
+ 
+****************************************
+Design : mkBrentKungAdder24
+****************************************
+
+No implementations to report
+1

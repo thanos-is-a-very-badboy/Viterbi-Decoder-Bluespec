@@ -1,0 +1,2620 @@
+Warning: duplicate option '-nosplit' overrides previous value. (CMD-018)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -input_pins
+        -nets
+        -group f2f
+        -max_paths 20
+        -transition_time
+        -capacitance
+Design : mkViterbi
+Version: U-2022.12
+Date   : Fri Nov  7 08:54:27 2025
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: ss0p75v25c   Library: saed32lvt_ss0p75v25c
+Wire Load Model Mode: enclosed
+
+  Startpoint: bt_t_ctr_reg_2_
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: path_58_reg_1_
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: f2f
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mkViterbi          140000                saed32lvt_ss0p75v25c
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock CLK (rise edge)                                       0.000      0.000
+  clock network delay (ideal)                                 0.000      0.000
+  bt_t_ctr_reg_2_/CLK (DFFX1_LVT)                   0.000     0.000      0.000 r
+  bt_t_ctr_reg_2_/Q (DFFX1_LVT)                     0.068     0.209      0.209 f
+  bt_t_ctr[2] (net)             11        5.763               0.000      0.209 f
+  U11185/A1 (AND2X2_LVT)                            0.068     0.000      0.209 f
+  U11185/Y (AND2X2_LVT)                             0.077     0.141      0.350 f
+  n13246 (net)                  23       10.851               0.000      0.350 f
+  U9831/A2 (AND2X4_LVT)                             0.077     0.000      0.350 f
+  U9831/Y (AND2X4_LVT)                              0.095     0.182      0.532 f
+  n7250 (net)                   40       21.457               0.000      0.532 f
+  U11240/A1 (AO22X1_LVT)                            0.095     0.000      0.532 f
+  U11240/Y (AO22X1_LVT)                             0.037     0.140      0.672 f
+  n7266 (net)                    1        0.549               0.000      0.672 f
+  U11243/A2 (NOR4X1_LVT)                            0.037     0.000      0.672 f
+  U11243/Y (NOR4X1_LVT)                             0.032     0.186      0.858 r
+  n7269 (net)                    1        0.580               0.000      0.858 r
+  U11245/A3 (OA22X1_LVT)                            0.032     0.000      0.858 r
+  U11245/Y (OA22X1_LVT)                             0.042     0.080      0.938 r
+  n7271 (net)                    1        0.579               0.000      0.938 r
+  U11246/A4 (NAND4X0_LVT)                           0.042     0.000      0.938 r
+  U11246/Y (NAND4X0_LVT)                            0.130     0.115      1.053 f
+  n9296 (net)                    4        2.662               0.000      1.053 f
+  U9165/A1 (NOR3X0_LVT)                             0.130     0.000      1.053 f
+  U9165/Y (NOR3X0_LVT)                              0.065     0.231      1.284 r
+  n9295 (net)                    4        3.600               0.000      1.284 r
+  U13203/A1 (NAND2X0_LVT)                           0.065     0.000      1.284 r
+  U13203/Y (NAND2X0_LVT)                            0.060     0.052      1.336 f
+  n9227 (net)                    2        1.228               0.000      1.336 f
+  U13206/A (INVX1_LVT)                              0.060     0.000      1.336 f
+  U13206/Y (INVX1_LVT)                              0.040     0.051      1.386 r
+  n9285 (net)                    1        1.040               0.000      1.386 r
+  U13252/A0 (HADDX1_LVT)                            0.040     0.000      1.386 r
+  U13252/SO (HADDX1_LVT)                            0.054     0.136      1.522 f
+  n9286 (net)                    3        1.471               0.000      1.522 f
+  U13253/A3 (NAND3X0_LVT)                           0.054     0.000      1.522 f
+  U13253/Y (NAND3X0_LVT)                            0.107     0.099      1.621 r
+  n11750 (net)                   3        2.591               0.000      1.621 r
+  U13254/A5 (OA221X1_LVT)                           0.107     0.000      1.621 r
+  U13254/Y (OA221X1_LVT)                            0.055     0.107      1.728 r
+  n9302 (net)                    1        1.449               0.000      1.728 r
+  U13263/CI (FADDX1_LVT)                            0.055     0.000      1.728 r
+  U13263/S (FADDX1_LVT)                             0.058     0.175      1.903 f
+  n9287 (net)                    1        0.764               0.000      1.903 f
+  U9166/A (INVX1_LVT)                               0.058     0.000      1.903 f
+  U9166/Y (INVX1_LVT)                               0.048     0.059      1.963 r
+  intadd_3/A_2_ (net)            1        1.942               0.000      1.963 r
+  intadd_3/U2/B (FADDX1_LVT)                        0.048     0.000      1.963 r
+  intadd_3/U2/CO (FADDX1_LVT)                       0.045     0.106      2.068 r
+  intadd_3/n1 (net)              1        0.589               0.000      2.068 r
+  U9124/A (INVX0_LVT)                               0.045     0.000      2.068 r
+  U9124/Y (INVX0_LVT)                               0.041     0.039      2.107 f
+  intadd_0/B_2_ (net)            1        1.892               0.000      2.107 f
+  intadd_0/U5/A (FADDX1_LVT)                        0.041     0.000      2.107 f
+  intadd_0/U5/CO (FADDX1_LVT)                       0.055     0.132      2.239 f
+  intadd_0/n4 (net)              1        1.420               0.000      2.239 f
+  intadd_0/U4/CI (FADDX1_LVT)                       0.055     0.000      2.239 f
+  intadd_0/U4/S (FADDX1_LVT)                        0.097     0.247      2.486 r
+  intadd_0/SUM_3_ (net)          9        5.034               0.000      2.486 r
+  U9121/A (INVX1_LVT)                               0.097     0.000      2.486 r
+  U9121/Y (INVX1_LVT)                               0.061     0.046      2.532 f
+  n7342 (net)                    6        2.625               0.000      2.532 f
+  U11313/A2 (AND2X1_LVT)                            0.061     0.000      2.532 f
+  U11313/Y (AND2X1_LVT)                             0.036     0.096      2.628 f
+  n7358 (net)                    3        1.399               0.000      2.628 f
+  U11341/A2 (AND3X1_LVT)                            0.036     0.000      2.628 f
+  U11341/Y (AND3X1_LVT)                             0.069     0.124      2.752 f
+  n7395 (net)                    8        4.316               0.000      2.752 f
+  U9471/A2 (AND2X1_LVT)                             0.069     0.000      2.752 f
+  U9471/Y (AND2X1_LVT)                              0.086     0.143      2.895 f
+  n13106 (net)                  16        8.075               0.000      2.895 f
+  U9215/A (NBUFFX2_LVT)                             0.086     0.000      2.895 f
+  U9215/Y (NBUFFX2_LVT)                             0.073     0.128      3.023 f
+  n7756 (net)                   25       12.702               0.000      3.023 f
+  U11930/A1 (AO22X1_LVT)                            0.073     0.000      3.023 f
+  U11930/Y (AO22X1_LVT)                             0.036     0.126      3.149 f
+  n7955 (net)                    1        0.549               0.000      3.149 f
+  U11933/A2 (NOR4X1_LVT)                            0.036     0.000      3.149 f
+  U11933/Y (NOR4X1_LVT)                             0.032     0.185      3.335 r
+  n7957 (net)                    1        0.579               0.000      3.335 r
+  U11934/A4 (NAND4X0_LVT)                           0.032     0.000      3.335 r
+  U11934/Y (NAND4X0_LVT)                            0.061     0.066      3.401 f
+  n8024 (net)                    1        0.528               0.000      3.401 f
+  U11998/A1 (NOR4X1_LVT)                            0.061     0.000      3.401 f
+  U11998/Y (NOR4X1_LVT)                             0.031     0.211      3.612 r
+  n8113 (net)                    1        0.483               0.000      3.612 r
+  U12086/A1 (OA22X1_LVT)                            0.031     0.000      3.612 r
+  U12086/Y (OA22X1_LVT)                             0.042     0.089      3.701 r
+  n8114 (net)                    1        0.579               0.000      3.701 r
+  U9184/A4 (NAND4X0_LVT)                            0.042     0.000      3.701 r
+  U9184/Y (NAND4X0_LVT)                             0.332     0.252      3.953 f
+  n10471 (net)                  15        8.968               0.000      3.953 f
+  U12087/A (INVX2_LVT)                              0.332     0.000      3.953 f
+  U12087/Y (INVX2_LVT)                              0.190     0.213      4.166 r
+  n10246 (net)                  17       10.663               0.000      4.166 r
+  U9183/A (INVX1_LVT)                               0.190     0.000      4.166 r
+  U9183/Y (INVX1_LVT)                               0.147     0.124      4.290 f
+  n10445 (net)                  18        9.479               0.000      4.290 f
+  U14460/A1 (AO222X1_LVT)                           0.147     0.000      4.290 f
+  U14460/Y (AO222X1_LVT)                            0.041     0.215      4.504 f
+  n14304 (net)                   1        0.542               0.000      4.504 f
+  path_58_reg_1_/D (DFFX1_LVT)                      0.041     0.000      4.504 f
+  data arrival time                                                      4.504
+
+  clock CLK (rise edge)                                       6.000      6.000
+  clock network delay (ideal)                                 0.000      6.000
+  clock uncertainty                                          -1.000      5.000
+  path_58_reg_1_/CLK (DFFX1_LVT)                              0.000      5.000 r
+  library setup time                                         -0.091      4.909
+  data required time                                                     4.909
+  -------------------------------------------------------------------------------
+  data required time                                                     4.909
+  data arrival time                                                     -4.504
+  -------------------------------------------------------------------------------
+  slack (MET)                                                            0.405
+
+
+  Startpoint: bt_t_ctr_reg_2_
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: path_56_reg_1_
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: f2f
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mkViterbi          140000                saed32lvt_ss0p75v25c
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock CLK (rise edge)                                       0.000      0.000
+  clock network delay (ideal)                                 0.000      0.000
+  bt_t_ctr_reg_2_/CLK (DFFX1_LVT)                   0.000     0.000      0.000 r
+  bt_t_ctr_reg_2_/Q (DFFX1_LVT)                     0.068     0.209      0.209 f
+  bt_t_ctr[2] (net)             11        5.763               0.000      0.209 f
+  U11185/A1 (AND2X2_LVT)                            0.068     0.000      0.209 f
+  U11185/Y (AND2X2_LVT)                             0.077     0.141      0.350 f
+  n13246 (net)                  23       10.851               0.000      0.350 f
+  U9831/A2 (AND2X4_LVT)                             0.077     0.000      0.350 f
+  U9831/Y (AND2X4_LVT)                              0.095     0.182      0.532 f
+  n7250 (net)                   40       21.457               0.000      0.532 f
+  U11240/A1 (AO22X1_LVT)                            0.095     0.000      0.532 f
+  U11240/Y (AO22X1_LVT)                             0.037     0.140      0.672 f
+  n7266 (net)                    1        0.549               0.000      0.672 f
+  U11243/A2 (NOR4X1_LVT)                            0.037     0.000      0.672 f
+  U11243/Y (NOR4X1_LVT)                             0.032     0.186      0.858 r
+  n7269 (net)                    1        0.580               0.000      0.858 r
+  U11245/A3 (OA22X1_LVT)                            0.032     0.000      0.858 r
+  U11245/Y (OA22X1_LVT)                             0.042     0.080      0.938 r
+  n7271 (net)                    1        0.579               0.000      0.938 r
+  U11246/A4 (NAND4X0_LVT)                           0.042     0.000      0.938 r
+  U11246/Y (NAND4X0_LVT)                            0.130     0.115      1.053 f
+  n9296 (net)                    4        2.662               0.000      1.053 f
+  U9165/A1 (NOR3X0_LVT)                             0.130     0.000      1.053 f
+  U9165/Y (NOR3X0_LVT)                              0.065     0.231      1.284 r
+  n9295 (net)                    4        3.600               0.000      1.284 r
+  U13203/A1 (NAND2X0_LVT)                           0.065     0.000      1.284 r
+  U13203/Y (NAND2X0_LVT)                            0.060     0.052      1.336 f
+  n9227 (net)                    2        1.228               0.000      1.336 f
+  U13206/A (INVX1_LVT)                              0.060     0.000      1.336 f
+  U13206/Y (INVX1_LVT)                              0.040     0.051      1.386 r
+  n9285 (net)                    1        1.040               0.000      1.386 r
+  U13252/A0 (HADDX1_LVT)                            0.040     0.000      1.386 r
+  U13252/SO (HADDX1_LVT)                            0.054     0.136      1.522 f
+  n9286 (net)                    3        1.471               0.000      1.522 f
+  U13253/A3 (NAND3X0_LVT)                           0.054     0.000      1.522 f
+  U13253/Y (NAND3X0_LVT)                            0.107     0.099      1.621 r
+  n11750 (net)                   3        2.591               0.000      1.621 r
+  U13254/A5 (OA221X1_LVT)                           0.107     0.000      1.621 r
+  U13254/Y (OA221X1_LVT)                            0.055     0.107      1.728 r
+  n9302 (net)                    1        1.449               0.000      1.728 r
+  U13263/CI (FADDX1_LVT)                            0.055     0.000      1.728 r
+  U13263/S (FADDX1_LVT)                             0.058     0.175      1.903 f
+  n9287 (net)                    1        0.764               0.000      1.903 f
+  U9166/A (INVX1_LVT)                               0.058     0.000      1.903 f
+  U9166/Y (INVX1_LVT)                               0.048     0.059      1.963 r
+  intadd_3/A_2_ (net)            1        1.942               0.000      1.963 r
+  intadd_3/U2/B (FADDX1_LVT)                        0.048     0.000      1.963 r
+  intadd_3/U2/CO (FADDX1_LVT)                       0.045     0.106      2.068 r
+  intadd_3/n1 (net)              1        0.589               0.000      2.068 r
+  U9124/A (INVX0_LVT)                               0.045     0.000      2.068 r
+  U9124/Y (INVX0_LVT)                               0.041     0.039      2.107 f
+  intadd_0/B_2_ (net)            1        1.892               0.000      2.107 f
+  intadd_0/U5/A (FADDX1_LVT)                        0.041     0.000      2.107 f
+  intadd_0/U5/CO (FADDX1_LVT)                       0.055     0.132      2.239 f
+  intadd_0/n4 (net)              1        1.420               0.000      2.239 f
+  intadd_0/U4/CI (FADDX1_LVT)                       0.055     0.000      2.239 f
+  intadd_0/U4/S (FADDX1_LVT)                        0.097     0.247      2.486 r
+  intadd_0/SUM_3_ (net)          9        5.034               0.000      2.486 r
+  U9121/A (INVX1_LVT)                               0.097     0.000      2.486 r
+  U9121/Y (INVX1_LVT)                               0.061     0.046      2.532 f
+  n7342 (net)                    6        2.625               0.000      2.532 f
+  U11313/A2 (AND2X1_LVT)                            0.061     0.000      2.532 f
+  U11313/Y (AND2X1_LVT)                             0.036     0.096      2.628 f
+  n7358 (net)                    3        1.399               0.000      2.628 f
+  U11341/A2 (AND3X1_LVT)                            0.036     0.000      2.628 f
+  U11341/Y (AND3X1_LVT)                             0.069     0.124      2.752 f
+  n7395 (net)                    8        4.316               0.000      2.752 f
+  U9471/A2 (AND2X1_LVT)                             0.069     0.000      2.752 f
+  U9471/Y (AND2X1_LVT)                              0.086     0.143      2.895 f
+  n13106 (net)                  16        8.075               0.000      2.895 f
+  U9215/A (NBUFFX2_LVT)                             0.086     0.000      2.895 f
+  U9215/Y (NBUFFX2_LVT)                             0.073     0.128      3.023 f
+  n7756 (net)                   25       12.702               0.000      3.023 f
+  U11930/A1 (AO22X1_LVT)                            0.073     0.000      3.023 f
+  U11930/Y (AO22X1_LVT)                             0.036     0.126      3.149 f
+  n7955 (net)                    1        0.549               0.000      3.149 f
+  U11933/A2 (NOR4X1_LVT)                            0.036     0.000      3.149 f
+  U11933/Y (NOR4X1_LVT)                             0.032     0.185      3.335 r
+  n7957 (net)                    1        0.579               0.000      3.335 r
+  U11934/A4 (NAND4X0_LVT)                           0.032     0.000      3.335 r
+  U11934/Y (NAND4X0_LVT)                            0.061     0.066      3.401 f
+  n8024 (net)                    1        0.528               0.000      3.401 f
+  U11998/A1 (NOR4X1_LVT)                            0.061     0.000      3.401 f
+  U11998/Y (NOR4X1_LVT)                             0.031     0.211      3.612 r
+  n8113 (net)                    1        0.483               0.000      3.612 r
+  U12086/A1 (OA22X1_LVT)                            0.031     0.000      3.612 r
+  U12086/Y (OA22X1_LVT)                             0.042     0.089      3.701 r
+  n8114 (net)                    1        0.579               0.000      3.701 r
+  U9184/A4 (NAND4X0_LVT)                            0.042     0.000      3.701 r
+  U9184/Y (NAND4X0_LVT)                             0.332     0.252      3.953 f
+  n10471 (net)                  15        8.968               0.000      3.953 f
+  U12087/A (INVX2_LVT)                              0.332     0.000      3.953 f
+  U12087/Y (INVX2_LVT)                              0.190     0.213      4.166 r
+  n10246 (net)                  17       10.663               0.000      4.166 r
+  U9183/A (INVX1_LVT)                               0.190     0.000      4.166 r
+  U9183/Y (INVX1_LVT)                               0.147     0.124      4.290 f
+  n10445 (net)                  18        9.479               0.000      4.290 f
+  U14463/A1 (AO222X1_LVT)                           0.147     0.000      4.290 f
+  U14463/Y (AO222X1_LVT)                            0.041     0.215      4.504 f
+  n14307 (net)                   1        0.542               0.000      4.504 f
+  path_56_reg_1_/D (DFFX1_LVT)                      0.041     0.000      4.504 f
+  data arrival time                                                      4.504
+
+  clock CLK (rise edge)                                       6.000      6.000
+  clock network delay (ideal)                                 0.000      6.000
+  clock uncertainty                                          -1.000      5.000
+  path_56_reg_1_/CLK (DFFX1_LVT)                              0.000      5.000 r
+  library setup time                                         -0.091      4.909
+  data required time                                                     4.909
+  -------------------------------------------------------------------------------
+  data required time                                                     4.909
+  data arrival time                                                     -4.504
+  -------------------------------------------------------------------------------
+  slack (MET)                                                            0.405
+
+
+  Startpoint: bt_t_ctr_reg_2_
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: path_49_reg_1_
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: f2f
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mkViterbi          140000                saed32lvt_ss0p75v25c
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock CLK (rise edge)                                       0.000      0.000
+  clock network delay (ideal)                                 0.000      0.000
+  bt_t_ctr_reg_2_/CLK (DFFX1_LVT)                   0.000     0.000      0.000 r
+  bt_t_ctr_reg_2_/Q (DFFX1_LVT)                     0.068     0.209      0.209 f
+  bt_t_ctr[2] (net)             11        5.763               0.000      0.209 f
+  U11185/A1 (AND2X2_LVT)                            0.068     0.000      0.209 f
+  U11185/Y (AND2X2_LVT)                             0.077     0.141      0.350 f
+  n13246 (net)                  23       10.851               0.000      0.350 f
+  U9831/A2 (AND2X4_LVT)                             0.077     0.000      0.350 f
+  U9831/Y (AND2X4_LVT)                              0.095     0.182      0.532 f
+  n7250 (net)                   40       21.457               0.000      0.532 f
+  U11240/A1 (AO22X1_LVT)                            0.095     0.000      0.532 f
+  U11240/Y (AO22X1_LVT)                             0.037     0.140      0.672 f
+  n7266 (net)                    1        0.549               0.000      0.672 f
+  U11243/A2 (NOR4X1_LVT)                            0.037     0.000      0.672 f
+  U11243/Y (NOR4X1_LVT)                             0.032     0.186      0.858 r
+  n7269 (net)                    1        0.580               0.000      0.858 r
+  U11245/A3 (OA22X1_LVT)                            0.032     0.000      0.858 r
+  U11245/Y (OA22X1_LVT)                             0.042     0.080      0.938 r
+  n7271 (net)                    1        0.579               0.000      0.938 r
+  U11246/A4 (NAND4X0_LVT)                           0.042     0.000      0.938 r
+  U11246/Y (NAND4X0_LVT)                            0.130     0.115      1.053 f
+  n9296 (net)                    4        2.662               0.000      1.053 f
+  U9165/A1 (NOR3X0_LVT)                             0.130     0.000      1.053 f
+  U9165/Y (NOR3X0_LVT)                              0.065     0.231      1.284 r
+  n9295 (net)                    4        3.600               0.000      1.284 r
+  U13203/A1 (NAND2X0_LVT)                           0.065     0.000      1.284 r
+  U13203/Y (NAND2X0_LVT)                            0.060     0.052      1.336 f
+  n9227 (net)                    2        1.228               0.000      1.336 f
+  U13206/A (INVX1_LVT)                              0.060     0.000      1.336 f
+  U13206/Y (INVX1_LVT)                              0.040     0.051      1.386 r
+  n9285 (net)                    1        1.040               0.000      1.386 r
+  U13252/A0 (HADDX1_LVT)                            0.040     0.000      1.386 r
+  U13252/SO (HADDX1_LVT)                            0.054     0.136      1.522 f
+  n9286 (net)                    3        1.471               0.000      1.522 f
+  U13253/A3 (NAND3X0_LVT)                           0.054     0.000      1.522 f
+  U13253/Y (NAND3X0_LVT)                            0.107     0.099      1.621 r
+  n11750 (net)                   3        2.591               0.000      1.621 r
+  U13254/A5 (OA221X1_LVT)                           0.107     0.000      1.621 r
+  U13254/Y (OA221X1_LVT)                            0.055     0.107      1.728 r
+  n9302 (net)                    1        1.449               0.000      1.728 r
+  U13263/CI (FADDX1_LVT)                            0.055     0.000      1.728 r
+  U13263/S (FADDX1_LVT)                             0.058     0.175      1.903 f
+  n9287 (net)                    1        0.764               0.000      1.903 f
+  U9166/A (INVX1_LVT)                               0.058     0.000      1.903 f
+  U9166/Y (INVX1_LVT)                               0.048     0.059      1.963 r
+  intadd_3/A_2_ (net)            1        1.942               0.000      1.963 r
+  intadd_3/U2/B (FADDX1_LVT)                        0.048     0.000      1.963 r
+  intadd_3/U2/CO (FADDX1_LVT)                       0.045     0.106      2.068 r
+  intadd_3/n1 (net)              1        0.589               0.000      2.068 r
+  U9124/A (INVX0_LVT)                               0.045     0.000      2.068 r
+  U9124/Y (INVX0_LVT)                               0.041     0.039      2.107 f
+  intadd_0/B_2_ (net)            1        1.892               0.000      2.107 f
+  intadd_0/U5/A (FADDX1_LVT)                        0.041     0.000      2.107 f
+  intadd_0/U5/CO (FADDX1_LVT)                       0.055     0.132      2.239 f
+  intadd_0/n4 (net)              1        1.420               0.000      2.239 f
+  intadd_0/U4/CI (FADDX1_LVT)                       0.055     0.000      2.239 f
+  intadd_0/U4/S (FADDX1_LVT)                        0.097     0.247      2.486 r
+  intadd_0/SUM_3_ (net)          9        5.034               0.000      2.486 r
+  U9121/A (INVX1_LVT)                               0.097     0.000      2.486 r
+  U9121/Y (INVX1_LVT)                               0.061     0.046      2.532 f
+  n7342 (net)                    6        2.625               0.000      2.532 f
+  U11313/A2 (AND2X1_LVT)                            0.061     0.000      2.532 f
+  U11313/Y (AND2X1_LVT)                             0.036     0.096      2.628 f
+  n7358 (net)                    3        1.399               0.000      2.628 f
+  U11341/A2 (AND3X1_LVT)                            0.036     0.000      2.628 f
+  U11341/Y (AND3X1_LVT)                             0.069     0.124      2.752 f
+  n7395 (net)                    8        4.316               0.000      2.752 f
+  U9471/A2 (AND2X1_LVT)                             0.069     0.000      2.752 f
+  U9471/Y (AND2X1_LVT)                              0.086     0.143      2.895 f
+  n13106 (net)                  16        8.075               0.000      2.895 f
+  U9215/A (NBUFFX2_LVT)                             0.086     0.000      2.895 f
+  U9215/Y (NBUFFX2_LVT)                             0.073     0.128      3.023 f
+  n7756 (net)                   25       12.702               0.000      3.023 f
+  U11930/A1 (AO22X1_LVT)                            0.073     0.000      3.023 f
+  U11930/Y (AO22X1_LVT)                             0.036     0.126      3.149 f
+  n7955 (net)                    1        0.549               0.000      3.149 f
+  U11933/A2 (NOR4X1_LVT)                            0.036     0.000      3.149 f
+  U11933/Y (NOR4X1_LVT)                             0.032     0.185      3.335 r
+  n7957 (net)                    1        0.579               0.000      3.335 r
+  U11934/A4 (NAND4X0_LVT)                           0.032     0.000      3.335 r
+  U11934/Y (NAND4X0_LVT)                            0.061     0.066      3.401 f
+  n8024 (net)                    1        0.528               0.000      3.401 f
+  U11998/A1 (NOR4X1_LVT)                            0.061     0.000      3.401 f
+  U11998/Y (NOR4X1_LVT)                             0.031     0.211      3.612 r
+  n8113 (net)                    1        0.483               0.000      3.612 r
+  U12086/A1 (OA22X1_LVT)                            0.031     0.000      3.612 r
+  U12086/Y (OA22X1_LVT)                             0.042     0.089      3.701 r
+  n8114 (net)                    1        0.579               0.000      3.701 r
+  U9184/A4 (NAND4X0_LVT)                            0.042     0.000      3.701 r
+  U9184/Y (NAND4X0_LVT)                             0.332     0.252      3.953 f
+  n10471 (net)                  15        8.968               0.000      3.953 f
+  U12087/A (INVX2_LVT)                              0.332     0.000      3.953 f
+  U12087/Y (INVX2_LVT)                              0.190     0.213      4.166 r
+  n10246 (net)                  17       10.663               0.000      4.166 r
+  U9183/A (INVX1_LVT)                               0.190     0.000      4.166 r
+  U9183/Y (INVX1_LVT)                               0.147     0.124      4.290 f
+  n10445 (net)                  18        9.479               0.000      4.290 f
+  U14462/A1 (AO222X1_LVT)                           0.147     0.000      4.290 f
+  U14462/Y (AO222X1_LVT)                            0.041     0.215      4.504 f
+  n14306 (net)                   1        0.542               0.000      4.504 f
+  path_49_reg_1_/D (DFFX1_LVT)                      0.041     0.000      4.504 f
+  data arrival time                                                      4.504
+
+  clock CLK (rise edge)                                       6.000      6.000
+  clock network delay (ideal)                                 0.000      6.000
+  clock uncertainty                                          -1.000      5.000
+  path_49_reg_1_/CLK (DFFX1_LVT)                              0.000      5.000 r
+  library setup time                                         -0.091      4.909
+  data required time                                                     4.909
+  -------------------------------------------------------------------------------
+  data required time                                                     4.909
+  data arrival time                                                     -4.504
+  -------------------------------------------------------------------------------
+  slack (MET)                                                            0.405
+
+
+  Startpoint: bt_t_ctr_reg_2_
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: path_48_reg_1_
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: f2f
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mkViterbi          140000                saed32lvt_ss0p75v25c
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock CLK (rise edge)                                       0.000      0.000
+  clock network delay (ideal)                                 0.000      0.000
+  bt_t_ctr_reg_2_/CLK (DFFX1_LVT)                   0.000     0.000      0.000 r
+  bt_t_ctr_reg_2_/Q (DFFX1_LVT)                     0.068     0.209      0.209 f
+  bt_t_ctr[2] (net)             11        5.763               0.000      0.209 f
+  U11185/A1 (AND2X2_LVT)                            0.068     0.000      0.209 f
+  U11185/Y (AND2X2_LVT)                             0.077     0.141      0.350 f
+  n13246 (net)                  23       10.851               0.000      0.350 f
+  U9831/A2 (AND2X4_LVT)                             0.077     0.000      0.350 f
+  U9831/Y (AND2X4_LVT)                              0.095     0.182      0.532 f
+  n7250 (net)                   40       21.457               0.000      0.532 f
+  U11240/A1 (AO22X1_LVT)                            0.095     0.000      0.532 f
+  U11240/Y (AO22X1_LVT)                             0.037     0.140      0.672 f
+  n7266 (net)                    1        0.549               0.000      0.672 f
+  U11243/A2 (NOR4X1_LVT)                            0.037     0.000      0.672 f
+  U11243/Y (NOR4X1_LVT)                             0.032     0.186      0.858 r
+  n7269 (net)                    1        0.580               0.000      0.858 r
+  U11245/A3 (OA22X1_LVT)                            0.032     0.000      0.858 r
+  U11245/Y (OA22X1_LVT)                             0.042     0.080      0.938 r
+  n7271 (net)                    1        0.579               0.000      0.938 r
+  U11246/A4 (NAND4X0_LVT)                           0.042     0.000      0.938 r
+  U11246/Y (NAND4X0_LVT)                            0.130     0.115      1.053 f
+  n9296 (net)                    4        2.662               0.000      1.053 f
+  U9165/A1 (NOR3X0_LVT)                             0.130     0.000      1.053 f
+  U9165/Y (NOR3X0_LVT)                              0.065     0.231      1.284 r
+  n9295 (net)                    4        3.600               0.000      1.284 r
+  U13203/A1 (NAND2X0_LVT)                           0.065     0.000      1.284 r
+  U13203/Y (NAND2X0_LVT)                            0.060     0.052      1.336 f
+  n9227 (net)                    2        1.228               0.000      1.336 f
+  U13206/A (INVX1_LVT)                              0.060     0.000      1.336 f
+  U13206/Y (INVX1_LVT)                              0.040     0.051      1.386 r
+  n9285 (net)                    1        1.040               0.000      1.386 r
+  U13252/A0 (HADDX1_LVT)                            0.040     0.000      1.386 r
+  U13252/SO (HADDX1_LVT)                            0.054     0.136      1.522 f
+  n9286 (net)                    3        1.471               0.000      1.522 f
+  U13253/A3 (NAND3X0_LVT)                           0.054     0.000      1.522 f
+  U13253/Y (NAND3X0_LVT)                            0.107     0.099      1.621 r
+  n11750 (net)                   3        2.591               0.000      1.621 r
+  U13254/A5 (OA221X1_LVT)                           0.107     0.000      1.621 r
+  U13254/Y (OA221X1_LVT)                            0.055     0.107      1.728 r
+  n9302 (net)                    1        1.449               0.000      1.728 r
+  U13263/CI (FADDX1_LVT)                            0.055     0.000      1.728 r
+  U13263/S (FADDX1_LVT)                             0.058     0.175      1.903 f
+  n9287 (net)                    1        0.764               0.000      1.903 f
+  U9166/A (INVX1_LVT)                               0.058     0.000      1.903 f
+  U9166/Y (INVX1_LVT)                               0.048     0.059      1.963 r
+  intadd_3/A_2_ (net)            1        1.942               0.000      1.963 r
+  intadd_3/U2/B (FADDX1_LVT)                        0.048     0.000      1.963 r
+  intadd_3/U2/CO (FADDX1_LVT)                       0.045     0.106      2.068 r
+  intadd_3/n1 (net)              1        0.589               0.000      2.068 r
+  U9124/A (INVX0_LVT)                               0.045     0.000      2.068 r
+  U9124/Y (INVX0_LVT)                               0.041     0.039      2.107 f
+  intadd_0/B_2_ (net)            1        1.892               0.000      2.107 f
+  intadd_0/U5/A (FADDX1_LVT)                        0.041     0.000      2.107 f
+  intadd_0/U5/CO (FADDX1_LVT)                       0.055     0.132      2.239 f
+  intadd_0/n4 (net)              1        1.420               0.000      2.239 f
+  intadd_0/U4/CI (FADDX1_LVT)                       0.055     0.000      2.239 f
+  intadd_0/U4/S (FADDX1_LVT)                        0.097     0.247      2.486 r
+  intadd_0/SUM_3_ (net)          9        5.034               0.000      2.486 r
+  U9121/A (INVX1_LVT)                               0.097     0.000      2.486 r
+  U9121/Y (INVX1_LVT)                               0.061     0.046      2.532 f
+  n7342 (net)                    6        2.625               0.000      2.532 f
+  U11313/A2 (AND2X1_LVT)                            0.061     0.000      2.532 f
+  U11313/Y (AND2X1_LVT)                             0.036     0.096      2.628 f
+  n7358 (net)                    3        1.399               0.000      2.628 f
+  U11341/A2 (AND3X1_LVT)                            0.036     0.000      2.628 f
+  U11341/Y (AND3X1_LVT)                             0.069     0.124      2.752 f
+  n7395 (net)                    8        4.316               0.000      2.752 f
+  U9471/A2 (AND2X1_LVT)                             0.069     0.000      2.752 f
+  U9471/Y (AND2X1_LVT)                              0.086     0.143      2.895 f
+  n13106 (net)                  16        8.075               0.000      2.895 f
+  U9215/A (NBUFFX2_LVT)                             0.086     0.000      2.895 f
+  U9215/Y (NBUFFX2_LVT)                             0.073     0.128      3.023 f
+  n7756 (net)                   25       12.702               0.000      3.023 f
+  U11930/A1 (AO22X1_LVT)                            0.073     0.000      3.023 f
+  U11930/Y (AO22X1_LVT)                             0.036     0.126      3.149 f
+  n7955 (net)                    1        0.549               0.000      3.149 f
+  U11933/A2 (NOR4X1_LVT)                            0.036     0.000      3.149 f
+  U11933/Y (NOR4X1_LVT)                             0.032     0.185      3.335 r
+  n7957 (net)                    1        0.579               0.000      3.335 r
+  U11934/A4 (NAND4X0_LVT)                           0.032     0.000      3.335 r
+  U11934/Y (NAND4X0_LVT)                            0.061     0.066      3.401 f
+  n8024 (net)                    1        0.528               0.000      3.401 f
+  U11998/A1 (NOR4X1_LVT)                            0.061     0.000      3.401 f
+  U11998/Y (NOR4X1_LVT)                             0.031     0.211      3.612 r
+  n8113 (net)                    1        0.483               0.000      3.612 r
+  U12086/A1 (OA22X1_LVT)                            0.031     0.000      3.612 r
+  U12086/Y (OA22X1_LVT)                             0.042     0.089      3.701 r
+  n8114 (net)                    1        0.579               0.000      3.701 r
+  U9184/A4 (NAND4X0_LVT)                            0.042     0.000      3.701 r
+  U9184/Y (NAND4X0_LVT)                             0.332     0.252      3.953 f
+  n10471 (net)                  15        8.968               0.000      3.953 f
+  U12087/A (INVX2_LVT)                              0.332     0.000      3.953 f
+  U12087/Y (INVX2_LVT)                              0.190     0.213      4.166 r
+  n10246 (net)                  17       10.663               0.000      4.166 r
+  U9183/A (INVX1_LVT)                               0.190     0.000      4.166 r
+  U9183/Y (INVX1_LVT)                               0.147     0.124      4.290 f
+  n10445 (net)                  18        9.479               0.000      4.290 f
+  U14461/A1 (AO222X1_LVT)                           0.147     0.000      4.290 f
+  U14461/Y (AO222X1_LVT)                            0.041     0.215      4.504 f
+  n14305 (net)                   1        0.542               0.000      4.504 f
+  path_48_reg_1_/D (DFFX1_LVT)                      0.041     0.000      4.504 f
+  data arrival time                                                      4.504
+
+  clock CLK (rise edge)                                       6.000      6.000
+  clock network delay (ideal)                                 0.000      6.000
+  clock uncertainty                                          -1.000      5.000
+  path_48_reg_1_/CLK (DFFX1_LVT)                              0.000      5.000 r
+  library setup time                                         -0.091      4.909
+  data required time                                                     4.909
+  -------------------------------------------------------------------------------
+  data required time                                                     4.909
+  data arrival time                                                     -4.504
+  -------------------------------------------------------------------------------
+  slack (MET)                                                            0.405
+
+
+  Startpoint: bt_t_ctr_reg_2_
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: path_32_reg_1_
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: f2f
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mkViterbi          140000                saed32lvt_ss0p75v25c
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock CLK (rise edge)                                       0.000      0.000
+  clock network delay (ideal)                                 0.000      0.000
+  bt_t_ctr_reg_2_/CLK (DFFX1_LVT)                   0.000     0.000      0.000 r
+  bt_t_ctr_reg_2_/Q (DFFX1_LVT)                     0.068     0.209      0.209 f
+  bt_t_ctr[2] (net)             11        5.763               0.000      0.209 f
+  U11185/A1 (AND2X2_LVT)                            0.068     0.000      0.209 f
+  U11185/Y (AND2X2_LVT)                             0.077     0.141      0.350 f
+  n13246 (net)                  23       10.851               0.000      0.350 f
+  U9831/A2 (AND2X4_LVT)                             0.077     0.000      0.350 f
+  U9831/Y (AND2X4_LVT)                              0.095     0.182      0.532 f
+  n7250 (net)                   40       21.457               0.000      0.532 f
+  U11240/A1 (AO22X1_LVT)                            0.095     0.000      0.532 f
+  U11240/Y (AO22X1_LVT)                             0.037     0.140      0.672 f
+  n7266 (net)                    1        0.549               0.000      0.672 f
+  U11243/A2 (NOR4X1_LVT)                            0.037     0.000      0.672 f
+  U11243/Y (NOR4X1_LVT)                             0.032     0.186      0.858 r
+  n7269 (net)                    1        0.580               0.000      0.858 r
+  U11245/A3 (OA22X1_LVT)                            0.032     0.000      0.858 r
+  U11245/Y (OA22X1_LVT)                             0.042     0.080      0.938 r
+  n7271 (net)                    1        0.579               0.000      0.938 r
+  U11246/A4 (NAND4X0_LVT)                           0.042     0.000      0.938 r
+  U11246/Y (NAND4X0_LVT)                            0.130     0.115      1.053 f
+  n9296 (net)                    4        2.662               0.000      1.053 f
+  U9165/A1 (NOR3X0_LVT)                             0.130     0.000      1.053 f
+  U9165/Y (NOR3X0_LVT)                              0.065     0.231      1.284 r
+  n9295 (net)                    4        3.600               0.000      1.284 r
+  U13203/A1 (NAND2X0_LVT)                           0.065     0.000      1.284 r
+  U13203/Y (NAND2X0_LVT)                            0.060     0.052      1.336 f
+  n9227 (net)                    2        1.228               0.000      1.336 f
+  U13206/A (INVX1_LVT)                              0.060     0.000      1.336 f
+  U13206/Y (INVX1_LVT)                              0.040     0.051      1.386 r
+  n9285 (net)                    1        1.040               0.000      1.386 r
+  U13252/A0 (HADDX1_LVT)                            0.040     0.000      1.386 r
+  U13252/SO (HADDX1_LVT)                            0.054     0.136      1.522 f
+  n9286 (net)                    3        1.471               0.000      1.522 f
+  U13253/A3 (NAND3X0_LVT)                           0.054     0.000      1.522 f
+  U13253/Y (NAND3X0_LVT)                            0.107     0.099      1.621 r
+  n11750 (net)                   3        2.591               0.000      1.621 r
+  U13254/A5 (OA221X1_LVT)                           0.107     0.000      1.621 r
+  U13254/Y (OA221X1_LVT)                            0.055     0.107      1.728 r
+  n9302 (net)                    1        1.449               0.000      1.728 r
+  U13263/CI (FADDX1_LVT)                            0.055     0.000      1.728 r
+  U13263/S (FADDX1_LVT)                             0.058     0.175      1.903 f
+  n9287 (net)                    1        0.764               0.000      1.903 f
+  U9166/A (INVX1_LVT)                               0.058     0.000      1.903 f
+  U9166/Y (INVX1_LVT)                               0.048     0.059      1.963 r
+  intadd_3/A_2_ (net)            1        1.942               0.000      1.963 r
+  intadd_3/U2/B (FADDX1_LVT)                        0.048     0.000      1.963 r
+  intadd_3/U2/CO (FADDX1_LVT)                       0.045     0.106      2.068 r
+  intadd_3/n1 (net)              1        0.589               0.000      2.068 r
+  U9124/A (INVX0_LVT)                               0.045     0.000      2.068 r
+  U9124/Y (INVX0_LVT)                               0.041     0.039      2.107 f
+  intadd_0/B_2_ (net)            1        1.892               0.000      2.107 f
+  intadd_0/U5/A (FADDX1_LVT)                        0.041     0.000      2.107 f
+  intadd_0/U5/CO (FADDX1_LVT)                       0.055     0.132      2.239 f
+  intadd_0/n4 (net)              1        1.420               0.000      2.239 f
+  intadd_0/U4/CI (FADDX1_LVT)                       0.055     0.000      2.239 f
+  intadd_0/U4/S (FADDX1_LVT)                        0.097     0.247      2.486 r
+  intadd_0/SUM_3_ (net)          9        5.034               0.000      2.486 r
+  U9121/A (INVX1_LVT)                               0.097     0.000      2.486 r
+  U9121/Y (INVX1_LVT)                               0.061     0.046      2.532 f
+  n7342 (net)                    6        2.625               0.000      2.532 f
+  U11313/A2 (AND2X1_LVT)                            0.061     0.000      2.532 f
+  U11313/Y (AND2X1_LVT)                             0.036     0.096      2.628 f
+  n7358 (net)                    3        1.399               0.000      2.628 f
+  U11341/A2 (AND3X1_LVT)                            0.036     0.000      2.628 f
+  U11341/Y (AND3X1_LVT)                             0.069     0.124      2.752 f
+  n7395 (net)                    8        4.316               0.000      2.752 f
+  U9471/A2 (AND2X1_LVT)                             0.069     0.000      2.752 f
+  U9471/Y (AND2X1_LVT)                              0.086     0.143      2.895 f
+  n13106 (net)                  16        8.075               0.000      2.895 f
+  U9215/A (NBUFFX2_LVT)                             0.086     0.000      2.895 f
+  U9215/Y (NBUFFX2_LVT)                             0.073     0.128      3.023 f
+  n7756 (net)                   25       12.702               0.000      3.023 f
+  U11930/A1 (AO22X1_LVT)                            0.073     0.000      3.023 f
+  U11930/Y (AO22X1_LVT)                             0.036     0.126      3.149 f
+  n7955 (net)                    1        0.549               0.000      3.149 f
+  U11933/A2 (NOR4X1_LVT)                            0.036     0.000      3.149 f
+  U11933/Y (NOR4X1_LVT)                             0.032     0.185      3.335 r
+  n7957 (net)                    1        0.579               0.000      3.335 r
+  U11934/A4 (NAND4X0_LVT)                           0.032     0.000      3.335 r
+  U11934/Y (NAND4X0_LVT)                            0.061     0.066      3.401 f
+  n8024 (net)                    1        0.528               0.000      3.401 f
+  U11998/A1 (NOR4X1_LVT)                            0.061     0.000      3.401 f
+  U11998/Y (NOR4X1_LVT)                             0.031     0.211      3.612 r
+  n8113 (net)                    1        0.483               0.000      3.612 r
+  U12086/A1 (OA22X1_LVT)                            0.031     0.000      3.612 r
+  U12086/Y (OA22X1_LVT)                             0.042     0.089      3.701 r
+  n8114 (net)                    1        0.579               0.000      3.701 r
+  U9184/A4 (NAND4X0_LVT)                            0.042     0.000      3.701 r
+  U9184/Y (NAND4X0_LVT)                             0.332     0.252      3.953 f
+  n10471 (net)                  15        8.968               0.000      3.953 f
+  U12087/A (INVX2_LVT)                              0.332     0.000      3.953 f
+  U12087/Y (INVX2_LVT)                              0.190     0.213      4.166 r
+  n10246 (net)                  17       10.663               0.000      4.166 r
+  U9183/A (INVX1_LVT)                               0.190     0.000      4.166 r
+  U9183/Y (INVX1_LVT)                               0.147     0.124      4.290 f
+  n10445 (net)                  18        9.479               0.000      4.290 f
+  U14450/A1 (AO222X1_LVT)                           0.147     0.000      4.290 f
+  U14450/Y (AO222X1_LVT)                            0.041     0.215      4.504 f
+  n14294 (net)                   1        0.542               0.000      4.504 f
+  path_32_reg_1_/D (DFFX1_LVT)                      0.041     0.000      4.504 f
+  data arrival time                                                      4.504
+
+  clock CLK (rise edge)                                       6.000      6.000
+  clock network delay (ideal)                                 0.000      6.000
+  clock uncertainty                                          -1.000      5.000
+  path_32_reg_1_/CLK (DFFX1_LVT)                              0.000      5.000 r
+  library setup time                                         -0.091      4.909
+  data required time                                                     4.909
+  -------------------------------------------------------------------------------
+  data required time                                                     4.909
+  data arrival time                                                     -4.504
+  -------------------------------------------------------------------------------
+  slack (MET)                                                            0.405
+
+
+  Startpoint: bt_t_ctr_reg_2_
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: path_3_reg_1_
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: f2f
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mkViterbi          140000                saed32lvt_ss0p75v25c
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock CLK (rise edge)                                       0.000      0.000
+  clock network delay (ideal)                                 0.000      0.000
+  bt_t_ctr_reg_2_/CLK (DFFX1_LVT)                   0.000     0.000      0.000 r
+  bt_t_ctr_reg_2_/Q (DFFX1_LVT)                     0.068     0.209      0.209 f
+  bt_t_ctr[2] (net)             11        5.763               0.000      0.209 f
+  U11185/A1 (AND2X2_LVT)                            0.068     0.000      0.209 f
+  U11185/Y (AND2X2_LVT)                             0.077     0.141      0.350 f
+  n13246 (net)                  23       10.851               0.000      0.350 f
+  U9831/A2 (AND2X4_LVT)                             0.077     0.000      0.350 f
+  U9831/Y (AND2X4_LVT)                              0.095     0.182      0.532 f
+  n7250 (net)                   40       21.457               0.000      0.532 f
+  U11240/A1 (AO22X1_LVT)                            0.095     0.000      0.532 f
+  U11240/Y (AO22X1_LVT)                             0.037     0.140      0.672 f
+  n7266 (net)                    1        0.549               0.000      0.672 f
+  U11243/A2 (NOR4X1_LVT)                            0.037     0.000      0.672 f
+  U11243/Y (NOR4X1_LVT)                             0.032     0.186      0.858 r
+  n7269 (net)                    1        0.580               0.000      0.858 r
+  U11245/A3 (OA22X1_LVT)                            0.032     0.000      0.858 r
+  U11245/Y (OA22X1_LVT)                             0.042     0.080      0.938 r
+  n7271 (net)                    1        0.579               0.000      0.938 r
+  U11246/A4 (NAND4X0_LVT)                           0.042     0.000      0.938 r
+  U11246/Y (NAND4X0_LVT)                            0.130     0.115      1.053 f
+  n9296 (net)                    4        2.662               0.000      1.053 f
+  U9165/A1 (NOR3X0_LVT)                             0.130     0.000      1.053 f
+  U9165/Y (NOR3X0_LVT)                              0.065     0.231      1.284 r
+  n9295 (net)                    4        3.600               0.000      1.284 r
+  U13203/A1 (NAND2X0_LVT)                           0.065     0.000      1.284 r
+  U13203/Y (NAND2X0_LVT)                            0.060     0.052      1.336 f
+  n9227 (net)                    2        1.228               0.000      1.336 f
+  U13206/A (INVX1_LVT)                              0.060     0.000      1.336 f
+  U13206/Y (INVX1_LVT)                              0.040     0.051      1.386 r
+  n9285 (net)                    1        1.040               0.000      1.386 r
+  U13252/A0 (HADDX1_LVT)                            0.040     0.000      1.386 r
+  U13252/SO (HADDX1_LVT)                            0.054     0.136      1.522 f
+  n9286 (net)                    3        1.471               0.000      1.522 f
+  U13253/A3 (NAND3X0_LVT)                           0.054     0.000      1.522 f
+  U13253/Y (NAND3X0_LVT)                            0.107     0.099      1.621 r
+  n11750 (net)                   3        2.591               0.000      1.621 r
+  U13254/A5 (OA221X1_LVT)                           0.107     0.000      1.621 r
+  U13254/Y (OA221X1_LVT)                            0.055     0.107      1.728 r
+  n9302 (net)                    1        1.449               0.000      1.728 r
+  U13263/CI (FADDX1_LVT)                            0.055     0.000      1.728 r
+  U13263/S (FADDX1_LVT)                             0.058     0.175      1.903 f
+  n9287 (net)                    1        0.764               0.000      1.903 f
+  U9166/A (INVX1_LVT)                               0.058     0.000      1.903 f
+  U9166/Y (INVX1_LVT)                               0.048     0.059      1.963 r
+  intadd_3/A_2_ (net)            1        1.942               0.000      1.963 r
+  intadd_3/U2/B (FADDX1_LVT)                        0.048     0.000      1.963 r
+  intadd_3/U2/CO (FADDX1_LVT)                       0.045     0.106      2.068 r
+  intadd_3/n1 (net)              1        0.589               0.000      2.068 r
+  U9124/A (INVX0_LVT)                               0.045     0.000      2.068 r
+  U9124/Y (INVX0_LVT)                               0.041     0.039      2.107 f
+  intadd_0/B_2_ (net)            1        1.892               0.000      2.107 f
+  intadd_0/U5/A (FADDX1_LVT)                        0.041     0.000      2.107 f
+  intadd_0/U5/CO (FADDX1_LVT)                       0.055     0.132      2.239 f
+  intadd_0/n4 (net)              1        1.420               0.000      2.239 f
+  intadd_0/U4/CI (FADDX1_LVT)                       0.055     0.000      2.239 f
+  intadd_0/U4/S (FADDX1_LVT)                        0.097     0.247      2.486 r
+  intadd_0/SUM_3_ (net)          9        5.034               0.000      2.486 r
+  U9121/A (INVX1_LVT)                               0.097     0.000      2.486 r
+  U9121/Y (INVX1_LVT)                               0.061     0.046      2.532 f
+  n7342 (net)                    6        2.625               0.000      2.532 f
+  U11313/A2 (AND2X1_LVT)                            0.061     0.000      2.532 f
+  U11313/Y (AND2X1_LVT)                             0.036     0.096      2.628 f
+  n7358 (net)                    3        1.399               0.000      2.628 f
+  U11341/A2 (AND3X1_LVT)                            0.036     0.000      2.628 f
+  U11341/Y (AND3X1_LVT)                             0.069     0.124      2.752 f
+  n7395 (net)                    8        4.316               0.000      2.752 f
+  U9471/A2 (AND2X1_LVT)                             0.069     0.000      2.752 f
+  U9471/Y (AND2X1_LVT)                              0.086     0.143      2.895 f
+  n13106 (net)                  16        8.075               0.000      2.895 f
+  U9215/A (NBUFFX2_LVT)                             0.086     0.000      2.895 f
+  U9215/Y (NBUFFX2_LVT)                             0.073     0.128      3.023 f
+  n7756 (net)                   25       12.702               0.000      3.023 f
+  U11930/A1 (AO22X1_LVT)                            0.073     0.000      3.023 f
+  U11930/Y (AO22X1_LVT)                             0.036     0.126      3.149 f
+  n7955 (net)                    1        0.549               0.000      3.149 f
+  U11933/A2 (NOR4X1_LVT)                            0.036     0.000      3.149 f
+  U11933/Y (NOR4X1_LVT)                             0.032     0.185      3.335 r
+  n7957 (net)                    1        0.579               0.000      3.335 r
+  U11934/A4 (NAND4X0_LVT)                           0.032     0.000      3.335 r
+  U11934/Y (NAND4X0_LVT)                            0.061     0.066      3.401 f
+  n8024 (net)                    1        0.528               0.000      3.401 f
+  U11998/A1 (NOR4X1_LVT)                            0.061     0.000      3.401 f
+  U11998/Y (NOR4X1_LVT)                             0.031     0.211      3.612 r
+  n8113 (net)                    1        0.483               0.000      3.612 r
+  U12086/A1 (OA22X1_LVT)                            0.031     0.000      3.612 r
+  U12086/Y (OA22X1_LVT)                             0.042     0.089      3.701 r
+  n8114 (net)                    1        0.579               0.000      3.701 r
+  U9184/A4 (NAND4X0_LVT)                            0.042     0.000      3.701 r
+  U9184/Y (NAND4X0_LVT)                             0.332     0.252      3.953 f
+  n10471 (net)                  15        8.968               0.000      3.953 f
+  U12087/A (INVX2_LVT)                              0.332     0.000      3.953 f
+  U12087/Y (INVX2_LVT)                              0.190     0.213      4.166 r
+  n10246 (net)                  17       10.663               0.000      4.166 r
+  U9183/A (INVX1_LVT)                               0.190     0.000      4.166 r
+  U9183/Y (INVX1_LVT)                               0.147     0.124      4.290 f
+  n10445 (net)                  18        9.479               0.000      4.290 f
+  U14449/A1 (AO222X1_LVT)                           0.147     0.000      4.290 f
+  U14449/Y (AO222X1_LVT)                            0.041     0.215      4.504 f
+  n14293 (net)                   1        0.542               0.000      4.504 f
+  path_3_reg_1_/D (DFFX1_LVT)                       0.041     0.000      4.504 f
+  data arrival time                                                      4.504
+
+  clock CLK (rise edge)                                       6.000      6.000
+  clock network delay (ideal)                                 0.000      6.000
+  clock uncertainty                                          -1.000      5.000
+  path_3_reg_1_/CLK (DFFX1_LVT)                               0.000      5.000 r
+  library setup time                                         -0.091      4.909
+  data required time                                                     4.909
+  -------------------------------------------------------------------------------
+  data required time                                                     4.909
+  data arrival time                                                     -4.504
+  -------------------------------------------------------------------------------
+  slack (MET)                                                            0.405
+
+
+  Startpoint: bt_t_ctr_reg_2_
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: path_27_reg_1_
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: f2f
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mkViterbi          140000                saed32lvt_ss0p75v25c
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock CLK (rise edge)                                       0.000      0.000
+  clock network delay (ideal)                                 0.000      0.000
+  bt_t_ctr_reg_2_/CLK (DFFX1_LVT)                   0.000     0.000      0.000 r
+  bt_t_ctr_reg_2_/Q (DFFX1_LVT)                     0.068     0.209      0.209 f
+  bt_t_ctr[2] (net)             11        5.763               0.000      0.209 f
+  U11185/A1 (AND2X2_LVT)                            0.068     0.000      0.209 f
+  U11185/Y (AND2X2_LVT)                             0.077     0.141      0.350 f
+  n13246 (net)                  23       10.851               0.000      0.350 f
+  U9831/A2 (AND2X4_LVT)                             0.077     0.000      0.350 f
+  U9831/Y (AND2X4_LVT)                              0.095     0.182      0.532 f
+  n7250 (net)                   40       21.457               0.000      0.532 f
+  U11240/A1 (AO22X1_LVT)                            0.095     0.000      0.532 f
+  U11240/Y (AO22X1_LVT)                             0.037     0.140      0.672 f
+  n7266 (net)                    1        0.549               0.000      0.672 f
+  U11243/A2 (NOR4X1_LVT)                            0.037     0.000      0.672 f
+  U11243/Y (NOR4X1_LVT)                             0.032     0.186      0.858 r
+  n7269 (net)                    1        0.580               0.000      0.858 r
+  U11245/A3 (OA22X1_LVT)                            0.032     0.000      0.858 r
+  U11245/Y (OA22X1_LVT)                             0.042     0.080      0.938 r
+  n7271 (net)                    1        0.579               0.000      0.938 r
+  U11246/A4 (NAND4X0_LVT)                           0.042     0.000      0.938 r
+  U11246/Y (NAND4X0_LVT)                            0.130     0.115      1.053 f
+  n9296 (net)                    4        2.662               0.000      1.053 f
+  U9165/A1 (NOR3X0_LVT)                             0.130     0.000      1.053 f
+  U9165/Y (NOR3X0_LVT)                              0.065     0.231      1.284 r
+  n9295 (net)                    4        3.600               0.000      1.284 r
+  U13203/A1 (NAND2X0_LVT)                           0.065     0.000      1.284 r
+  U13203/Y (NAND2X0_LVT)                            0.060     0.052      1.336 f
+  n9227 (net)                    2        1.228               0.000      1.336 f
+  U13206/A (INVX1_LVT)                              0.060     0.000      1.336 f
+  U13206/Y (INVX1_LVT)                              0.040     0.051      1.386 r
+  n9285 (net)                    1        1.040               0.000      1.386 r
+  U13252/A0 (HADDX1_LVT)                            0.040     0.000      1.386 r
+  U13252/SO (HADDX1_LVT)                            0.054     0.136      1.522 f
+  n9286 (net)                    3        1.471               0.000      1.522 f
+  U13253/A3 (NAND3X0_LVT)                           0.054     0.000      1.522 f
+  U13253/Y (NAND3X0_LVT)                            0.107     0.099      1.621 r
+  n11750 (net)                   3        2.591               0.000      1.621 r
+  U13254/A5 (OA221X1_LVT)                           0.107     0.000      1.621 r
+  U13254/Y (OA221X1_LVT)                            0.055     0.107      1.728 r
+  n9302 (net)                    1        1.449               0.000      1.728 r
+  U13263/CI (FADDX1_LVT)                            0.055     0.000      1.728 r
+  U13263/S (FADDX1_LVT)                             0.058     0.175      1.903 f
+  n9287 (net)                    1        0.764               0.000      1.903 f
+  U9166/A (INVX1_LVT)                               0.058     0.000      1.903 f
+  U9166/Y (INVX1_LVT)                               0.048     0.059      1.963 r
+  intadd_3/A_2_ (net)            1        1.942               0.000      1.963 r
+  intadd_3/U2/B (FADDX1_LVT)                        0.048     0.000      1.963 r
+  intadd_3/U2/CO (FADDX1_LVT)                       0.045     0.106      2.068 r
+  intadd_3/n1 (net)              1        0.589               0.000      2.068 r
+  U9124/A (INVX0_LVT)                               0.045     0.000      2.068 r
+  U9124/Y (INVX0_LVT)                               0.041     0.039      2.107 f
+  intadd_0/B_2_ (net)            1        1.892               0.000      2.107 f
+  intadd_0/U5/A (FADDX1_LVT)                        0.041     0.000      2.107 f
+  intadd_0/U5/CO (FADDX1_LVT)                       0.055     0.132      2.239 f
+  intadd_0/n4 (net)              1        1.420               0.000      2.239 f
+  intadd_0/U4/CI (FADDX1_LVT)                       0.055     0.000      2.239 f
+  intadd_0/U4/S (FADDX1_LVT)                        0.097     0.247      2.486 r
+  intadd_0/SUM_3_ (net)          9        5.034               0.000      2.486 r
+  U9121/A (INVX1_LVT)                               0.097     0.000      2.486 r
+  U9121/Y (INVX1_LVT)                               0.061     0.046      2.532 f
+  n7342 (net)                    6        2.625               0.000      2.532 f
+  U11313/A2 (AND2X1_LVT)                            0.061     0.000      2.532 f
+  U11313/Y (AND2X1_LVT)                             0.036     0.096      2.628 f
+  n7358 (net)                    3        1.399               0.000      2.628 f
+  U11341/A2 (AND3X1_LVT)                            0.036     0.000      2.628 f
+  U11341/Y (AND3X1_LVT)                             0.069     0.124      2.752 f
+  n7395 (net)                    8        4.316               0.000      2.752 f
+  U9471/A2 (AND2X1_LVT)                             0.069     0.000      2.752 f
+  U9471/Y (AND2X1_LVT)                              0.086     0.143      2.895 f
+  n13106 (net)                  16        8.075               0.000      2.895 f
+  U9215/A (NBUFFX2_LVT)                             0.086     0.000      2.895 f
+  U9215/Y (NBUFFX2_LVT)                             0.073     0.128      3.023 f
+  n7756 (net)                   25       12.702               0.000      3.023 f
+  U11930/A1 (AO22X1_LVT)                            0.073     0.000      3.023 f
+  U11930/Y (AO22X1_LVT)                             0.036     0.126      3.149 f
+  n7955 (net)                    1        0.549               0.000      3.149 f
+  U11933/A2 (NOR4X1_LVT)                            0.036     0.000      3.149 f
+  U11933/Y (NOR4X1_LVT)                             0.032     0.185      3.335 r
+  n7957 (net)                    1        0.579               0.000      3.335 r
+  U11934/A4 (NAND4X0_LVT)                           0.032     0.000      3.335 r
+  U11934/Y (NAND4X0_LVT)                            0.061     0.066      3.401 f
+  n8024 (net)                    1        0.528               0.000      3.401 f
+  U11998/A1 (NOR4X1_LVT)                            0.061     0.000      3.401 f
+  U11998/Y (NOR4X1_LVT)                             0.031     0.211      3.612 r
+  n8113 (net)                    1        0.483               0.000      3.612 r
+  U12086/A1 (OA22X1_LVT)                            0.031     0.000      3.612 r
+  U12086/Y (OA22X1_LVT)                             0.042     0.089      3.701 r
+  n8114 (net)                    1        0.579               0.000      3.701 r
+  U9184/A4 (NAND4X0_LVT)                            0.042     0.000      3.701 r
+  U9184/Y (NAND4X0_LVT)                             0.332     0.252      3.953 f
+  n10471 (net)                  15        8.968               0.000      3.953 f
+  U12087/A (INVX2_LVT)                              0.332     0.000      3.953 f
+  U12087/Y (INVX2_LVT)                              0.190     0.213      4.166 r
+  n10246 (net)                  17       10.663               0.000      4.166 r
+  U9183/A (INVX1_LVT)                               0.190     0.000      4.166 r
+  U9183/Y (INVX1_LVT)                               0.147     0.124      4.290 f
+  n10445 (net)                  18        9.479               0.000      4.290 f
+  U14448/A1 (AO222X1_LVT)                           0.147     0.000      4.290 f
+  U14448/Y (AO222X1_LVT)                            0.041     0.215      4.504 f
+  n14292 (net)                   1        0.542               0.000      4.504 f
+  path_27_reg_1_/D (DFFX1_LVT)                      0.041     0.000      4.504 f
+  data arrival time                                                      4.504
+
+  clock CLK (rise edge)                                       6.000      6.000
+  clock network delay (ideal)                                 0.000      6.000
+  clock uncertainty                                          -1.000      5.000
+  path_27_reg_1_/CLK (DFFX1_LVT)                              0.000      5.000 r
+  library setup time                                         -0.091      4.909
+  data required time                                                     4.909
+  -------------------------------------------------------------------------------
+  data required time                                                     4.909
+  data arrival time                                                     -4.504
+  -------------------------------------------------------------------------------
+  slack (MET)                                                            0.405
+
+
+  Startpoint: bt_t_ctr_reg_2_
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: path_26_reg_1_
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: f2f
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mkViterbi          140000                saed32lvt_ss0p75v25c
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock CLK (rise edge)                                       0.000      0.000
+  clock network delay (ideal)                                 0.000      0.000
+  bt_t_ctr_reg_2_/CLK (DFFX1_LVT)                   0.000     0.000      0.000 r
+  bt_t_ctr_reg_2_/Q (DFFX1_LVT)                     0.068     0.209      0.209 f
+  bt_t_ctr[2] (net)             11        5.763               0.000      0.209 f
+  U11185/A1 (AND2X2_LVT)                            0.068     0.000      0.209 f
+  U11185/Y (AND2X2_LVT)                             0.077     0.141      0.350 f
+  n13246 (net)                  23       10.851               0.000      0.350 f
+  U9831/A2 (AND2X4_LVT)                             0.077     0.000      0.350 f
+  U9831/Y (AND2X4_LVT)                              0.095     0.182      0.532 f
+  n7250 (net)                   40       21.457               0.000      0.532 f
+  U11240/A1 (AO22X1_LVT)                            0.095     0.000      0.532 f
+  U11240/Y (AO22X1_LVT)                             0.037     0.140      0.672 f
+  n7266 (net)                    1        0.549               0.000      0.672 f
+  U11243/A2 (NOR4X1_LVT)                            0.037     0.000      0.672 f
+  U11243/Y (NOR4X1_LVT)                             0.032     0.186      0.858 r
+  n7269 (net)                    1        0.580               0.000      0.858 r
+  U11245/A3 (OA22X1_LVT)                            0.032     0.000      0.858 r
+  U11245/Y (OA22X1_LVT)                             0.042     0.080      0.938 r
+  n7271 (net)                    1        0.579               0.000      0.938 r
+  U11246/A4 (NAND4X0_LVT)                           0.042     0.000      0.938 r
+  U11246/Y (NAND4X0_LVT)                            0.130     0.115      1.053 f
+  n9296 (net)                    4        2.662               0.000      1.053 f
+  U9165/A1 (NOR3X0_LVT)                             0.130     0.000      1.053 f
+  U9165/Y (NOR3X0_LVT)                              0.065     0.231      1.284 r
+  n9295 (net)                    4        3.600               0.000      1.284 r
+  U13203/A1 (NAND2X0_LVT)                           0.065     0.000      1.284 r
+  U13203/Y (NAND2X0_LVT)                            0.060     0.052      1.336 f
+  n9227 (net)                    2        1.228               0.000      1.336 f
+  U13206/A (INVX1_LVT)                              0.060     0.000      1.336 f
+  U13206/Y (INVX1_LVT)                              0.040     0.051      1.386 r
+  n9285 (net)                    1        1.040               0.000      1.386 r
+  U13252/A0 (HADDX1_LVT)                            0.040     0.000      1.386 r
+  U13252/SO (HADDX1_LVT)                            0.054     0.136      1.522 f
+  n9286 (net)                    3        1.471               0.000      1.522 f
+  U13253/A3 (NAND3X0_LVT)                           0.054     0.000      1.522 f
+  U13253/Y (NAND3X0_LVT)                            0.107     0.099      1.621 r
+  n11750 (net)                   3        2.591               0.000      1.621 r
+  U13254/A5 (OA221X1_LVT)                           0.107     0.000      1.621 r
+  U13254/Y (OA221X1_LVT)                            0.055     0.107      1.728 r
+  n9302 (net)                    1        1.449               0.000      1.728 r
+  U13263/CI (FADDX1_LVT)                            0.055     0.000      1.728 r
+  U13263/S (FADDX1_LVT)                             0.058     0.175      1.903 f
+  n9287 (net)                    1        0.764               0.000      1.903 f
+  U9166/A (INVX1_LVT)                               0.058     0.000      1.903 f
+  U9166/Y (INVX1_LVT)                               0.048     0.059      1.963 r
+  intadd_3/A_2_ (net)            1        1.942               0.000      1.963 r
+  intadd_3/U2/B (FADDX1_LVT)                        0.048     0.000      1.963 r
+  intadd_3/U2/CO (FADDX1_LVT)                       0.045     0.106      2.068 r
+  intadd_3/n1 (net)              1        0.589               0.000      2.068 r
+  U9124/A (INVX0_LVT)                               0.045     0.000      2.068 r
+  U9124/Y (INVX0_LVT)                               0.041     0.039      2.107 f
+  intadd_0/B_2_ (net)            1        1.892               0.000      2.107 f
+  intadd_0/U5/A (FADDX1_LVT)                        0.041     0.000      2.107 f
+  intadd_0/U5/CO (FADDX1_LVT)                       0.055     0.132      2.239 f
+  intadd_0/n4 (net)              1        1.420               0.000      2.239 f
+  intadd_0/U4/CI (FADDX1_LVT)                       0.055     0.000      2.239 f
+  intadd_0/U4/S (FADDX1_LVT)                        0.097     0.247      2.486 r
+  intadd_0/SUM_3_ (net)          9        5.034               0.000      2.486 r
+  U9121/A (INVX1_LVT)                               0.097     0.000      2.486 r
+  U9121/Y (INVX1_LVT)                               0.061     0.046      2.532 f
+  n7342 (net)                    6        2.625               0.000      2.532 f
+  U11313/A2 (AND2X1_LVT)                            0.061     0.000      2.532 f
+  U11313/Y (AND2X1_LVT)                             0.036     0.096      2.628 f
+  n7358 (net)                    3        1.399               0.000      2.628 f
+  U11341/A2 (AND3X1_LVT)                            0.036     0.000      2.628 f
+  U11341/Y (AND3X1_LVT)                             0.069     0.124      2.752 f
+  n7395 (net)                    8        4.316               0.000      2.752 f
+  U9471/A2 (AND2X1_LVT)                             0.069     0.000      2.752 f
+  U9471/Y (AND2X1_LVT)                              0.086     0.143      2.895 f
+  n13106 (net)                  16        8.075               0.000      2.895 f
+  U9215/A (NBUFFX2_LVT)                             0.086     0.000      2.895 f
+  U9215/Y (NBUFFX2_LVT)                             0.073     0.128      3.023 f
+  n7756 (net)                   25       12.702               0.000      3.023 f
+  U11930/A1 (AO22X1_LVT)                            0.073     0.000      3.023 f
+  U11930/Y (AO22X1_LVT)                             0.036     0.126      3.149 f
+  n7955 (net)                    1        0.549               0.000      3.149 f
+  U11933/A2 (NOR4X1_LVT)                            0.036     0.000      3.149 f
+  U11933/Y (NOR4X1_LVT)                             0.032     0.185      3.335 r
+  n7957 (net)                    1        0.579               0.000      3.335 r
+  U11934/A4 (NAND4X0_LVT)                           0.032     0.000      3.335 r
+  U11934/Y (NAND4X0_LVT)                            0.061     0.066      3.401 f
+  n8024 (net)                    1        0.528               0.000      3.401 f
+  U11998/A1 (NOR4X1_LVT)                            0.061     0.000      3.401 f
+  U11998/Y (NOR4X1_LVT)                             0.031     0.211      3.612 r
+  n8113 (net)                    1        0.483               0.000      3.612 r
+  U12086/A1 (OA22X1_LVT)                            0.031     0.000      3.612 r
+  U12086/Y (OA22X1_LVT)                             0.042     0.089      3.701 r
+  n8114 (net)                    1        0.579               0.000      3.701 r
+  U9184/A4 (NAND4X0_LVT)                            0.042     0.000      3.701 r
+  U9184/Y (NAND4X0_LVT)                             0.332     0.252      3.953 f
+  n10471 (net)                  15        8.968               0.000      3.953 f
+  U12087/A (INVX2_LVT)                              0.332     0.000      3.953 f
+  U12087/Y (INVX2_LVT)                              0.190     0.213      4.166 r
+  n10246 (net)                  17       10.663               0.000      4.166 r
+  U9183/A (INVX1_LVT)                               0.190     0.000      4.166 r
+  U9183/Y (INVX1_LVT)                               0.147     0.124      4.290 f
+  n10445 (net)                  18        9.479               0.000      4.290 f
+  U14447/A1 (AO222X1_LVT)                           0.147     0.000      4.290 f
+  U14447/Y (AO222X1_LVT)                            0.041     0.215      4.504 f
+  n14291 (net)                   1        0.542               0.000      4.504 f
+  path_26_reg_1_/D (DFFX1_LVT)                      0.041     0.000      4.504 f
+  data arrival time                                                      4.504
+
+  clock CLK (rise edge)                                       6.000      6.000
+  clock network delay (ideal)                                 0.000      6.000
+  clock uncertainty                                          -1.000      5.000
+  path_26_reg_1_/CLK (DFFX1_LVT)                              0.000      5.000 r
+  library setup time                                         -0.091      4.909
+  data required time                                                     4.909
+  -------------------------------------------------------------------------------
+  data required time                                                     4.909
+  data arrival time                                                     -4.504
+  -------------------------------------------------------------------------------
+  slack (MET)                                                            0.405
+
+
+  Startpoint: bt_t_ctr_reg_2_
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: path_24_reg_1_
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: f2f
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mkViterbi          140000                saed32lvt_ss0p75v25c
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock CLK (rise edge)                                       0.000      0.000
+  clock network delay (ideal)                                 0.000      0.000
+  bt_t_ctr_reg_2_/CLK (DFFX1_LVT)                   0.000     0.000      0.000 r
+  bt_t_ctr_reg_2_/Q (DFFX1_LVT)                     0.068     0.209      0.209 f
+  bt_t_ctr[2] (net)             11        5.763               0.000      0.209 f
+  U11185/A1 (AND2X2_LVT)                            0.068     0.000      0.209 f
+  U11185/Y (AND2X2_LVT)                             0.077     0.141      0.350 f
+  n13246 (net)                  23       10.851               0.000      0.350 f
+  U9831/A2 (AND2X4_LVT)                             0.077     0.000      0.350 f
+  U9831/Y (AND2X4_LVT)                              0.095     0.182      0.532 f
+  n7250 (net)                   40       21.457               0.000      0.532 f
+  U11240/A1 (AO22X1_LVT)                            0.095     0.000      0.532 f
+  U11240/Y (AO22X1_LVT)                             0.037     0.140      0.672 f
+  n7266 (net)                    1        0.549               0.000      0.672 f
+  U11243/A2 (NOR4X1_LVT)                            0.037     0.000      0.672 f
+  U11243/Y (NOR4X1_LVT)                             0.032     0.186      0.858 r
+  n7269 (net)                    1        0.580               0.000      0.858 r
+  U11245/A3 (OA22X1_LVT)                            0.032     0.000      0.858 r
+  U11245/Y (OA22X1_LVT)                             0.042     0.080      0.938 r
+  n7271 (net)                    1        0.579               0.000      0.938 r
+  U11246/A4 (NAND4X0_LVT)                           0.042     0.000      0.938 r
+  U11246/Y (NAND4X0_LVT)                            0.130     0.115      1.053 f
+  n9296 (net)                    4        2.662               0.000      1.053 f
+  U9165/A1 (NOR3X0_LVT)                             0.130     0.000      1.053 f
+  U9165/Y (NOR3X0_LVT)                              0.065     0.231      1.284 r
+  n9295 (net)                    4        3.600               0.000      1.284 r
+  U13203/A1 (NAND2X0_LVT)                           0.065     0.000      1.284 r
+  U13203/Y (NAND2X0_LVT)                            0.060     0.052      1.336 f
+  n9227 (net)                    2        1.228               0.000      1.336 f
+  U13206/A (INVX1_LVT)                              0.060     0.000      1.336 f
+  U13206/Y (INVX1_LVT)                              0.040     0.051      1.386 r
+  n9285 (net)                    1        1.040               0.000      1.386 r
+  U13252/A0 (HADDX1_LVT)                            0.040     0.000      1.386 r
+  U13252/SO (HADDX1_LVT)                            0.054     0.136      1.522 f
+  n9286 (net)                    3        1.471               0.000      1.522 f
+  U13253/A3 (NAND3X0_LVT)                           0.054     0.000      1.522 f
+  U13253/Y (NAND3X0_LVT)                            0.107     0.099      1.621 r
+  n11750 (net)                   3        2.591               0.000      1.621 r
+  U13254/A5 (OA221X1_LVT)                           0.107     0.000      1.621 r
+  U13254/Y (OA221X1_LVT)                            0.055     0.107      1.728 r
+  n9302 (net)                    1        1.449               0.000      1.728 r
+  U13263/CI (FADDX1_LVT)                            0.055     0.000      1.728 r
+  U13263/S (FADDX1_LVT)                             0.058     0.175      1.903 f
+  n9287 (net)                    1        0.764               0.000      1.903 f
+  U9166/A (INVX1_LVT)                               0.058     0.000      1.903 f
+  U9166/Y (INVX1_LVT)                               0.048     0.059      1.963 r
+  intadd_3/A_2_ (net)            1        1.942               0.000      1.963 r
+  intadd_3/U2/B (FADDX1_LVT)                        0.048     0.000      1.963 r
+  intadd_3/U2/CO (FADDX1_LVT)                       0.045     0.106      2.068 r
+  intadd_3/n1 (net)              1        0.589               0.000      2.068 r
+  U9124/A (INVX0_LVT)                               0.045     0.000      2.068 r
+  U9124/Y (INVX0_LVT)                               0.041     0.039      2.107 f
+  intadd_0/B_2_ (net)            1        1.892               0.000      2.107 f
+  intadd_0/U5/A (FADDX1_LVT)                        0.041     0.000      2.107 f
+  intadd_0/U5/CO (FADDX1_LVT)                       0.055     0.132      2.239 f
+  intadd_0/n4 (net)              1        1.420               0.000      2.239 f
+  intadd_0/U4/CI (FADDX1_LVT)                       0.055     0.000      2.239 f
+  intadd_0/U4/S (FADDX1_LVT)                        0.097     0.247      2.486 r
+  intadd_0/SUM_3_ (net)          9        5.034               0.000      2.486 r
+  U9121/A (INVX1_LVT)                               0.097     0.000      2.486 r
+  U9121/Y (INVX1_LVT)                               0.061     0.046      2.532 f
+  n7342 (net)                    6        2.625               0.000      2.532 f
+  U11313/A2 (AND2X1_LVT)                            0.061     0.000      2.532 f
+  U11313/Y (AND2X1_LVT)                             0.036     0.096      2.628 f
+  n7358 (net)                    3        1.399               0.000      2.628 f
+  U11341/A2 (AND3X1_LVT)                            0.036     0.000      2.628 f
+  U11341/Y (AND3X1_LVT)                             0.069     0.124      2.752 f
+  n7395 (net)                    8        4.316               0.000      2.752 f
+  U9471/A2 (AND2X1_LVT)                             0.069     0.000      2.752 f
+  U9471/Y (AND2X1_LVT)                              0.086     0.143      2.895 f
+  n13106 (net)                  16        8.075               0.000      2.895 f
+  U9215/A (NBUFFX2_LVT)                             0.086     0.000      2.895 f
+  U9215/Y (NBUFFX2_LVT)                             0.073     0.128      3.023 f
+  n7756 (net)                   25       12.702               0.000      3.023 f
+  U11930/A1 (AO22X1_LVT)                            0.073     0.000      3.023 f
+  U11930/Y (AO22X1_LVT)                             0.036     0.126      3.149 f
+  n7955 (net)                    1        0.549               0.000      3.149 f
+  U11933/A2 (NOR4X1_LVT)                            0.036     0.000      3.149 f
+  U11933/Y (NOR4X1_LVT)                             0.032     0.185      3.335 r
+  n7957 (net)                    1        0.579               0.000      3.335 r
+  U11934/A4 (NAND4X0_LVT)                           0.032     0.000      3.335 r
+  U11934/Y (NAND4X0_LVT)                            0.061     0.066      3.401 f
+  n8024 (net)                    1        0.528               0.000      3.401 f
+  U11998/A1 (NOR4X1_LVT)                            0.061     0.000      3.401 f
+  U11998/Y (NOR4X1_LVT)                             0.031     0.211      3.612 r
+  n8113 (net)                    1        0.483               0.000      3.612 r
+  U12086/A1 (OA22X1_LVT)                            0.031     0.000      3.612 r
+  U12086/Y (OA22X1_LVT)                             0.042     0.089      3.701 r
+  n8114 (net)                    1        0.579               0.000      3.701 r
+  U9184/A4 (NAND4X0_LVT)                            0.042     0.000      3.701 r
+  U9184/Y (NAND4X0_LVT)                             0.332     0.252      3.953 f
+  n10471 (net)                  15        8.968               0.000      3.953 f
+  U12087/A (INVX2_LVT)                              0.332     0.000      3.953 f
+  U12087/Y (INVX2_LVT)                              0.190     0.213      4.166 r
+  n10246 (net)                  17       10.663               0.000      4.166 r
+  U9183/A (INVX1_LVT)                               0.190     0.000      4.166 r
+  U9183/Y (INVX1_LVT)                               0.147     0.124      4.290 f
+  n10445 (net)                  18        9.479               0.000      4.290 f
+  U14446/A1 (AO222X1_LVT)                           0.147     0.000      4.290 f
+  U14446/Y (AO222X1_LVT)                            0.041     0.215      4.504 f
+  n14290 (net)                   1        0.542               0.000      4.504 f
+  path_24_reg_1_/D (DFFX1_LVT)                      0.041     0.000      4.504 f
+  data arrival time                                                      4.504
+
+  clock CLK (rise edge)                                       6.000      6.000
+  clock network delay (ideal)                                 0.000      6.000
+  clock uncertainty                                          -1.000      5.000
+  path_24_reg_1_/CLK (DFFX1_LVT)                              0.000      5.000 r
+  library setup time                                         -0.091      4.909
+  data required time                                                     4.909
+  -------------------------------------------------------------------------------
+  data required time                                                     4.909
+  data arrival time                                                     -4.504
+  -------------------------------------------------------------------------------
+  slack (MET)                                                            0.405
+
+
+  Startpoint: bt_t_ctr_reg_2_
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: path_2_reg_1_
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: f2f
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mkViterbi          140000                saed32lvt_ss0p75v25c
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock CLK (rise edge)                                       0.000      0.000
+  clock network delay (ideal)                                 0.000      0.000
+  bt_t_ctr_reg_2_/CLK (DFFX1_LVT)                   0.000     0.000      0.000 r
+  bt_t_ctr_reg_2_/Q (DFFX1_LVT)                     0.068     0.209      0.209 f
+  bt_t_ctr[2] (net)             11        5.763               0.000      0.209 f
+  U11185/A1 (AND2X2_LVT)                            0.068     0.000      0.209 f
+  U11185/Y (AND2X2_LVT)                             0.077     0.141      0.350 f
+  n13246 (net)                  23       10.851               0.000      0.350 f
+  U9831/A2 (AND2X4_LVT)                             0.077     0.000      0.350 f
+  U9831/Y (AND2X4_LVT)                              0.095     0.182      0.532 f
+  n7250 (net)                   40       21.457               0.000      0.532 f
+  U11240/A1 (AO22X1_LVT)                            0.095     0.000      0.532 f
+  U11240/Y (AO22X1_LVT)                             0.037     0.140      0.672 f
+  n7266 (net)                    1        0.549               0.000      0.672 f
+  U11243/A2 (NOR4X1_LVT)                            0.037     0.000      0.672 f
+  U11243/Y (NOR4X1_LVT)                             0.032     0.186      0.858 r
+  n7269 (net)                    1        0.580               0.000      0.858 r
+  U11245/A3 (OA22X1_LVT)                            0.032     0.000      0.858 r
+  U11245/Y (OA22X1_LVT)                             0.042     0.080      0.938 r
+  n7271 (net)                    1        0.579               0.000      0.938 r
+  U11246/A4 (NAND4X0_LVT)                           0.042     0.000      0.938 r
+  U11246/Y (NAND4X0_LVT)                            0.130     0.115      1.053 f
+  n9296 (net)                    4        2.662               0.000      1.053 f
+  U9165/A1 (NOR3X0_LVT)                             0.130     0.000      1.053 f
+  U9165/Y (NOR3X0_LVT)                              0.065     0.231      1.284 r
+  n9295 (net)                    4        3.600               0.000      1.284 r
+  U13203/A1 (NAND2X0_LVT)                           0.065     0.000      1.284 r
+  U13203/Y (NAND2X0_LVT)                            0.060     0.052      1.336 f
+  n9227 (net)                    2        1.228               0.000      1.336 f
+  U13206/A (INVX1_LVT)                              0.060     0.000      1.336 f
+  U13206/Y (INVX1_LVT)                              0.040     0.051      1.386 r
+  n9285 (net)                    1        1.040               0.000      1.386 r
+  U13252/A0 (HADDX1_LVT)                            0.040     0.000      1.386 r
+  U13252/SO (HADDX1_LVT)                            0.054     0.136      1.522 f
+  n9286 (net)                    3        1.471               0.000      1.522 f
+  U13253/A3 (NAND3X0_LVT)                           0.054     0.000      1.522 f
+  U13253/Y (NAND3X0_LVT)                            0.107     0.099      1.621 r
+  n11750 (net)                   3        2.591               0.000      1.621 r
+  U13254/A5 (OA221X1_LVT)                           0.107     0.000      1.621 r
+  U13254/Y (OA221X1_LVT)                            0.055     0.107      1.728 r
+  n9302 (net)                    1        1.449               0.000      1.728 r
+  U13263/CI (FADDX1_LVT)                            0.055     0.000      1.728 r
+  U13263/S (FADDX1_LVT)                             0.058     0.175      1.903 f
+  n9287 (net)                    1        0.764               0.000      1.903 f
+  U9166/A (INVX1_LVT)                               0.058     0.000      1.903 f
+  U9166/Y (INVX1_LVT)                               0.048     0.059      1.963 r
+  intadd_3/A_2_ (net)            1        1.942               0.000      1.963 r
+  intadd_3/U2/B (FADDX1_LVT)                        0.048     0.000      1.963 r
+  intadd_3/U2/CO (FADDX1_LVT)                       0.045     0.106      2.068 r
+  intadd_3/n1 (net)              1        0.589               0.000      2.068 r
+  U9124/A (INVX0_LVT)                               0.045     0.000      2.068 r
+  U9124/Y (INVX0_LVT)                               0.041     0.039      2.107 f
+  intadd_0/B_2_ (net)            1        1.892               0.000      2.107 f
+  intadd_0/U5/A (FADDX1_LVT)                        0.041     0.000      2.107 f
+  intadd_0/U5/CO (FADDX1_LVT)                       0.055     0.132      2.239 f
+  intadd_0/n4 (net)              1        1.420               0.000      2.239 f
+  intadd_0/U4/CI (FADDX1_LVT)                       0.055     0.000      2.239 f
+  intadd_0/U4/S (FADDX1_LVT)                        0.097     0.247      2.486 r
+  intadd_0/SUM_3_ (net)          9        5.034               0.000      2.486 r
+  U9121/A (INVX1_LVT)                               0.097     0.000      2.486 r
+  U9121/Y (INVX1_LVT)                               0.061     0.046      2.532 f
+  n7342 (net)                    6        2.625               0.000      2.532 f
+  U11313/A2 (AND2X1_LVT)                            0.061     0.000      2.532 f
+  U11313/Y (AND2X1_LVT)                             0.036     0.096      2.628 f
+  n7358 (net)                    3        1.399               0.000      2.628 f
+  U11341/A2 (AND3X1_LVT)                            0.036     0.000      2.628 f
+  U11341/Y (AND3X1_LVT)                             0.069     0.124      2.752 f
+  n7395 (net)                    8        4.316               0.000      2.752 f
+  U9471/A2 (AND2X1_LVT)                             0.069     0.000      2.752 f
+  U9471/Y (AND2X1_LVT)                              0.086     0.143      2.895 f
+  n13106 (net)                  16        8.075               0.000      2.895 f
+  U9215/A (NBUFFX2_LVT)                             0.086     0.000      2.895 f
+  U9215/Y (NBUFFX2_LVT)                             0.073     0.128      3.023 f
+  n7756 (net)                   25       12.702               0.000      3.023 f
+  U11930/A1 (AO22X1_LVT)                            0.073     0.000      3.023 f
+  U11930/Y (AO22X1_LVT)                             0.036     0.126      3.149 f
+  n7955 (net)                    1        0.549               0.000      3.149 f
+  U11933/A2 (NOR4X1_LVT)                            0.036     0.000      3.149 f
+  U11933/Y (NOR4X1_LVT)                             0.032     0.185      3.335 r
+  n7957 (net)                    1        0.579               0.000      3.335 r
+  U11934/A4 (NAND4X0_LVT)                           0.032     0.000      3.335 r
+  U11934/Y (NAND4X0_LVT)                            0.061     0.066      3.401 f
+  n8024 (net)                    1        0.528               0.000      3.401 f
+  U11998/A1 (NOR4X1_LVT)                            0.061     0.000      3.401 f
+  U11998/Y (NOR4X1_LVT)                             0.031     0.211      3.612 r
+  n8113 (net)                    1        0.483               0.000      3.612 r
+  U12086/A1 (OA22X1_LVT)                            0.031     0.000      3.612 r
+  U12086/Y (OA22X1_LVT)                             0.042     0.089      3.701 r
+  n8114 (net)                    1        0.579               0.000      3.701 r
+  U9184/A4 (NAND4X0_LVT)                            0.042     0.000      3.701 r
+  U9184/Y (NAND4X0_LVT)                             0.332     0.252      3.953 f
+  n10471 (net)                  15        8.968               0.000      3.953 f
+  U12087/A (INVX2_LVT)                              0.332     0.000      3.953 f
+  U12087/Y (INVX2_LVT)                              0.190     0.213      4.166 r
+  n10246 (net)                  17       10.663               0.000      4.166 r
+  U9183/A (INVX1_LVT)                               0.190     0.000      4.166 r
+  U9183/Y (INVX1_LVT)                               0.147     0.124      4.290 f
+  n10445 (net)                  18        9.479               0.000      4.290 f
+  U14437/A1 (AO222X1_LVT)                           0.147     0.000      4.290 f
+  U14437/Y (AO222X1_LVT)                            0.041     0.215      4.504 f
+  n14106 (net)                   1        0.542               0.000      4.504 f
+  path_2_reg_1_/D (DFFX1_LVT)                       0.041     0.000      4.504 f
+  data arrival time                                                      4.504
+
+  clock CLK (rise edge)                                       6.000      6.000
+  clock network delay (ideal)                                 0.000      6.000
+  clock uncertainty                                          -1.000      5.000
+  path_2_reg_1_/CLK (DFFX1_LVT)                               0.000      5.000 r
+  library setup time                                         -0.091      4.909
+  data required time                                                     4.909
+  -------------------------------------------------------------------------------
+  data required time                                                     4.909
+  data arrival time                                                     -4.504
+  -------------------------------------------------------------------------------
+  slack (MET)                                                            0.405
+
+
+  Startpoint: bt_t_ctr_reg_2_
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: path_17_reg_1_
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: f2f
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mkViterbi          140000                saed32lvt_ss0p75v25c
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock CLK (rise edge)                                       0.000      0.000
+  clock network delay (ideal)                                 0.000      0.000
+  bt_t_ctr_reg_2_/CLK (DFFX1_LVT)                   0.000     0.000      0.000 r
+  bt_t_ctr_reg_2_/Q (DFFX1_LVT)                     0.068     0.209      0.209 f
+  bt_t_ctr[2] (net)             11        5.763               0.000      0.209 f
+  U11185/A1 (AND2X2_LVT)                            0.068     0.000      0.209 f
+  U11185/Y (AND2X2_LVT)                             0.077     0.141      0.350 f
+  n13246 (net)                  23       10.851               0.000      0.350 f
+  U9831/A2 (AND2X4_LVT)                             0.077     0.000      0.350 f
+  U9831/Y (AND2X4_LVT)                              0.095     0.182      0.532 f
+  n7250 (net)                   40       21.457               0.000      0.532 f
+  U11240/A1 (AO22X1_LVT)                            0.095     0.000      0.532 f
+  U11240/Y (AO22X1_LVT)                             0.037     0.140      0.672 f
+  n7266 (net)                    1        0.549               0.000      0.672 f
+  U11243/A2 (NOR4X1_LVT)                            0.037     0.000      0.672 f
+  U11243/Y (NOR4X1_LVT)                             0.032     0.186      0.858 r
+  n7269 (net)                    1        0.580               0.000      0.858 r
+  U11245/A3 (OA22X1_LVT)                            0.032     0.000      0.858 r
+  U11245/Y (OA22X1_LVT)                             0.042     0.080      0.938 r
+  n7271 (net)                    1        0.579               0.000      0.938 r
+  U11246/A4 (NAND4X0_LVT)                           0.042     0.000      0.938 r
+  U11246/Y (NAND4X0_LVT)                            0.130     0.115      1.053 f
+  n9296 (net)                    4        2.662               0.000      1.053 f
+  U9165/A1 (NOR3X0_LVT)                             0.130     0.000      1.053 f
+  U9165/Y (NOR3X0_LVT)                              0.065     0.231      1.284 r
+  n9295 (net)                    4        3.600               0.000      1.284 r
+  U13203/A1 (NAND2X0_LVT)                           0.065     0.000      1.284 r
+  U13203/Y (NAND2X0_LVT)                            0.060     0.052      1.336 f
+  n9227 (net)                    2        1.228               0.000      1.336 f
+  U13206/A (INVX1_LVT)                              0.060     0.000      1.336 f
+  U13206/Y (INVX1_LVT)                              0.040     0.051      1.386 r
+  n9285 (net)                    1        1.040               0.000      1.386 r
+  U13252/A0 (HADDX1_LVT)                            0.040     0.000      1.386 r
+  U13252/SO (HADDX1_LVT)                            0.054     0.136      1.522 f
+  n9286 (net)                    3        1.471               0.000      1.522 f
+  U13253/A3 (NAND3X0_LVT)                           0.054     0.000      1.522 f
+  U13253/Y (NAND3X0_LVT)                            0.107     0.099      1.621 r
+  n11750 (net)                   3        2.591               0.000      1.621 r
+  U13254/A5 (OA221X1_LVT)                           0.107     0.000      1.621 r
+  U13254/Y (OA221X1_LVT)                            0.055     0.107      1.728 r
+  n9302 (net)                    1        1.449               0.000      1.728 r
+  U13263/CI (FADDX1_LVT)                            0.055     0.000      1.728 r
+  U13263/S (FADDX1_LVT)                             0.058     0.175      1.903 f
+  n9287 (net)                    1        0.764               0.000      1.903 f
+  U9166/A (INVX1_LVT)                               0.058     0.000      1.903 f
+  U9166/Y (INVX1_LVT)                               0.048     0.059      1.963 r
+  intadd_3/A_2_ (net)            1        1.942               0.000      1.963 r
+  intadd_3/U2/B (FADDX1_LVT)                        0.048     0.000      1.963 r
+  intadd_3/U2/CO (FADDX1_LVT)                       0.045     0.106      2.068 r
+  intadd_3/n1 (net)              1        0.589               0.000      2.068 r
+  U9124/A (INVX0_LVT)                               0.045     0.000      2.068 r
+  U9124/Y (INVX0_LVT)                               0.041     0.039      2.107 f
+  intadd_0/B_2_ (net)            1        1.892               0.000      2.107 f
+  intadd_0/U5/A (FADDX1_LVT)                        0.041     0.000      2.107 f
+  intadd_0/U5/CO (FADDX1_LVT)                       0.055     0.132      2.239 f
+  intadd_0/n4 (net)              1        1.420               0.000      2.239 f
+  intadd_0/U4/CI (FADDX1_LVT)                       0.055     0.000      2.239 f
+  intadd_0/U4/S (FADDX1_LVT)                        0.097     0.247      2.486 r
+  intadd_0/SUM_3_ (net)          9        5.034               0.000      2.486 r
+  U9121/A (INVX1_LVT)                               0.097     0.000      2.486 r
+  U9121/Y (INVX1_LVT)                               0.061     0.046      2.532 f
+  n7342 (net)                    6        2.625               0.000      2.532 f
+  U11313/A2 (AND2X1_LVT)                            0.061     0.000      2.532 f
+  U11313/Y (AND2X1_LVT)                             0.036     0.096      2.628 f
+  n7358 (net)                    3        1.399               0.000      2.628 f
+  U11341/A2 (AND3X1_LVT)                            0.036     0.000      2.628 f
+  U11341/Y (AND3X1_LVT)                             0.069     0.124      2.752 f
+  n7395 (net)                    8        4.316               0.000      2.752 f
+  U9471/A2 (AND2X1_LVT)                             0.069     0.000      2.752 f
+  U9471/Y (AND2X1_LVT)                              0.086     0.143      2.895 f
+  n13106 (net)                  16        8.075               0.000      2.895 f
+  U9215/A (NBUFFX2_LVT)                             0.086     0.000      2.895 f
+  U9215/Y (NBUFFX2_LVT)                             0.073     0.128      3.023 f
+  n7756 (net)                   25       12.702               0.000      3.023 f
+  U11930/A1 (AO22X1_LVT)                            0.073     0.000      3.023 f
+  U11930/Y (AO22X1_LVT)                             0.036     0.126      3.149 f
+  n7955 (net)                    1        0.549               0.000      3.149 f
+  U11933/A2 (NOR4X1_LVT)                            0.036     0.000      3.149 f
+  U11933/Y (NOR4X1_LVT)                             0.032     0.185      3.335 r
+  n7957 (net)                    1        0.579               0.000      3.335 r
+  U11934/A4 (NAND4X0_LVT)                           0.032     0.000      3.335 r
+  U11934/Y (NAND4X0_LVT)                            0.061     0.066      3.401 f
+  n8024 (net)                    1        0.528               0.000      3.401 f
+  U11998/A1 (NOR4X1_LVT)                            0.061     0.000      3.401 f
+  U11998/Y (NOR4X1_LVT)                             0.031     0.211      3.612 r
+  n8113 (net)                    1        0.483               0.000      3.612 r
+  U12086/A1 (OA22X1_LVT)                            0.031     0.000      3.612 r
+  U12086/Y (OA22X1_LVT)                             0.042     0.089      3.701 r
+  n8114 (net)                    1        0.579               0.000      3.701 r
+  U9184/A4 (NAND4X0_LVT)                            0.042     0.000      3.701 r
+  U9184/Y (NAND4X0_LVT)                             0.332     0.252      3.953 f
+  n10471 (net)                  15        8.968               0.000      3.953 f
+  U12087/A (INVX2_LVT)                              0.332     0.000      3.953 f
+  U12087/Y (INVX2_LVT)                              0.190     0.213      4.166 r
+  n10246 (net)                  17       10.663               0.000      4.166 r
+  U9183/A (INVX1_LVT)                               0.190     0.000      4.166 r
+  U9183/Y (INVX1_LVT)                               0.147     0.124      4.290 f
+  n10445 (net)                  18        9.479               0.000      4.290 f
+  U14434/A1 (AO222X1_LVT)                           0.147     0.000      4.290 f
+  U14434/Y (AO222X1_LVT)                            0.041     0.215      4.504 f
+  n14103 (net)                   1        0.542               0.000      4.504 f
+  path_17_reg_1_/D (DFFX1_LVT)                      0.041     0.000      4.504 f
+  data arrival time                                                      4.504
+
+  clock CLK (rise edge)                                       6.000      6.000
+  clock network delay (ideal)                                 0.000      6.000
+  clock uncertainty                                          -1.000      5.000
+  path_17_reg_1_/CLK (DFFX1_LVT)                              0.000      5.000 r
+  library setup time                                         -0.091      4.909
+  data required time                                                     4.909
+  -------------------------------------------------------------------------------
+  data required time                                                     4.909
+  data arrival time                                                     -4.504
+  -------------------------------------------------------------------------------
+  slack (MET)                                                            0.405
+
+
+  Startpoint: bt_t_ctr_reg_2_
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: path_16_reg_1_
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: f2f
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mkViterbi          140000                saed32lvt_ss0p75v25c
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock CLK (rise edge)                                       0.000      0.000
+  clock network delay (ideal)                                 0.000      0.000
+  bt_t_ctr_reg_2_/CLK (DFFX1_LVT)                   0.000     0.000      0.000 r
+  bt_t_ctr_reg_2_/Q (DFFX1_LVT)                     0.068     0.209      0.209 f
+  bt_t_ctr[2] (net)             11        5.763               0.000      0.209 f
+  U11185/A1 (AND2X2_LVT)                            0.068     0.000      0.209 f
+  U11185/Y (AND2X2_LVT)                             0.077     0.141      0.350 f
+  n13246 (net)                  23       10.851               0.000      0.350 f
+  U9831/A2 (AND2X4_LVT)                             0.077     0.000      0.350 f
+  U9831/Y (AND2X4_LVT)                              0.095     0.182      0.532 f
+  n7250 (net)                   40       21.457               0.000      0.532 f
+  U11240/A1 (AO22X1_LVT)                            0.095     0.000      0.532 f
+  U11240/Y (AO22X1_LVT)                             0.037     0.140      0.672 f
+  n7266 (net)                    1        0.549               0.000      0.672 f
+  U11243/A2 (NOR4X1_LVT)                            0.037     0.000      0.672 f
+  U11243/Y (NOR4X1_LVT)                             0.032     0.186      0.858 r
+  n7269 (net)                    1        0.580               0.000      0.858 r
+  U11245/A3 (OA22X1_LVT)                            0.032     0.000      0.858 r
+  U11245/Y (OA22X1_LVT)                             0.042     0.080      0.938 r
+  n7271 (net)                    1        0.579               0.000      0.938 r
+  U11246/A4 (NAND4X0_LVT)                           0.042     0.000      0.938 r
+  U11246/Y (NAND4X0_LVT)                            0.130     0.115      1.053 f
+  n9296 (net)                    4        2.662               0.000      1.053 f
+  U9165/A1 (NOR3X0_LVT)                             0.130     0.000      1.053 f
+  U9165/Y (NOR3X0_LVT)                              0.065     0.231      1.284 r
+  n9295 (net)                    4        3.600               0.000      1.284 r
+  U13203/A1 (NAND2X0_LVT)                           0.065     0.000      1.284 r
+  U13203/Y (NAND2X0_LVT)                            0.060     0.052      1.336 f
+  n9227 (net)                    2        1.228               0.000      1.336 f
+  U13206/A (INVX1_LVT)                              0.060     0.000      1.336 f
+  U13206/Y (INVX1_LVT)                              0.040     0.051      1.386 r
+  n9285 (net)                    1        1.040               0.000      1.386 r
+  U13252/A0 (HADDX1_LVT)                            0.040     0.000      1.386 r
+  U13252/SO (HADDX1_LVT)                            0.054     0.136      1.522 f
+  n9286 (net)                    3        1.471               0.000      1.522 f
+  U13253/A3 (NAND3X0_LVT)                           0.054     0.000      1.522 f
+  U13253/Y (NAND3X0_LVT)                            0.107     0.099      1.621 r
+  n11750 (net)                   3        2.591               0.000      1.621 r
+  U13254/A5 (OA221X1_LVT)                           0.107     0.000      1.621 r
+  U13254/Y (OA221X1_LVT)                            0.055     0.107      1.728 r
+  n9302 (net)                    1        1.449               0.000      1.728 r
+  U13263/CI (FADDX1_LVT)                            0.055     0.000      1.728 r
+  U13263/S (FADDX1_LVT)                             0.058     0.175      1.903 f
+  n9287 (net)                    1        0.764               0.000      1.903 f
+  U9166/A (INVX1_LVT)                               0.058     0.000      1.903 f
+  U9166/Y (INVX1_LVT)                               0.048     0.059      1.963 r
+  intadd_3/A_2_ (net)            1        1.942               0.000      1.963 r
+  intadd_3/U2/B (FADDX1_LVT)                        0.048     0.000      1.963 r
+  intadd_3/U2/CO (FADDX1_LVT)                       0.045     0.106      2.068 r
+  intadd_3/n1 (net)              1        0.589               0.000      2.068 r
+  U9124/A (INVX0_LVT)                               0.045     0.000      2.068 r
+  U9124/Y (INVX0_LVT)                               0.041     0.039      2.107 f
+  intadd_0/B_2_ (net)            1        1.892               0.000      2.107 f
+  intadd_0/U5/A (FADDX1_LVT)                        0.041     0.000      2.107 f
+  intadd_0/U5/CO (FADDX1_LVT)                       0.055     0.132      2.239 f
+  intadd_0/n4 (net)              1        1.420               0.000      2.239 f
+  intadd_0/U4/CI (FADDX1_LVT)                       0.055     0.000      2.239 f
+  intadd_0/U4/S (FADDX1_LVT)                        0.097     0.247      2.486 r
+  intadd_0/SUM_3_ (net)          9        5.034               0.000      2.486 r
+  U9121/A (INVX1_LVT)                               0.097     0.000      2.486 r
+  U9121/Y (INVX1_LVT)                               0.061     0.046      2.532 f
+  n7342 (net)                    6        2.625               0.000      2.532 f
+  U11313/A2 (AND2X1_LVT)                            0.061     0.000      2.532 f
+  U11313/Y (AND2X1_LVT)                             0.036     0.096      2.628 f
+  n7358 (net)                    3        1.399               0.000      2.628 f
+  U11341/A2 (AND3X1_LVT)                            0.036     0.000      2.628 f
+  U11341/Y (AND3X1_LVT)                             0.069     0.124      2.752 f
+  n7395 (net)                    8        4.316               0.000      2.752 f
+  U9471/A2 (AND2X1_LVT)                             0.069     0.000      2.752 f
+  U9471/Y (AND2X1_LVT)                              0.086     0.143      2.895 f
+  n13106 (net)                  16        8.075               0.000      2.895 f
+  U9215/A (NBUFFX2_LVT)                             0.086     0.000      2.895 f
+  U9215/Y (NBUFFX2_LVT)                             0.073     0.128      3.023 f
+  n7756 (net)                   25       12.702               0.000      3.023 f
+  U11930/A1 (AO22X1_LVT)                            0.073     0.000      3.023 f
+  U11930/Y (AO22X1_LVT)                             0.036     0.126      3.149 f
+  n7955 (net)                    1        0.549               0.000      3.149 f
+  U11933/A2 (NOR4X1_LVT)                            0.036     0.000      3.149 f
+  U11933/Y (NOR4X1_LVT)                             0.032     0.185      3.335 r
+  n7957 (net)                    1        0.579               0.000      3.335 r
+  U11934/A4 (NAND4X0_LVT)                           0.032     0.000      3.335 r
+  U11934/Y (NAND4X0_LVT)                            0.061     0.066      3.401 f
+  n8024 (net)                    1        0.528               0.000      3.401 f
+  U11998/A1 (NOR4X1_LVT)                            0.061     0.000      3.401 f
+  U11998/Y (NOR4X1_LVT)                             0.031     0.211      3.612 r
+  n8113 (net)                    1        0.483               0.000      3.612 r
+  U12086/A1 (OA22X1_LVT)                            0.031     0.000      3.612 r
+  U12086/Y (OA22X1_LVT)                             0.042     0.089      3.701 r
+  n8114 (net)                    1        0.579               0.000      3.701 r
+  U9184/A4 (NAND4X0_LVT)                            0.042     0.000      3.701 r
+  U9184/Y (NAND4X0_LVT)                             0.332     0.252      3.953 f
+  n10471 (net)                  15        8.968               0.000      3.953 f
+  U12087/A (INVX2_LVT)                              0.332     0.000      3.953 f
+  U12087/Y (INVX2_LVT)                              0.190     0.213      4.166 r
+  n10246 (net)                  17       10.663               0.000      4.166 r
+  U9183/A (INVX1_LVT)                               0.190     0.000      4.166 r
+  U9183/Y (INVX1_LVT)                               0.147     0.124      4.290 f
+  n10445 (net)                  18        9.479               0.000      4.290 f
+  U14432/A1 (AO222X1_LVT)                           0.147     0.000      4.290 f
+  U14432/Y (AO222X1_LVT)                            0.041     0.215      4.504 f
+  n14097 (net)                   1        0.542               0.000      4.504 f
+  path_16_reg_1_/D (DFFX1_LVT)                      0.041     0.000      4.504 f
+  data arrival time                                                      4.504
+
+  clock CLK (rise edge)                                       6.000      6.000
+  clock network delay (ideal)                                 0.000      6.000
+  clock uncertainty                                          -1.000      5.000
+  path_16_reg_1_/CLK (DFFX1_LVT)                              0.000      5.000 r
+  library setup time                                         -0.091      4.909
+  data required time                                                     4.909
+  -------------------------------------------------------------------------------
+  data required time                                                     4.909
+  data arrival time                                                     -4.504
+  -------------------------------------------------------------------------------
+  slack (MET)                                                            0.405
+
+
+  Startpoint: bt_t_ctr_reg_2_
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: path_11_reg_1_
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: f2f
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mkViterbi          140000                saed32lvt_ss0p75v25c
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock CLK (rise edge)                                       0.000      0.000
+  clock network delay (ideal)                                 0.000      0.000
+  bt_t_ctr_reg_2_/CLK (DFFX1_LVT)                   0.000     0.000      0.000 r
+  bt_t_ctr_reg_2_/Q (DFFX1_LVT)                     0.068     0.209      0.209 f
+  bt_t_ctr[2] (net)             11        5.763               0.000      0.209 f
+  U11185/A1 (AND2X2_LVT)                            0.068     0.000      0.209 f
+  U11185/Y (AND2X2_LVT)                             0.077     0.141      0.350 f
+  n13246 (net)                  23       10.851               0.000      0.350 f
+  U9831/A2 (AND2X4_LVT)                             0.077     0.000      0.350 f
+  U9831/Y (AND2X4_LVT)                              0.095     0.182      0.532 f
+  n7250 (net)                   40       21.457               0.000      0.532 f
+  U11240/A1 (AO22X1_LVT)                            0.095     0.000      0.532 f
+  U11240/Y (AO22X1_LVT)                             0.037     0.140      0.672 f
+  n7266 (net)                    1        0.549               0.000      0.672 f
+  U11243/A2 (NOR4X1_LVT)                            0.037     0.000      0.672 f
+  U11243/Y (NOR4X1_LVT)                             0.032     0.186      0.858 r
+  n7269 (net)                    1        0.580               0.000      0.858 r
+  U11245/A3 (OA22X1_LVT)                            0.032     0.000      0.858 r
+  U11245/Y (OA22X1_LVT)                             0.042     0.080      0.938 r
+  n7271 (net)                    1        0.579               0.000      0.938 r
+  U11246/A4 (NAND4X0_LVT)                           0.042     0.000      0.938 r
+  U11246/Y (NAND4X0_LVT)                            0.130     0.115      1.053 f
+  n9296 (net)                    4        2.662               0.000      1.053 f
+  U9165/A1 (NOR3X0_LVT)                             0.130     0.000      1.053 f
+  U9165/Y (NOR3X0_LVT)                              0.065     0.231      1.284 r
+  n9295 (net)                    4        3.600               0.000      1.284 r
+  U13203/A1 (NAND2X0_LVT)                           0.065     0.000      1.284 r
+  U13203/Y (NAND2X0_LVT)                            0.060     0.052      1.336 f
+  n9227 (net)                    2        1.228               0.000      1.336 f
+  U13206/A (INVX1_LVT)                              0.060     0.000      1.336 f
+  U13206/Y (INVX1_LVT)                              0.040     0.051      1.386 r
+  n9285 (net)                    1        1.040               0.000      1.386 r
+  U13252/A0 (HADDX1_LVT)                            0.040     0.000      1.386 r
+  U13252/SO (HADDX1_LVT)                            0.054     0.136      1.522 f
+  n9286 (net)                    3        1.471               0.000      1.522 f
+  U13253/A3 (NAND3X0_LVT)                           0.054     0.000      1.522 f
+  U13253/Y (NAND3X0_LVT)                            0.107     0.099      1.621 r
+  n11750 (net)                   3        2.591               0.000      1.621 r
+  U13254/A5 (OA221X1_LVT)                           0.107     0.000      1.621 r
+  U13254/Y (OA221X1_LVT)                            0.055     0.107      1.728 r
+  n9302 (net)                    1        1.449               0.000      1.728 r
+  U13263/CI (FADDX1_LVT)                            0.055     0.000      1.728 r
+  U13263/S (FADDX1_LVT)                             0.058     0.175      1.903 f
+  n9287 (net)                    1        0.764               0.000      1.903 f
+  U9166/A (INVX1_LVT)                               0.058     0.000      1.903 f
+  U9166/Y (INVX1_LVT)                               0.048     0.059      1.963 r
+  intadd_3/A_2_ (net)            1        1.942               0.000      1.963 r
+  intadd_3/U2/B (FADDX1_LVT)                        0.048     0.000      1.963 r
+  intadd_3/U2/CO (FADDX1_LVT)                       0.045     0.106      2.068 r
+  intadd_3/n1 (net)              1        0.589               0.000      2.068 r
+  U9124/A (INVX0_LVT)                               0.045     0.000      2.068 r
+  U9124/Y (INVX0_LVT)                               0.041     0.039      2.107 f
+  intadd_0/B_2_ (net)            1        1.892               0.000      2.107 f
+  intadd_0/U5/A (FADDX1_LVT)                        0.041     0.000      2.107 f
+  intadd_0/U5/CO (FADDX1_LVT)                       0.055     0.132      2.239 f
+  intadd_0/n4 (net)              1        1.420               0.000      2.239 f
+  intadd_0/U4/CI (FADDX1_LVT)                       0.055     0.000      2.239 f
+  intadd_0/U4/S (FADDX1_LVT)                        0.097     0.247      2.486 r
+  intadd_0/SUM_3_ (net)          9        5.034               0.000      2.486 r
+  U9121/A (INVX1_LVT)                               0.097     0.000      2.486 r
+  U9121/Y (INVX1_LVT)                               0.061     0.046      2.532 f
+  n7342 (net)                    6        2.625               0.000      2.532 f
+  U11313/A2 (AND2X1_LVT)                            0.061     0.000      2.532 f
+  U11313/Y (AND2X1_LVT)                             0.036     0.096      2.628 f
+  n7358 (net)                    3        1.399               0.000      2.628 f
+  U11341/A2 (AND3X1_LVT)                            0.036     0.000      2.628 f
+  U11341/Y (AND3X1_LVT)                             0.069     0.124      2.752 f
+  n7395 (net)                    8        4.316               0.000      2.752 f
+  U9471/A2 (AND2X1_LVT)                             0.069     0.000      2.752 f
+  U9471/Y (AND2X1_LVT)                              0.086     0.143      2.895 f
+  n13106 (net)                  16        8.075               0.000      2.895 f
+  U9215/A (NBUFFX2_LVT)                             0.086     0.000      2.895 f
+  U9215/Y (NBUFFX2_LVT)                             0.073     0.128      3.023 f
+  n7756 (net)                   25       12.702               0.000      3.023 f
+  U11930/A1 (AO22X1_LVT)                            0.073     0.000      3.023 f
+  U11930/Y (AO22X1_LVT)                             0.036     0.126      3.149 f
+  n7955 (net)                    1        0.549               0.000      3.149 f
+  U11933/A2 (NOR4X1_LVT)                            0.036     0.000      3.149 f
+  U11933/Y (NOR4X1_LVT)                             0.032     0.185      3.335 r
+  n7957 (net)                    1        0.579               0.000      3.335 r
+  U11934/A4 (NAND4X0_LVT)                           0.032     0.000      3.335 r
+  U11934/Y (NAND4X0_LVT)                            0.061     0.066      3.401 f
+  n8024 (net)                    1        0.528               0.000      3.401 f
+  U11998/A1 (NOR4X1_LVT)                            0.061     0.000      3.401 f
+  U11998/Y (NOR4X1_LVT)                             0.031     0.211      3.612 r
+  n8113 (net)                    1        0.483               0.000      3.612 r
+  U12086/A1 (OA22X1_LVT)                            0.031     0.000      3.612 r
+  U12086/Y (OA22X1_LVT)                             0.042     0.089      3.701 r
+  n8114 (net)                    1        0.579               0.000      3.701 r
+  U9184/A4 (NAND4X0_LVT)                            0.042     0.000      3.701 r
+  U9184/Y (NAND4X0_LVT)                             0.332     0.252      3.953 f
+  n10471 (net)                  15        8.968               0.000      3.953 f
+  U12087/A (INVX2_LVT)                              0.332     0.000      3.953 f
+  U12087/Y (INVX2_LVT)                              0.190     0.213      4.166 r
+  n10246 (net)                  17       10.663               0.000      4.166 r
+  U9183/A (INVX1_LVT)                               0.190     0.000      4.166 r
+  U9183/Y (INVX1_LVT)                               0.147     0.124      4.290 f
+  n10445 (net)                  18        9.479               0.000      4.290 f
+  U9891/A1 (AO222X1_LVT)                            0.147     0.000      4.290 f
+  U9891/Y (AO222X1_LVT)                             0.041     0.215      4.504 f
+  n6273 (net)                    1        0.542               0.000      4.504 f
+  path_11_reg_1_/D (DFFX1_LVT)                      0.041     0.000      4.504 f
+  data arrival time                                                      4.504
+
+  clock CLK (rise edge)                                       6.000      6.000
+  clock network delay (ideal)                                 0.000      6.000
+  clock uncertainty                                          -1.000      5.000
+  path_11_reg_1_/CLK (DFFX1_LVT)                              0.000      5.000 r
+  library setup time                                         -0.091      4.909
+  data required time                                                     4.909
+  -------------------------------------------------------------------------------
+  data required time                                                     4.909
+  data arrival time                                                     -4.504
+  -------------------------------------------------------------------------------
+  slack (MET)                                                            0.405
+
+
+  Startpoint: bt_t_ctr_reg_2_
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: path_10_reg_1_
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: f2f
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mkViterbi          140000                saed32lvt_ss0p75v25c
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock CLK (rise edge)                                       0.000      0.000
+  clock network delay (ideal)                                 0.000      0.000
+  bt_t_ctr_reg_2_/CLK (DFFX1_LVT)                   0.000     0.000      0.000 r
+  bt_t_ctr_reg_2_/Q (DFFX1_LVT)                     0.068     0.209      0.209 f
+  bt_t_ctr[2] (net)             11        5.763               0.000      0.209 f
+  U11185/A1 (AND2X2_LVT)                            0.068     0.000      0.209 f
+  U11185/Y (AND2X2_LVT)                             0.077     0.141      0.350 f
+  n13246 (net)                  23       10.851               0.000      0.350 f
+  U9831/A2 (AND2X4_LVT)                             0.077     0.000      0.350 f
+  U9831/Y (AND2X4_LVT)                              0.095     0.182      0.532 f
+  n7250 (net)                   40       21.457               0.000      0.532 f
+  U11240/A1 (AO22X1_LVT)                            0.095     0.000      0.532 f
+  U11240/Y (AO22X1_LVT)                             0.037     0.140      0.672 f
+  n7266 (net)                    1        0.549               0.000      0.672 f
+  U11243/A2 (NOR4X1_LVT)                            0.037     0.000      0.672 f
+  U11243/Y (NOR4X1_LVT)                             0.032     0.186      0.858 r
+  n7269 (net)                    1        0.580               0.000      0.858 r
+  U11245/A3 (OA22X1_LVT)                            0.032     0.000      0.858 r
+  U11245/Y (OA22X1_LVT)                             0.042     0.080      0.938 r
+  n7271 (net)                    1        0.579               0.000      0.938 r
+  U11246/A4 (NAND4X0_LVT)                           0.042     0.000      0.938 r
+  U11246/Y (NAND4X0_LVT)                            0.130     0.115      1.053 f
+  n9296 (net)                    4        2.662               0.000      1.053 f
+  U9165/A1 (NOR3X0_LVT)                             0.130     0.000      1.053 f
+  U9165/Y (NOR3X0_LVT)                              0.065     0.231      1.284 r
+  n9295 (net)                    4        3.600               0.000      1.284 r
+  U13203/A1 (NAND2X0_LVT)                           0.065     0.000      1.284 r
+  U13203/Y (NAND2X0_LVT)                            0.060     0.052      1.336 f
+  n9227 (net)                    2        1.228               0.000      1.336 f
+  U13206/A (INVX1_LVT)                              0.060     0.000      1.336 f
+  U13206/Y (INVX1_LVT)                              0.040     0.051      1.386 r
+  n9285 (net)                    1        1.040               0.000      1.386 r
+  U13252/A0 (HADDX1_LVT)                            0.040     0.000      1.386 r
+  U13252/SO (HADDX1_LVT)                            0.054     0.136      1.522 f
+  n9286 (net)                    3        1.471               0.000      1.522 f
+  U13253/A3 (NAND3X0_LVT)                           0.054     0.000      1.522 f
+  U13253/Y (NAND3X0_LVT)                            0.107     0.099      1.621 r
+  n11750 (net)                   3        2.591               0.000      1.621 r
+  U13254/A5 (OA221X1_LVT)                           0.107     0.000      1.621 r
+  U13254/Y (OA221X1_LVT)                            0.055     0.107      1.728 r
+  n9302 (net)                    1        1.449               0.000      1.728 r
+  U13263/CI (FADDX1_LVT)                            0.055     0.000      1.728 r
+  U13263/S (FADDX1_LVT)                             0.058     0.175      1.903 f
+  n9287 (net)                    1        0.764               0.000      1.903 f
+  U9166/A (INVX1_LVT)                               0.058     0.000      1.903 f
+  U9166/Y (INVX1_LVT)                               0.048     0.059      1.963 r
+  intadd_3/A_2_ (net)            1        1.942               0.000      1.963 r
+  intadd_3/U2/B (FADDX1_LVT)                        0.048     0.000      1.963 r
+  intadd_3/U2/CO (FADDX1_LVT)                       0.045     0.106      2.068 r
+  intadd_3/n1 (net)              1        0.589               0.000      2.068 r
+  U9124/A (INVX0_LVT)                               0.045     0.000      2.068 r
+  U9124/Y (INVX0_LVT)                               0.041     0.039      2.107 f
+  intadd_0/B_2_ (net)            1        1.892               0.000      2.107 f
+  intadd_0/U5/A (FADDX1_LVT)                        0.041     0.000      2.107 f
+  intadd_0/U5/CO (FADDX1_LVT)                       0.055     0.132      2.239 f
+  intadd_0/n4 (net)              1        1.420               0.000      2.239 f
+  intadd_0/U4/CI (FADDX1_LVT)                       0.055     0.000      2.239 f
+  intadd_0/U4/S (FADDX1_LVT)                        0.097     0.247      2.486 r
+  intadd_0/SUM_3_ (net)          9        5.034               0.000      2.486 r
+  U9121/A (INVX1_LVT)                               0.097     0.000      2.486 r
+  U9121/Y (INVX1_LVT)                               0.061     0.046      2.532 f
+  n7342 (net)                    6        2.625               0.000      2.532 f
+  U11313/A2 (AND2X1_LVT)                            0.061     0.000      2.532 f
+  U11313/Y (AND2X1_LVT)                             0.036     0.096      2.628 f
+  n7358 (net)                    3        1.399               0.000      2.628 f
+  U11341/A2 (AND3X1_LVT)                            0.036     0.000      2.628 f
+  U11341/Y (AND3X1_LVT)                             0.069     0.124      2.752 f
+  n7395 (net)                    8        4.316               0.000      2.752 f
+  U9471/A2 (AND2X1_LVT)                             0.069     0.000      2.752 f
+  U9471/Y (AND2X1_LVT)                              0.086     0.143      2.895 f
+  n13106 (net)                  16        8.075               0.000      2.895 f
+  U9215/A (NBUFFX2_LVT)                             0.086     0.000      2.895 f
+  U9215/Y (NBUFFX2_LVT)                             0.073     0.128      3.023 f
+  n7756 (net)                   25       12.702               0.000      3.023 f
+  U11930/A1 (AO22X1_LVT)                            0.073     0.000      3.023 f
+  U11930/Y (AO22X1_LVT)                             0.036     0.126      3.149 f
+  n7955 (net)                    1        0.549               0.000      3.149 f
+  U11933/A2 (NOR4X1_LVT)                            0.036     0.000      3.149 f
+  U11933/Y (NOR4X1_LVT)                             0.032     0.185      3.335 r
+  n7957 (net)                    1        0.579               0.000      3.335 r
+  U11934/A4 (NAND4X0_LVT)                           0.032     0.000      3.335 r
+  U11934/Y (NAND4X0_LVT)                            0.061     0.066      3.401 f
+  n8024 (net)                    1        0.528               0.000      3.401 f
+  U11998/A1 (NOR4X1_LVT)                            0.061     0.000      3.401 f
+  U11998/Y (NOR4X1_LVT)                             0.031     0.211      3.612 r
+  n8113 (net)                    1        0.483               0.000      3.612 r
+  U12086/A1 (OA22X1_LVT)                            0.031     0.000      3.612 r
+  U12086/Y (OA22X1_LVT)                             0.042     0.089      3.701 r
+  n8114 (net)                    1        0.579               0.000      3.701 r
+  U9184/A4 (NAND4X0_LVT)                            0.042     0.000      3.701 r
+  U9184/Y (NAND4X0_LVT)                             0.332     0.252      3.953 f
+  n10471 (net)                  15        8.968               0.000      3.953 f
+  U12087/A (INVX2_LVT)                              0.332     0.000      3.953 f
+  U12087/Y (INVX2_LVT)                              0.190     0.213      4.166 r
+  n10246 (net)                  17       10.663               0.000      4.166 r
+  U9183/A (INVX1_LVT)                               0.190     0.000      4.166 r
+  U9183/Y (INVX1_LVT)                               0.147     0.124      4.290 f
+  n10445 (net)                  18        9.479               0.000      4.290 f
+  U14433/A1 (AO222X1_LVT)                           0.147     0.000      4.290 f
+  U14433/Y (AO222X1_LVT)                            0.041     0.215      4.504 f
+  n14102 (net)                   1        0.542               0.000      4.504 f
+  path_10_reg_1_/D (DFFX1_LVT)                      0.041     0.000      4.504 f
+  data arrival time                                                      4.504
+
+  clock CLK (rise edge)                                       6.000      6.000
+  clock network delay (ideal)                                 0.000      6.000
+  clock uncertainty                                          -1.000      5.000
+  path_10_reg_1_/CLK (DFFX1_LVT)                              0.000      5.000 r
+  library setup time                                         -0.091      4.909
+  data required time                                                     4.909
+  -------------------------------------------------------------------------------
+  data required time                                                     4.909
+  data arrival time                                                     -4.504
+  -------------------------------------------------------------------------------
+  slack (MET)                                                            0.405
+
+
+  Startpoint: bt_t_ctr_reg_2_
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: path_25_reg_1_
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: f2f
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mkViterbi          140000                saed32lvt_ss0p75v25c
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock CLK (rise edge)                                       0.000      0.000
+  clock network delay (ideal)                                 0.000      0.000
+  bt_t_ctr_reg_2_/CLK (DFFX1_LVT)                   0.000     0.000      0.000 r
+  bt_t_ctr_reg_2_/Q (DFFX1_LVT)                     0.068     0.209      0.209 f
+  bt_t_ctr[2] (net)             11        5.763               0.000      0.209 f
+  U11185/A1 (AND2X2_LVT)                            0.068     0.000      0.209 f
+  U11185/Y (AND2X2_LVT)                             0.077     0.141      0.350 f
+  n13246 (net)                  23       10.851               0.000      0.350 f
+  U9831/A2 (AND2X4_LVT)                             0.077     0.000      0.350 f
+  U9831/Y (AND2X4_LVT)                              0.095     0.182      0.532 f
+  n7250 (net)                   40       21.457               0.000      0.532 f
+  U11240/A1 (AO22X1_LVT)                            0.095     0.000      0.532 f
+  U11240/Y (AO22X1_LVT)                             0.037     0.140      0.672 f
+  n7266 (net)                    1        0.549               0.000      0.672 f
+  U11243/A2 (NOR4X1_LVT)                            0.037     0.000      0.672 f
+  U11243/Y (NOR4X1_LVT)                             0.032     0.186      0.858 r
+  n7269 (net)                    1        0.580               0.000      0.858 r
+  U11245/A3 (OA22X1_LVT)                            0.032     0.000      0.858 r
+  U11245/Y (OA22X1_LVT)                             0.042     0.080      0.938 r
+  n7271 (net)                    1        0.579               0.000      0.938 r
+  U11246/A4 (NAND4X0_LVT)                           0.042     0.000      0.938 r
+  U11246/Y (NAND4X0_LVT)                            0.130     0.115      1.053 f
+  n9296 (net)                    4        2.662               0.000      1.053 f
+  U9165/A1 (NOR3X0_LVT)                             0.130     0.000      1.053 f
+  U9165/Y (NOR3X0_LVT)                              0.065     0.231      1.284 r
+  n9295 (net)                    4        3.600               0.000      1.284 r
+  U13203/A1 (NAND2X0_LVT)                           0.065     0.000      1.284 r
+  U13203/Y (NAND2X0_LVT)                            0.060     0.052      1.336 f
+  n9227 (net)                    2        1.228               0.000      1.336 f
+  U13206/A (INVX1_LVT)                              0.060     0.000      1.336 f
+  U13206/Y (INVX1_LVT)                              0.040     0.051      1.386 r
+  n9285 (net)                    1        1.040               0.000      1.386 r
+  U13252/A0 (HADDX1_LVT)                            0.040     0.000      1.386 r
+  U13252/SO (HADDX1_LVT)                            0.054     0.136      1.522 f
+  n9286 (net)                    3        1.471               0.000      1.522 f
+  U13253/A3 (NAND3X0_LVT)                           0.054     0.000      1.522 f
+  U13253/Y (NAND3X0_LVT)                            0.107     0.099      1.621 r
+  n11750 (net)                   3        2.591               0.000      1.621 r
+  U13254/A5 (OA221X1_LVT)                           0.107     0.000      1.621 r
+  U13254/Y (OA221X1_LVT)                            0.055     0.107      1.728 r
+  n9302 (net)                    1        1.449               0.000      1.728 r
+  U13263/CI (FADDX1_LVT)                            0.055     0.000      1.728 r
+  U13263/S (FADDX1_LVT)                             0.058     0.175      1.903 f
+  n9287 (net)                    1        0.764               0.000      1.903 f
+  U9166/A (INVX1_LVT)                               0.058     0.000      1.903 f
+  U9166/Y (INVX1_LVT)                               0.048     0.059      1.963 r
+  intadd_3/A_2_ (net)            1        1.942               0.000      1.963 r
+  intadd_3/U2/B (FADDX1_LVT)                        0.048     0.000      1.963 r
+  intadd_3/U2/CO (FADDX1_LVT)                       0.045     0.106      2.068 r
+  intadd_3/n1 (net)              1        0.589               0.000      2.068 r
+  U9124/A (INVX0_LVT)                               0.045     0.000      2.068 r
+  U9124/Y (INVX0_LVT)                               0.041     0.039      2.107 f
+  intadd_0/B_2_ (net)            1        1.892               0.000      2.107 f
+  intadd_0/U5/A (FADDX1_LVT)                        0.041     0.000      2.107 f
+  intadd_0/U5/CO (FADDX1_LVT)                       0.055     0.132      2.239 f
+  intadd_0/n4 (net)              1        1.420               0.000      2.239 f
+  intadd_0/U4/CI (FADDX1_LVT)                       0.055     0.000      2.239 f
+  intadd_0/U4/S (FADDX1_LVT)                        0.097     0.247      2.486 r
+  intadd_0/SUM_3_ (net)          9        5.034               0.000      2.486 r
+  U9121/A (INVX1_LVT)                               0.097     0.000      2.486 r
+  U9121/Y (INVX1_LVT)                               0.061     0.046      2.532 f
+  n7342 (net)                    6        2.625               0.000      2.532 f
+  U11313/A2 (AND2X1_LVT)                            0.061     0.000      2.532 f
+  U11313/Y (AND2X1_LVT)                             0.036     0.096      2.628 f
+  n7358 (net)                    3        1.399               0.000      2.628 f
+  U11341/A2 (AND3X1_LVT)                            0.036     0.000      2.628 f
+  U11341/Y (AND3X1_LVT)                             0.069     0.124      2.752 f
+  n7395 (net)                    8        4.316               0.000      2.752 f
+  U9471/A2 (AND2X1_LVT)                             0.069     0.000      2.752 f
+  U9471/Y (AND2X1_LVT)                              0.086     0.143      2.895 f
+  n13106 (net)                  16        8.075               0.000      2.895 f
+  U9215/A (NBUFFX2_LVT)                             0.086     0.000      2.895 f
+  U9215/Y (NBUFFX2_LVT)                             0.073     0.128      3.023 f
+  n7756 (net)                   25       12.702               0.000      3.023 f
+  U11930/A1 (AO22X1_LVT)                            0.073     0.000      3.023 f
+  U11930/Y (AO22X1_LVT)                             0.036     0.126      3.149 f
+  n7955 (net)                    1        0.549               0.000      3.149 f
+  U11933/A2 (NOR4X1_LVT)                            0.036     0.000      3.149 f
+  U11933/Y (NOR4X1_LVT)                             0.032     0.185      3.335 r
+  n7957 (net)                    1        0.579               0.000      3.335 r
+  U11934/A4 (NAND4X0_LVT)                           0.032     0.000      3.335 r
+  U11934/Y (NAND4X0_LVT)                            0.061     0.066      3.401 f
+  n8024 (net)                    1        0.528               0.000      3.401 f
+  U11998/A1 (NOR4X1_LVT)                            0.061     0.000      3.401 f
+  U11998/Y (NOR4X1_LVT)                             0.031     0.211      3.612 r
+  n8113 (net)                    1        0.483               0.000      3.612 r
+  U12086/A1 (OA22X1_LVT)                            0.031     0.000      3.612 r
+  U12086/Y (OA22X1_LVT)                             0.042     0.089      3.701 r
+  n8114 (net)                    1        0.579               0.000      3.701 r
+  U9184/A4 (NAND4X0_LVT)                            0.042     0.000      3.701 r
+  U9184/Y (NAND4X0_LVT)                             0.332     0.252      3.953 f
+  n10471 (net)                  15        8.968               0.000      3.953 f
+  U12087/A (INVX2_LVT)                              0.332     0.000      3.953 f
+  U12087/Y (INVX2_LVT)                              0.190     0.213      4.166 r
+  n10246 (net)                  17       10.663               0.000      4.166 r
+  U9183/A (INVX1_LVT)                               0.190     0.000      4.166 r
+  U9183/Y (INVX1_LVT)                               0.147     0.124      4.290 f
+  n10445 (net)                  18        9.479               0.000      4.290 f
+  U14438/A1 (AO222X1_LVT)                           0.147     0.000      4.290 f
+  U14438/Y (AO222X1_LVT)                            0.041     0.215      4.504 f
+  n14107 (net)                   1        0.542               0.000      4.504 f
+  path_25_reg_1_/D (DFFX1_LVT)                      0.041     0.000      4.504 f
+  data arrival time                                                      4.504
+
+  clock CLK (rise edge)                                       6.000      6.000
+  clock network delay (ideal)                                 0.000      6.000
+  clock uncertainty                                          -1.000      5.000
+  path_25_reg_1_/CLK (DFFX1_LVT)                              0.000      5.000 r
+  library setup time                                         -0.091      4.909
+  data required time                                                     4.909
+  -------------------------------------------------------------------------------
+  data required time                                                     4.909
+  data arrival time                                                     -4.504
+  -------------------------------------------------------------------------------
+  slack (MET)                                                            0.405
+
+
+  Startpoint: bt_t_ctr_reg_2_
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: path_19_reg_1_
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: f2f
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mkViterbi          140000                saed32lvt_ss0p75v25c
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock CLK (rise edge)                                       0.000      0.000
+  clock network delay (ideal)                                 0.000      0.000
+  bt_t_ctr_reg_2_/CLK (DFFX1_LVT)                   0.000     0.000      0.000 r
+  bt_t_ctr_reg_2_/Q (DFFX1_LVT)                     0.068     0.209      0.209 f
+  bt_t_ctr[2] (net)             11        5.763               0.000      0.209 f
+  U11185/A1 (AND2X2_LVT)                            0.068     0.000      0.209 f
+  U11185/Y (AND2X2_LVT)                             0.077     0.141      0.350 f
+  n13246 (net)                  23       10.851               0.000      0.350 f
+  U9831/A2 (AND2X4_LVT)                             0.077     0.000      0.350 f
+  U9831/Y (AND2X4_LVT)                              0.095     0.182      0.532 f
+  n7250 (net)                   40       21.457               0.000      0.532 f
+  U11240/A1 (AO22X1_LVT)                            0.095     0.000      0.532 f
+  U11240/Y (AO22X1_LVT)                             0.037     0.140      0.672 f
+  n7266 (net)                    1        0.549               0.000      0.672 f
+  U11243/A2 (NOR4X1_LVT)                            0.037     0.000      0.672 f
+  U11243/Y (NOR4X1_LVT)                             0.032     0.186      0.858 r
+  n7269 (net)                    1        0.580               0.000      0.858 r
+  U11245/A3 (OA22X1_LVT)                            0.032     0.000      0.858 r
+  U11245/Y (OA22X1_LVT)                             0.042     0.080      0.938 r
+  n7271 (net)                    1        0.579               0.000      0.938 r
+  U11246/A4 (NAND4X0_LVT)                           0.042     0.000      0.938 r
+  U11246/Y (NAND4X0_LVT)                            0.130     0.115      1.053 f
+  n9296 (net)                    4        2.662               0.000      1.053 f
+  U9165/A1 (NOR3X0_LVT)                             0.130     0.000      1.053 f
+  U9165/Y (NOR3X0_LVT)                              0.065     0.231      1.284 r
+  n9295 (net)                    4        3.600               0.000      1.284 r
+  U13203/A1 (NAND2X0_LVT)                           0.065     0.000      1.284 r
+  U13203/Y (NAND2X0_LVT)                            0.060     0.052      1.336 f
+  n9227 (net)                    2        1.228               0.000      1.336 f
+  U13206/A (INVX1_LVT)                              0.060     0.000      1.336 f
+  U13206/Y (INVX1_LVT)                              0.040     0.051      1.386 r
+  n9285 (net)                    1        1.040               0.000      1.386 r
+  U13252/A0 (HADDX1_LVT)                            0.040     0.000      1.386 r
+  U13252/SO (HADDX1_LVT)                            0.054     0.136      1.522 f
+  n9286 (net)                    3        1.471               0.000      1.522 f
+  U13253/A3 (NAND3X0_LVT)                           0.054     0.000      1.522 f
+  U13253/Y (NAND3X0_LVT)                            0.107     0.099      1.621 r
+  n11750 (net)                   3        2.591               0.000      1.621 r
+  U13254/A5 (OA221X1_LVT)                           0.107     0.000      1.621 r
+  U13254/Y (OA221X1_LVT)                            0.055     0.107      1.728 r
+  n9302 (net)                    1        1.449               0.000      1.728 r
+  U13263/CI (FADDX1_LVT)                            0.055     0.000      1.728 r
+  U13263/S (FADDX1_LVT)                             0.058     0.175      1.903 f
+  n9287 (net)                    1        0.764               0.000      1.903 f
+  U9166/A (INVX1_LVT)                               0.058     0.000      1.903 f
+  U9166/Y (INVX1_LVT)                               0.048     0.059      1.963 r
+  intadd_3/A_2_ (net)            1        1.942               0.000      1.963 r
+  intadd_3/U2/B (FADDX1_LVT)                        0.048     0.000      1.963 r
+  intadd_3/U2/CO (FADDX1_LVT)                       0.045     0.106      2.068 r
+  intadd_3/n1 (net)              1        0.589               0.000      2.068 r
+  U9124/A (INVX0_LVT)                               0.045     0.000      2.068 r
+  U9124/Y (INVX0_LVT)                               0.041     0.039      2.107 f
+  intadd_0/B_2_ (net)            1        1.892               0.000      2.107 f
+  intadd_0/U5/A (FADDX1_LVT)                        0.041     0.000      2.107 f
+  intadd_0/U5/CO (FADDX1_LVT)                       0.055     0.132      2.239 f
+  intadd_0/n4 (net)              1        1.420               0.000      2.239 f
+  intadd_0/U4/CI (FADDX1_LVT)                       0.055     0.000      2.239 f
+  intadd_0/U4/S (FADDX1_LVT)                        0.097     0.247      2.486 r
+  intadd_0/SUM_3_ (net)          9        5.034               0.000      2.486 r
+  U9121/A (INVX1_LVT)                               0.097     0.000      2.486 r
+  U9121/Y (INVX1_LVT)                               0.061     0.046      2.532 f
+  n7342 (net)                    6        2.625               0.000      2.532 f
+  U11313/A2 (AND2X1_LVT)                            0.061     0.000      2.532 f
+  U11313/Y (AND2X1_LVT)                             0.036     0.096      2.628 f
+  n7358 (net)                    3        1.399               0.000      2.628 f
+  U11341/A2 (AND3X1_LVT)                            0.036     0.000      2.628 f
+  U11341/Y (AND3X1_LVT)                             0.069     0.124      2.752 f
+  n7395 (net)                    8        4.316               0.000      2.752 f
+  U9471/A2 (AND2X1_LVT)                             0.069     0.000      2.752 f
+  U9471/Y (AND2X1_LVT)                              0.086     0.143      2.895 f
+  n13106 (net)                  16        8.075               0.000      2.895 f
+  U9215/A (NBUFFX2_LVT)                             0.086     0.000      2.895 f
+  U9215/Y (NBUFFX2_LVT)                             0.073     0.128      3.023 f
+  n7756 (net)                   25       12.702               0.000      3.023 f
+  U11930/A1 (AO22X1_LVT)                            0.073     0.000      3.023 f
+  U11930/Y (AO22X1_LVT)                             0.036     0.126      3.149 f
+  n7955 (net)                    1        0.549               0.000      3.149 f
+  U11933/A2 (NOR4X1_LVT)                            0.036     0.000      3.149 f
+  U11933/Y (NOR4X1_LVT)                             0.032     0.185      3.335 r
+  n7957 (net)                    1        0.579               0.000      3.335 r
+  U11934/A4 (NAND4X0_LVT)                           0.032     0.000      3.335 r
+  U11934/Y (NAND4X0_LVT)                            0.061     0.066      3.401 f
+  n8024 (net)                    1        0.528               0.000      3.401 f
+  U11998/A1 (NOR4X1_LVT)                            0.061     0.000      3.401 f
+  U11998/Y (NOR4X1_LVT)                             0.031     0.211      3.612 r
+  n8113 (net)                    1        0.483               0.000      3.612 r
+  U12086/A1 (OA22X1_LVT)                            0.031     0.000      3.612 r
+  U12086/Y (OA22X1_LVT)                             0.042     0.089      3.701 r
+  n8114 (net)                    1        0.579               0.000      3.701 r
+  U9184/A4 (NAND4X0_LVT)                            0.042     0.000      3.701 r
+  U9184/Y (NAND4X0_LVT)                             0.332     0.252      3.953 f
+  n10471 (net)                  15        8.968               0.000      3.953 f
+  U12087/A (INVX2_LVT)                              0.332     0.000      3.953 f
+  U12087/Y (INVX2_LVT)                              0.190     0.213      4.166 r
+  n10246 (net)                  17       10.663               0.000      4.166 r
+  U9183/A (INVX1_LVT)                               0.190     0.000      4.166 r
+  U9183/Y (INVX1_LVT)                               0.147     0.124      4.290 f
+  n10445 (net)                  18        9.479               0.000      4.290 f
+  U14436/A1 (AO222X1_LVT)                           0.147     0.000      4.290 f
+  U14436/Y (AO222X1_LVT)                            0.041     0.215      4.504 f
+  n14105 (net)                   1        0.542               0.000      4.504 f
+  path_19_reg_1_/D (DFFX1_LVT)                      0.041     0.000      4.504 f
+  data arrival time                                                      4.504
+
+  clock CLK (rise edge)                                       6.000      6.000
+  clock network delay (ideal)                                 0.000      6.000
+  clock uncertainty                                          -1.000      5.000
+  path_19_reg_1_/CLK (DFFX1_LVT)                              0.000      5.000 r
+  library setup time                                         -0.091      4.909
+  data required time                                                     4.909
+  -------------------------------------------------------------------------------
+  data required time                                                     4.909
+  data arrival time                                                     -4.504
+  -------------------------------------------------------------------------------
+  slack (MET)                                                            0.405
+
+
+  Startpoint: bt_t_ctr_reg_2_
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: path_18_reg_1_
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: f2f
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mkViterbi          140000                saed32lvt_ss0p75v25c
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock CLK (rise edge)                                       0.000      0.000
+  clock network delay (ideal)                                 0.000      0.000
+  bt_t_ctr_reg_2_/CLK (DFFX1_LVT)                   0.000     0.000      0.000 r
+  bt_t_ctr_reg_2_/Q (DFFX1_LVT)                     0.068     0.209      0.209 f
+  bt_t_ctr[2] (net)             11        5.763               0.000      0.209 f
+  U11185/A1 (AND2X2_LVT)                            0.068     0.000      0.209 f
+  U11185/Y (AND2X2_LVT)                             0.077     0.141      0.350 f
+  n13246 (net)                  23       10.851               0.000      0.350 f
+  U9831/A2 (AND2X4_LVT)                             0.077     0.000      0.350 f
+  U9831/Y (AND2X4_LVT)                              0.095     0.182      0.532 f
+  n7250 (net)                   40       21.457               0.000      0.532 f
+  U11240/A1 (AO22X1_LVT)                            0.095     0.000      0.532 f
+  U11240/Y (AO22X1_LVT)                             0.037     0.140      0.672 f
+  n7266 (net)                    1        0.549               0.000      0.672 f
+  U11243/A2 (NOR4X1_LVT)                            0.037     0.000      0.672 f
+  U11243/Y (NOR4X1_LVT)                             0.032     0.186      0.858 r
+  n7269 (net)                    1        0.580               0.000      0.858 r
+  U11245/A3 (OA22X1_LVT)                            0.032     0.000      0.858 r
+  U11245/Y (OA22X1_LVT)                             0.042     0.080      0.938 r
+  n7271 (net)                    1        0.579               0.000      0.938 r
+  U11246/A4 (NAND4X0_LVT)                           0.042     0.000      0.938 r
+  U11246/Y (NAND4X0_LVT)                            0.130     0.115      1.053 f
+  n9296 (net)                    4        2.662               0.000      1.053 f
+  U9165/A1 (NOR3X0_LVT)                             0.130     0.000      1.053 f
+  U9165/Y (NOR3X0_LVT)                              0.065     0.231      1.284 r
+  n9295 (net)                    4        3.600               0.000      1.284 r
+  U13203/A1 (NAND2X0_LVT)                           0.065     0.000      1.284 r
+  U13203/Y (NAND2X0_LVT)                            0.060     0.052      1.336 f
+  n9227 (net)                    2        1.228               0.000      1.336 f
+  U13206/A (INVX1_LVT)                              0.060     0.000      1.336 f
+  U13206/Y (INVX1_LVT)                              0.040     0.051      1.386 r
+  n9285 (net)                    1        1.040               0.000      1.386 r
+  U13252/A0 (HADDX1_LVT)                            0.040     0.000      1.386 r
+  U13252/SO (HADDX1_LVT)                            0.054     0.136      1.522 f
+  n9286 (net)                    3        1.471               0.000      1.522 f
+  U13253/A3 (NAND3X0_LVT)                           0.054     0.000      1.522 f
+  U13253/Y (NAND3X0_LVT)                            0.107     0.099      1.621 r
+  n11750 (net)                   3        2.591               0.000      1.621 r
+  U13254/A5 (OA221X1_LVT)                           0.107     0.000      1.621 r
+  U13254/Y (OA221X1_LVT)                            0.055     0.107      1.728 r
+  n9302 (net)                    1        1.449               0.000      1.728 r
+  U13263/CI (FADDX1_LVT)                            0.055     0.000      1.728 r
+  U13263/S (FADDX1_LVT)                             0.058     0.175      1.903 f
+  n9287 (net)                    1        0.764               0.000      1.903 f
+  U9166/A (INVX1_LVT)                               0.058     0.000      1.903 f
+  U9166/Y (INVX1_LVT)                               0.048     0.059      1.963 r
+  intadd_3/A_2_ (net)            1        1.942               0.000      1.963 r
+  intadd_3/U2/B (FADDX1_LVT)                        0.048     0.000      1.963 r
+  intadd_3/U2/CO (FADDX1_LVT)                       0.045     0.106      2.068 r
+  intadd_3/n1 (net)              1        0.589               0.000      2.068 r
+  U9124/A (INVX0_LVT)                               0.045     0.000      2.068 r
+  U9124/Y (INVX0_LVT)                               0.041     0.039      2.107 f
+  intadd_0/B_2_ (net)            1        1.892               0.000      2.107 f
+  intadd_0/U5/A (FADDX1_LVT)                        0.041     0.000      2.107 f
+  intadd_0/U5/CO (FADDX1_LVT)                       0.055     0.132      2.239 f
+  intadd_0/n4 (net)              1        1.420               0.000      2.239 f
+  intadd_0/U4/CI (FADDX1_LVT)                       0.055     0.000      2.239 f
+  intadd_0/U4/S (FADDX1_LVT)                        0.097     0.247      2.486 r
+  intadd_0/SUM_3_ (net)          9        5.034               0.000      2.486 r
+  U9121/A (INVX1_LVT)                               0.097     0.000      2.486 r
+  U9121/Y (INVX1_LVT)                               0.061     0.046      2.532 f
+  n7342 (net)                    6        2.625               0.000      2.532 f
+  U11313/A2 (AND2X1_LVT)                            0.061     0.000      2.532 f
+  U11313/Y (AND2X1_LVT)                             0.036     0.096      2.628 f
+  n7358 (net)                    3        1.399               0.000      2.628 f
+  U11341/A2 (AND3X1_LVT)                            0.036     0.000      2.628 f
+  U11341/Y (AND3X1_LVT)                             0.069     0.124      2.752 f
+  n7395 (net)                    8        4.316               0.000      2.752 f
+  U9471/A2 (AND2X1_LVT)                             0.069     0.000      2.752 f
+  U9471/Y (AND2X1_LVT)                              0.086     0.143      2.895 f
+  n13106 (net)                  16        8.075               0.000      2.895 f
+  U9215/A (NBUFFX2_LVT)                             0.086     0.000      2.895 f
+  U9215/Y (NBUFFX2_LVT)                             0.073     0.128      3.023 f
+  n7756 (net)                   25       12.702               0.000      3.023 f
+  U11930/A1 (AO22X1_LVT)                            0.073     0.000      3.023 f
+  U11930/Y (AO22X1_LVT)                             0.036     0.126      3.149 f
+  n7955 (net)                    1        0.549               0.000      3.149 f
+  U11933/A2 (NOR4X1_LVT)                            0.036     0.000      3.149 f
+  U11933/Y (NOR4X1_LVT)                             0.032     0.185      3.335 r
+  n7957 (net)                    1        0.579               0.000      3.335 r
+  U11934/A4 (NAND4X0_LVT)                           0.032     0.000      3.335 r
+  U11934/Y (NAND4X0_LVT)                            0.061     0.066      3.401 f
+  n8024 (net)                    1        0.528               0.000      3.401 f
+  U11998/A1 (NOR4X1_LVT)                            0.061     0.000      3.401 f
+  U11998/Y (NOR4X1_LVT)                             0.031     0.211      3.612 r
+  n8113 (net)                    1        0.483               0.000      3.612 r
+  U12086/A1 (OA22X1_LVT)                            0.031     0.000      3.612 r
+  U12086/Y (OA22X1_LVT)                             0.042     0.089      3.701 r
+  n8114 (net)                    1        0.579               0.000      3.701 r
+  U9184/A4 (NAND4X0_LVT)                            0.042     0.000      3.701 r
+  U9184/Y (NAND4X0_LVT)                             0.332     0.252      3.953 f
+  n10471 (net)                  15        8.968               0.000      3.953 f
+  U12087/A (INVX2_LVT)                              0.332     0.000      3.953 f
+  U12087/Y (INVX2_LVT)                              0.190     0.213      4.166 r
+  n10246 (net)                  17       10.663               0.000      4.166 r
+  U9183/A (INVX1_LVT)                               0.190     0.000      4.166 r
+  U9183/Y (INVX1_LVT)                               0.147     0.124      4.290 f
+  n10445 (net)                  18        9.479               0.000      4.290 f
+  U14435/A1 (AO222X1_LVT)                           0.147     0.000      4.290 f
+  U14435/Y (AO222X1_LVT)                            0.041     0.215      4.504 f
+  n14104 (net)                   1        0.542               0.000      4.504 f
+  path_18_reg_1_/D (DFFX1_LVT)                      0.041     0.000      4.504 f
+  data arrival time                                                      4.504
+
+  clock CLK (rise edge)                                       6.000      6.000
+  clock network delay (ideal)                                 0.000      6.000
+  clock uncertainty                                          -1.000      5.000
+  path_18_reg_1_/CLK (DFFX1_LVT)                              0.000      5.000 r
+  library setup time                                         -0.091      4.909
+  data required time                                                     4.909
+  -------------------------------------------------------------------------------
+  data required time                                                     4.909
+  data arrival time                                                     -4.504
+  -------------------------------------------------------------------------------
+  slack (MET)                                                            0.405
+
+
+  Startpoint: bt_t_ctr_reg_2_
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: path_1_reg_1_
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: f2f
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mkViterbi          140000                saed32lvt_ss0p75v25c
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock CLK (rise edge)                                       0.000      0.000
+  clock network delay (ideal)                                 0.000      0.000
+  bt_t_ctr_reg_2_/CLK (DFFX1_LVT)                   0.000     0.000      0.000 r
+  bt_t_ctr_reg_2_/Q (DFFX1_LVT)                     0.068     0.209      0.209 f
+  bt_t_ctr[2] (net)             11        5.763               0.000      0.209 f
+  U11185/A1 (AND2X2_LVT)                            0.068     0.000      0.209 f
+  U11185/Y (AND2X2_LVT)                             0.077     0.141      0.350 f
+  n13246 (net)                  23       10.851               0.000      0.350 f
+  U9831/A2 (AND2X4_LVT)                             0.077     0.000      0.350 f
+  U9831/Y (AND2X4_LVT)                              0.095     0.182      0.532 f
+  n7250 (net)                   40       21.457               0.000      0.532 f
+  U11240/A1 (AO22X1_LVT)                            0.095     0.000      0.532 f
+  U11240/Y (AO22X1_LVT)                             0.037     0.140      0.672 f
+  n7266 (net)                    1        0.549               0.000      0.672 f
+  U11243/A2 (NOR4X1_LVT)                            0.037     0.000      0.672 f
+  U11243/Y (NOR4X1_LVT)                             0.032     0.186      0.858 r
+  n7269 (net)                    1        0.580               0.000      0.858 r
+  U11245/A3 (OA22X1_LVT)                            0.032     0.000      0.858 r
+  U11245/Y (OA22X1_LVT)                             0.042     0.080      0.938 r
+  n7271 (net)                    1        0.579               0.000      0.938 r
+  U11246/A4 (NAND4X0_LVT)                           0.042     0.000      0.938 r
+  U11246/Y (NAND4X0_LVT)                            0.130     0.115      1.053 f
+  n9296 (net)                    4        2.662               0.000      1.053 f
+  U9165/A1 (NOR3X0_LVT)                             0.130     0.000      1.053 f
+  U9165/Y (NOR3X0_LVT)                              0.065     0.231      1.284 r
+  n9295 (net)                    4        3.600               0.000      1.284 r
+  U13203/A1 (NAND2X0_LVT)                           0.065     0.000      1.284 r
+  U13203/Y (NAND2X0_LVT)                            0.060     0.052      1.336 f
+  n9227 (net)                    2        1.228               0.000      1.336 f
+  U13206/A (INVX1_LVT)                              0.060     0.000      1.336 f
+  U13206/Y (INVX1_LVT)                              0.040     0.051      1.386 r
+  n9285 (net)                    1        1.040               0.000      1.386 r
+  U13252/A0 (HADDX1_LVT)                            0.040     0.000      1.386 r
+  U13252/SO (HADDX1_LVT)                            0.054     0.136      1.522 f
+  n9286 (net)                    3        1.471               0.000      1.522 f
+  U13253/A3 (NAND3X0_LVT)                           0.054     0.000      1.522 f
+  U13253/Y (NAND3X0_LVT)                            0.107     0.099      1.621 r
+  n11750 (net)                   3        2.591               0.000      1.621 r
+  U13254/A5 (OA221X1_LVT)                           0.107     0.000      1.621 r
+  U13254/Y (OA221X1_LVT)                            0.055     0.107      1.728 r
+  n9302 (net)                    1        1.449               0.000      1.728 r
+  U13263/CI (FADDX1_LVT)                            0.055     0.000      1.728 r
+  U13263/S (FADDX1_LVT)                             0.058     0.175      1.903 f
+  n9287 (net)                    1        0.764               0.000      1.903 f
+  U9166/A (INVX1_LVT)                               0.058     0.000      1.903 f
+  U9166/Y (INVX1_LVT)                               0.048     0.059      1.963 r
+  intadd_3/A_2_ (net)            1        1.942               0.000      1.963 r
+  intadd_3/U2/B (FADDX1_LVT)                        0.048     0.000      1.963 r
+  intadd_3/U2/CO (FADDX1_LVT)                       0.045     0.106      2.068 r
+  intadd_3/n1 (net)              1        0.589               0.000      2.068 r
+  U9124/A (INVX0_LVT)                               0.045     0.000      2.068 r
+  U9124/Y (INVX0_LVT)                               0.041     0.039      2.107 f
+  intadd_0/B_2_ (net)            1        1.892               0.000      2.107 f
+  intadd_0/U5/A (FADDX1_LVT)                        0.041     0.000      2.107 f
+  intadd_0/U5/CO (FADDX1_LVT)                       0.055     0.132      2.239 f
+  intadd_0/n4 (net)              1        1.420               0.000      2.239 f
+  intadd_0/U4/CI (FADDX1_LVT)                       0.055     0.000      2.239 f
+  intadd_0/U4/S (FADDX1_LVT)                        0.097     0.247      2.486 r
+  intadd_0/SUM_3_ (net)          9        5.034               0.000      2.486 r
+  U9121/A (INVX1_LVT)                               0.097     0.000      2.486 r
+  U9121/Y (INVX1_LVT)                               0.061     0.046      2.532 f
+  n7342 (net)                    6        2.625               0.000      2.532 f
+  U11313/A2 (AND2X1_LVT)                            0.061     0.000      2.532 f
+  U11313/Y (AND2X1_LVT)                             0.036     0.096      2.628 f
+  n7358 (net)                    3        1.399               0.000      2.628 f
+  U11341/A2 (AND3X1_LVT)                            0.036     0.000      2.628 f
+  U11341/Y (AND3X1_LVT)                             0.069     0.124      2.752 f
+  n7395 (net)                    8        4.316               0.000      2.752 f
+  U9471/A2 (AND2X1_LVT)                             0.069     0.000      2.752 f
+  U9471/Y (AND2X1_LVT)                              0.086     0.143      2.895 f
+  n13106 (net)                  16        8.075               0.000      2.895 f
+  U9215/A (NBUFFX2_LVT)                             0.086     0.000      2.895 f
+  U9215/Y (NBUFFX2_LVT)                             0.073     0.128      3.023 f
+  n7756 (net)                   25       12.702               0.000      3.023 f
+  U11930/A1 (AO22X1_LVT)                            0.073     0.000      3.023 f
+  U11930/Y (AO22X1_LVT)                             0.036     0.126      3.149 f
+  n7955 (net)                    1        0.549               0.000      3.149 f
+  U11933/A2 (NOR4X1_LVT)                            0.036     0.000      3.149 f
+  U11933/Y (NOR4X1_LVT)                             0.032     0.185      3.335 r
+  n7957 (net)                    1        0.579               0.000      3.335 r
+  U11934/A4 (NAND4X0_LVT)                           0.032     0.000      3.335 r
+  U11934/Y (NAND4X0_LVT)                            0.061     0.066      3.401 f
+  n8024 (net)                    1        0.528               0.000      3.401 f
+  U11998/A1 (NOR4X1_LVT)                            0.061     0.000      3.401 f
+  U11998/Y (NOR4X1_LVT)                             0.031     0.211      3.612 r
+  n8113 (net)                    1        0.483               0.000      3.612 r
+  U12086/A1 (OA22X1_LVT)                            0.031     0.000      3.612 r
+  U12086/Y (OA22X1_LVT)                             0.042     0.089      3.701 r
+  n8114 (net)                    1        0.579               0.000      3.701 r
+  U9184/A4 (NAND4X0_LVT)                            0.042     0.000      3.701 r
+  U9184/Y (NAND4X0_LVT)                             0.332     0.252      3.953 f
+  n10471 (net)                  15        8.968               0.000      3.953 f
+  U12087/A (INVX2_LVT)                              0.332     0.000      3.953 f
+  U12087/Y (INVX2_LVT)                              0.190     0.213      4.166 r
+  n10246 (net)                  17       10.663               0.000      4.166 r
+  U9183/A (INVX1_LVT)                               0.190     0.000      4.166 r
+  U9183/Y (INVX1_LVT)                               0.147     0.124      4.290 f
+  n10445 (net)                  18        9.479               0.000      4.290 f
+  U14719/A4 (AO22X1_LVT)                            0.147     0.000      4.290 f
+  U14719/Y (AO22X1_LVT)                             0.044     0.125      4.415 f
+  n10444 (net)                   1        0.528               0.000      4.415 f
+  U14720/A3 (AO21X1_LVT)                            0.044     0.000      4.415 f
+  U14720/Y (AO21X1_LVT)                             0.037     0.069      4.484 f
+  N22527 (net)                   1        0.542               0.000      4.484 f
+  path_1_reg_1_/D (DFFX1_LVT)                       0.037     0.000      4.484 f
+  data arrival time                                                      4.484
+
+  clock CLK (rise edge)                                       6.000      6.000
+  clock network delay (ideal)                                 0.000      6.000
+  clock uncertainty                                          -1.000      5.000
+  path_1_reg_1_/CLK (DFFX1_LVT)                               0.000      5.000 r
+  library setup time                                         -0.088      4.912
+  data required time                                                     4.912
+  -------------------------------------------------------------------------------
+  data required time                                                     4.912
+  data arrival time                                                     -4.484
+  -------------------------------------------------------------------------------
+  slack (MET)                                                            0.428
+
+
+  Startpoint: bt_t_ctr_reg_2_
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: path_49_reg_0_
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: f2f
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mkViterbi          140000                saed32lvt_ss0p75v25c
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock CLK (rise edge)                                       0.000      0.000
+  clock network delay (ideal)                                 0.000      0.000
+  bt_t_ctr_reg_2_/CLK (DFFX1_LVT)                   0.000     0.000      0.000 r
+  bt_t_ctr_reg_2_/Q (DFFX1_LVT)                     0.068     0.209      0.209 f
+  bt_t_ctr[2] (net)             11        5.763               0.000      0.209 f
+  U11185/A1 (AND2X2_LVT)                            0.068     0.000      0.209 f
+  U11185/Y (AND2X2_LVT)                             0.077     0.141      0.350 f
+  n13246 (net)                  23       10.851               0.000      0.350 f
+  U9831/A2 (AND2X4_LVT)                             0.077     0.000      0.350 f
+  U9831/Y (AND2X4_LVT)                              0.095     0.182      0.532 f
+  n7250 (net)                   40       21.457               0.000      0.532 f
+  U11240/A1 (AO22X1_LVT)                            0.095     0.000      0.532 f
+  U11240/Y (AO22X1_LVT)                             0.037     0.140      0.672 f
+  n7266 (net)                    1        0.549               0.000      0.672 f
+  U11243/A2 (NOR4X1_LVT)                            0.037     0.000      0.672 f
+  U11243/Y (NOR4X1_LVT)                             0.032     0.186      0.858 r
+  n7269 (net)                    1        0.580               0.000      0.858 r
+  U11245/A3 (OA22X1_LVT)                            0.032     0.000      0.858 r
+  U11245/Y (OA22X1_LVT)                             0.042     0.080      0.938 r
+  n7271 (net)                    1        0.579               0.000      0.938 r
+  U11246/A4 (NAND4X0_LVT)                           0.042     0.000      0.938 r
+  U11246/Y (NAND4X0_LVT)                            0.130     0.115      1.053 f
+  n9296 (net)                    4        2.662               0.000      1.053 f
+  U9165/A1 (NOR3X0_LVT)                             0.130     0.000      1.053 f
+  U9165/Y (NOR3X0_LVT)                              0.065     0.231      1.284 r
+  n9295 (net)                    4        3.600               0.000      1.284 r
+  U13203/A1 (NAND2X0_LVT)                           0.065     0.000      1.284 r
+  U13203/Y (NAND2X0_LVT)                            0.060     0.052      1.336 f
+  n9227 (net)                    2        1.228               0.000      1.336 f
+  U13206/A (INVX1_LVT)                              0.060     0.000      1.336 f
+  U13206/Y (INVX1_LVT)                              0.040     0.051      1.386 r
+  n9285 (net)                    1        1.040               0.000      1.386 r
+  U13252/A0 (HADDX1_LVT)                            0.040     0.000      1.386 r
+  U13252/SO (HADDX1_LVT)                            0.054     0.136      1.522 f
+  n9286 (net)                    3        1.471               0.000      1.522 f
+  U13253/A3 (NAND3X0_LVT)                           0.054     0.000      1.522 f
+  U13253/Y (NAND3X0_LVT)                            0.107     0.099      1.621 r
+  n11750 (net)                   3        2.591               0.000      1.621 r
+  U13254/A5 (OA221X1_LVT)                           0.107     0.000      1.621 r
+  U13254/Y (OA221X1_LVT)                            0.055     0.107      1.728 r
+  n9302 (net)                    1        1.449               0.000      1.728 r
+  U13263/CI (FADDX1_LVT)                            0.055     0.000      1.728 r
+  U13263/S (FADDX1_LVT)                             0.058     0.175      1.903 f
+  n9287 (net)                    1        0.764               0.000      1.903 f
+  U9166/A (INVX1_LVT)                               0.058     0.000      1.903 f
+  U9166/Y (INVX1_LVT)                               0.048     0.059      1.963 r
+  intadd_3/A_2_ (net)            1        1.942               0.000      1.963 r
+  intadd_3/U2/B (FADDX1_LVT)                        0.048     0.000      1.963 r
+  intadd_3/U2/CO (FADDX1_LVT)                       0.045     0.106      2.068 r
+  intadd_3/n1 (net)              1        0.589               0.000      2.068 r
+  U9124/A (INVX0_LVT)                               0.045     0.000      2.068 r
+  U9124/Y (INVX0_LVT)                               0.041     0.039      2.107 f
+  intadd_0/B_2_ (net)            1        1.892               0.000      2.107 f
+  intadd_0/U5/A (FADDX1_LVT)                        0.041     0.000      2.107 f
+  intadd_0/U5/CO (FADDX1_LVT)                       0.055     0.132      2.239 f
+  intadd_0/n4 (net)              1        1.420               0.000      2.239 f
+  intadd_0/U4/CI (FADDX1_LVT)                       0.055     0.000      2.239 f
+  intadd_0/U4/S (FADDX1_LVT)                        0.097     0.247      2.486 r
+  intadd_0/SUM_3_ (net)          9        5.034               0.000      2.486 r
+  U9121/A (INVX1_LVT)                               0.097     0.000      2.486 r
+  U9121/Y (INVX1_LVT)                               0.061     0.046      2.532 f
+  n7342 (net)                    6        2.625               0.000      2.532 f
+  U11313/A2 (AND2X1_LVT)                            0.061     0.000      2.532 f
+  U11313/Y (AND2X1_LVT)                             0.036     0.096      2.628 f
+  n7358 (net)                    3        1.399               0.000      2.628 f
+  U11341/A2 (AND3X1_LVT)                            0.036     0.000      2.628 f
+  U11341/Y (AND3X1_LVT)                             0.069     0.124      2.752 f
+  n7395 (net)                    8        4.316               0.000      2.752 f
+  U9471/A2 (AND2X1_LVT)                             0.069     0.000      2.752 f
+  U9471/Y (AND2X1_LVT)                              0.086     0.143      2.895 f
+  n13106 (net)                  16        8.075               0.000      2.895 f
+  U9215/A (NBUFFX2_LVT)                             0.086     0.000      2.895 f
+  U9215/Y (NBUFFX2_LVT)                             0.073     0.128      3.023 f
+  n7756 (net)                   25       12.702               0.000      3.023 f
+  U17564/A1 (AO22X1_LVT)                            0.073     0.000      3.023 f
+  U17564/Y (AO22X1_LVT)                             0.036     0.126      3.149 f
+  n12300 (net)                   1        0.549               0.000      3.149 f
+  U17567/A2 (NOR4X1_LVT)                            0.036     0.000      3.149 f
+  U17567/Y (NOR4X1_LVT)                             0.032     0.185      3.335 r
+  n12302 (net)                   1        0.579               0.000      3.335 r
+  U17568/A4 (NAND4X0_LVT)                           0.032     0.000      3.335 r
+  U17568/Y (NAND4X0_LVT)                            0.061     0.066      3.401 f
+  n12373 (net)                   1        0.528               0.000      3.401 f
+  U17632/A1 (NOR4X1_LVT)                            0.061     0.000      3.401 f
+  U17632/Y (NOR4X1_LVT)                             0.031     0.211      3.612 r
+  n12466 (net)                   1        0.483               0.000      3.612 r
+  U17718/A1 (OA22X1_LVT)                            0.031     0.000      3.612 r
+  U17718/Y (OA22X1_LVT)                             0.042     0.089      3.701 r
+  n12467 (net)                   1        0.579               0.000      3.701 r
+  U9181/A4 (NAND4X0_LVT)                            0.042     0.000      3.701 r
+  U9181/Y (NAND4X0_LVT)                             0.318     0.242      3.943 f
+  n13498 (net)                  16        8.530               0.000      3.943 f
+  U9182/A (NBUFFX4_LVT)                             0.318     0.000      3.943 f
+  U9182/Y (NBUFFX4_LVT)                             0.121     0.280      4.224 f
+  n13402 (net)                  48       25.747               0.000      4.224 f
+  U18476/A1 (AO222X1_LVT)                           0.121     0.000      4.224 f
+  U18476/Y (AO222X1_LVT)                            0.041     0.199      4.423 f
+  N22784 (net)                   1        0.542               0.000      4.423 f
+  path_49_reg_0_/D (DFFX1_LVT)                      0.041     0.000      4.423 f
+  data arrival time                                                      4.423
+
+  clock CLK (rise edge)                                       6.000      6.000
+  clock network delay (ideal)                                 0.000      6.000
+  clock uncertainty                                          -1.000      5.000
+  path_49_reg_0_/CLK (DFFX1_LVT)                              0.000      5.000 r
+  library setup time                                         -0.091      4.909
+  data required time                                                     4.909
+  -------------------------------------------------------------------------------
+  data required time                                                     4.909
+  data arrival time                                                     -4.423
+  -------------------------------------------------------------------------------
+  slack (MET)                                                            0.487
+
+
+  Startpoint: bt_t_ctr_reg_2_
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: path_48_reg_0_
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: f2f
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mkViterbi          140000                saed32lvt_ss0p75v25c
+
+  Point                        Fanout       Cap     Trans      Incr       Path
+  -------------------------------------------------------------------------------
+  clock CLK (rise edge)                                       0.000      0.000
+  clock network delay (ideal)                                 0.000      0.000
+  bt_t_ctr_reg_2_/CLK (DFFX1_LVT)                   0.000     0.000      0.000 r
+  bt_t_ctr_reg_2_/Q (DFFX1_LVT)                     0.068     0.209      0.209 f
+  bt_t_ctr[2] (net)             11        5.763               0.000      0.209 f
+  U11185/A1 (AND2X2_LVT)                            0.068     0.000      0.209 f
+  U11185/Y (AND2X2_LVT)                             0.077     0.141      0.350 f
+  n13246 (net)                  23       10.851               0.000      0.350 f
+  U9831/A2 (AND2X4_LVT)                             0.077     0.000      0.350 f
+  U9831/Y (AND2X4_LVT)                              0.095     0.182      0.532 f
+  n7250 (net)                   40       21.457               0.000      0.532 f
+  U11240/A1 (AO22X1_LVT)                            0.095     0.000      0.532 f
+  U11240/Y (AO22X1_LVT)                             0.037     0.140      0.672 f
+  n7266 (net)                    1        0.549               0.000      0.672 f
+  U11243/A2 (NOR4X1_LVT)                            0.037     0.000      0.672 f
+  U11243/Y (NOR4X1_LVT)                             0.032     0.186      0.858 r
+  n7269 (net)                    1        0.580               0.000      0.858 r
+  U11245/A3 (OA22X1_LVT)                            0.032     0.000      0.858 r
+  U11245/Y (OA22X1_LVT)                             0.042     0.080      0.938 r
+  n7271 (net)                    1        0.579               0.000      0.938 r
+  U11246/A4 (NAND4X0_LVT)                           0.042     0.000      0.938 r
+  U11246/Y (NAND4X0_LVT)                            0.130     0.115      1.053 f
+  n9296 (net)                    4        2.662               0.000      1.053 f
+  U9165/A1 (NOR3X0_LVT)                             0.130     0.000      1.053 f
+  U9165/Y (NOR3X0_LVT)                              0.065     0.231      1.284 r
+  n9295 (net)                    4        3.600               0.000      1.284 r
+  U13203/A1 (NAND2X0_LVT)                           0.065     0.000      1.284 r
+  U13203/Y (NAND2X0_LVT)                            0.060     0.052      1.336 f
+  n9227 (net)                    2        1.228               0.000      1.336 f
+  U13206/A (INVX1_LVT)                              0.060     0.000      1.336 f
+  U13206/Y (INVX1_LVT)                              0.040     0.051      1.386 r
+  n9285 (net)                    1        1.040               0.000      1.386 r
+  U13252/A0 (HADDX1_LVT)                            0.040     0.000      1.386 r
+  U13252/SO (HADDX1_LVT)                            0.054     0.136      1.522 f
+  n9286 (net)                    3        1.471               0.000      1.522 f
+  U13253/A3 (NAND3X0_LVT)                           0.054     0.000      1.522 f
+  U13253/Y (NAND3X0_LVT)                            0.107     0.099      1.621 r
+  n11750 (net)                   3        2.591               0.000      1.621 r
+  U13254/A5 (OA221X1_LVT)                           0.107     0.000      1.621 r
+  U13254/Y (OA221X1_LVT)                            0.055     0.107      1.728 r
+  n9302 (net)                    1        1.449               0.000      1.728 r
+  U13263/CI (FADDX1_LVT)                            0.055     0.000      1.728 r
+  U13263/S (FADDX1_LVT)                             0.058     0.175      1.903 f
+  n9287 (net)                    1        0.764               0.000      1.903 f
+  U9166/A (INVX1_LVT)                               0.058     0.000      1.903 f
+  U9166/Y (INVX1_LVT)                               0.048     0.059      1.963 r
+  intadd_3/A_2_ (net)            1        1.942               0.000      1.963 r
+  intadd_3/U2/B (FADDX1_LVT)                        0.048     0.000      1.963 r
+  intadd_3/U2/CO (FADDX1_LVT)                       0.045     0.106      2.068 r
+  intadd_3/n1 (net)              1        0.589               0.000      2.068 r
+  U9124/A (INVX0_LVT)                               0.045     0.000      2.068 r
+  U9124/Y (INVX0_LVT)                               0.041     0.039      2.107 f
+  intadd_0/B_2_ (net)            1        1.892               0.000      2.107 f
+  intadd_0/U5/A (FADDX1_LVT)                        0.041     0.000      2.107 f
+  intadd_0/U5/CO (FADDX1_LVT)                       0.055     0.132      2.239 f
+  intadd_0/n4 (net)              1        1.420               0.000      2.239 f
+  intadd_0/U4/CI (FADDX1_LVT)                       0.055     0.000      2.239 f
+  intadd_0/U4/S (FADDX1_LVT)                        0.097     0.247      2.486 r
+  intadd_0/SUM_3_ (net)          9        5.034               0.000      2.486 r
+  U9121/A (INVX1_LVT)                               0.097     0.000      2.486 r
+  U9121/Y (INVX1_LVT)                               0.061     0.046      2.532 f
+  n7342 (net)                    6        2.625               0.000      2.532 f
+  U11313/A2 (AND2X1_LVT)                            0.061     0.000      2.532 f
+  U11313/Y (AND2X1_LVT)                             0.036     0.096      2.628 f
+  n7358 (net)                    3        1.399               0.000      2.628 f
+  U11341/A2 (AND3X1_LVT)                            0.036     0.000      2.628 f
+  U11341/Y (AND3X1_LVT)                             0.069     0.124      2.752 f
+  n7395 (net)                    8        4.316               0.000      2.752 f
+  U9471/A2 (AND2X1_LVT)                             0.069     0.000      2.752 f
+  U9471/Y (AND2X1_LVT)                              0.086     0.143      2.895 f
+  n13106 (net)                  16        8.075               0.000      2.895 f
+  U9215/A (NBUFFX2_LVT)                             0.086     0.000      2.895 f
+  U9215/Y (NBUFFX2_LVT)                             0.073     0.128      3.023 f
+  n7756 (net)                   25       12.702               0.000      3.023 f
+  U17564/A1 (AO22X1_LVT)                            0.073     0.000      3.023 f
+  U17564/Y (AO22X1_LVT)                             0.036     0.126      3.149 f
+  n12300 (net)                   1        0.549               0.000      3.149 f
+  U17567/A2 (NOR4X1_LVT)                            0.036     0.000      3.149 f
+  U17567/Y (NOR4X1_LVT)                             0.032     0.185      3.335 r
+  n12302 (net)                   1        0.579               0.000      3.335 r
+  U17568/A4 (NAND4X0_LVT)                           0.032     0.000      3.335 r
+  U17568/Y (NAND4X0_LVT)                            0.061     0.066      3.401 f
+  n12373 (net)                   1        0.528               0.000      3.401 f
+  U17632/A1 (NOR4X1_LVT)                            0.061     0.000      3.401 f
+  U17632/Y (NOR4X1_LVT)                             0.031     0.211      3.612 r
+  n12466 (net)                   1        0.483               0.000      3.612 r
+  U17718/A1 (OA22X1_LVT)                            0.031     0.000      3.612 r
+  U17718/Y (OA22X1_LVT)                             0.042     0.089      3.701 r
+  n12467 (net)                   1        0.579               0.000      3.701 r
+  U9181/A4 (NAND4X0_LVT)                            0.042     0.000      3.701 r
+  U9181/Y (NAND4X0_LVT)                             0.318     0.242      3.943 f
+  n13498 (net)                  16        8.530               0.000      3.943 f
+  U9182/A (NBUFFX4_LVT)                             0.318     0.000      3.943 f
+  U9182/Y (NBUFFX4_LVT)                             0.121     0.280      4.224 f
+  n13402 (net)                  48       25.747               0.000      4.224 f
+  U18478/A1 (AO222X1_LVT)                           0.121     0.000      4.224 f
+  U18478/Y (AO222X1_LVT)                            0.041     0.199      4.423 f
+  N22778 (net)                   1        0.542               0.000      4.423 f
+  path_48_reg_0_/D (DFFX1_LVT)                      0.041     0.000      4.423 f
+  data arrival time                                                      4.423
+
+  clock CLK (rise edge)                                       6.000      6.000
+  clock network delay (ideal)                                 0.000      6.000
+  clock uncertainty                                          -1.000      5.000
+  path_48_reg_0_/CLK (DFFX1_LVT)                              0.000      5.000 r
+  library setup time                                         -0.091      4.909
+  data required time                                                     4.909
+  -------------------------------------------------------------------------------
+  data required time                                                     4.909
+  data arrival time                                                     -4.423
+  -------------------------------------------------------------------------------
+  slack (MET)                                                            0.487
+
+
+1

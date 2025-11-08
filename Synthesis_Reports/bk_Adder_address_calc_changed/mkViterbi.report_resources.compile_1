@@ -1,0 +1,1380 @@
+ 
+****************************************
+Report : resources
+Design : mkViterbi
+Version: U-2022.12
+Date   : Fri Nov  7 10:52:43 2025
+****************************************
+
+
+Resource Report for this hierarchy in file
+        /scratch/EE22B086/CS6230/new/synth/rtl/mkViterbi.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| add_x_76       | DW01_inc       | width=10   | add_14496 (mkViterbi.v:14496) |
+| add_x_77       | DW01_inc       | width=5    | add_14499 (mkViterbi.v:14499) |
+| lt_x_182       | DW_cmp         | width=32   | lt_28395 (mkViterbi.v:28395) |
+| lt_x_183       | DW_cmp         | width=5    | lt_28395_2 (mkViterbi.v:28395) |
+| lt_x_184       | DW_cmp         | width=5    | lt_28404 (mkViterbi.v:28404) |
+| lt_x_185       | DW_cmp         | width=5    | lt_28433 (mkViterbi.v:28433) |
+| lt_x_186       | DW_cmp         | width=32   | lt_28448 (mkViterbi.v:28448) |
+| add_x_187      | DW01_inc       | width=5    | add_28451 (mkViterbi.v:28451) |
+| sub_x_188      | DW01_dec       | width=5    | sub_28454 (mkViterbi.v:28454) |
+| add_x_189      | DW01_inc       | width=10   | add_28457 (mkViterbi.v:28457) |
+| add_x_190      | DW01_inc       | width=5    | add_28458 (mkViterbi.v:28458) |
+| sub_x_191      | DW01_dec       | width=5    | sub_28464 (mkViterbi.v:28464) |
+| *cell*10600    | DW_decode_en   | width=11   | eq_14500 (mkViterbi.v:14500) |
+               |                |            | eq_14506 (mkViterbi.v:14506) |
+               |                |            | eq_14512 (mkViterbi.v:14512) |
+               |                |            | eq_14518 (mkViterbi.v:14518) |
+               |                |            | eq_14524 (mkViterbi.v:14524) |
+               |                |            | eq_14530 (mkViterbi.v:14530) |
+               |                |            | eq_14536 (mkViterbi.v:14536) |
+               |                |            | eq_14542 (mkViterbi.v:14542) |
+               |                |            | eq_14548 (mkViterbi.v:14548) |
+               |                |            | eq_14554 (mkViterbi.v:14554) |
+               |                |            | eq_14560 (mkViterbi.v:14560) |
+               |                |            | eq_14566 (mkViterbi.v:14566) |
+               |                |            | eq_14572 (mkViterbi.v:14572) |
+               |                |            | eq_14578 (mkViterbi.v:14578) |
+               |                |            | eq_14584 (mkViterbi.v:14584) |
+               |                |            | eq_14590 (mkViterbi.v:14590) |
+               |                |            | eq_14596 (mkViterbi.v:14596) |
+               |                |            | eq_14602 (mkViterbi.v:14602) |
+               |                |            | eq_14608 (mkViterbi.v:14608) |
+               |                |            | eq_14614 (mkViterbi.v:14614) |
+               |                |            | eq_14620 (mkViterbi.v:14620) |
+               |                |            | eq_14626 (mkViterbi.v:14626) |
+               |                |            | eq_14632 (mkViterbi.v:14632) |
+               |                |            | eq_14638 (mkViterbi.v:14638) |
+               |                |            | eq_14644 (mkViterbi.v:14644) |
+               |                |            | eq_14650 (mkViterbi.v:14650) |
+               |                |            | eq_14656 (mkViterbi.v:14656) |
+               |                |            | eq_14662 (mkViterbi.v:14662) |
+               |                |            | eq_14668 (mkViterbi.v:14668) |
+               |                |            | eq_14674 (mkViterbi.v:14674) |
+               |                |            | eq_14716 (mkViterbi.v:14716) |
+               |                |            | eq_14782 (mkViterbi.v:14782) |
+               |                |            | eq_14848 (mkViterbi.v:14848) |
+               |                |            | eq_14914 (mkViterbi.v:14914) |
+               |                |            | eq_14980 (mkViterbi.v:14980) |
+               |                |            | eq_15046 (mkViterbi.v:15046) |
+               |                |            | eq_15112 (mkViterbi.v:15112) |
+               |                |            | eq_15178 (mkViterbi.v:15178) |
+               |                |            | eq_15184 (mkViterbi.v:15184) |
+               |                |            | eq_15250 (mkViterbi.v:15250) |
+               |                |            | eq_15316 (mkViterbi.v:15316) |
+               |                |            | eq_15382 (mkViterbi.v:15382) |
+               |                |            | eq_15448 (mkViterbi.v:15448) |
+               |                |            | eq_15514 (mkViterbi.v:15514) |
+               |                |            | eq_15580 (mkViterbi.v:15580) |
+               |                |            | eq_15646 (mkViterbi.v:15646) |
+               |                |            | eq_15712 (mkViterbi.v:15712) |
+               |                |            | eq_15778 (mkViterbi.v:15778) |
+               |                |            | eq_15844 (mkViterbi.v:15844) |
+               |                |            | eq_15850 (mkViterbi.v:15850) |
+               |                |            | eq_15916 (mkViterbi.v:15916) |
+               |                |            | eq_15982 (mkViterbi.v:15982) |
+               |                |            | eq_16048 (mkViterbi.v:16048) |
+               |                |            | eq_16114 (mkViterbi.v:16114) |
+               |                |            | eq_16180 (mkViterbi.v:16180) |
+               |                |            | eq_16246 (mkViterbi.v:16246) |
+               |                |            | eq_16312 (mkViterbi.v:16312) |
+               |                |            | eq_16378 (mkViterbi.v:16378) |
+               |                |            | eq_16444 (mkViterbi.v:16444) |
+               |                |            | eq_16510 (mkViterbi.v:16510) |
+               |                |            | eq_16516 (mkViterbi.v:16516) |
+               |                |            | eq_16582 (mkViterbi.v:16582) |
+               |                |            | eq_16648 (mkViterbi.v:16648) |
+               |                |            | eq_16714 (mkViterbi.v:16714) |
+               |                |            | eq_16780 (mkViterbi.v:16780) |
+               |                |            | eq_16846 (mkViterbi.v:16846) |
+               |                |            | eq_16912 (mkViterbi.v:16912) |
+               |                |            | eq_16978 (mkViterbi.v:16978) |
+               |                |            | eq_17044 (mkViterbi.v:17044) |
+               |                |            | eq_17110 (mkViterbi.v:17110) |
+               |                |            | eq_17176 (mkViterbi.v:17176) |
+               |                |            | eq_17182 (mkViterbi.v:17182) |
+               |                |            | eq_17248 (mkViterbi.v:17248) |
+               |                |            | eq_17314 (mkViterbi.v:17314) |
+               |                |            | eq_17380 (mkViterbi.v:17380) |
+               |                |            | eq_17446 (mkViterbi.v:17446) |
+               |                |            | eq_17512 (mkViterbi.v:17512) |
+               |                |            | eq_17578 (mkViterbi.v:17578) |
+               |                |            | eq_17644 (mkViterbi.v:17644) |
+               |                |            | eq_17710 (mkViterbi.v:17710) |
+               |                |            | eq_17776 (mkViterbi.v:17776) |
+               |                |            | eq_17842 (mkViterbi.v:17842) |
+               |                |            | eq_17848 (mkViterbi.v:17848) |
+               |                |            | eq_17914 (mkViterbi.v:17914) |
+               |                |            | eq_17980 (mkViterbi.v:17980) |
+               |                |            | eq_18046 (mkViterbi.v:18046) |
+               |                |            | eq_18112 (mkViterbi.v:18112) |
+               |                |            | eq_18178 (mkViterbi.v:18178) |
+               |                |            | eq_18244 (mkViterbi.v:18244) |
+               |                |            | eq_18310 (mkViterbi.v:18310) |
+               |                |            | eq_18376 (mkViterbi.v:18376) |
+               |                |            | eq_18442 (mkViterbi.v:18442) |
+               |                |            | eq_18508 (mkViterbi.v:18508) |
+               |                |            | eq_18514 (mkViterbi.v:18514) |
+               |                |            | eq_18580 (mkViterbi.v:18580) |
+               |                |            | eq_18646 (mkViterbi.v:18646) |
+               |                |            | eq_18712 (mkViterbi.v:18712) |
+               |                |            | eq_18778 (mkViterbi.v:18778) |
+               |                |            | eq_18844 (mkViterbi.v:18844) |
+               |                |            | eq_18910 (mkViterbi.v:18910) |
+               |                |            | eq_18976 (mkViterbi.v:18976) |
+               |                |            | eq_19042 (mkViterbi.v:19042) |
+               |                |            | eq_19108 (mkViterbi.v:19108) |
+               |                |            | eq_19174 (mkViterbi.v:19174) |
+               |                |            | eq_19180 (mkViterbi.v:19180) |
+               |                |            | eq_19246 (mkViterbi.v:19246) |
+               |                |            | eq_19312 (mkViterbi.v:19312) |
+               |                |            | eq_19378 (mkViterbi.v:19378) |
+               |                |            | eq_19444 (mkViterbi.v:19444) |
+               |                |            | eq_19510 (mkViterbi.v:19510) |
+               |                |            | eq_19576 (mkViterbi.v:19576) |
+               |                |            | eq_19642 (mkViterbi.v:19642) |
+               |                |            | eq_19708 (mkViterbi.v:19708) |
+               |                |            | eq_19774 (mkViterbi.v:19774) |
+               |                |            | eq_19840 (mkViterbi.v:19840) |
+               |                |            | eq_19846 (mkViterbi.v:19846) |
+               |                |            | eq_19912 (mkViterbi.v:19912) |
+               |                |            | eq_19978 (mkViterbi.v:19978) |
+               |                |            | eq_20044 (mkViterbi.v:20044) |
+               |                |            | eq_20110 (mkViterbi.v:20110) |
+               |                |            | eq_20176 (mkViterbi.v:20176) |
+               |                |            | eq_20242 (mkViterbi.v:20242) |
+               |                |            | eq_20308 (mkViterbi.v:20308) |
+               |                |            | eq_20374 (mkViterbi.v:20374) |
+               |                |            | eq_20440 (mkViterbi.v:20440) |
+               |                |            | eq_20506 (mkViterbi.v:20506) |
+               |                |            | eq_20512 (mkViterbi.v:20512) |
+               |                |            | eq_20578 (mkViterbi.v:20578) |
+               |                |            | eq_20644 (mkViterbi.v:20644) |
+               |                |            | eq_20710 (mkViterbi.v:20710) |
+               |                |            | eq_20776 (mkViterbi.v:20776) |
+               |                |            | eq_20842 (mkViterbi.v:20842) |
+               |                |            | eq_20908 (mkViterbi.v:20908) |
+               |                |            | eq_20974 (mkViterbi.v:20974) |
+               |                |            | eq_21040 (mkViterbi.v:21040) |
+               |                |            | eq_21106 (mkViterbi.v:21106) |
+               |                |            | eq_21172 (mkViterbi.v:21172) |
+               |                |            | eq_21178 (mkViterbi.v:21178) |
+               |                |            | eq_21184 (mkViterbi.v:21184) |
+               |                |            | eq_21250 (mkViterbi.v:21250) |
+               |                |            | eq_21316 (mkViterbi.v:21316) |
+               |                |            | eq_21382 (mkViterbi.v:21382) |
+               |                |            | eq_21448 (mkViterbi.v:21448) |
+               |                |            | eq_21502 (mkViterbi.v:21502) |
+               |                |            | eq_21508 (mkViterbi.v:21508) |
+               |                |            | eq_21514 (mkViterbi.v:21514) |
+               |                |            | eq_21520 (mkViterbi.v:21520) |
+               |                |            | eq_21526 (mkViterbi.v:21526) |
+               |                |            | eq_21532 (mkViterbi.v:21532) |
+               |                |            | eq_21538 (mkViterbi.v:21538) |
+               |                |            | eq_21544 (mkViterbi.v:21544) |
+               |                |            | eq_21550 (mkViterbi.v:21550) |
+               |                |            | eq_21556 (mkViterbi.v:21556) |
+               |                |            | eq_21562 (mkViterbi.v:21562) |
+               |                |            | eq_21568 (mkViterbi.v:21568) |
+               |                |            | eq_21574 (mkViterbi.v:21574) |
+               |                |            | eq_21580 (mkViterbi.v:21580) |
+               |                |            | eq_21586 (mkViterbi.v:21586) |
+               |                |            | eq_21592 (mkViterbi.v:21592) |
+               |                |            | eq_21598 (mkViterbi.v:21598) |
+               |                |            | eq_21604 (mkViterbi.v:21604) |
+               |                |            | eq_21610 (mkViterbi.v:21610) |
+               |                |            | eq_21616 (mkViterbi.v:21616) |
+               |                |            | eq_21622 (mkViterbi.v:21622) |
+               |                |            | eq_21628 (mkViterbi.v:21628) |
+               |                |            | eq_21634 (mkViterbi.v:21634) |
+               |                |            | eq_21640 (mkViterbi.v:21640) |
+               |                |            | eq_21646 (mkViterbi.v:21646) |
+               |                |            | eq_21652 (mkViterbi.v:21652) |
+               |                |            | eq_21658 (mkViterbi.v:21658) |
+               |                |            | eq_21664 (mkViterbi.v:21664) |
+               |                |            | eq_21670 (mkViterbi.v:21670) |
+               |                |            | eq_21676 (mkViterbi.v:21676) |
+               |                |            | eq_21682 (mkViterbi.v:21682) |
+               |                |            | eq_21688 (mkViterbi.v:21688) |
+               |                |            | eq_21694 (mkViterbi.v:21694) |
+               |                |            | eq_21700 (mkViterbi.v:21700) |
+               |                |            | eq_21706 (mkViterbi.v:21706) |
+               |                |            | eq_21712 (mkViterbi.v:21712) |
+               |                |            | eq_21718 (mkViterbi.v:21718) |
+               |                |            | eq_21724 (mkViterbi.v:21724) |
+               |                |            | eq_21730 (mkViterbi.v:21730) |
+               |                |            | eq_21736 (mkViterbi.v:21736) |
+               |                |            | eq_21742 (mkViterbi.v:21742) |
+               |                |            | eq_21748 (mkViterbi.v:21748) |
+               |                |            | eq_21754 (mkViterbi.v:21754) |
+               |                |            | eq_21760 (mkViterbi.v:21760) |
+               |                |            | eq_21766 (mkViterbi.v:21766) |
+               |                |            | eq_21772 (mkViterbi.v:21772) |
+               |                |            | eq_21778 (mkViterbi.v:21778) |
+               |                |            | eq_21784 (mkViterbi.v:21784) |
+               |                |            | eq_21790 (mkViterbi.v:21790) |
+               |                |            | eq_21796 (mkViterbi.v:21796) |
+               |                |            | eq_21802 (mkViterbi.v:21802) |
+               |                |            | eq_21808 (mkViterbi.v:21808) |
+               |                |            | eq_21814 (mkViterbi.v:21814) |
+               |                |            | eq_21820 (mkViterbi.v:21820) |
+               |                |            | eq_21826 (mkViterbi.v:21826) |
+               |                |            | eq_21832 (mkViterbi.v:21832) |
+               |                |            | eq_21838 (mkViterbi.v:21838) |
+               |                |            | eq_21844 (mkViterbi.v:21844) |
+               |                |            | eq_21850 (mkViterbi.v:21850) |
+               |                |            | eq_21856 (mkViterbi.v:21856) |
+               |                |            | eq_21862 (mkViterbi.v:21862) |
+               |                |            | eq_21868 (mkViterbi.v:21868) |
+               |                |            | eq_21874 (mkViterbi.v:21874) |
+               |                |            | eq_21880 (mkViterbi.v:21880) |
+               |                |            | eq_21886 (mkViterbi.v:21886) |
+               |                |            | eq_21892 (mkViterbi.v:21892) |
+               |                |            | eq_21898 (mkViterbi.v:21898) |
+               |                |            | eq_21904 (mkViterbi.v:21904) |
+               |                |            | eq_21910 (mkViterbi.v:21910) |
+               |                |            | eq_21916 (mkViterbi.v:21916) |
+               |                |            | eq_21922 (mkViterbi.v:21922) |
+               |                |            | eq_21928 (mkViterbi.v:21928) |
+               |                |            | eq_21934 (mkViterbi.v:21934) |
+               |                |            | eq_21940 (mkViterbi.v:21940) |
+               |                |            | eq_21946 (mkViterbi.v:21946) |
+               |                |            | eq_21952 (mkViterbi.v:21952) |
+               |                |            | eq_21958 (mkViterbi.v:21958) |
+               |                |            | eq_21964 (mkViterbi.v:21964) |
+               |                |            | eq_21970 (mkViterbi.v:21970) |
+               |                |            | eq_21976 (mkViterbi.v:21976) |
+               |                |            | eq_21982 (mkViterbi.v:21982) |
+               |                |            | eq_21988 (mkViterbi.v:21988) |
+               |                |            | eq_21994 (mkViterbi.v:21994) |
+               |                |            | eq_22000 (mkViterbi.v:22000) |
+               |                |            | eq_22006 (mkViterbi.v:22006) |
+               |                |            | eq_22012 (mkViterbi.v:22012) |
+               |                |            | eq_22018 (mkViterbi.v:22018) |
+               |                |            | eq_22024 (mkViterbi.v:22024) |
+               |                |            | eq_22030 (mkViterbi.v:22030) |
+               |                |            | eq_22036 (mkViterbi.v:22036) |
+               |                |            | eq_22042 (mkViterbi.v:22042) |
+               |                |            | eq_22048 (mkViterbi.v:22048) |
+               |                |            | eq_22054 (mkViterbi.v:22054) |
+               |                |            | eq_22060 (mkViterbi.v:22060) |
+               |                |            | eq_22066 (mkViterbi.v:22066) |
+               |                |            | eq_22072 (mkViterbi.v:22072) |
+               |                |            | eq_22078 (mkViterbi.v:22078) |
+               |                |            | eq_22084 (mkViterbi.v:22084) |
+               |                |            | eq_22090 (mkViterbi.v:22090) |
+               |                |            | eq_22096 (mkViterbi.v:22096) |
+               |                |            | eq_22102 (mkViterbi.v:22102) |
+               |                |            | eq_22108 (mkViterbi.v:22108) |
+               |                |            | eq_22114 (mkViterbi.v:22114) |
+               |                |            | eq_22120 (mkViterbi.v:22120) |
+               |                |            | eq_22126 (mkViterbi.v:22126) |
+               |                |            | eq_22132 (mkViterbi.v:22132) |
+               |                |            | eq_22138 (mkViterbi.v:22138) |
+               |                |            | eq_22144 (mkViterbi.v:22144) |
+               |                |            | eq_22150 (mkViterbi.v:22150) |
+               |                |            | eq_22156 (mkViterbi.v:22156) |
+               |                |            | eq_22162 (mkViterbi.v:22162) |
+               |                |            | eq_22168 (mkViterbi.v:22168) |
+               |                |            | eq_22174 (mkViterbi.v:22174) |
+               |                |            | eq_22180 (mkViterbi.v:22180) |
+               |                |            | eq_22186 (mkViterbi.v:22186) |
+               |                |            | eq_22192 (mkViterbi.v:22192) |
+               |                |            | eq_22198 (mkViterbi.v:22198) |
+               |                |            | eq_22204 (mkViterbi.v:22204) |
+               |                |            | eq_22210 (mkViterbi.v:22210) |
+               |                |            | eq_22216 (mkViterbi.v:22216) |
+               |                |            | eq_22222 (mkViterbi.v:22222) |
+               |                |            | eq_22228 (mkViterbi.v:22228) |
+               |                |            | eq_22234 (mkViterbi.v:22234) |
+               |                |            | eq_22240 (mkViterbi.v:22240) |
+               |                |            | eq_22246 (mkViterbi.v:22246) |
+               |                |            | eq_22252 (mkViterbi.v:22252) |
+               |                |            | eq_22258 (mkViterbi.v:22258) |
+               |                |            | eq_22264 (mkViterbi.v:22264) |
+               |                |            | eq_22270 (mkViterbi.v:22270) |
+               |                |            | eq_22276 (mkViterbi.v:22276) |
+               |                |            | eq_22282 (mkViterbi.v:22282) |
+               |                |            | eq_22288 (mkViterbi.v:22288) |
+               |                |            | eq_22294 (mkViterbi.v:22294) |
+               |                |            | eq_22300 (mkViterbi.v:22300) |
+               |                |            | eq_22306 (mkViterbi.v:22306) |
+               |                |            | eq_22312 (mkViterbi.v:22312) |
+               |                |            | eq_22318 (mkViterbi.v:22318) |
+               |                |            | eq_22324 (mkViterbi.v:22324) |
+               |                |            | eq_22330 (mkViterbi.v:22330) |
+               |                |            | eq_22336 (mkViterbi.v:22336) |
+               |                |            | eq_22342 (mkViterbi.v:22342) |
+               |                |            | eq_22348 (mkViterbi.v:22348) |
+               |                |            | eq_22354 (mkViterbi.v:22354) |
+               |                |            | eq_22360 (mkViterbi.v:22360) |
+               |                |            | eq_22366 (mkViterbi.v:22366) |
+               |                |            | eq_22372 (mkViterbi.v:22372) |
+               |                |            | eq_22378 (mkViterbi.v:22378) |
+               |                |            | eq_22384 (mkViterbi.v:22384) |
+               |                |            | eq_22390 (mkViterbi.v:22390) |
+               |                |            | eq_22396 (mkViterbi.v:22396) |
+               |                |            | eq_22402 (mkViterbi.v:22402) |
+               |                |            | eq_22408 (mkViterbi.v:22408) |
+               |                |            | eq_22414 (mkViterbi.v:22414) |
+               |                |            | eq_22420 (mkViterbi.v:22420) |
+               |                |            | eq_22426 (mkViterbi.v:22426) |
+               |                |            | eq_22432 (mkViterbi.v:22432) |
+               |                |            | eq_22438 (mkViterbi.v:22438) |
+               |                |            | eq_22444 (mkViterbi.v:22444) |
+               |                |            | eq_22450 (mkViterbi.v:22450) |
+               |                |            | eq_22456 (mkViterbi.v:22456) |
+               |                |            | eq_22462 (mkViterbi.v:22462) |
+               |                |            | eq_22468 (mkViterbi.v:22468) |
+               |                |            | eq_22474 (mkViterbi.v:22474) |
+               |                |            | eq_22480 (mkViterbi.v:22480) |
+               |                |            | eq_22486 (mkViterbi.v:22486) |
+               |                |            | eq_22492 (mkViterbi.v:22492) |
+               |                |            | eq_22498 (mkViterbi.v:22498) |
+               |                |            | eq_22504 (mkViterbi.v:22504) |
+               |                |            | eq_22510 (mkViterbi.v:22510) |
+               |                |            | eq_22516 (mkViterbi.v:22516) |
+               |                |            | eq_22522 (mkViterbi.v:22522) |
+               |                |            | eq_22528 (mkViterbi.v:22528) |
+               |                |            | eq_22534 (mkViterbi.v:22534) |
+               |                |            | eq_22540 (mkViterbi.v:22540) |
+               |                |            | eq_22546 (mkViterbi.v:22546) |
+               |                |            | eq_22552 (mkViterbi.v:22552) |
+               |                |            | eq_22558 (mkViterbi.v:22558) |
+               |                |            | eq_22564 (mkViterbi.v:22564) |
+               |                |            | eq_22570 (mkViterbi.v:22570) |
+               |                |            | eq_22576 (mkViterbi.v:22576) |
+               |                |            | eq_22582 (mkViterbi.v:22582) |
+               |                |            | eq_22588 (mkViterbi.v:22588) |
+               |                |            | eq_22594 (mkViterbi.v:22594) |
+               |                |            | eq_22600 (mkViterbi.v:22600) |
+               |                |            | eq_22606 (mkViterbi.v:22606) |
+               |                |            | eq_22612 (mkViterbi.v:22612) |
+               |                |            | eq_22618 (mkViterbi.v:22618) |
+               |                |            | eq_22624 (mkViterbi.v:22624) |
+               |                |            | eq_22630 (mkViterbi.v:22630) |
+               |                |            | eq_22636 (mkViterbi.v:22636) |
+               |                |            | eq_22642 (mkViterbi.v:22642) |
+               |                |            | eq_22648 (mkViterbi.v:22648) |
+               |                |            | eq_22654 (mkViterbi.v:22654) |
+               |                |            | eq_22660 (mkViterbi.v:22660) |
+               |                |            | eq_22666 (mkViterbi.v:22666) |
+               |                |            | eq_22672 (mkViterbi.v:22672) |
+               |                |            | eq_22678 (mkViterbi.v:22678) |
+               |                |            | eq_22684 (mkViterbi.v:22684) |
+               |                |            | eq_22690 (mkViterbi.v:22690) |
+               |                |            | eq_22696 (mkViterbi.v:22696) |
+               |                |            | eq_22702 (mkViterbi.v:22702) |
+               |                |            | eq_22708 (mkViterbi.v:22708) |
+               |                |            | eq_22714 (mkViterbi.v:22714) |
+               |                |            | eq_22720 (mkViterbi.v:22720) |
+               |                |            | eq_22726 (mkViterbi.v:22726) |
+               |                |            | eq_22732 (mkViterbi.v:22732) |
+               |                |            | eq_22738 (mkViterbi.v:22738) |
+               |                |            | eq_22744 (mkViterbi.v:22744) |
+               |                |            | eq_22750 (mkViterbi.v:22750) |
+               |                |            | eq_22756 (mkViterbi.v:22756) |
+               |                |            | eq_22762 (mkViterbi.v:22762) |
+               |                |            | eq_22768 (mkViterbi.v:22768) |
+               |                |            | eq_22774 (mkViterbi.v:22774) |
+               |                |            | eq_22780 (mkViterbi.v:22780) |
+               |                |            | eq_22786 (mkViterbi.v:22786) |
+               |                |            | eq_22792 (mkViterbi.v:22792) |
+               |                |            | eq_22798 (mkViterbi.v:22798) |
+               |                |            | eq_22804 (mkViterbi.v:22804) |
+               |                |            | eq_22810 (mkViterbi.v:22810) |
+               |                |            | eq_22816 (mkViterbi.v:22816) |
+               |                |            | eq_22822 (mkViterbi.v:22822) |
+               |                |            | eq_22828 (mkViterbi.v:22828) |
+               |                |            | eq_22834 (mkViterbi.v:22834) |
+               |                |            | eq_22840 (mkViterbi.v:22840) |
+               |                |            | eq_22846 (mkViterbi.v:22846) |
+               |                |            | eq_22852 (mkViterbi.v:22852) |
+               |                |            | eq_22858 (mkViterbi.v:22858) |
+               |                |            | eq_22864 (mkViterbi.v:22864) |
+               |                |            | eq_22870 (mkViterbi.v:22870) |
+               |                |            | eq_22876 (mkViterbi.v:22876) |
+               |                |            | eq_22882 (mkViterbi.v:22882) |
+               |                |            | eq_22888 (mkViterbi.v:22888) |
+               |                |            | eq_22894 (mkViterbi.v:22894) |
+               |                |            | eq_22900 (mkViterbi.v:22900) |
+               |                |            | eq_22906 (mkViterbi.v:22906) |
+               |                |            | eq_22912 (mkViterbi.v:22912) |
+               |                |            | eq_22918 (mkViterbi.v:22918) |
+               |                |            | eq_22924 (mkViterbi.v:22924) |
+               |                |            | eq_22930 (mkViterbi.v:22930) |
+               |                |            | eq_22936 (mkViterbi.v:22936) |
+               |                |            | eq_22942 (mkViterbi.v:22942) |
+               |                |            | eq_22948 (mkViterbi.v:22948) |
+               |                |            | eq_22954 (mkViterbi.v:22954) |
+               |                |            | eq_22960 (mkViterbi.v:22960) |
+               |                |            | eq_22966 (mkViterbi.v:22966) |
+               |                |            | eq_22972 (mkViterbi.v:22972) |
+               |                |            | eq_22978 (mkViterbi.v:22978) |
+               |                |            | eq_22984 (mkViterbi.v:22984) |
+               |                |            | eq_22990 (mkViterbi.v:22990) |
+               |                |            | eq_22996 (mkViterbi.v:22996) |
+               |                |            | eq_23002 (mkViterbi.v:23002) |
+               |                |            | eq_23008 (mkViterbi.v:23008) |
+               |                |            | eq_23014 (mkViterbi.v:23014) |
+               |                |            | eq_23020 (mkViterbi.v:23020) |
+               |                |            | eq_23026 (mkViterbi.v:23026) |
+               |                |            | eq_23032 (mkViterbi.v:23032) |
+               |                |            | eq_23038 (mkViterbi.v:23038) |
+               |                |            | eq_23044 (mkViterbi.v:23044) |
+               |                |            | eq_23050 (mkViterbi.v:23050) |
+               |                |            | eq_23056 (mkViterbi.v:23056) |
+               |                |            | eq_23062 (mkViterbi.v:23062) |
+               |                |            | eq_23068 (mkViterbi.v:23068) |
+               |                |            | eq_23074 (mkViterbi.v:23074) |
+               |                |            | eq_23080 (mkViterbi.v:23080) |
+               |                |            | eq_23086 (mkViterbi.v:23086) |
+               |                |            | eq_23092 (mkViterbi.v:23092) |
+               |                |            | eq_23098 (mkViterbi.v:23098) |
+               |                |            | eq_23104 (mkViterbi.v:23104) |
+               |                |            | eq_23110 (mkViterbi.v:23110) |
+               |                |            | eq_23116 (mkViterbi.v:23116) |
+               |                |            | eq_23122 (mkViterbi.v:23122) |
+               |                |            | eq_23128 (mkViterbi.v:23128) |
+               |                |            | eq_23134 (mkViterbi.v:23134) |
+               |                |            | eq_23140 (mkViterbi.v:23140) |
+               |                |            | eq_23146 (mkViterbi.v:23146) |
+               |                |            | eq_23152 (mkViterbi.v:23152) |
+               |                |            | eq_23158 (mkViterbi.v:23158) |
+               |                |            | eq_23164 (mkViterbi.v:23164) |
+               |                |            | eq_23170 (mkViterbi.v:23170) |
+               |                |            | eq_23176 (mkViterbi.v:23176) |
+               |                |            | eq_23182 (mkViterbi.v:23182) |
+               |                |            | eq_23188 (mkViterbi.v:23188) |
+               |                |            | eq_23194 (mkViterbi.v:23194) |
+               |                |            | eq_23200 (mkViterbi.v:23200) |
+               |                |            | eq_23206 (mkViterbi.v:23206) |
+               |                |            | eq_23212 (mkViterbi.v:23212) |
+               |                |            | eq_23218 (mkViterbi.v:23218) |
+               |                |            | eq_23224 (mkViterbi.v:23224) |
+               |                |            | eq_23230 (mkViterbi.v:23230) |
+               |                |            | eq_23236 (mkViterbi.v:23236) |
+               |                |            | eq_23242 (mkViterbi.v:23242) |
+               |                |            | eq_23248 (mkViterbi.v:23248) |
+               |                |            | eq_23254 (mkViterbi.v:23254) |
+               |                |            | eq_23260 (mkViterbi.v:23260) |
+               |                |            | eq_23266 (mkViterbi.v:23266) |
+               |                |            | eq_23272 (mkViterbi.v:23272) |
+               |                |            | eq_23278 (mkViterbi.v:23278) |
+               |                |            | eq_23284 (mkViterbi.v:23284) |
+               |                |            | eq_23290 (mkViterbi.v:23290) |
+               |                |            | eq_23296 (mkViterbi.v:23296) |
+               |                |            | eq_23302 (mkViterbi.v:23302) |
+               |                |            | eq_23308 (mkViterbi.v:23308) |
+               |                |            | eq_23314 (mkViterbi.v:23314) |
+               |                |            | eq_23320 (mkViterbi.v:23320) |
+               |                |            | eq_23326 (mkViterbi.v:23326) |
+               |                |            | eq_23332 (mkViterbi.v:23332) |
+               |                |            | eq_23338 (mkViterbi.v:23338) |
+               |                |            | eq_23344 (mkViterbi.v:23344) |
+               |                |            | eq_23350 (mkViterbi.v:23350) |
+               |                |            | eq_23356 (mkViterbi.v:23356) |
+               |                |            | eq_23362 (mkViterbi.v:23362) |
+               |                |            | eq_23368 (mkViterbi.v:23368) |
+               |                |            | eq_23374 (mkViterbi.v:23374) |
+               |                |            | eq_23380 (mkViterbi.v:23380) |
+               |                |            | eq_23386 (mkViterbi.v:23386) |
+               |                |            | eq_23392 (mkViterbi.v:23392) |
+               |                |            | eq_23398 (mkViterbi.v:23398) |
+               |                |            | eq_23404 (mkViterbi.v:23404) |
+               |                |            | eq_23410 (mkViterbi.v:23410) |
+               |                |            | eq_23416 (mkViterbi.v:23416) |
+               |                |            | eq_23422 (mkViterbi.v:23422) |
+               |                |            | eq_23428 (mkViterbi.v:23428) |
+               |                |            | eq_23434 (mkViterbi.v:23434) |
+               |                |            | eq_23440 (mkViterbi.v:23440) |
+               |                |            | eq_23446 (mkViterbi.v:23446) |
+               |                |            | eq_23452 (mkViterbi.v:23452) |
+               |                |            | eq_23458 (mkViterbi.v:23458) |
+               |                |            | eq_23464 (mkViterbi.v:23464) |
+               |                |            | eq_23470 (mkViterbi.v:23470) |
+               |                |            | eq_23476 (mkViterbi.v:23476) |
+               |                |            | eq_23482 (mkViterbi.v:23482) |
+               |                |            | eq_23488 (mkViterbi.v:23488) |
+               |                |            | eq_23494 (mkViterbi.v:23494) |
+               |                |            | eq_23500 (mkViterbi.v:23500) |
+               |                |            | eq_23506 (mkViterbi.v:23506) |
+               |                |            | eq_23512 (mkViterbi.v:23512) |
+               |                |            | eq_23518 (mkViterbi.v:23518) |
+               |                |            | eq_23524 (mkViterbi.v:23524) |
+               |                |            | eq_23530 (mkViterbi.v:23530) |
+               |                |            | eq_23536 (mkViterbi.v:23536) |
+               |                |            | eq_23542 (mkViterbi.v:23542) |
+               |                |            | eq_23548 (mkViterbi.v:23548) |
+               |                |            | eq_23554 (mkViterbi.v:23554) |
+               |                |            | eq_23560 (mkViterbi.v:23560) |
+               |                |            | eq_23566 (mkViterbi.v:23566) |
+               |                |            | eq_23572 (mkViterbi.v:23572) |
+               |                |            | eq_23578 (mkViterbi.v:23578) |
+               |                |            | eq_23584 (mkViterbi.v:23584) |
+               |                |            | eq_23590 (mkViterbi.v:23590) |
+               |                |            | eq_23596 (mkViterbi.v:23596) |
+               |                |            | eq_23602 (mkViterbi.v:23602) |
+               |                |            | eq_23608 (mkViterbi.v:23608) |
+               |                |            | eq_23614 (mkViterbi.v:23614) |
+               |                |            | eq_23620 (mkViterbi.v:23620) |
+               |                |            | eq_23626 (mkViterbi.v:23626) |
+               |                |            | eq_23632 (mkViterbi.v:23632) |
+               |                |            | eq_23638 (mkViterbi.v:23638) |
+               |                |            | eq_23644 (mkViterbi.v:23644) |
+               |                |            | eq_23650 (mkViterbi.v:23650) |
+               |                |            | eq_23656 (mkViterbi.v:23656) |
+               |                |            | eq_23662 (mkViterbi.v:23662) |
+               |                |            | eq_23668 (mkViterbi.v:23668) |
+               |                |            | eq_23674 (mkViterbi.v:23674) |
+               |                |            | eq_23680 (mkViterbi.v:23680) |
+               |                |            | eq_23686 (mkViterbi.v:23686) |
+               |                |            | eq_23692 (mkViterbi.v:23692) |
+               |                |            | eq_23698 (mkViterbi.v:23698) |
+               |                |            | eq_23704 (mkViterbi.v:23704) |
+               |                |            | eq_23710 (mkViterbi.v:23710) |
+               |                |            | eq_23716 (mkViterbi.v:23716) |
+               |                |            | eq_23722 (mkViterbi.v:23722) |
+               |                |            | eq_23728 (mkViterbi.v:23728) |
+               |                |            | eq_23734 (mkViterbi.v:23734) |
+               |                |            | eq_23740 (mkViterbi.v:23740) |
+               |                |            | eq_23746 (mkViterbi.v:23746) |
+               |                |            | eq_23752 (mkViterbi.v:23752) |
+               |                |            | eq_23758 (mkViterbi.v:23758) |
+               |                |            | eq_23764 (mkViterbi.v:23764) |
+               |                |            | eq_23770 (mkViterbi.v:23770) |
+               |                |            | eq_23776 (mkViterbi.v:23776) |
+               |                |            | eq_23782 (mkViterbi.v:23782) |
+               |                |            | eq_23788 (mkViterbi.v:23788) |
+               |                |            | eq_23794 (mkViterbi.v:23794) |
+               |                |            | eq_23800 (mkViterbi.v:23800) |
+               |                |            | eq_23806 (mkViterbi.v:23806) |
+               |                |            | eq_23812 (mkViterbi.v:23812) |
+               |                |            | eq_23818 (mkViterbi.v:23818) |
+               |                |            | eq_23824 (mkViterbi.v:23824) |
+               |                |            | eq_23830 (mkViterbi.v:23830) |
+               |                |            | eq_23836 (mkViterbi.v:23836) |
+               |                |            | eq_23842 (mkViterbi.v:23842) |
+               |                |            | eq_23848 (mkViterbi.v:23848) |
+               |                |            | eq_23854 (mkViterbi.v:23854) |
+               |                |            | eq_23860 (mkViterbi.v:23860) |
+               |                |            | eq_23866 (mkViterbi.v:23866) |
+               |                |            | eq_23872 (mkViterbi.v:23872) |
+               |                |            | eq_23878 (mkViterbi.v:23878) |
+               |                |            | eq_23884 (mkViterbi.v:23884) |
+               |                |            | eq_23890 (mkViterbi.v:23890) |
+               |                |            | eq_23896 (mkViterbi.v:23896) |
+               |                |            | eq_23902 (mkViterbi.v:23902) |
+               |                |            | eq_23908 (mkViterbi.v:23908) |
+               |                |            | eq_23914 (mkViterbi.v:23914) |
+               |                |            | eq_23920 (mkViterbi.v:23920) |
+               |                |            | eq_23926 (mkViterbi.v:23926) |
+               |                |            | eq_23932 (mkViterbi.v:23932) |
+               |                |            | eq_23938 (mkViterbi.v:23938) |
+               |                |            | eq_23944 (mkViterbi.v:23944) |
+               |                |            | eq_23950 (mkViterbi.v:23950) |
+               |                |            | eq_23956 (mkViterbi.v:23956) |
+               |                |            | eq_23962 (mkViterbi.v:23962) |
+               |                |            | eq_23968 (mkViterbi.v:23968) |
+               |                |            | eq_23974 (mkViterbi.v:23974) |
+               |                |            | eq_23980 (mkViterbi.v:23980) |
+               |                |            | eq_23986 (mkViterbi.v:23986) |
+               |                |            | eq_23992 (mkViterbi.v:23992) |
+               |                |            | eq_23998 (mkViterbi.v:23998) |
+               |                |            | eq_24004 (mkViterbi.v:24004) |
+               |                |            | eq_24010 (mkViterbi.v:24010) |
+               |                |            | eq_24016 (mkViterbi.v:24016) |
+               |                |            | eq_24022 (mkViterbi.v:24022) |
+               |                |            | eq_24028 (mkViterbi.v:24028) |
+               |                |            | eq_24034 (mkViterbi.v:24034) |
+               |                |            | eq_24040 (mkViterbi.v:24040) |
+               |                |            | eq_24046 (mkViterbi.v:24046) |
+               |                |            | eq_24052 (mkViterbi.v:24052) |
+               |                |            | eq_24058 (mkViterbi.v:24058) |
+               |                |            | eq_24064 (mkViterbi.v:24064) |
+               |                |            | eq_24070 (mkViterbi.v:24070) |
+               |                |            | eq_24076 (mkViterbi.v:24076) |
+               |                |            | eq_24082 (mkViterbi.v:24082) |
+               |                |            | eq_24088 (mkViterbi.v:24088) |
+               |                |            | eq_24094 (mkViterbi.v:24094) |
+               |                |            | eq_24100 (mkViterbi.v:24100) |
+               |                |            | eq_24106 (mkViterbi.v:24106) |
+               |                |            | eq_24112 (mkViterbi.v:24112) |
+               |                |            | eq_24118 (mkViterbi.v:24118) |
+               |                |            | eq_24124 (mkViterbi.v:24124) |
+               |                |            | eq_24130 (mkViterbi.v:24130) |
+               |                |            | eq_24136 (mkViterbi.v:24136) |
+               |                |            | eq_24142 (mkViterbi.v:24142) |
+               |                |            | eq_24148 (mkViterbi.v:24148) |
+               |                |            | eq_24154 (mkViterbi.v:24154) |
+               |                |            | eq_24160 (mkViterbi.v:24160) |
+               |                |            | eq_24166 (mkViterbi.v:24166) |
+               |                |            | eq_24172 (mkViterbi.v:24172) |
+               |                |            | eq_24178 (mkViterbi.v:24178) |
+               |                |            | eq_24184 (mkViterbi.v:24184) |
+               |                |            | eq_24190 (mkViterbi.v:24190) |
+               |                |            | eq_24196 (mkViterbi.v:24196) |
+               |                |            | eq_24202 (mkViterbi.v:24202) |
+               |                |            | eq_24208 (mkViterbi.v:24208) |
+               |                |            | eq_24214 (mkViterbi.v:24214) |
+               |                |            | eq_24220 (mkViterbi.v:24220) |
+               |                |            | eq_24226 (mkViterbi.v:24226) |
+               |                |            | eq_24232 (mkViterbi.v:24232) |
+               |                |            | eq_24238 (mkViterbi.v:24238) |
+               |                |            | eq_24244 (mkViterbi.v:24244) |
+               |                |            | eq_24250 (mkViterbi.v:24250) |
+               |                |            | eq_24256 (mkViterbi.v:24256) |
+               |                |            | eq_24262 (mkViterbi.v:24262) |
+               |                |            | eq_24268 (mkViterbi.v:24268) |
+               |                |            | eq_24274 (mkViterbi.v:24274) |
+               |                |            | eq_24280 (mkViterbi.v:24280) |
+               |                |            | eq_24286 (mkViterbi.v:24286) |
+               |                |            | eq_24292 (mkViterbi.v:24292) |
+               |                |            | eq_24298 (mkViterbi.v:24298) |
+               |                |            | eq_24304 (mkViterbi.v:24304) |
+               |                |            | eq_24310 (mkViterbi.v:24310) |
+               |                |            | eq_24316 (mkViterbi.v:24316) |
+               |                |            | eq_24322 (mkViterbi.v:24322) |
+               |                |            | eq_24328 (mkViterbi.v:24328) |
+               |                |            | eq_24334 (mkViterbi.v:24334) |
+               |                |            | eq_24340 (mkViterbi.v:24340) |
+               |                |            | eq_24346 (mkViterbi.v:24346) |
+               |                |            | eq_24352 (mkViterbi.v:24352) |
+               |                |            | eq_24358 (mkViterbi.v:24358) |
+               |                |            | eq_24364 (mkViterbi.v:24364) |
+               |                |            | eq_24370 (mkViterbi.v:24370) |
+               |                |            | eq_24376 (mkViterbi.v:24376) |
+               |                |            | eq_24382 (mkViterbi.v:24382) |
+               |                |            | eq_24388 (mkViterbi.v:24388) |
+               |                |            | eq_24394 (mkViterbi.v:24394) |
+               |                |            | eq_24400 (mkViterbi.v:24400) |
+               |                |            | eq_24406 (mkViterbi.v:24406) |
+               |                |            | eq_24412 (mkViterbi.v:24412) |
+               |                |            | eq_24418 (mkViterbi.v:24418) |
+               |                |            | eq_24424 (mkViterbi.v:24424) |
+               |                |            | eq_24430 (mkViterbi.v:24430) |
+               |                |            | eq_24436 (mkViterbi.v:24436) |
+               |                |            | eq_24442 (mkViterbi.v:24442) |
+               |                |            | eq_24448 (mkViterbi.v:24448) |
+               |                |            | eq_24454 (mkViterbi.v:24454) |
+               |                |            | eq_24460 (mkViterbi.v:24460) |
+               |                |            | eq_24466 (mkViterbi.v:24466) |
+               |                |            | eq_24472 (mkViterbi.v:24472) |
+               |                |            | eq_24478 (mkViterbi.v:24478) |
+               |                |            | eq_24484 (mkViterbi.v:24484) |
+               |                |            | eq_24490 (mkViterbi.v:24490) |
+               |                |            | eq_24496 (mkViterbi.v:24496) |
+               |                |            | eq_24502 (mkViterbi.v:24502) |
+               |                |            | eq_24508 (mkViterbi.v:24508) |
+               |                |            | eq_24514 (mkViterbi.v:24514) |
+               |                |            | eq_24520 (mkViterbi.v:24520) |
+               |                |            | eq_24526 (mkViterbi.v:24526) |
+               |                |            | eq_24532 (mkViterbi.v:24532) |
+               |                |            | eq_24538 (mkViterbi.v:24538) |
+               |                |            | eq_24544 (mkViterbi.v:24544) |
+               |                |            | eq_24550 (mkViterbi.v:24550) |
+               |                |            | eq_24556 (mkViterbi.v:24556) |
+               |                |            | eq_24562 (mkViterbi.v:24562) |
+               |                |            | eq_24568 (mkViterbi.v:24568) |
+               |                |            | eq_24574 (mkViterbi.v:24574) |
+               |                |            | eq_24580 (mkViterbi.v:24580) |
+               |                |            | eq_24586 (mkViterbi.v:24586) |
+               |                |            | eq_24592 (mkViterbi.v:24592) |
+               |                |            | eq_24598 (mkViterbi.v:24598) |
+               |                |            | eq_24604 (mkViterbi.v:24604) |
+               |                |            | eq_24610 (mkViterbi.v:24610) |
+               |                |            | eq_24616 (mkViterbi.v:24616) |
+               |                |            | eq_24622 (mkViterbi.v:24622) |
+               |                |            | eq_24628 (mkViterbi.v:24628) |
+               |                |            | eq_24634 (mkViterbi.v:24634) |
+               |                |            | eq_24640 (mkViterbi.v:24640) |
+               |                |            | eq_24646 (mkViterbi.v:24646) |
+               |                |            | eq_24652 (mkViterbi.v:24652) |
+               |                |            | eq_24658 (mkViterbi.v:24658) |
+               |                |            | eq_24664 (mkViterbi.v:24664) |
+               |                |            | eq_24670 (mkViterbi.v:24670) |
+               |                |            | eq_24676 (mkViterbi.v:24676) |
+               |                |            | eq_24682 (mkViterbi.v:24682) |
+               |                |            | eq_24688 (mkViterbi.v:24688) |
+               |                |            | eq_24694 (mkViterbi.v:24694) |
+               |                |            | eq_24700 (mkViterbi.v:24700) |
+               |                |            | eq_24706 (mkViterbi.v:24706) |
+               |                |            | eq_24712 (mkViterbi.v:24712) |
+               |                |            | eq_24718 (mkViterbi.v:24718) |
+               |                |            | eq_24724 (mkViterbi.v:24724) |
+               |                |            | eq_24730 (mkViterbi.v:24730) |
+               |                |            | eq_24736 (mkViterbi.v:24736) |
+               |                |            | eq_24742 (mkViterbi.v:24742) |
+               |                |            | eq_24748 (mkViterbi.v:24748) |
+               |                |            | eq_24754 (mkViterbi.v:24754) |
+               |                |            | eq_24760 (mkViterbi.v:24760) |
+               |                |            | eq_24766 (mkViterbi.v:24766) |
+               |                |            | eq_24772 (mkViterbi.v:24772) |
+               |                |            | eq_24778 (mkViterbi.v:24778) |
+               |                |            | eq_24784 (mkViterbi.v:24784) |
+               |                |            | eq_24790 (mkViterbi.v:24790) |
+               |                |            | eq_24796 (mkViterbi.v:24796) |
+               |                |            | eq_24802 (mkViterbi.v:24802) |
+               |                |            | eq_24808 (mkViterbi.v:24808) |
+               |                |            | eq_24814 (mkViterbi.v:24814) |
+               |                |            | eq_24820 (mkViterbi.v:24820) |
+               |                |            | eq_24826 (mkViterbi.v:24826) |
+               |                |            | eq_24832 (mkViterbi.v:24832) |
+               |                |            | eq_24838 (mkViterbi.v:24838) |
+               |                |            | eq_24844 (mkViterbi.v:24844) |
+               |                |            | eq_24850 (mkViterbi.v:24850) |
+               |                |            | eq_24856 (mkViterbi.v:24856) |
+               |                |            | eq_24862 (mkViterbi.v:24862) |
+               |                |            | eq_24868 (mkViterbi.v:24868) |
+               |                |            | eq_24874 (mkViterbi.v:24874) |
+               |                |            | eq_24880 (mkViterbi.v:24880) |
+               |                |            | eq_24886 (mkViterbi.v:24886) |
+               |                |            | eq_24892 (mkViterbi.v:24892) |
+               |                |            | eq_24898 (mkViterbi.v:24898) |
+               |                |            | eq_24904 (mkViterbi.v:24904) |
+               |                |            | eq_24910 (mkViterbi.v:24910) |
+               |                |            | eq_24916 (mkViterbi.v:24916) |
+               |                |            | eq_24922 (mkViterbi.v:24922) |
+               |                |            | eq_24928 (mkViterbi.v:24928) |
+               |                |            | eq_24934 (mkViterbi.v:24934) |
+               |                |            | eq_24940 (mkViterbi.v:24940) |
+               |                |            | eq_24946 (mkViterbi.v:24946) |
+               |                |            | eq_24952 (mkViterbi.v:24952) |
+               |                |            | eq_24958 (mkViterbi.v:24958) |
+               |                |            | eq_24964 (mkViterbi.v:24964) |
+               |                |            | eq_24970 (mkViterbi.v:24970) |
+               |                |            | eq_24976 (mkViterbi.v:24976) |
+               |                |            | eq_24982 (mkViterbi.v:24982) |
+               |                |            | eq_24988 (mkViterbi.v:24988) |
+               |                |            | eq_24994 (mkViterbi.v:24994) |
+               |                |            | eq_25000 (mkViterbi.v:25000) |
+               |                |            | eq_25006 (mkViterbi.v:25006) |
+               |                |            | eq_25012 (mkViterbi.v:25012) |
+               |                |            | eq_25018 (mkViterbi.v:25018) |
+               |                |            | eq_25024 (mkViterbi.v:25024) |
+               |                |            | eq_25030 (mkViterbi.v:25030) |
+               |                |            | eq_25036 (mkViterbi.v:25036) |
+               |                |            | eq_25042 (mkViterbi.v:25042) |
+               |                |            | eq_25048 (mkViterbi.v:25048) |
+               |                |            | eq_25054 (mkViterbi.v:25054) |
+               |                |            | eq_25060 (mkViterbi.v:25060) |
+               |                |            | eq_25066 (mkViterbi.v:25066) |
+               |                |            | eq_25072 (mkViterbi.v:25072) |
+               |                |            | eq_25078 (mkViterbi.v:25078) |
+               |                |            | eq_25084 (mkViterbi.v:25084) |
+               |                |            | eq_25090 (mkViterbi.v:25090) |
+               |                |            | eq_25096 (mkViterbi.v:25096) |
+               |                |            | eq_25102 (mkViterbi.v:25102) |
+               |                |            | eq_25108 (mkViterbi.v:25108) |
+               |                |            | eq_25114 (mkViterbi.v:25114) |
+               |                |            | eq_25120 (mkViterbi.v:25120) |
+               |                |            | eq_25126 (mkViterbi.v:25126) |
+               |                |            | eq_25132 (mkViterbi.v:25132) |
+               |                |            | eq_25138 (mkViterbi.v:25138) |
+               |                |            | eq_25144 (mkViterbi.v:25144) |
+               |                |            | eq_25150 (mkViterbi.v:25150) |
+               |                |            | eq_25156 (mkViterbi.v:25156) |
+               |                |            | eq_25162 (mkViterbi.v:25162) |
+               |                |            | eq_25168 (mkViterbi.v:25168) |
+               |                |            | eq_25174 (mkViterbi.v:25174) |
+               |                |            | eq_25180 (mkViterbi.v:25180) |
+               |                |            | eq_25186 (mkViterbi.v:25186) |
+               |                |            | eq_25192 (mkViterbi.v:25192) |
+               |                |            | eq_25198 (mkViterbi.v:25198) |
+               |                |            | eq_25204 (mkViterbi.v:25204) |
+               |                |            | eq_25210 (mkViterbi.v:25210) |
+               |                |            | eq_25216 (mkViterbi.v:25216) |
+               |                |            | eq_25222 (mkViterbi.v:25222) |
+               |                |            | eq_25228 (mkViterbi.v:25228) |
+               |                |            | eq_25234 (mkViterbi.v:25234) |
+               |                |            | eq_25240 (mkViterbi.v:25240) |
+               |                |            | eq_25246 (mkViterbi.v:25246) |
+               |                |            | eq_25252 (mkViterbi.v:25252) |
+               |                |            | eq_25258 (mkViterbi.v:25258) |
+               |                |            | eq_25264 (mkViterbi.v:25264) |
+               |                |            | eq_25270 (mkViterbi.v:25270) |
+               |                |            | eq_25276 (mkViterbi.v:25276) |
+               |                |            | eq_25282 (mkViterbi.v:25282) |
+               |                |            | eq_25288 (mkViterbi.v:25288) |
+               |                |            | eq_25294 (mkViterbi.v:25294) |
+               |                |            | eq_25300 (mkViterbi.v:25300) |
+               |                |            | eq_25306 (mkViterbi.v:25306) |
+               |                |            | eq_25312 (mkViterbi.v:25312) |
+               |                |            | eq_25318 (mkViterbi.v:25318) |
+               |                |            | eq_25324 (mkViterbi.v:25324) |
+               |                |            | eq_25330 (mkViterbi.v:25330) |
+               |                |            | eq_25336 (mkViterbi.v:25336) |
+               |                |            | eq_25342 (mkViterbi.v:25342) |
+               |                |            | eq_25348 (mkViterbi.v:25348) |
+               |                |            | eq_25354 (mkViterbi.v:25354) |
+               |                |            | eq_25360 (mkViterbi.v:25360) |
+               |                |            | eq_25366 (mkViterbi.v:25366) |
+               |                |            | eq_25372 (mkViterbi.v:25372) |
+               |                |            | eq_25378 (mkViterbi.v:25378) |
+               |                |            | eq_25384 (mkViterbi.v:25384) |
+               |                |            | eq_25390 (mkViterbi.v:25390) |
+               |                |            | eq_25396 (mkViterbi.v:25396) |
+               |                |            | eq_25402 (mkViterbi.v:25402) |
+               |                |            | eq_25408 (mkViterbi.v:25408) |
+               |                |            | eq_25414 (mkViterbi.v:25414) |
+               |                |            | eq_25420 (mkViterbi.v:25420) |
+               |                |            | eq_25426 (mkViterbi.v:25426) |
+               |                |            | eq_25432 (mkViterbi.v:25432) |
+               |                |            | eq_25438 (mkViterbi.v:25438) |
+               |                |            | eq_25444 (mkViterbi.v:25444) |
+               |                |            | eq_25450 (mkViterbi.v:25450) |
+               |                |            | eq_25456 (mkViterbi.v:25456) |
+               |                |            | eq_25462 (mkViterbi.v:25462) |
+               |                |            | eq_25468 (mkViterbi.v:25468) |
+               |                |            | eq_25474 (mkViterbi.v:25474) |
+               |                |            | eq_25480 (mkViterbi.v:25480) |
+               |                |            | eq_25486 (mkViterbi.v:25486) |
+               |                |            | eq_25492 (mkViterbi.v:25492) |
+               |                |            | eq_25498 (mkViterbi.v:25498) |
+               |                |            | eq_25504 (mkViterbi.v:25504) |
+               |                |            | eq_25510 (mkViterbi.v:25510) |
+               |                |            | eq_25516 (mkViterbi.v:25516) |
+               |                |            | eq_25522 (mkViterbi.v:25522) |
+               |                |            | eq_25528 (mkViterbi.v:25528) |
+               |                |            | eq_25534 (mkViterbi.v:25534) |
+               |                |            | eq_25540 (mkViterbi.v:25540) |
+               |                |            | eq_25546 (mkViterbi.v:25546) |
+               |                |            | eq_25552 (mkViterbi.v:25552) |
+               |                |            | eq_25558 (mkViterbi.v:25558) |
+               |                |            | eq_25564 (mkViterbi.v:25564) |
+               |                |            | eq_25570 (mkViterbi.v:25570) |
+               |                |            | eq_25576 (mkViterbi.v:25576) |
+               |                |            | eq_25582 (mkViterbi.v:25582) |
+               |                |            | eq_25588 (mkViterbi.v:25588) |
+               |                |            | eq_25594 (mkViterbi.v:25594) |
+               |                |            | eq_25600 (mkViterbi.v:25600) |
+               |                |            | eq_25606 (mkViterbi.v:25606) |
+               |                |            | eq_25612 (mkViterbi.v:25612) |
+               |                |            | eq_25618 (mkViterbi.v:25618) |
+               |                |            | eq_25624 (mkViterbi.v:25624) |
+               |                |            | eq_25630 (mkViterbi.v:25630) |
+               |                |            | eq_25636 (mkViterbi.v:25636) |
+               |                |            | eq_25642 (mkViterbi.v:25642) |
+               |                |            | eq_25648 (mkViterbi.v:25648) |
+               |                |            | eq_25654 (mkViterbi.v:25654) |
+               |                |            | eq_25660 (mkViterbi.v:25660) |
+               |                |            | eq_25666 (mkViterbi.v:25666) |
+               |                |            | eq_25672 (mkViterbi.v:25672) |
+               |                |            | eq_25678 (mkViterbi.v:25678) |
+               |                |            | eq_25684 (mkViterbi.v:25684) |
+               |                |            | eq_25690 (mkViterbi.v:25690) |
+               |                |            | eq_25696 (mkViterbi.v:25696) |
+               |                |            | eq_25702 (mkViterbi.v:25702) |
+               |                |            | eq_25708 (mkViterbi.v:25708) |
+               |                |            | eq_25714 (mkViterbi.v:25714) |
+               |                |            | eq_25720 (mkViterbi.v:25720) |
+               |                |            | eq_25726 (mkViterbi.v:25726) |
+               |                |            | eq_25732 (mkViterbi.v:25732) |
+               |                |            | eq_25738 (mkViterbi.v:25738) |
+               |                |            | eq_25744 (mkViterbi.v:25744) |
+               |                |            | eq_25750 (mkViterbi.v:25750) |
+               |                |            | eq_25756 (mkViterbi.v:25756) |
+               |                |            | eq_25762 (mkViterbi.v:25762) |
+               |                |            | eq_25768 (mkViterbi.v:25768) |
+               |                |            | eq_25774 (mkViterbi.v:25774) |
+               |                |            | eq_25780 (mkViterbi.v:25780) |
+               |                |            | eq_25786 (mkViterbi.v:25786) |
+               |                |            | eq_25792 (mkViterbi.v:25792) |
+               |                |            | eq_25798 (mkViterbi.v:25798) |
+               |                |            | eq_25804 (mkViterbi.v:25804) |
+               |                |            | eq_25810 (mkViterbi.v:25810) |
+               |                |            | eq_25816 (mkViterbi.v:25816) |
+               |                |            | eq_25822 (mkViterbi.v:25822) |
+               |                |            | eq_25828 (mkViterbi.v:25828) |
+               |                |            | eq_25834 (mkViterbi.v:25834) |
+               |                |            | eq_25840 (mkViterbi.v:25840) |
+               |                |            | eq_25846 (mkViterbi.v:25846) |
+               |                |            | eq_25852 (mkViterbi.v:25852) |
+               |                |            | eq_25858 (mkViterbi.v:25858) |
+               |                |            | eq_25864 (mkViterbi.v:25864) |
+               |                |            | eq_25870 (mkViterbi.v:25870) |
+               |                |            | eq_25876 (mkViterbi.v:25876) |
+               |                |            | eq_25882 (mkViterbi.v:25882) |
+               |                |            | eq_25888 (mkViterbi.v:25888) |
+               |                |            | eq_25894 (mkViterbi.v:25894) |
+               |                |            | eq_25900 (mkViterbi.v:25900) |
+               |                |            | eq_25906 (mkViterbi.v:25906) |
+               |                |            | eq_25912 (mkViterbi.v:25912) |
+               |                |            | eq_25918 (mkViterbi.v:25918) |
+               |                |            | eq_25924 (mkViterbi.v:25924) |
+               |                |            | eq_25930 (mkViterbi.v:25930) |
+               |                |            | eq_25936 (mkViterbi.v:25936) |
+               |                |            | eq_25942 (mkViterbi.v:25942) |
+               |                |            | eq_25948 (mkViterbi.v:25948) |
+               |                |            | eq_25954 (mkViterbi.v:25954) |
+               |                |            | eq_25960 (mkViterbi.v:25960) |
+               |                |            | eq_25966 (mkViterbi.v:25966) |
+               |                |            | eq_25972 (mkViterbi.v:25972) |
+               |                |            | eq_25978 (mkViterbi.v:25978) |
+               |                |            | eq_25984 (mkViterbi.v:25984) |
+               |                |            | eq_25990 (mkViterbi.v:25990) |
+               |                |            | eq_25996 (mkViterbi.v:25996) |
+               |                |            | eq_26002 (mkViterbi.v:26002) |
+               |                |            | eq_26008 (mkViterbi.v:26008) |
+               |                |            | eq_26014 (mkViterbi.v:26014) |
+               |                |            | eq_26020 (mkViterbi.v:26020) |
+               |                |            | eq_26026 (mkViterbi.v:26026) |
+               |                |            | eq_26032 (mkViterbi.v:26032) |
+               |                |            | eq_26038 (mkViterbi.v:26038) |
+               |                |            | eq_26044 (mkViterbi.v:26044) |
+               |                |            | eq_26050 (mkViterbi.v:26050) |
+               |                |            | eq_26056 (mkViterbi.v:26056) |
+               |                |            | eq_26062 (mkViterbi.v:26062) |
+               |                |            | eq_26068 (mkViterbi.v:26068) |
+               |                |            | eq_26074 (mkViterbi.v:26074) |
+               |                |            | eq_26080 (mkViterbi.v:26080) |
+               |                |            | eq_26086 (mkViterbi.v:26086) |
+               |                |            | eq_26092 (mkViterbi.v:26092) |
+               |                |            | eq_26098 (mkViterbi.v:26098) |
+               |                |            | eq_26104 (mkViterbi.v:26104) |
+               |                |            | eq_26110 (mkViterbi.v:26110) |
+               |                |            | eq_26116 (mkViterbi.v:26116) |
+               |                |            | eq_26122 (mkViterbi.v:26122) |
+               |                |            | eq_26128 (mkViterbi.v:26128) |
+               |                |            | eq_26134 (mkViterbi.v:26134) |
+               |                |            | eq_26140 (mkViterbi.v:26140) |
+               |                |            | eq_26146 (mkViterbi.v:26146) |
+               |                |            | eq_26152 (mkViterbi.v:26152) |
+               |                |            | eq_26158 (mkViterbi.v:26158) |
+               |                |            | eq_26164 (mkViterbi.v:26164) |
+               |                |            | eq_26170 (mkViterbi.v:26170) |
+               |                |            | eq_26176 (mkViterbi.v:26176) |
+               |                |            | eq_26182 (mkViterbi.v:26182) |
+               |                |            | eq_26188 (mkViterbi.v:26188) |
+               |                |            | eq_26194 (mkViterbi.v:26194) |
+               |                |            | eq_26200 (mkViterbi.v:26200) |
+               |                |            | eq_26206 (mkViterbi.v:26206) |
+               |                |            | eq_26212 (mkViterbi.v:26212) |
+               |                |            | eq_26218 (mkViterbi.v:26218) |
+               |                |            | eq_26224 (mkViterbi.v:26224) |
+               |                |            | eq_26230 (mkViterbi.v:26230) |
+               |                |            | eq_26236 (mkViterbi.v:26236) |
+               |                |            | eq_26242 (mkViterbi.v:26242) |
+               |                |            | eq_26248 (mkViterbi.v:26248) |
+               |                |            | eq_26254 (mkViterbi.v:26254) |
+               |                |            | eq_26260 (mkViterbi.v:26260) |
+               |                |            | eq_26266 (mkViterbi.v:26266) |
+               |                |            | eq_26272 (mkViterbi.v:26272) |
+               |                |            | eq_26278 (mkViterbi.v:26278) |
+               |                |            | eq_26284 (mkViterbi.v:26284) |
+               |                |            | eq_26290 (mkViterbi.v:26290) |
+               |                |            | eq_26296 (mkViterbi.v:26296) |
+               |                |            | eq_26302 (mkViterbi.v:26302) |
+               |                |            | eq_26308 (mkViterbi.v:26308) |
+               |                |            | eq_26314 (mkViterbi.v:26314) |
+               |                |            | eq_26320 (mkViterbi.v:26320) |
+               |                |            | eq_26326 (mkViterbi.v:26326) |
+               |                |            | eq_26332 (mkViterbi.v:26332) |
+               |                |            | eq_26338 (mkViterbi.v:26338) |
+               |                |            | eq_26344 (mkViterbi.v:26344) |
+               |                |            | eq_26350 (mkViterbi.v:26350) |
+               |                |            | eq_26356 (mkViterbi.v:26356) |
+               |                |            | eq_26362 (mkViterbi.v:26362) |
+               |                |            | eq_26368 (mkViterbi.v:26368) |
+               |                |            | eq_26374 (mkViterbi.v:26374) |
+               |                |            | eq_26380 (mkViterbi.v:26380) |
+               |                |            | eq_26386 (mkViterbi.v:26386) |
+               |                |            | eq_26392 (mkViterbi.v:26392) |
+               |                |            | eq_26398 (mkViterbi.v:26398) |
+               |                |            | eq_26404 (mkViterbi.v:26404) |
+               |                |            | eq_26410 (mkViterbi.v:26410) |
+               |                |            | eq_26416 (mkViterbi.v:26416) |
+               |                |            | eq_26422 (mkViterbi.v:26422) |
+               |                |            | eq_26428 (mkViterbi.v:26428) |
+               |                |            | eq_26434 (mkViterbi.v:26434) |
+               |                |            | eq_26440 (mkViterbi.v:26440) |
+               |                |            | eq_26446 (mkViterbi.v:26446) |
+               |                |            | eq_26452 (mkViterbi.v:26452) |
+               |                |            | eq_26458 (mkViterbi.v:26458) |
+               |                |            | eq_26464 (mkViterbi.v:26464) |
+               |                |            | eq_26470 (mkViterbi.v:26470) |
+               |                |            | eq_26476 (mkViterbi.v:26476) |
+               |                |            | eq_26482 (mkViterbi.v:26482) |
+               |                |            | eq_26488 (mkViterbi.v:26488) |
+               |                |            | eq_26494 (mkViterbi.v:26494) |
+               |                |            | eq_26500 (mkViterbi.v:26500) |
+               |                |            | eq_26506 (mkViterbi.v:26506) |
+               |                |            | eq_26512 (mkViterbi.v:26512) |
+               |                |            | eq_26518 (mkViterbi.v:26518) |
+               |                |            | eq_26524 (mkViterbi.v:26524) |
+               |                |            | eq_26530 (mkViterbi.v:26530) |
+               |                |            | eq_26536 (mkViterbi.v:26536) |
+               |                |            | eq_26542 (mkViterbi.v:26542) |
+               |                |            | eq_26548 (mkViterbi.v:26548) |
+               |                |            | eq_26554 (mkViterbi.v:26554) |
+               |                |            | eq_26560 (mkViterbi.v:26560) |
+               |                |            | eq_26566 (mkViterbi.v:26566) |
+               |                |            | eq_26572 (mkViterbi.v:26572) |
+               |                |            | eq_26578 (mkViterbi.v:26578) |
+               |                |            | eq_26584 (mkViterbi.v:26584) |
+               |                |            | eq_26590 (mkViterbi.v:26590) |
+               |                |            | eq_26596 (mkViterbi.v:26596) |
+               |                |            | eq_26602 (mkViterbi.v:26602) |
+               |                |            | eq_26608 (mkViterbi.v:26608) |
+               |                |            | eq_26614 (mkViterbi.v:26614) |
+               |                |            | eq_26620 (mkViterbi.v:26620) |
+               |                |            | eq_26626 (mkViterbi.v:26626) |
+               |                |            | eq_26632 (mkViterbi.v:26632) |
+               |                |            | eq_26638 (mkViterbi.v:26638) |
+               |                |            | eq_26644 (mkViterbi.v:26644) |
+               |                |            | eq_26650 (mkViterbi.v:26650) |
+               |                |            | eq_26656 (mkViterbi.v:26656) |
+               |                |            | eq_26662 (mkViterbi.v:26662) |
+               |                |            | eq_26668 (mkViterbi.v:26668) |
+               |                |            | eq_26674 (mkViterbi.v:26674) |
+               |                |            | eq_26680 (mkViterbi.v:26680) |
+               |                |            | eq_26686 (mkViterbi.v:26686) |
+               |                |            | eq_26692 (mkViterbi.v:26692) |
+               |                |            | eq_26698 (mkViterbi.v:26698) |
+               |                |            | eq_26704 (mkViterbi.v:26704) |
+               |                |            | eq_26710 (mkViterbi.v:26710) |
+               |                |            | eq_26716 (mkViterbi.v:26716) |
+               |                |            | eq_26722 (mkViterbi.v:26722) |
+               |                |            | eq_26728 (mkViterbi.v:26728) |
+               |                |            | eq_26734 (mkViterbi.v:26734) |
+               |                |            | eq_26740 (mkViterbi.v:26740) |
+               |                |            | eq_26746 (mkViterbi.v:26746) |
+               |                |            | eq_26752 (mkViterbi.v:26752) |
+               |                |            | eq_26758 (mkViterbi.v:26758) |
+               |                |            | eq_26764 (mkViterbi.v:26764) |
+               |                |            | eq_26770 (mkViterbi.v:26770) |
+               |                |            | eq_26776 (mkViterbi.v:26776) |
+               |                |            | eq_26782 (mkViterbi.v:26782) |
+| *cell*10601    | DW_decode_en   | width=10   | eq_14048 (mkViterbi.v:14048) |
+               |                |            | eq_14053 (mkViterbi.v:14053) |
+               |                |            | eq_14060 (mkViterbi.v:14060) |
+               |                |            | eq_14067 (mkViterbi.v:14067) |
+               |                |            | eq_14074 (mkViterbi.v:14074) |
+               |                |            | eq_14081 (mkViterbi.v:14081) |
+               |                |            | eq_14088 (mkViterbi.v:14088) |
+               |                |            | eq_14095 (mkViterbi.v:14095) |
+               |                |            | eq_14102 (mkViterbi.v:14102) |
+               |                |            | eq_14109 (mkViterbi.v:14109) |
+               |                |            | eq_14116 (mkViterbi.v:14116) |
+               |                |            | eq_14123 (mkViterbi.v:14123) |
+               |                |            | eq_14130 (mkViterbi.v:14130) |
+               |                |            | eq_14137 (mkViterbi.v:14137) |
+               |                |            | eq_14144 (mkViterbi.v:14144) |
+               |                |            | eq_14151 (mkViterbi.v:14151) |
+               |                |            | eq_14158 (mkViterbi.v:14158) |
+               |                |            | eq_14165 (mkViterbi.v:14165) |
+               |                |            | eq_14172 (mkViterbi.v:14172) |
+               |                |            | eq_14179 (mkViterbi.v:14179) |
+               |                |            | eq_14186 (mkViterbi.v:14186) |
+               |                |            | eq_14193 (mkViterbi.v:14193) |
+               |                |            | eq_14200 (mkViterbi.v:14200) |
+               |                |            | eq_14207 (mkViterbi.v:14207) |
+               |                |            | eq_14214 (mkViterbi.v:14214) |
+               |                |            | eq_14221 (mkViterbi.v:14221) |
+               |                |            | eq_14228 (mkViterbi.v:14228) |
+               |                |            | eq_14235 (mkViterbi.v:14235) |
+               |                |            | eq_14242 (mkViterbi.v:14242) |
+               |                |            | eq_14249 (mkViterbi.v:14249) |
+               |                |            | eq_14256 (mkViterbi.v:14256) |
+               |                |            | eq_14263 (mkViterbi.v:14263) |
+               |                |            | eq_14270 (mkViterbi.v:14270) |
+               |                |            | eq_14277 (mkViterbi.v:14277) |
+               |                |            | eq_14284 (mkViterbi.v:14284) |
+               |                |            | eq_14291 (mkViterbi.v:14291) |
+               |                |            | eq_14298 (mkViterbi.v:14298) |
+               |                |            | eq_14305 (mkViterbi.v:14305) |
+               |                |            | eq_14312 (mkViterbi.v:14312) |
+               |                |            | eq_14319 (mkViterbi.v:14319) |
+               |                |            | eq_14326 (mkViterbi.v:14326) |
+               |                |            | eq_14333 (mkViterbi.v:14333) |
+               |                |            | eq_14340 (mkViterbi.v:14340) |
+               |                |            | eq_14347 (mkViterbi.v:14347) |
+               |                |            | eq_14354 (mkViterbi.v:14354) |
+               |                |            | eq_14361 (mkViterbi.v:14361) |
+               |                |            | eq_14368 (mkViterbi.v:14368) |
+               |                |            | eq_14375 (mkViterbi.v:14375) |
+               |                |            | eq_14382 (mkViterbi.v:14382) |
+               |                |            | eq_14389 (mkViterbi.v:14389) |
+               |                |            | eq_14396 (mkViterbi.v:14396) |
+               |                |            | eq_14403 (mkViterbi.v:14403) |
+               |                |            | eq_14410 (mkViterbi.v:14410) |
+               |                |            | eq_14417 (mkViterbi.v:14417) |
+               |                |            | eq_14424 (mkViterbi.v:14424) |
+               |                |            | eq_14431 (mkViterbi.v:14431) |
+               |                |            | eq_14438 (mkViterbi.v:14438) |
+               |                |            | eq_14445 (mkViterbi.v:14445) |
+               |                |            | eq_14452 (mkViterbi.v:14452) |
+               |                |            | eq_14459 (mkViterbi.v:14459) |
+               |                |            | eq_14466 (mkViterbi.v:14466) |
+               |                |            | eq_14473 (mkViterbi.v:14473) |
+               |                |            | eq_14480 (mkViterbi.v:14480) |
+               |                |            | eq_14487 (mkViterbi.v:14487) |
+               |                |            | eq_28070 (mkViterbi.v:28070) |
+               |                |            | eq_28075 (mkViterbi.v:28075) |
+               |                |            | eq_28080 (mkViterbi.v:28080) |
+               |                |            | eq_28085 (mkViterbi.v:28085) |
+               |                |            | eq_28090 (mkViterbi.v:28090) |
+               |                |            | eq_28095 (mkViterbi.v:28095) |
+               |                |            | eq_28100 (mkViterbi.v:28100) |
+               |                |            | eq_28105 (mkViterbi.v:28105) |
+               |                |            | eq_28110 (mkViterbi.v:28110) |
+               |                |            | eq_28115 (mkViterbi.v:28115) |
+               |                |            | eq_28120 (mkViterbi.v:28120) |
+               |                |            | eq_28125 (mkViterbi.v:28125) |
+               |                |            | eq_28130 (mkViterbi.v:28130) |
+               |                |            | eq_28135 (mkViterbi.v:28135) |
+               |                |            | eq_28140 (mkViterbi.v:28140) |
+               |                |            | eq_28145 (mkViterbi.v:28145) |
+               |                |            | eq_28150 (mkViterbi.v:28150) |
+               |                |            | eq_28155 (mkViterbi.v:28155) |
+               |                |            | eq_28160 (mkViterbi.v:28160) |
+               |                |            | eq_28165 (mkViterbi.v:28165) |
+               |                |            | eq_28170 (mkViterbi.v:28170) |
+               |                |            | eq_28175 (mkViterbi.v:28175) |
+               |                |            | eq_28180 (mkViterbi.v:28180) |
+               |                |            | eq_28185 (mkViterbi.v:28185) |
+               |                |            | eq_28190 (mkViterbi.v:28190) |
+               |                |            | eq_28195 (mkViterbi.v:28195) |
+               |                |            | eq_28200 (mkViterbi.v:28200) |
+               |                |            | eq_28205 (mkViterbi.v:28205) |
+               |                |            | eq_28210 (mkViterbi.v:28210) |
+               |                |            | eq_28215 (mkViterbi.v:28215) |
+               |                |            | eq_28220 (mkViterbi.v:28220) |
+               |                |            | eq_28225 (mkViterbi.v:28225) |
+               |                |            | eq_28230 (mkViterbi.v:28230) |
+               |                |            | eq_28235 (mkViterbi.v:28235) |
+               |                |            | eq_28240 (mkViterbi.v:28240) |
+               |                |            | eq_28245 (mkViterbi.v:28245) |
+               |                |            | eq_28250 (mkViterbi.v:28250) |
+               |                |            | eq_28255 (mkViterbi.v:28255) |
+               |                |            | eq_28260 (mkViterbi.v:28260) |
+               |                |            | eq_28265 (mkViterbi.v:28265) |
+               |                |            | eq_28270 (mkViterbi.v:28270) |
+               |                |            | eq_28275 (mkViterbi.v:28275) |
+               |                |            | eq_28280 (mkViterbi.v:28280) |
+               |                |            | eq_28285 (mkViterbi.v:28285) |
+               |                |            | eq_28290 (mkViterbi.v:28290) |
+               |                |            | eq_28295 (mkViterbi.v:28295) |
+               |                |            | eq_28300 (mkViterbi.v:28300) |
+               |                |            | eq_28305 (mkViterbi.v:28305) |
+               |                |            | eq_28310 (mkViterbi.v:28310) |
+               |                |            | eq_28315 (mkViterbi.v:28315) |
+               |                |            | eq_28320 (mkViterbi.v:28320) |
+               |                |            | eq_28325 (mkViterbi.v:28325) |
+               |                |            | eq_28330 (mkViterbi.v:28330) |
+               |                |            | eq_28335 (mkViterbi.v:28335) |
+               |                |            | eq_28340 (mkViterbi.v:28340) |
+               |                |            | eq_28345 (mkViterbi.v:28345) |
+               |                |            | eq_28350 (mkViterbi.v:28350) |
+               |                |            | eq_28355 (mkViterbi.v:28355) |
+               |                |            | eq_28360 (mkViterbi.v:28360) |
+               |                |            | eq_28365 (mkViterbi.v:28365) |
+               |                |            | eq_28370 (mkViterbi.v:28370) |
+               |                |            | eq_28375 (mkViterbi.v:28375) |
+               |                |            | eq_28380 (mkViterbi.v:28380) |
+               |                |            | eq_28385 (mkViterbi.v:28385) |
+| DP_OP_11244J1_122_9205          |            |                            |
+|                | DP_OP_11244J1_122_9205 |    |                            |
+| DP_OP_11245J1_123_9204          |            |                            |
+|                | DP_OP_11245J1_123_9204 |    |                            |
+| DP_OP_3728J1_124_1893           |            |                            |
+|                | DP_OP_3728J1_124_1893 |     |                            |
+=============================================================================
+
+Datapath Report for DP_OP_11244J1_122_9205
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_11244J1_122_9205 | mult_28046 (mkViterbi.v:28046)                    |
+|                      | add_28397 (mkViterbi.v:28397)                       |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 10    |                                          |
+| I2    | PI   | Unsigned | 5     |                                          |
+| I3    | PI   | Unsigned | 5     |                                          |
+| T1270 | IFO  | Unsigned | 11    | I1 * I2 (mkViterbi.v:28046)              |
+| O1    | PO   | Unsigned | 11    | T1270 + I3 (mkViterbi.v:28397)           |
+==============================================================================
+
+Datapath Report for DP_OP_11245J1_123_9204
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_11245J1_123_9204 | mult_28402 (mkViterbi.v:28402)                    |
+|                      | add_28400 (mkViterbi.v:28400)                       |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 10    |                                          |
+| I2    | PI   | Unsigned | 5     |                                          |
+| I3    | PI   | Unsigned | 5     |                                          |
+| T1339 | IFO  | Unsigned | 10    | I1 * I2 (mkViterbi.v:28402)              |
+| O1    | PO   | Unsigned | 10    | T1339 + I3 (mkViterbi.v:28400)           |
+==============================================================================
+
+Datapath Report for DP_OP_3728J1_124_1893
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_3728J1_124_1893 | sub_28461 (mkViterbi.v:28461)                      |
+|                      | add_28460 (mkViterbi.v:28460)                       |
+|                      | C70570 (mkViterbi.v:26795)                          |
+|                      | sub_28453 (mkViterbi.v:28453)                       |
+|                      | sub_28459 (mkViterbi.v:28459)                       |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 10    |                                          |
+| I2    | PI   | Unsigned | 10    |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| I4    | PI   | Signed   | 10    |                                          |
+| I5    | PI   | Unsigned | 1     |                                          |
+| T3720 | IFO  | Signed   | 6     | O1[5:0]                                  |
+| T3723 | IFO  | Signed   | 10    | { I3, I5 } ? O1 : I4 (mkViterbi.v:26795) |
+| O1    | PO   | Signed   | 10    | I1 - I2 (mkViterbi.v:28461)              |
+| O2    | PO   | Unsigned | 6     | T3720 + $unsigned(1'b1) (mkViterbi.v:28460) |
+| O3    | PO   | Signed   | 10    | T3723 - $unsigned(1'b1) ( mkViterbi.v:28453 mkViterbi.v:28459 ) |
+==============================================================================
+
+
+Datapath Extraction Report
+
+Information: Operator associated with resources 'mult_28046 (mkViterbi.v:28046)' in design 'mkViterbi' breaks the datapath extraction because there is leakage due to truncation on the fanout of its driver 'sub_28461 (mkViterbi.v:28461)'.  (HDL-120)
+
+Information: Operator associated with resources 'sub_28454 (mkViterbi.v:28454)' in design 'mkViterbi' breaks the datapath extraction because there is leakage due to truncation on its fanout to operator of resources 'add_28400 (mkViterbi.v:28400)'.  (HDL-120)
+
+Information: Operator associated with resources 'sub_28464 (mkViterbi.v:28464)' in design 'mkViterbi' breaks the datapath extraction because there is leakage due to truncation on its fanout to operator of resources 'lt_28404 (mkViterbi.v:28404)'.  (HDL-120)
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| add_x_76           | DW01_inc         | apparch (area)     |                |
+| add_x_77           | DW01_inc         | apparch (area)     |                |
+| lt_x_182           | DW_cmp           | apparch (area)     |                |
+| lt_x_183           | DW_cmp           | apparch (area)     |                |
+| lt_x_184           | DW_cmp           | apparch (area)     |                |
+| lt_x_185           | DW_cmp           | apparch (area)     |                |
+| lt_x_186           | DW_cmp           | apparch (area)     |                |
+| add_x_187          | DW01_inc         | apparch (area)     |                |
+| sub_x_188          | DW01_dec         | apparch (area)     |                |
+| add_x_189          | DW01_inc         | apparch (area)     |                |
+| add_x_190          | DW01_inc         | apparch (area)     |                |
+| sub_x_191          | DW01_dec         | apparch (area)     |                |
+| *cell*10600        | DW_decode_en     | cgen (area)        |                |
+| *cell*10601        | DW_decode_en     | cgen (area)        |                |
+| DP_OP_11244J1_122_9205                |                    |                |
+|                    | DP_OP_11244J1_122_9205 | str (area)   |                |
+|                    |                  | mult_arch: and     |                |
+| DP_OP_11245J1_123_9204                |                    |                |
+|                    | DP_OP_11245J1_123_9204 | str (area)   |                |
+|                    |                  | mult_arch: and     |                |
+| DP_OP_3728J1_124_1893                 |                    |                |
+|                    | DP_OP_3728J1_124_1893 | str (area)    |                |
+===============================================================================
+
+ 
+****************************************
+Design : mkFP32_Adder
+****************************************
+
+Resource Report for this hierarchy in file
+        /scratch/EE22B086/CS6230/new/synth/rtl/mkFP32_Adder.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| add_x_4        | DW01_inc       | width=8    | add_345 (mkFP32_Adder.v:345) |
+| sub_x_9        | DW01_dec       | width=5    | sub_391 (mkFP32_Adder.v:391) |
+| sub_x_10       | DW01_dec       | width=5    | sub_392 (mkFP32_Adder.v:392) |
+| eq_x_11        | DW_cmp         | width=8    | eq_394 (mkFP32_Adder.v:394) |
+| lte_x_12       | DW_cmp         | width=8    | lte_396 (mkFP32_Adder.v:396) |
+| ashr_13        | DW_rightsh     | A_width=24 | srl_409 (mkFP32_Adder.v:409) |
+               |                | SH_width=8 |                            |
+| sub_x_14       | DW01_sub       | width=8    | sub_410 (mkFP32_Adder.v:410) |
+| ashr_15        | DW_rightsh     | A_width=24 | srl_411 (mkFP32_Adder.v:411) |
+               |                | SH_width=8 |                            |
+| sub_x_16       | DW01_sub       | width=8    | sub_412 (mkFP32_Adder.v:412) |
+| ashr_19        | DW_rightsh     | A_width=24 | srl_425 (mkFP32_Adder.v:425) |
+               |                | SH_width=8 |                            |
+| ashr_20        | DW_rightsh     | A_width=24 | srl_426 (mkFP32_Adder.v:426) |
+               |                | SH_width=8 |                            |
+| DP_OP_134_130_6507              |            |                            |
+|                | DP_OP_134_130_6507 |        |                            |
+=============================================================================
+
+Datapath Report for DP_OP_134_130_6507
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_134_130_6507   | add_405 (mkFP32_Adder.v:405)                        |
+|                      | add_404 (mkFP32_Adder.v:404)                        |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 23    |                                          |
+| O1    | PO   | Unsigned | 23    | I1 + $unsigned(1'b1) ( mkFP32_Adder.v:404 mkFP32_Adder.v:405 ) |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| add_x_4            | DW01_inc         | apparch (area)     |                |
+| sub_x_9            | DW01_dec         | apparch (area)     |                |
+| sub_x_10           | DW01_dec         | apparch (area)     |                |
+| eq_x_11            | DW_cmp           | apparch (area)     |                |
+| lte_x_12           | DW_cmp           | apparch (area)     |                |
+| ashr_13            | DW_rightsh       | astr (area)        |                |
+| sub_x_14           | DW01_sub         | apparch (area)     |                |
+| ashr_15            | DW_rightsh       | astr (area)        |                |
+| sub_x_16           | DW01_sub         | apparch (area)     |                |
+| ashr_19            | DW_rightsh       | astr (area)        |                |
+| ashr_20            | DW_rightsh       | astr (area)        |                |
+| DP_OP_134_130_6507 | DP_OP_134_130_6507 | str (area)       |                |
+===============================================================================
+
+
+No resource sharing information to report.
+ 
+****************************************
+Design : mkRippleCarrySubtractor_0
+****************************************
+
+No implementations to report
+
+No resource sharing information to report.
+ 
+****************************************
+Design : mkRippleCarrySubtractor_1
+****************************************
+
+No implementations to report
+
+No resource sharing information to report.
+ 
+****************************************
+Design : mkBrentKungAdder24
+****************************************
+
+No implementations to report
+1

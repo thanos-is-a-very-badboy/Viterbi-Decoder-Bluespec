@@ -1,0 +1,1305 @@
+ 
+****************************************
+Report : clock_gating
+        -gating_elements
+        -gated
+        -verbose
+Design : mkViterbi
+Version: U-2022.12
+Date   : Fri Nov  7 18:28:30 2025
+****************************************
+
+Information: Identification of clock-gating cells has not been performed. Pre-existing clock-gating cells will not be reported. (PWR-947)
+--------------------------------------------------------------------------------
+                             Clock Gating Cell Report
+--------------------------------------------------------------------------------
+
+ Clock Gating Bank : clk_gate_transition_buffer_reg
+-------------------
+
+     STYLE = latch, MIN = 3, MAX = unlimited, OBS_DEPTH = 5 
+
+     TEST INFORMATION : 
+
+     INPUTS :
+         clk_gate_transition_buffer_reg/CLK = CLK 
+         clk_gate_transition_buffer_reg/EN = N431 
+
+     OUTPUTS :
+         clk_gate_transition_buffer_reg/ENCLK = net1286 
+
+     RELATED REGISTERS :
+		transition_buffer_reg_0_
+		transition_buffer_reg_1_
+		transition_buffer_reg_2_
+		transition_buffer_reg_3_
+		transition_buffer_reg_4_
+		transition_buffer_reg_5_
+		transition_buffer_reg_6_
+		transition_buffer_reg_7_
+		transition_buffer_reg_8_
+		transition_buffer_reg_9_
+		transition_buffer_reg_10_
+		transition_buffer_reg_11_
+		transition_buffer_reg_12_
+		transition_buffer_reg_13_
+		transition_buffer_reg_14_
+		transition_buffer_reg_15_
+		transition_buffer_reg_16_
+		transition_buffer_reg_17_
+		transition_buffer_reg_18_
+		transition_buffer_reg_19_
+		transition_buffer_reg_20_
+		transition_buffer_reg_21_
+		transition_buffer_reg_22_
+		transition_buffer_reg_23_
+		transition_buffer_reg_24_
+		transition_buffer_reg_25_
+		transition_buffer_reg_26_
+		transition_buffer_reg_27_
+		transition_buffer_reg_28_
+		transition_buffer_reg_29_
+		transition_buffer_reg_30_
+
+ Clock Gating Bank : clk_gate_t_start_reg
+-------------------
+
+     STYLE = latch, MIN = 3, MAX = unlimited, OBS_DEPTH = 5 
+
+     TEST INFORMATION : 
+
+     INPUTS :
+         clk_gate_t_start_reg/CLK = CLK 
+         clk_gate_t_start_reg/EN = N420 
+
+     OUTPUTS :
+         clk_gate_t_start_reg/ENCLK = net1291 
+
+     RELATED REGISTERS :
+		t_start_reg_0_
+		t_start_reg_1_
+		t_start_reg_2_
+		t_start_reg_3_
+		t_start_reg_4_
+		t_start_reg_5_
+		t_start_reg_6_
+		t_start_reg_7_
+		t_start_reg_8_
+		t_start_reg_9_
+
+ Clock Gating Bank : clk_gate_t_ctr_reg
+-------------------
+
+     STYLE = latch, MIN = 3, MAX = unlimited, OBS_DEPTH = 5 
+
+     TEST INFORMATION : 
+
+     INPUTS :
+         clk_gate_t_ctr_reg/CLK = CLK 
+         clk_gate_t_ctr_reg/EN = N409 
+
+     OUTPUTS :
+         clk_gate_t_ctr_reg/ENCLK = net1296 
+
+     RELATED REGISTERS :
+		t_ctr_reg_0_
+		t_ctr_reg_1_
+		t_ctr_reg_2_
+		t_ctr_reg_3_
+		t_ctr_reg_4_
+		t_ctr_reg_5_
+		t_ctr_reg_6_
+		t_ctr_reg_7_
+		t_ctr_reg_8_
+		t_ctr_reg_9_
+
+ Clock Gating Bank : clk_gate_prev_buffer_reg
+-------------------
+
+     STYLE = latch, MIN = 3, MAX = unlimited, OBS_DEPTH = 5 
+
+     TEST INFORMATION : 
+
+     INPUTS :
+         clk_gate_prev_buffer_reg/CLK = CLK 
+         clk_gate_prev_buffer_reg/EN = N356 
+
+     OUTPUTS :
+         clk_gate_prev_buffer_reg/ENCLK = net1301 
+
+     RELATED REGISTERS :
+		prev_buffer_reg_31_
+		prev_buffer_reg_30_
+		prev_buffer_reg_29_
+		prev_buffer_reg_28_
+		prev_buffer_reg_27_
+		prev_buffer_reg_26_
+		prev_buffer_reg_25_
+		prev_buffer_reg_24_
+		prev_buffer_reg_23_
+		prev_buffer_reg_22_
+		prev_buffer_reg_21_
+		prev_buffer_reg_20_
+		prev_buffer_reg_19_
+		prev_buffer_reg_18_
+		prev_buffer_reg_17_
+		prev_buffer_reg_16_
+		prev_buffer_reg_15_
+		prev_buffer_reg_14_
+		prev_buffer_reg_13_
+		prev_buffer_reg_12_
+		prev_buffer_reg_11_
+		prev_buffer_reg_10_
+		prev_buffer_reg_9_
+		prev_buffer_reg_8_
+		prev_buffer_reg_7_
+		prev_buffer_reg_6_
+		prev_buffer_reg_5_
+		prev_buffer_reg_4_
+		prev_buffer_reg_3_
+		prev_buffer_reg_2_
+		prev_buffer_reg_1_
+		prev_buffer_reg_0_
+
+ Clock Gating Bank : clk_gate_path_buffer_reg
+-------------------
+
+     STYLE = latch, MIN = 3, MAX = unlimited, OBS_DEPTH = 5 
+
+     TEST INFORMATION : 
+
+     INPUTS :
+         clk_gate_path_buffer_reg/CLK = CLK 
+         clk_gate_path_buffer_reg/EN = N348 
+
+     OUTPUTS :
+         clk_gate_path_buffer_reg/ENCLK = net1306 
+
+     RELATED REGISTERS :
+		path_buffer_reg_0_
+		path_buffer_reg_1_
+		path_buffer_reg_2_
+		path_buffer_reg_3_
+		path_buffer_reg_4_
+
+ Clock Gating Bank : clk_gate_outcome_idx_reg
+-------------------
+
+     STYLE = latch, MIN = 3, MAX = unlimited, OBS_DEPTH = 5 
+
+     TEST INFORMATION : 
+
+     INPUTS :
+         clk_gate_outcome_idx_reg/CLK = CLK 
+         clk_gate_outcome_idx_reg/EN = N335 
+
+     OUTPUTS :
+         clk_gate_outcome_idx_reg/ENCLK = net1311 
+
+     RELATED REGISTERS :
+		outcome_idx_reg_0_
+		outcome_idx_reg_1_
+		outcome_idx_reg_2_
+		outcome_idx_reg_3_
+		outcome_idx_reg_4_
+		outcome_idx_reg_5_
+		outcome_idx_reg_6_
+		outcome_idx_reg_7_
+		outcome_idx_reg_8_
+		outcome_idx_reg_9_
+
+ Clock Gating Bank : clk_gate_outcome_buffer_reg
+-------------------
+
+     STYLE = latch, MIN = 3, MAX = unlimited, OBS_DEPTH = 5 
+
+     TEST INFORMATION : 
+
+     INPUTS :
+         clk_gate_outcome_buffer_reg/CLK = CLK 
+         clk_gate_outcome_buffer_reg/EN = N302 
+
+     OUTPUTS :
+         clk_gate_outcome_buffer_reg/ENCLK = net1316 
+
+     RELATED REGISTERS :
+		outcome_buffer_reg_0_
+		outcome_buffer_reg_1_
+		outcome_buffer_reg_2_
+		outcome_buffer_reg_3_
+		outcome_buffer_reg_4_
+		outcome_buffer_reg_5_
+		outcome_buffer_reg_6_
+		outcome_buffer_reg_7_
+		outcome_buffer_reg_8_
+		outcome_buffer_reg_9_
+		outcome_buffer_reg_10_
+		outcome_buffer_reg_11_
+		outcome_buffer_reg_12_
+		outcome_buffer_reg_13_
+		outcome_buffer_reg_14_
+		outcome_buffer_reg_15_
+		outcome_buffer_reg_16_
+		outcome_buffer_reg_17_
+		outcome_buffer_reg_18_
+		outcome_buffer_reg_19_
+		outcome_buffer_reg_20_
+		outcome_buffer_reg_21_
+		outcome_buffer_reg_22_
+		outcome_buffer_reg_23_
+		outcome_buffer_reg_24_
+		outcome_buffer_reg_25_
+		outcome_buffer_reg_26_
+		outcome_buffer_reg_27_
+		outcome_buffer_reg_28_
+		outcome_buffer_reg_29_
+		outcome_buffer_reg_30_
+		outcome_buffer_reg_31_
+
+ Clock Gating Bank : clk_gate_n_reg_reg
+-------------------
+
+     STYLE = latch, MIN = 3, MAX = unlimited, OBS_DEPTH = 5 
+
+     TEST INFORMATION : 
+
+     INPUTS :
+         clk_gate_n_reg_reg/CLK = CLK 
+         clk_gate_n_reg_reg/EN = N296 
+
+     OUTPUTS :
+         clk_gate_n_reg_reg/ENCLK = net1321 
+
+     RELATED REGISTERS :
+		n_and_m_loaded_reg
+		n_reg_reg_0_
+		n_reg_reg_1_
+		n_reg_reg_2_
+		n_reg_reg_3_
+		n_reg_reg_4_
+
+ Clock Gating Bank : clk_gate_max_state_reg_reg
+-------------------
+
+     STYLE = latch, MIN = 3, MAX = unlimited, OBS_DEPTH = 5 
+
+     TEST INFORMATION : 
+
+     INPUTS :
+         clk_gate_max_state_reg_reg/CLK = CLK 
+         clk_gate_max_state_reg_reg/EN = N289 
+
+     OUTPUTS :
+         clk_gate_max_state_reg_reg/ENCLK = net1326 
+
+     RELATED REGISTERS :
+		max_state_reg_reg_0_
+		max_state_reg_reg_1_
+		max_state_reg_reg_2_
+		max_state_reg_reg_3_
+		max_state_reg_reg_4_
+
+ Clock Gating Bank : clk_gate_max_reg_reg
+-------------------
+
+     STYLE = latch, MIN = 3, MAX = unlimited, OBS_DEPTH = 5 
+
+     TEST INFORMATION : 
+
+     INPUTS :
+         clk_gate_max_reg_reg/CLK = CLK 
+         clk_gate_max_reg_reg/EN = N256 
+
+     OUTPUTS :
+         clk_gate_max_reg_reg/ENCLK = net1331 
+
+     RELATED REGISTERS :
+		max_reg_reg_31_
+		max_reg_reg_30_
+		max_reg_reg_29_
+		max_reg_reg_28_
+		max_reg_reg_27_
+		max_reg_reg_26_
+		max_reg_reg_25_
+		max_reg_reg_24_
+		max_reg_reg_23_
+		max_reg_reg_22_
+		max_reg_reg_21_
+		max_reg_reg_20_
+		max_reg_reg_19_
+		max_reg_reg_18_
+		max_reg_reg_17_
+		max_reg_reg_16_
+		max_reg_reg_15_
+		max_reg_reg_14_
+		max_reg_reg_13_
+		max_reg_reg_12_
+		max_reg_reg_11_
+		max_reg_reg_10_
+		max_reg_reg_9_
+		max_reg_reg_8_
+		max_reg_reg_7_
+		max_reg_reg_6_
+		max_reg_reg_5_
+		max_reg_reg_4_
+		max_reg_reg_3_
+		max_reg_reg_2_
+		max_reg_reg_1_
+		max_reg_reg_0_
+
+ Clock Gating Bank : clk_gate_max_path_reg
+-------------------
+
+     STYLE = latch, MIN = 3, MAX = unlimited, OBS_DEPTH = 5 
+
+     TEST INFORMATION : 
+
+     INPUTS :
+         clk_gate_max_path_reg/CLK = CLK 
+         clk_gate_max_path_reg/EN = N250 
+
+     OUTPUTS :
+         clk_gate_max_path_reg/ENCLK = net1336 
+
+     RELATED REGISTERS :
+		max_path_reg_0_
+		max_path_reg_1_
+		max_path_reg_2_
+		max_path_reg_3_
+		max_path_reg_4_
+
+ Clock Gating Bank : clk_gate_machine_state_reg
+-------------------
+
+     STYLE = latch, MIN = 3, MAX = unlimited, OBS_DEPTH = 5 
+
+     TEST INFORMATION : 
+
+     INPUTS :
+         clk_gate_machine_state_reg/CLK = CLK 
+         clk_gate_machine_state_reg/EN = N246 
+
+     OUTPUTS :
+         clk_gate_machine_state_reg/ENCLK = net1341 
+
+     RELATED REGISTERS :
+		reset_machine_flag_reg
+		write_to_bt_flag_reg
+		write_to_curr_flag_reg
+		machine_state_reg_1_
+		machine_state_reg_2_
+		machine_state_reg_0_
+
+ Clock Gating Bank : clk_gate_j_ctr_reg
+-------------------
+
+     STYLE = latch, MIN = 3, MAX = unlimited, OBS_DEPTH = 5 
+
+     TEST INFORMATION : 
+
+     INPUTS :
+         clk_gate_j_ctr_reg/CLK = CLK 
+         clk_gate_j_ctr_reg/EN = N238 
+
+     OUTPUTS :
+         clk_gate_j_ctr_reg/ENCLK = net1346 
+
+     RELATED REGISTERS :
+		j_ctr_reg_4_
+		j_ctr_reg_3_
+		j_ctr_reg_2_
+		j_ctr_reg_1_
+		j_ctr_reg_0_
+
+ Clock Gating Bank : clk_gate_i_ctr_reg
+-------------------
+
+     STYLE = latch, MIN = 3, MAX = unlimited, OBS_DEPTH = 5 
+
+     TEST INFORMATION : 
+
+     INPUTS :
+         clk_gate_i_ctr_reg/CLK = CLK 
+         clk_gate_i_ctr_reg/EN = N227 
+
+     OUTPUTS :
+         clk_gate_i_ctr_reg/ENCLK = net1351 
+
+     RELATED REGISTERS :
+		i_ctr_reg_4_
+		i_ctr_reg_3_
+		i_ctr_reg_2_
+		i_ctr_reg_1_
+		i_ctr_reg_0_
+
+ Clock Gating Bank : clk_gate_emission_buffer_reg
+-------------------
+
+     STYLE = latch, MIN = 3, MAX = unlimited, OBS_DEPTH = 5 
+
+     TEST INFORMATION : 
+
+     INPUTS :
+         clk_gate_emission_buffer_reg/CLK = CLK 
+         clk_gate_emission_buffer_reg/EN = N192 
+
+     OUTPUTS :
+         clk_gate_emission_buffer_reg/ENCLK = net1356 
+
+     RELATED REGISTERS :
+		emission_buffer_reg_0_
+		emission_buffer_reg_1_
+		emission_buffer_reg_2_
+		emission_buffer_reg_3_
+		emission_buffer_reg_4_
+		emission_buffer_reg_5_
+		emission_buffer_reg_6_
+		emission_buffer_reg_7_
+		emission_buffer_reg_8_
+		emission_buffer_reg_9_
+		emission_buffer_reg_10_
+		emission_buffer_reg_11_
+		emission_buffer_reg_12_
+		emission_buffer_reg_13_
+		emission_buffer_reg_14_
+		emission_buffer_reg_15_
+		emission_buffer_reg_16_
+		emission_buffer_reg_17_
+		emission_buffer_reg_18_
+		emission_buffer_reg_19_
+		emission_buffer_reg_20_
+		emission_buffer_reg_21_
+		emission_buffer_reg_22_
+		emission_buffer_reg_23_
+		emission_buffer_reg_24_
+		emission_buffer_reg_25_
+		emission_buffer_reg_26_
+		emission_buffer_reg_27_
+		emission_buffer_reg_28_
+		emission_buffer_reg_29_
+		emission_buffer_reg_30_
+
+ Clock Gating Bank : clk_gate_curr_buffer_reg
+-------------------
+
+     STYLE = latch, MIN = 3, MAX = unlimited, OBS_DEPTH = 5 
+
+     TEST INFORMATION : 
+
+     INPUTS :
+         clk_gate_curr_buffer_reg/CLK = CLK 
+         clk_gate_curr_buffer_reg/EN = N157 
+
+     OUTPUTS :
+         clk_gate_curr_buffer_reg/ENCLK = net1361 
+
+     RELATED REGISTERS :
+		curr_buffer_reg_0_
+		curr_buffer_reg_1_
+		curr_buffer_reg_2_
+		curr_buffer_reg_3_
+		curr_buffer_reg_4_
+		curr_buffer_reg_5_
+		curr_buffer_reg_6_
+		curr_buffer_reg_7_
+		curr_buffer_reg_8_
+		curr_buffer_reg_9_
+		curr_buffer_reg_10_
+		curr_buffer_reg_11_
+		curr_buffer_reg_12_
+		curr_buffer_reg_13_
+		curr_buffer_reg_14_
+		curr_buffer_reg_15_
+		curr_buffer_reg_16_
+		curr_buffer_reg_17_
+		curr_buffer_reg_18_
+		curr_buffer_reg_19_
+		curr_buffer_reg_20_
+		curr_buffer_reg_21_
+		curr_buffer_reg_22_
+		curr_buffer_reg_23_
+		curr_buffer_reg_24_
+		curr_buffer_reg_25_
+		curr_buffer_reg_26_
+		curr_buffer_reg_27_
+		curr_buffer_reg_28_
+		curr_buffer_reg_29_
+		curr_buffer_reg_30_
+		curr_buffer_reg_31_
+
+ Clock Gating Bank : clk_gate_bt_t_ctr_reg
+-------------------
+
+     STYLE = latch, MIN = 3, MAX = unlimited, OBS_DEPTH = 5 
+
+     TEST INFORMATION : 
+
+     INPUTS :
+         clk_gate_bt_t_ctr_reg/CLK = CLK 
+         clk_gate_bt_t_ctr_reg/EN = N146 
+
+     OUTPUTS :
+         clk_gate_bt_t_ctr_reg/ENCLK = net1366 
+
+     RELATED REGISTERS :
+		bt_t_ctr_reg_0_
+		bt_t_ctr_reg_1_
+		bt_t_ctr_reg_2_
+		bt_t_ctr_reg_3_
+		bt_t_ctr_reg_4_
+		bt_t_ctr_reg_5_
+		bt_t_ctr_reg_6_
+		bt_t_ctr_reg_7_
+		bt_t_ctr_reg_8_
+		bt_t_ctr_reg_9_
+
+ Clock Gating Bank : clk_gate_bt_max_reg
+-------------------
+
+     STYLE = latch, MIN = 3, MAX = unlimited, OBS_DEPTH = 5 
+
+     TEST INFORMATION : 
+
+     INPUTS :
+         clk_gate_bt_max_reg/CLK = CLK 
+         clk_gate_bt_max_reg/EN = N111 
+
+     OUTPUTS :
+         clk_gate_bt_max_reg/ENCLK = net1371 
+
+     RELATED REGISTERS :
+		bt_max_reg_0_
+		bt_max_reg_1_
+		bt_max_reg_2_
+		bt_max_reg_3_
+		bt_max_reg_4_
+		bt_max_reg_5_
+		bt_max_reg_6_
+		bt_max_reg_7_
+		bt_max_reg_8_
+		bt_max_reg_9_
+		bt_max_reg_10_
+		bt_max_reg_11_
+		bt_max_reg_12_
+		bt_max_reg_13_
+		bt_max_reg_14_
+		bt_max_reg_15_
+		bt_max_reg_16_
+		bt_max_reg_17_
+		bt_max_reg_18_
+		bt_max_reg_19_
+		bt_max_reg_20_
+		bt_max_reg_21_
+		bt_max_reg_22_
+		bt_max_reg_23_
+		bt_max_reg_24_
+		bt_max_reg_25_
+		bt_max_reg_26_
+		bt_max_reg_27_
+		bt_max_reg_28_
+		bt_max_reg_29_
+		bt_max_reg_30_
+		bt_max_reg_31_
+
+ Clock Gating Bank : clk_gate_bt_buffer_reg
+-------------------
+
+     STYLE = latch, MIN = 3, MAX = unlimited, OBS_DEPTH = 5 
+
+     TEST INFORMATION : 
+
+     INPUTS :
+         clk_gate_bt_buffer_reg/CLK = CLK 
+         clk_gate_bt_buffer_reg/EN = N105 
+
+     OUTPUTS :
+         clk_gate_bt_buffer_reg/ENCLK = net1376 
+
+     RELATED REGISTERS :
+		bt_buffer_reg_0_
+		bt_buffer_reg_1_
+		bt_buffer_reg_2_
+		bt_buffer_reg_3_
+		bt_buffer_reg_4_
+
+ Clock Gating Bank : clk_gate_write_to_prev_flag_reg
+-------------------
+
+     STYLE = latch, MIN = 3, MAX = unlimited, HOLD = 0.00, SETUP = 0.00, OBS_DEPTH = 5 
+
+     TEST INFORMATION : 
+
+     INPUTS :
+         clk_gate_write_to_prev_flag_reg/CLK = CLK 
+         clk_gate_write_to_prev_flag_reg/EN = n891 
+
+     OUTPUTS :
+         clk_gate_write_to_prev_flag_reg/ENCLK = n890 
+
+     RELATED REGISTERS :
+		loop_done_flag_reg
+		init_state_reg_0_
+		init_state_reg_1_
+		path_ready_reg
+		print_state_reg_0_
+		print_state_reg_1_
+		switch_prev_curr_reg
+		write_to_prev_flag_reg
+
+ Clock Gating Bank : adder/clk_gate_shifted_mantissa_2_reg
+-------------------
+
+     STYLE = latch, MIN = 3, MAX = unlimited, OBS_DEPTH = 5 
+
+     TEST INFORMATION : 
+
+     INPUTS :
+         adder/clk_gate_shifted_mantissa_2_reg/CLK = CLK 
+         adder/clk_gate_shifted_mantissa_2_reg/EN = N368 
+
+     OUTPUTS :
+         adder/clk_gate_shifted_mantissa_2_reg/ENCLK = net1392 
+
+     RELATED REGISTERS :
+		adder/guard1_reg
+		adder/new_exp_reg_0_
+		adder/new_exp_reg_1_
+		adder/new_exp_reg_2_
+		adder/new_exp_reg_3_
+		adder/new_exp_reg_4_
+		adder/new_exp_reg_5_
+		adder/new_exp_reg_6_
+		adder/new_exp_reg_7_
+		adder/shifted_mantissa_1_reg_0_
+		adder/shifted_mantissa_1_reg_1_
+		adder/shifted_mantissa_1_reg_2_
+		adder/shifted_mantissa_1_reg_3_
+		adder/shifted_mantissa_1_reg_4_
+		adder/shifted_mantissa_1_reg_5_
+		adder/shifted_mantissa_1_reg_6_
+		adder/shifted_mantissa_1_reg_7_
+		adder/shifted_mantissa_1_reg_8_
+		adder/shifted_mantissa_1_reg_9_
+		adder/shifted_mantissa_1_reg_10_
+		adder/shifted_mantissa_1_reg_11_
+		adder/shifted_mantissa_1_reg_12_
+		adder/shifted_mantissa_1_reg_13_
+		adder/shifted_mantissa_1_reg_14_
+		adder/shifted_mantissa_1_reg_15_
+		adder/shifted_mantissa_1_reg_16_
+		adder/shifted_mantissa_1_reg_17_
+		adder/shifted_mantissa_1_reg_18_
+		adder/shifted_mantissa_1_reg_19_
+		adder/shifted_mantissa_1_reg_20_
+		adder/shifted_mantissa_1_reg_21_
+		adder/shifted_mantissa_1_reg_22_
+		adder/shifted_mantissa_1_reg_23_
+		adder/shifted_mantissa_2_reg_0_
+		adder/shifted_mantissa_2_reg_1_
+		adder/shifted_mantissa_2_reg_2_
+		adder/shifted_mantissa_2_reg_3_
+		adder/shifted_mantissa_2_reg_4_
+		adder/shifted_mantissa_2_reg_5_
+		adder/shifted_mantissa_2_reg_6_
+		adder/shifted_mantissa_2_reg_7_
+		adder/shifted_mantissa_2_reg_8_
+		adder/shifted_mantissa_2_reg_9_
+		adder/shifted_mantissa_2_reg_10_
+		adder/shifted_mantissa_2_reg_11_
+		adder/shifted_mantissa_2_reg_12_
+		adder/shifted_mantissa_2_reg_13_
+		adder/shifted_mantissa_2_reg_14_
+		adder/shifted_mantissa_2_reg_15_
+		adder/shifted_mantissa_2_reg_16_
+		adder/shifted_mantissa_2_reg_17_
+		adder/shifted_mantissa_2_reg_18_
+		adder/shifted_mantissa_2_reg_19_
+		adder/shifted_mantissa_2_reg_20_
+		adder/shifted_mantissa_2_reg_21_
+		adder/shifted_mantissa_2_reg_22_
+		adder/shifted_mantissa_2_reg_23_
+		adder/sticky1_reg
+
+ Clock Gating Bank : adder/clk_gate_res_reg
+-------------------
+
+     STYLE = latch, MIN = 3, MAX = unlimited, OBS_DEPTH = 5 
+
+     TEST INFORMATION : 
+
+     INPUTS :
+         adder/clk_gate_res_reg/CLK = CLK 
+         adder/clk_gate_res_reg/EN = N311 
+
+     OUTPUTS :
+         adder/clk_gate_res_reg/ENCLK = net1397 
+
+     RELATED REGISTERS :
+		adder/res_reg_22_
+		adder/res_reg_0_
+		adder/res_reg_1_
+		adder/res_reg_2_
+		adder/res_reg_3_
+		adder/res_reg_4_
+		adder/res_reg_5_
+		adder/res_reg_6_
+		adder/res_reg_7_
+		adder/res_reg_8_
+		adder/res_reg_9_
+		adder/res_reg_10_
+		adder/res_reg_11_
+		adder/res_reg_12_
+		adder/res_reg_13_
+		adder/res_reg_14_
+		adder/res_reg_15_
+		adder/res_reg_16_
+		adder/res_reg_17_
+		adder/res_reg_18_
+		adder/res_reg_19_
+		adder/res_reg_20_
+		adder/res_reg_21_
+		adder/res_reg_30_
+		adder/res_reg_29_
+		adder/res_reg_28_
+		adder/res_reg_27_
+		adder/res_reg_26_
+		adder/res_reg_25_
+		adder/res_reg_24_
+		adder/res_reg_23_
+		adder/res_reg_31_
+
+ Clock Gating Bank : adder/clk_gate_man_carry_reg
+-------------------
+
+     STYLE = latch, MIN = 3, MAX = unlimited, OBS_DEPTH = 5 
+
+     TEST INFORMATION : 
+
+     INPUTS :
+         adder/clk_gate_man_carry_reg/CLK = CLK 
+         adder/clk_gate_man_carry_reg/EN = N301 
+
+     OUTPUTS :
+         adder/clk_gate_man_carry_reg/ENCLK = net1402 
+
+     RELATED REGISTERS :
+		adder/final_mantissa_reg_0_
+		adder/final_mantissa_reg_1_
+		adder/final_mantissa_reg_2_
+		adder/final_mantissa_reg_3_
+		adder/final_mantissa_reg_4_
+		adder/final_mantissa_reg_5_
+		adder/final_mantissa_reg_6_
+		adder/final_mantissa_reg_7_
+		adder/final_mantissa_reg_8_
+		adder/final_mantissa_reg_9_
+		adder/final_mantissa_reg_10_
+		adder/final_mantissa_reg_11_
+		adder/final_mantissa_reg_12_
+		adder/final_mantissa_reg_13_
+		adder/final_mantissa_reg_14_
+		adder/final_mantissa_reg_15_
+		adder/final_mantissa_reg_16_
+		adder/final_mantissa_reg_17_
+		adder/final_mantissa_reg_18_
+		adder/final_mantissa_reg_19_
+		adder/final_mantissa_reg_20_
+		adder/final_mantissa_reg_21_
+		adder/final_mantissa_reg_22_
+		adder/man_carry_reg
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+                             Gated Register Report
+--------------------------------------------------------------------------------
+            Clock Gating Bank                    |         Gated Register 
+--------------------------------------------------------------------------------
+                                                 |
+ clk_gate_transition_buffer_reg                  |       transition_buffer_reg_0_
+                                                 |       transition_buffer_reg_1_
+                                                 |       transition_buffer_reg_2_
+                                                 |       transition_buffer_reg_3_
+                                                 |       transition_buffer_reg_4_
+                                                 |       transition_buffer_reg_5_
+                                                 |       transition_buffer_reg_6_
+                                                 |       transition_buffer_reg_7_
+                                                 |       transition_buffer_reg_8_
+                                                 |       transition_buffer_reg_9_
+                                                 |       transition_buffer_reg_10_
+                                                 |       transition_buffer_reg_11_
+                                                 |       transition_buffer_reg_12_
+                                                 |       transition_buffer_reg_13_
+                                                 |       transition_buffer_reg_14_
+                                                 |       transition_buffer_reg_15_
+                                                 |       transition_buffer_reg_16_
+                                                 |       transition_buffer_reg_17_
+                                                 |       transition_buffer_reg_18_
+                                                 |       transition_buffer_reg_19_
+                                                 |       transition_buffer_reg_20_
+                                                 |       transition_buffer_reg_21_
+                                                 |       transition_buffer_reg_22_
+                                                 |       transition_buffer_reg_23_
+                                                 |       transition_buffer_reg_24_
+                                                 |       transition_buffer_reg_25_
+                                                 |       transition_buffer_reg_26_
+                                                 |       transition_buffer_reg_27_
+                                                 |       transition_buffer_reg_28_
+                                                 |       transition_buffer_reg_29_
+                                                 |       transition_buffer_reg_30_
+                                                 |
+ clk_gate_t_start_reg                            |       t_start_reg_0_
+                                                 |       t_start_reg_1_
+                                                 |       t_start_reg_2_
+                                                 |       t_start_reg_3_
+                                                 |       t_start_reg_4_
+                                                 |       t_start_reg_5_
+                                                 |       t_start_reg_6_
+                                                 |       t_start_reg_7_
+                                                 |       t_start_reg_8_
+                                                 |       t_start_reg_9_
+                                                 |
+ clk_gate_t_ctr_reg                              |       t_ctr_reg_0_
+                                                 |       t_ctr_reg_1_
+                                                 |       t_ctr_reg_2_
+                                                 |       t_ctr_reg_3_
+                                                 |       t_ctr_reg_4_
+                                                 |       t_ctr_reg_5_
+                                                 |       t_ctr_reg_6_
+                                                 |       t_ctr_reg_7_
+                                                 |       t_ctr_reg_8_
+                                                 |       t_ctr_reg_9_
+                                                 |
+ clk_gate_prev_buffer_reg                        |       prev_buffer_reg_31_
+                                                 |       prev_buffer_reg_30_
+                                                 |       prev_buffer_reg_29_
+                                                 |       prev_buffer_reg_28_
+                                                 |       prev_buffer_reg_27_
+                                                 |       prev_buffer_reg_26_
+                                                 |       prev_buffer_reg_25_
+                                                 |       prev_buffer_reg_24_
+                                                 |       prev_buffer_reg_23_
+                                                 |       prev_buffer_reg_22_
+                                                 |       prev_buffer_reg_21_
+                                                 |       prev_buffer_reg_20_
+                                                 |       prev_buffer_reg_19_
+                                                 |       prev_buffer_reg_18_
+                                                 |       prev_buffer_reg_17_
+                                                 |       prev_buffer_reg_16_
+                                                 |       prev_buffer_reg_15_
+                                                 |       prev_buffer_reg_14_
+                                                 |       prev_buffer_reg_13_
+                                                 |       prev_buffer_reg_12_
+                                                 |       prev_buffer_reg_11_
+                                                 |       prev_buffer_reg_10_
+                                                 |       prev_buffer_reg_9_
+                                                 |       prev_buffer_reg_8_
+                                                 |       prev_buffer_reg_7_
+                                                 |       prev_buffer_reg_6_
+                                                 |       prev_buffer_reg_5_
+                                                 |       prev_buffer_reg_4_
+                                                 |       prev_buffer_reg_3_
+                                                 |       prev_buffer_reg_2_
+                                                 |       prev_buffer_reg_1_
+                                                 |       prev_buffer_reg_0_
+                                                 |
+ clk_gate_path_buffer_reg                        |       path_buffer_reg_0_
+                                                 |       path_buffer_reg_1_
+                                                 |       path_buffer_reg_2_
+                                                 |       path_buffer_reg_3_
+                                                 |       path_buffer_reg_4_
+                                                 |
+ clk_gate_outcome_idx_reg                        |       outcome_idx_reg_0_
+                                                 |       outcome_idx_reg_1_
+                                                 |       outcome_idx_reg_2_
+                                                 |       outcome_idx_reg_3_
+                                                 |       outcome_idx_reg_4_
+                                                 |       outcome_idx_reg_5_
+                                                 |       outcome_idx_reg_6_
+                                                 |       outcome_idx_reg_7_
+                                                 |       outcome_idx_reg_8_
+                                                 |       outcome_idx_reg_9_
+                                                 |
+ clk_gate_outcome_buffer_reg                     |       outcome_buffer_reg_0_
+                                                 |       outcome_buffer_reg_1_
+                                                 |       outcome_buffer_reg_2_
+                                                 |       outcome_buffer_reg_3_
+                                                 |       outcome_buffer_reg_4_
+                                                 |       outcome_buffer_reg_5_
+                                                 |       outcome_buffer_reg_6_
+                                                 |       outcome_buffer_reg_7_
+                                                 |       outcome_buffer_reg_8_
+                                                 |       outcome_buffer_reg_9_
+                                                 |       outcome_buffer_reg_10_
+                                                 |       outcome_buffer_reg_11_
+                                                 |       outcome_buffer_reg_12_
+                                                 |       outcome_buffer_reg_13_
+                                                 |       outcome_buffer_reg_14_
+                                                 |       outcome_buffer_reg_15_
+                                                 |       outcome_buffer_reg_16_
+                                                 |       outcome_buffer_reg_17_
+                                                 |       outcome_buffer_reg_18_
+                                                 |       outcome_buffer_reg_19_
+                                                 |       outcome_buffer_reg_20_
+                                                 |       outcome_buffer_reg_21_
+                                                 |       outcome_buffer_reg_22_
+                                                 |       outcome_buffer_reg_23_
+                                                 |       outcome_buffer_reg_24_
+                                                 |       outcome_buffer_reg_25_
+                                                 |       outcome_buffer_reg_26_
+                                                 |       outcome_buffer_reg_27_
+                                                 |       outcome_buffer_reg_28_
+                                                 |       outcome_buffer_reg_29_
+                                                 |       outcome_buffer_reg_30_
+                                                 |       outcome_buffer_reg_31_
+                                                 |
+ clk_gate_n_reg_reg                              |       n_and_m_loaded_reg
+                                                 |       n_reg_reg_0_
+                                                 |       n_reg_reg_1_
+                                                 |       n_reg_reg_2_
+                                                 |       n_reg_reg_3_
+                                                 |       n_reg_reg_4_
+                                                 |
+ clk_gate_max_state_reg_reg                      |       max_state_reg_reg_0_
+                                                 |       max_state_reg_reg_1_
+                                                 |       max_state_reg_reg_2_
+                                                 |       max_state_reg_reg_3_
+                                                 |       max_state_reg_reg_4_
+                                                 |
+ clk_gate_max_reg_reg                            |       max_reg_reg_31_
+                                                 |       max_reg_reg_30_
+                                                 |       max_reg_reg_29_
+                                                 |       max_reg_reg_28_
+                                                 |       max_reg_reg_27_
+                                                 |       max_reg_reg_26_
+                                                 |       max_reg_reg_25_
+                                                 |       max_reg_reg_24_
+                                                 |       max_reg_reg_23_
+                                                 |       max_reg_reg_22_
+                                                 |       max_reg_reg_21_
+                                                 |       max_reg_reg_20_
+                                                 |       max_reg_reg_19_
+                                                 |       max_reg_reg_18_
+                                                 |       max_reg_reg_17_
+                                                 |       max_reg_reg_16_
+                                                 |       max_reg_reg_15_
+                                                 |       max_reg_reg_14_
+                                                 |       max_reg_reg_13_
+                                                 |       max_reg_reg_12_
+                                                 |       max_reg_reg_11_
+                                                 |       max_reg_reg_10_
+                                                 |       max_reg_reg_9_
+                                                 |       max_reg_reg_8_
+                                                 |       max_reg_reg_7_
+                                                 |       max_reg_reg_6_
+                                                 |       max_reg_reg_5_
+                                                 |       max_reg_reg_4_
+                                                 |       max_reg_reg_3_
+                                                 |       max_reg_reg_2_
+                                                 |       max_reg_reg_1_
+                                                 |       max_reg_reg_0_
+                                                 |
+ clk_gate_max_path_reg                           |       max_path_reg_0_
+                                                 |       max_path_reg_1_
+                                                 |       max_path_reg_2_
+                                                 |       max_path_reg_3_
+                                                 |       max_path_reg_4_
+                                                 |
+ clk_gate_machine_state_reg                      |       reset_machine_flag_reg
+                                                 |       write_to_bt_flag_reg
+                                                 |       write_to_curr_flag_reg
+                                                 |       machine_state_reg_1_
+                                                 |       machine_state_reg_2_
+                                                 |       machine_state_reg_0_
+                                                 |
+ clk_gate_j_ctr_reg                              |       j_ctr_reg_4_
+                                                 |       j_ctr_reg_3_
+                                                 |       j_ctr_reg_2_
+                                                 |       j_ctr_reg_1_
+                                                 |       j_ctr_reg_0_
+                                                 |
+ clk_gate_i_ctr_reg                              |       i_ctr_reg_4_
+                                                 |       i_ctr_reg_3_
+                                                 |       i_ctr_reg_2_
+                                                 |       i_ctr_reg_1_
+                                                 |       i_ctr_reg_0_
+                                                 |
+ clk_gate_emission_buffer_reg                    |       emission_buffer_reg_0_
+                                                 |       emission_buffer_reg_1_
+                                                 |       emission_buffer_reg_2_
+                                                 |       emission_buffer_reg_3_
+                                                 |       emission_buffer_reg_4_
+                                                 |       emission_buffer_reg_5_
+                                                 |       emission_buffer_reg_6_
+                                                 |       emission_buffer_reg_7_
+                                                 |       emission_buffer_reg_8_
+                                                 |       emission_buffer_reg_9_
+                                                 |       emission_buffer_reg_10_
+                                                 |       emission_buffer_reg_11_
+                                                 |       emission_buffer_reg_12_
+                                                 |       emission_buffer_reg_13_
+                                                 |       emission_buffer_reg_14_
+                                                 |       emission_buffer_reg_15_
+                                                 |       emission_buffer_reg_16_
+                                                 |       emission_buffer_reg_17_
+                                                 |       emission_buffer_reg_18_
+                                                 |       emission_buffer_reg_19_
+                                                 |       emission_buffer_reg_20_
+                                                 |       emission_buffer_reg_21_
+                                                 |       emission_buffer_reg_22_
+                                                 |       emission_buffer_reg_23_
+                                                 |       emission_buffer_reg_24_
+                                                 |       emission_buffer_reg_25_
+                                                 |       emission_buffer_reg_26_
+                                                 |       emission_buffer_reg_27_
+                                                 |       emission_buffer_reg_28_
+                                                 |       emission_buffer_reg_29_
+                                                 |       emission_buffer_reg_30_
+                                                 |
+ clk_gate_curr_buffer_reg                        |       curr_buffer_reg_0_
+                                                 |       curr_buffer_reg_1_
+                                                 |       curr_buffer_reg_2_
+                                                 |       curr_buffer_reg_3_
+                                                 |       curr_buffer_reg_4_
+                                                 |       curr_buffer_reg_5_
+                                                 |       curr_buffer_reg_6_
+                                                 |       curr_buffer_reg_7_
+                                                 |       curr_buffer_reg_8_
+                                                 |       curr_buffer_reg_9_
+                                                 |       curr_buffer_reg_10_
+                                                 |       curr_buffer_reg_11_
+                                                 |       curr_buffer_reg_12_
+                                                 |       curr_buffer_reg_13_
+                                                 |       curr_buffer_reg_14_
+                                                 |       curr_buffer_reg_15_
+                                                 |       curr_buffer_reg_16_
+                                                 |       curr_buffer_reg_17_
+                                                 |       curr_buffer_reg_18_
+                                                 |       curr_buffer_reg_19_
+                                                 |       curr_buffer_reg_20_
+                                                 |       curr_buffer_reg_21_
+                                                 |       curr_buffer_reg_22_
+                                                 |       curr_buffer_reg_23_
+                                                 |       curr_buffer_reg_24_
+                                                 |       curr_buffer_reg_25_
+                                                 |       curr_buffer_reg_26_
+                                                 |       curr_buffer_reg_27_
+                                                 |       curr_buffer_reg_28_
+                                                 |       curr_buffer_reg_29_
+                                                 |       curr_buffer_reg_30_
+                                                 |       curr_buffer_reg_31_
+                                                 |
+ clk_gate_bt_t_ctr_reg                           |       bt_t_ctr_reg_0_
+                                                 |       bt_t_ctr_reg_1_
+                                                 |       bt_t_ctr_reg_2_
+                                                 |       bt_t_ctr_reg_3_
+                                                 |       bt_t_ctr_reg_4_
+                                                 |       bt_t_ctr_reg_5_
+                                                 |       bt_t_ctr_reg_6_
+                                                 |       bt_t_ctr_reg_7_
+                                                 |       bt_t_ctr_reg_8_
+                                                 |       bt_t_ctr_reg_9_
+                                                 |
+ clk_gate_bt_max_reg                             |       bt_max_reg_0_
+                                                 |       bt_max_reg_1_
+                                                 |       bt_max_reg_2_
+                                                 |       bt_max_reg_3_
+                                                 |       bt_max_reg_4_
+                                                 |       bt_max_reg_5_
+                                                 |       bt_max_reg_6_
+                                                 |       bt_max_reg_7_
+                                                 |       bt_max_reg_8_
+                                                 |       bt_max_reg_9_
+                                                 |       bt_max_reg_10_
+                                                 |       bt_max_reg_11_
+                                                 |       bt_max_reg_12_
+                                                 |       bt_max_reg_13_
+                                                 |       bt_max_reg_14_
+                                                 |       bt_max_reg_15_
+                                                 |       bt_max_reg_16_
+                                                 |       bt_max_reg_17_
+                                                 |       bt_max_reg_18_
+                                                 |       bt_max_reg_19_
+                                                 |       bt_max_reg_20_
+                                                 |       bt_max_reg_21_
+                                                 |       bt_max_reg_22_
+                                                 |       bt_max_reg_23_
+                                                 |       bt_max_reg_24_
+                                                 |       bt_max_reg_25_
+                                                 |       bt_max_reg_26_
+                                                 |       bt_max_reg_27_
+                                                 |       bt_max_reg_28_
+                                                 |       bt_max_reg_29_
+                                                 |       bt_max_reg_30_
+                                                 |       bt_max_reg_31_
+                                                 |
+ clk_gate_bt_buffer_reg                          |       bt_buffer_reg_0_
+                                                 |       bt_buffer_reg_1_
+                                                 |       bt_buffer_reg_2_
+                                                 |       bt_buffer_reg_3_
+                                                 |       bt_buffer_reg_4_
+                                                 |
+ clk_gate_write_to_prev_flag_reg                 |       loop_done_flag_reg
+                                                 |       init_state_reg_0_
+                                                 |       init_state_reg_1_
+                                                 |       path_ready_reg
+                                                 |       print_state_reg_0_
+                                                 |       print_state_reg_1_
+                                                 |       switch_prev_curr_reg
+                                                 |       write_to_prev_flag_reg
+                                                 |
+ adder/clk_gate_shifted_mantissa_2_reg           |       adder/guard1_reg
+                                                 |       adder/new_exp_reg_0_
+                                                 |       adder/new_exp_reg_1_
+                                                 |       adder/new_exp_reg_2_
+                                                 |       adder/new_exp_reg_3_
+                                                 |       adder/new_exp_reg_4_
+                                                 |       adder/new_exp_reg_5_
+                                                 |       adder/new_exp_reg_6_
+                                                 |       adder/new_exp_reg_7_
+                                                 |       adder/shifted_mantissa_1_reg_0_
+                                                 |       adder/shifted_mantissa_1_reg_1_
+                                                 |       adder/shifted_mantissa_1_reg_2_
+                                                 |       adder/shifted_mantissa_1_reg_3_
+                                                 |       adder/shifted_mantissa_1_reg_4_
+                                                 |       adder/shifted_mantissa_1_reg_5_
+                                                 |       adder/shifted_mantissa_1_reg_6_
+                                                 |       adder/shifted_mantissa_1_reg_7_
+                                                 |       adder/shifted_mantissa_1_reg_8_
+                                                 |       adder/shifted_mantissa_1_reg_9_
+                                                 |       adder/shifted_mantissa_1_reg_10_
+                                                 |       adder/shifted_mantissa_1_reg_11_
+                                                 |       adder/shifted_mantissa_1_reg_12_
+                                                 |       adder/shifted_mantissa_1_reg_13_
+                                                 |       adder/shifted_mantissa_1_reg_14_
+                                                 |       adder/shifted_mantissa_1_reg_15_
+                                                 |       adder/shifted_mantissa_1_reg_16_
+                                                 |       adder/shifted_mantissa_1_reg_17_
+                                                 |       adder/shifted_mantissa_1_reg_18_
+                                                 |       adder/shifted_mantissa_1_reg_19_
+                                                 |       adder/shifted_mantissa_1_reg_20_
+                                                 |       adder/shifted_mantissa_1_reg_21_
+                                                 |       adder/shifted_mantissa_1_reg_22_
+                                                 |       adder/shifted_mantissa_1_reg_23_
+                                                 |       adder/shifted_mantissa_2_reg_0_
+                                                 |       adder/shifted_mantissa_2_reg_1_
+                                                 |       adder/shifted_mantissa_2_reg_2_
+                                                 |       adder/shifted_mantissa_2_reg_3_
+                                                 |       adder/shifted_mantissa_2_reg_4_
+                                                 |       adder/shifted_mantissa_2_reg_5_
+                                                 |       adder/shifted_mantissa_2_reg_6_
+                                                 |       adder/shifted_mantissa_2_reg_7_
+                                                 |       adder/shifted_mantissa_2_reg_8_
+                                                 |       adder/shifted_mantissa_2_reg_9_
+                                                 |       adder/shifted_mantissa_2_reg_10_
+                                                 |       adder/shifted_mantissa_2_reg_11_
+                                                 |       adder/shifted_mantissa_2_reg_12_
+                                                 |       adder/shifted_mantissa_2_reg_13_
+                                                 |       adder/shifted_mantissa_2_reg_14_
+                                                 |       adder/shifted_mantissa_2_reg_15_
+                                                 |       adder/shifted_mantissa_2_reg_16_
+                                                 |       adder/shifted_mantissa_2_reg_17_
+                                                 |       adder/shifted_mantissa_2_reg_18_
+                                                 |       adder/shifted_mantissa_2_reg_19_
+                                                 |       adder/shifted_mantissa_2_reg_20_
+                                                 |       adder/shifted_mantissa_2_reg_21_
+                                                 |       adder/shifted_mantissa_2_reg_22_
+                                                 |       adder/shifted_mantissa_2_reg_23_
+                                                 |       adder/sticky1_reg
+                                                 |
+ adder/clk_gate_res_reg                          |       adder/res_reg_22_
+                                                 |       adder/res_reg_0_
+                                                 |       adder/res_reg_1_
+                                                 |       adder/res_reg_2_
+                                                 |       adder/res_reg_3_
+                                                 |       adder/res_reg_4_
+                                                 |       adder/res_reg_5_
+                                                 |       adder/res_reg_6_
+                                                 |       adder/res_reg_7_
+                                                 |       adder/res_reg_8_
+                                                 |       adder/res_reg_9_
+                                                 |       adder/res_reg_10_
+                                                 |       adder/res_reg_11_
+                                                 |       adder/res_reg_12_
+                                                 |       adder/res_reg_13_
+                                                 |       adder/res_reg_14_
+                                                 |       adder/res_reg_15_
+                                                 |       adder/res_reg_16_
+                                                 |       adder/res_reg_17_
+                                                 |       adder/res_reg_18_
+                                                 |       adder/res_reg_19_
+                                                 |       adder/res_reg_20_
+                                                 |       adder/res_reg_21_
+                                                 |       adder/res_reg_30_
+                                                 |       adder/res_reg_29_
+                                                 |       adder/res_reg_28_
+                                                 |       adder/res_reg_27_
+                                                 |       adder/res_reg_26_
+                                                 |       adder/res_reg_25_
+                                                 |       adder/res_reg_24_
+                                                 |       adder/res_reg_23_
+                                                 |       adder/res_reg_31_
+                                                 |
+ adder/clk_gate_man_carry_reg                    |       adder/final_mantissa_reg_0_
+                                                 |       adder/final_mantissa_reg_1_
+                                                 |       adder/final_mantissa_reg_2_
+                                                 |       adder/final_mantissa_reg_3_
+                                                 |       adder/final_mantissa_reg_4_
+                                                 |       adder/final_mantissa_reg_5_
+                                                 |       adder/final_mantissa_reg_6_
+                                                 |       adder/final_mantissa_reg_7_
+                                                 |       adder/final_mantissa_reg_8_
+                                                 |       adder/final_mantissa_reg_9_
+                                                 |       adder/final_mantissa_reg_10_
+                                                 |       adder/final_mantissa_reg_11_
+                                                 |       adder/final_mantissa_reg_12_
+                                                 |       adder/final_mantissa_reg_13_
+                                                 |       adder/final_mantissa_reg_14_
+                                                 |       adder/final_mantissa_reg_15_
+                                                 |       adder/final_mantissa_reg_16_
+                                                 |       adder/final_mantissa_reg_17_
+                                                 |       adder/final_mantissa_reg_18_
+                                                 |       adder/final_mantissa_reg_19_
+                                                 |       adder/final_mantissa_reg_20_
+                                                 |       adder/final_mantissa_reg_21_
+                                                 |       adder/final_mantissa_reg_22_
+                                                 |       adder/man_carry_reg
+                                                 |
+--------------------------------------------------------------------------------
+
+
+                             Clock Gating Summary
+          ------------------------------------------------------------
+          |    Number of Clock gating elements    |       23         |
+          |                                       |                  |
+          |    Number of Gated registers          |   426 (96.38%)   |
+          |                                       |                  |
+          |    Number of Ungated registers        |    16 (3.62%)    |
+          |                                       |                  |
+          |    Total number of registers          |      442         |
+          ------------------------------------------------------------
+
+
+
+                             Clock Gating Report by Origin
+          +-------------------------------------------------+------------------+
+          |                                                 |    Actual (%)    |
+          |                                                 |    Count         |
+          +-------------------------------------------------+------------------+
+          |  Number of tool-inserted clock gating elements  |    23 (100.00%)  |
+          |                                                 |                  |
+          |  Number of pre-existing clock gating elements   |     0 (0.00%)    |
+          |                                                 |                  |
+          |  Number of gated registers                      |   426 (96.38%)   |
+          |                                                 |                  |
+          |  Number of tool-inserted gated registers        |   426 (96.38%)   |
+          |                                                 |                  |
+          |  Number of pre-existing gated registers         |     0 (0.00%)    |
+          |                                                 |                  |
+          |  Number of ungated registers                    |    16 (3.62%)    |
+          |                                                 |                  |
+          |  Number of registers                            |      442         |
+          +-------------------------------------------------+------------------+
+
+
+
+1

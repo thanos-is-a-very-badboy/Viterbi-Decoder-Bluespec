@@ -1,0 +1,20 @@
+ 
+****************************************
+Report : clock gating check
+Design : mkViterbi
+Version: U-2022.12
+Date   : Fri Nov  7 18:28:31 2025
+****************************************
+
+                                    Rise            Fall
+    Cell     Enable  Clock     Setup   Hold    Setup  Hold     Low/High  Attr
+--------------------------------------------------------------------------------
+
+    clk_gate_write_to_prev_flag_reg/main_gate
+             A1      A2         0.00    0.00    0.00   0.00    High      i
+Disabled:
+    None
+
+Attr: 
+i:auto inferred, p:power compiler inserted, l:library cell defined
+1

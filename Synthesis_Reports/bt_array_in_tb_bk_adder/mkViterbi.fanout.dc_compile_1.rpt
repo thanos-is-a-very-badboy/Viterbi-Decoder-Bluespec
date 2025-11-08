@@ -1,0 +1,195 @@
+ 
+****************************************
+Report : net fanout
+        -threshold 50
+Design : mkViterbi
+Version: U-2022.12
+Date   : Fri Nov  7 14:04:33 2025
+****************************************
+
+
+Operating Conditions: ss0p75v25c   Library: saed32lvt_ss0p75v25c
+Wire Load Model Mode: enclosed
+
+Design        Wire Load Model            Library
+------------------------------------------------
+mkViterbi              35000             saed32lvt_ss0p75v25c
+mkFP32_Adder           8000              saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_143 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_142 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_141 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_140 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_139 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_138 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_137 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_136 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_135 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_134 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_133 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_132 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_131 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_130 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_129 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_128 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_127 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_126 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_125 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_124 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_123 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_122 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_121 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_120 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_119 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_118 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_117 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_116 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_115 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_114 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_113 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_112 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_111 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_110 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_109 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_108 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_107 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_106 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_105 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_104 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_103 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_102 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_101 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_100 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_99 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_98 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_97 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_96 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_95 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_94 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_93 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_92 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_91 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_90 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_89 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_88 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_87 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_86 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_85 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_84 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_83 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_82 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_81 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_80 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_79 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_78 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_77 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_76 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_75 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_74 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_73 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_72 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_71 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_70 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_69 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_68 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_67 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_66 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_65 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_64 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_63 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_62 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_61 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_60 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_59 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_58 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_57 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_56 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_55 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_54 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_53 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_52 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_51 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_50 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_49 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_48 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_47 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_46 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_45 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_44 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_43 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_42 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_41 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_40 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_39 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_38 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_37 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_36 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_35 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_34 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_33 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_32 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_31 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_30 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_29 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_28 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_27 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_26 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_25 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_24 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_23 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_22 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_21 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_20 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_19 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_18 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_17 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_16 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_15 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_14 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_13 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_12 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_11 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_10 ForQA  saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_9 ForQA   saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_8 ForQA   saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_7 ForQA   saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_6 ForQA   saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_5 ForQA   saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_4 ForQA   saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_3 ForQA   saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_2 ForQA   saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_1 ForQA   saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkViterbi_0 ForQA   saed32lvt_ss0p75v25c
+mkBrentKungAdder24     8000              saed32lvt_ss0p75v25c
+mkRippleCarrySubtractor_1 ForQA          saed32lvt_ss0p75v25c
+mkRippleCarrySubtractor_0 ForQA          saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkFP32_Adder_2 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkFP32_Adder_1 ForQA saed32lvt_ss0p75v25c
+SNPS_CLOCK_GATE_HIGH_mkFP32_Adder_0 ForQA saed32lvt_ss0p75v25c
+
+
+Attributes:
+   dr - drc disabled
+    c - annotated capacitance
+    d - dont_touch
+    i - ideal_net
+    I - ideal_network
+    p - includes pin load
+    r - annotated resistance
+    h - high fanout
+
+Net                 Fanout   Attributes   Capacitance   Driver
+--------------------------------------------------------------------------------
+RDY_get_n_and_m_loaded    152 dr              5.86      U6513/**logic_1**
+CLK                    311   dr             161.46      CLK
+RST_N                   77                   40.72      RST_N
+n2414                   54                   24.33      U4302/Y
+n2416                   54                   24.33      U4304/Y
+n2417                   54                   24.28      U4306/Y
+n2418                   54                   24.33      U4307/Y
+n2470                  212                  102.37      U4468/Y
+n4664                   51                   23.49      U4416/Y
+n4665                   51                   23.49      U4378/Y
+n4684                   53                   24.41      U4432/Y
+n4711                   54                   24.48      U4433/Y
+adder/net5932           58   dr              35.87      adder/clk_gate_shifted_mantissa_2_reg/main_gate/Y
+1

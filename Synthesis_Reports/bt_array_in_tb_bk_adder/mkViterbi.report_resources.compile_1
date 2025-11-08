@@ -1,0 +1,299 @@
+ 
+****************************************
+Report : resources
+Design : mkViterbi
+Version: U-2022.12
+Date   : Fri Nov  7 14:04:33 2025
+****************************************
+
+
+Resource Report for this hierarchy in file
+        /scratch/EE22B086/CS6230/new/synth/rtl/mkViterbi.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| add_x_76       | DW01_inc       | width=10   | add_4304 (mkViterbi.v:4304) |
+| lt_x_262       | DW_cmp         | width=32   | lt_6327 (mkViterbi.v:6327) |
+| lt_x_263       | DW_cmp         | width=5    | lt_6327_2 (mkViterbi.v:6327) |
+| lt_x_264       | DW_cmp         | width=5    | lt_6329 (mkViterbi.v:6329) |
+| lt_x_265       | DW_cmp         | width=5    | lt_6358 (mkViterbi.v:6358) |
+| lt_x_266       | DW_cmp         | width=32   | lt_6377 (mkViterbi.v:6377) |
+| add_x_267      | DW01_inc       | width=5    | add_6383 (mkViterbi.v:6383) |
+| add_x_268      | DW01_inc       | width=10   | add_6385 (mkViterbi.v:6385) |
+| add_x_269      | DW01_inc       | width=5    | add_6386 (mkViterbi.v:6386) |
+| sub_x_270      | DW01_dec       | width=5    | sub_6390 (mkViterbi.v:6390) |
+| *cell*1380     | DW_decode_en   | width=10   | eq_3982 (mkViterbi.v:3982) |
+|                |                |            | eq_3987 (mkViterbi.v:3987) |
+|                |                |            | eq_3992 (mkViterbi.v:3992) |
+|                |                |            | eq_3997 (mkViterbi.v:3997) |
+|                |                |            | eq_4002 (mkViterbi.v:4002) |
+|                |                |            | eq_4007 (mkViterbi.v:4007) |
+|                |                |            | eq_4012 (mkViterbi.v:4012) |
+|                |                |            | eq_4017 (mkViterbi.v:4017) |
+|                |                |            | eq_4022 (mkViterbi.v:4022) |
+|                |                |            | eq_4027 (mkViterbi.v:4027) |
+|                |                |            | eq_4032 (mkViterbi.v:4032) |
+|                |                |            | eq_4037 (mkViterbi.v:4037) |
+|                |                |            | eq_4042 (mkViterbi.v:4042) |
+|                |                |            | eq_4047 (mkViterbi.v:4047) |
+|                |                |            | eq_4052 (mkViterbi.v:4052) |
+|                |                |            | eq_4057 (mkViterbi.v:4057) |
+|                |                |            | eq_4062 (mkViterbi.v:4062) |
+|                |                |            | eq_4067 (mkViterbi.v:4067) |
+|                |                |            | eq_4072 (mkViterbi.v:4072) |
+|                |                |            | eq_4077 (mkViterbi.v:4077) |
+|                |                |            | eq_4082 (mkViterbi.v:4082) |
+|                |                |            | eq_4087 (mkViterbi.v:4087) |
+|                |                |            | eq_4092 (mkViterbi.v:4092) |
+|                |                |            | eq_4097 (mkViterbi.v:4097) |
+|                |                |            | eq_4102 (mkViterbi.v:4102) |
+|                |                |            | eq_4107 (mkViterbi.v:4107) |
+|                |                |            | eq_4112 (mkViterbi.v:4112) |
+|                |                |            | eq_4117 (mkViterbi.v:4117) |
+|                |                |            | eq_4122 (mkViterbi.v:4122) |
+|                |                |            | eq_4127 (mkViterbi.v:4127) |
+|                |                |            | eq_4132 (mkViterbi.v:4132) |
+|                |                |            | eq_4137 (mkViterbi.v:4137) |
+|                |                |            | eq_4142 (mkViterbi.v:4142) |
+|                |                |            | eq_4147 (mkViterbi.v:4147) |
+|                |                |            | eq_4152 (mkViterbi.v:4152) |
+|                |                |            | eq_4157 (mkViterbi.v:4157) |
+|                |                |            | eq_4162 (mkViterbi.v:4162) |
+|                |                |            | eq_4167 (mkViterbi.v:4167) |
+|                |                |            | eq_4172 (mkViterbi.v:4172) |
+|                |                |            | eq_4177 (mkViterbi.v:4177) |
+|                |                |            | eq_4182 (mkViterbi.v:4182) |
+|                |                |            | eq_4187 (mkViterbi.v:4187) |
+|                |                |            | eq_4192 (mkViterbi.v:4192) |
+|                |                |            | eq_4197 (mkViterbi.v:4197) |
+|                |                |            | eq_4202 (mkViterbi.v:4202) |
+|                |                |            | eq_4207 (mkViterbi.v:4207) |
+|                |                |            | eq_4212 (mkViterbi.v:4212) |
+|                |                |            | eq_4217 (mkViterbi.v:4217) |
+|                |                |            | eq_4222 (mkViterbi.v:4222) |
+|                |                |            | eq_4227 (mkViterbi.v:4227) |
+|                |                |            | eq_4232 (mkViterbi.v:4232) |
+|                |                |            | eq_4237 (mkViterbi.v:4237) |
+|                |                |            | eq_4242 (mkViterbi.v:4242) |
+|                |                |            | eq_4247 (mkViterbi.v:4247) |
+|                |                |            | eq_4252 (mkViterbi.v:4252) |
+|                |                |            | eq_4257 (mkViterbi.v:4257) |
+|                |                |            | eq_4262 (mkViterbi.v:4262) |
+|                |                |            | eq_4267 (mkViterbi.v:4267) |
+|                |                |            | eq_4272 (mkViterbi.v:4272) |
+|                |                |            | eq_4277 (mkViterbi.v:4277) |
+|                |                |            | eq_4282 (mkViterbi.v:4282) |
+|                |                |            | eq_4287 (mkViterbi.v:4287) |
+|                |                |            | eq_4292 (mkViterbi.v:4292) |
+|                |                |            | eq_4297 (mkViterbi.v:4297) |
+|                |                |            | eq_5814 (mkViterbi.v:5814) |
+|                |                |            | eq_5819 (mkViterbi.v:5819) |
+|                |                |            | eq_5824 (mkViterbi.v:5824) |
+|                |                |            | eq_5829 (mkViterbi.v:5829) |
+|                |                |            | eq_5834 (mkViterbi.v:5834) |
+|                |                |            | eq_5839 (mkViterbi.v:5839) |
+|                |                |            | eq_5848 (mkViterbi.v:5848) |
+|                |                |            | eq_5853 (mkViterbi.v:5853) |
+|                |                |            | eq_5858 (mkViterbi.v:5858) |
+|                |                |            | eq_5863 (mkViterbi.v:5863) |
+|                |                |            | eq_5868 (mkViterbi.v:5868) |
+|                |                |            | eq_5873 (mkViterbi.v:5873) |
+|                |                |            | eq_5878 (mkViterbi.v:5878) |
+|                |                |            | eq_5883 (mkViterbi.v:5883) |
+|                |                |            | eq_5888 (mkViterbi.v:5888) |
+|                |                |            | eq_5893 (mkViterbi.v:5893) |
+|                |                |            | eq_5902 (mkViterbi.v:5902) |
+|                |                |            | eq_5907 (mkViterbi.v:5907) |
+|                |                |            | eq_5912 (mkViterbi.v:5912) |
+|                |                |            | eq_5917 (mkViterbi.v:5917) |
+|                |                |            | eq_5922 (mkViterbi.v:5922) |
+|                |                |            | eq_5927 (mkViterbi.v:5927) |
+|                |                |            | eq_5932 (mkViterbi.v:5932) |
+|                |                |            | eq_5937 (mkViterbi.v:5937) |
+|                |                |            | eq_5942 (mkViterbi.v:5942) |
+|                |                |            | eq_5947 (mkViterbi.v:5947) |
+|                |                |            | eq_5956 (mkViterbi.v:5956) |
+|                |                |            | eq_5961 (mkViterbi.v:5961) |
+|                |                |            | eq_5966 (mkViterbi.v:5966) |
+|                |                |            | eq_5971 (mkViterbi.v:5971) |
+|                |                |            | eq_5976 (mkViterbi.v:5976) |
+|                |                |            | eq_5981 (mkViterbi.v:5981) |
+|                |                |            | eq_5986 (mkViterbi.v:5986) |
+|                |                |            | eq_5991 (mkViterbi.v:5991) |
+|                |                |            | eq_5996 (mkViterbi.v:5996) |
+|                |                |            | eq_6001 (mkViterbi.v:6001) |
+|                |                |            | eq_6014 (mkViterbi.v:6014) |
+|                |                |            | eq_6019 (mkViterbi.v:6019) |
+|                |                |            | eq_6024 (mkViterbi.v:6024) |
+|                |                |            | eq_6029 (mkViterbi.v:6029) |
+|                |                |            | eq_6034 (mkViterbi.v:6034) |
+|                |                |            | eq_6039 (mkViterbi.v:6039) |
+|                |                |            | eq_6044 (mkViterbi.v:6044) |
+|                |                |            | eq_6049 (mkViterbi.v:6049) |
+|                |                |            | eq_6054 (mkViterbi.v:6054) |
+|                |                |            | eq_6059 (mkViterbi.v:6059) |
+|                |                |            | eq_6068 (mkViterbi.v:6068) |
+|                |                |            | eq_6073 (mkViterbi.v:6073) |
+|                |                |            | eq_6078 (mkViterbi.v:6078) |
+|                |                |            | eq_6083 (mkViterbi.v:6083) |
+|                |                |            | eq_6088 (mkViterbi.v:6088) |
+|                |                |            | eq_6093 (mkViterbi.v:6093) |
+|                |                |            | eq_6098 (mkViterbi.v:6098) |
+|                |                |            | eq_6103 (mkViterbi.v:6103) |
+|                |                |            | eq_6108 (mkViterbi.v:6108) |
+|                |                |            | eq_6113 (mkViterbi.v:6113) |
+|                |                |            | eq_6122 (mkViterbi.v:6122) |
+|                |                |            | eq_6127 (mkViterbi.v:6127) |
+|                |                |            | eq_6132 (mkViterbi.v:6132) |
+|                |                |            | eq_6137 (mkViterbi.v:6137) |
+|                |                |            | eq_6142 (mkViterbi.v:6142) |
+|                |                |            | eq_6147 (mkViterbi.v:6147) |
+|                |                |            | eq_6152 (mkViterbi.v:6152) |
+|                |                |            | eq_6157 (mkViterbi.v:6157) |
+| DP_OP_717J1_122_9873            |            |                            |
+|                | DP_OP_717J1_122_9873 |      |                            |
+=============================================================================
+
+Datapath Report for DP_OP_717J1_122_9873
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_717J1_122_9873 | sub_6389 (mkViterbi.v:6389)                         |
+|                      | add_6388 (mkViterbi.v:6388)                         |
+|                      | C20751 (mkViterbi.v:4327)                           |
+|                      | sub_6384 (mkViterbi.v:6384)                         |
+|                      | sub_6387 (mkViterbi.v:6387)                         |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 10    |                                          |
+| I2    | PI   | Unsigned | 10    |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| I4    | PI   | Signed   | 10    |                                          |
+| I5    | PI   | Unsigned | 1     |                                          |
+| T709  | IFO  | Signed   | 6     | O1[5:0]                                  |
+| T712  | IFO  | Signed   | 10    | { I3, I5 } ? O1 : I4 (mkViterbi.v:4327)  |
+| O1    | PO   | Signed   | 10    | I1 - I2 (mkViterbi.v:6389)               |
+| O2    | PO   | Unsigned | 6     | T709 + $unsigned(1'b1) (mkViterbi.v:6388) |
+| O3    | PO   | Signed   | 10    | T712 - $unsigned(1'b1) ( mkViterbi.v:6384 mkViterbi.v:6387 ) |
+==============================================================================
+
+
+Datapath Extraction Report
+
+Information: Operator associated with resources 'sub_6390 (mkViterbi.v:6390)' in design 'mkViterbi' breaks the datapath extraction because there is leakage due to truncation on its fanout to operator of resources 'lt_6329 (mkViterbi.v:6329)'.  (HDL-120)
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| add_x_76           | DW01_inc         | apparch (area)     |                |
+| lt_x_262           | DW_cmp           | apparch (area)     |                |
+| lt_x_263           | DW_cmp           | apparch (area)     |                |
+| lt_x_264           | DW_cmp           | apparch (area)     |                |
+| lt_x_265           | DW_cmp           | apparch (area)     |                |
+| lt_x_266           | DW_cmp           | apparch (area)     |                |
+| add_x_267          | DW01_inc         | apparch (area)     |                |
+| add_x_268          | DW01_inc         | apparch (area)     |                |
+| add_x_269          | DW01_inc         | apparch (area)     |                |
+| sub_x_270          | DW01_dec         | apparch (area)     |                |
+| *cell*1380         | DW_decode_en     | cgen (area)        |                |
+| DP_OP_717J1_122_9873                  |                    |                |
+|                    | DP_OP_717J1_122_9873 | str (area)     |                |
+===============================================================================
+
+ 
+****************************************
+Design : mkFP32_Adder
+****************************************
+
+Resource Report for this hierarchy in file
+        /scratch/EE22B086/CS6230/new/synth/rtl/mkFP32_Adder.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| add_x_4        | DW01_inc       | width=8    | add_345 (mkFP32_Adder.v:345) |
+| sub_x_9        | DW01_dec       | width=5    | sub_391 (mkFP32_Adder.v:391) |
+| sub_x_10       | DW01_dec       | width=5    | sub_392 (mkFP32_Adder.v:392) |
+| eq_x_11        | DW_cmp         | width=8    | eq_394 (mkFP32_Adder.v:394) |
+| lte_x_12       | DW_cmp         | width=8    | lte_396 (mkFP32_Adder.v:396) |
+| ashr_13        | DW_rightsh     | A_width=24 | srl_409 (mkFP32_Adder.v:409) |
+               |                | SH_width=8 |                            |
+| sub_x_14       | DW01_sub       | width=8    | sub_410 (mkFP32_Adder.v:410) |
+| ashr_15        | DW_rightsh     | A_width=24 | srl_411 (mkFP32_Adder.v:411) |
+               |                | SH_width=8 |                            |
+| sub_x_16       | DW01_sub       | width=8    | sub_412 (mkFP32_Adder.v:412) |
+| ashr_19        | DW_rightsh     | A_width=24 | srl_425 (mkFP32_Adder.v:425) |
+               |                | SH_width=8 |                            |
+| ashr_20        | DW_rightsh     | A_width=24 | srl_426 (mkFP32_Adder.v:426) |
+               |                | SH_width=8 |                            |
+| DP_OP_134_128_6507              |            |                            |
+|                | DP_OP_134_128_6507 |        |                            |
+=============================================================================
+
+Datapath Report for DP_OP_134_128_6507
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_134_128_6507   | add_405 (mkFP32_Adder.v:405)                        |
+|                      | add_404 (mkFP32_Adder.v:404)                        |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 23    |                                          |
+| O1    | PO   | Unsigned | 23    | I1 + $unsigned(1'b1) ( mkFP32_Adder.v:404 mkFP32_Adder.v:405 ) |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| add_x_4            | DW01_inc         | apparch (area)     |                |
+| sub_x_9            | DW01_dec         | apparch (area)     |                |
+| sub_x_10           | DW01_dec         | apparch (area)     |                |
+| eq_x_11            | DW_cmp           | apparch (area)     |                |
+| lte_x_12           | DW_cmp           | apparch (area)     |                |
+| ashr_13            | DW_rightsh       | astr (area)        |                |
+| sub_x_14           | DW01_sub         | apparch (area)     |                |
+| ashr_15            | DW_rightsh       | astr (area)        |                |
+| sub_x_16           | DW01_sub         | apparch (area)     |                |
+| ashr_19            | DW_rightsh       | astr (area)        |                |
+| ashr_20            | DW_rightsh       | astr (area)        |                |
+| DP_OP_134_128_6507 | DP_OP_134_128_6507 | str (area)       |                |
+===============================================================================
+
+
+No resource sharing information to report.
+ 
+****************************************
+Design : mkRippleCarrySubtractor_0
+****************************************
+
+No implementations to report
+
+No resource sharing information to report.
+ 
+****************************************
+Design : mkRippleCarrySubtractor_1
+****************************************
+
+No implementations to report
+
+No resource sharing information to report.
+ 
+****************************************
+Design : mkBrentKungAdder24
+****************************************
+
+No implementations to report
+1

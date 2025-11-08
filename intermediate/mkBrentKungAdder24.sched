@@ -1,0 +1,11 @@
+=== Generated schedule for mkBrentKungAdder24 ===
+
+Method schedule
+---------------
+Method: calculate
+Ready signal: True
+Conflict-free: calculate
+ 
+Logical execution order: calculate
+
+==================================================

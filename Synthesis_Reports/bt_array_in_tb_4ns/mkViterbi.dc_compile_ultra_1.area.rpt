@@ -1,0 +1,194 @@
+ 
+****************************************
+Report : area
+Design : mkViterbi
+Version: U-2022.12
+Date   : Fri Nov  7 14:28:08 2025
+****************************************
+
+Library(s) Used:
+
+    saed32lvt_ss0p75v25c (File: /home/tools/pdk/SAED32nm_EDK_02_2024/lib/stdcell_lvt/db_nldm/saed32lvt_ss0p75v25c.db)
+
+Number of ports:                         1784
+Number of nets:                         12885
+Number of cells:                        11508
+Number of combinational cells:           8506
+Number of sequential cells:              2848
+Number of macros/black boxes:               0
+Number of buf/inv:                       1022
+Number of references:                     196
+
+Combinational area:              19841.276373
+Buf/Inv area:                     1369.836164
+Noncombinational area:           18594.700493
+Macro/Black Box area:                0.000000
+Net Interconnect area:           14004.935634
+
+Total cell area:                 38435.976866
+Total area:                      52440.912500
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area            Local cell area
+                                  -------------------  ------------------------------ 
+Hierarchical cell                 Absolute    Percent  Combi-      Noncombi-   Black-
+                                  Total       Total    national    national    boxes   Design
+--------------------------------  ----------  -------  ----------  ----------  ------  -----------------------------------
+mkViterbi                         38435.9769    100.0  16621.2719  17074.4111  0.0000  mkViterbi
+adder                              3532.6016      9.2   2098.4670    773.1061  0.0000  mkFP32_Adder
+adder/clk_gate_man_carry_reg          8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkFP32_Adder_0
+adder/clk_gate_res_reg                8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkFP32_Adder_1
+adder/clk_gate_shifted_mantissa_2_reg     8.3868     0.0     3.3039     5.0829 0.0000  SNPS_CLOCK_GATE_HIGH_mkFP32_Adder_2
+adder/rca                           459.2382      1.2    459.2382      0.0000  0.0000  mkBrentKungAdder24
+adder/rcs1                          128.0886      0.3    128.0886      0.0000  0.0000  mkRippleCarrySubtractor_1
+adder/rcs2                           48.5415      0.1     48.5415      0.0000  0.0000  mkRippleCarrySubtractor_0
+clk_gate_bt_buffer_reg                8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_0
+clk_gate_bt_max_reg                   8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_1
+clk_gate_bt_t_ctr_reg                 8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_2
+clk_gate_curr_0_reg                   8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_3
+clk_gate_curr_10_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_5
+clk_gate_curr_11_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_6
+clk_gate_curr_12_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_7
+clk_gate_curr_13_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_8
+clk_gate_curr_14_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_9
+clk_gate_curr_15_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_10
+clk_gate_curr_16_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_11
+clk_gate_curr_17_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_12
+clk_gate_curr_18_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_13
+clk_gate_curr_19_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_14
+clk_gate_curr_1_reg                   8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_4
+clk_gate_curr_20_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_16
+clk_gate_curr_21_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_17
+clk_gate_curr_22_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_18
+clk_gate_curr_23_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_19
+clk_gate_curr_24_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_20
+clk_gate_curr_25_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_21
+clk_gate_curr_26_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_22
+clk_gate_curr_27_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_23
+clk_gate_curr_28_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_24
+clk_gate_curr_29_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_25
+clk_gate_curr_2_reg                   8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_15
+clk_gate_curr_30_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_27
+clk_gate_curr_31_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_28
+clk_gate_curr_3_reg                   8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_26
+clk_gate_curr_4_reg                   8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_29
+clk_gate_curr_5_reg                   8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_30
+clk_gate_curr_6_reg                   8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_31
+clk_gate_curr_7_reg                   8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_32
+clk_gate_curr_8_reg                   8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_33
+clk_gate_curr_9_reg                   8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_34
+clk_gate_emission_buffer_reg          8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_35
+clk_gate_i_ctr_reg                    8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_36
+clk_gate_j_ctr_reg                    8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_37
+clk_gate_machine_state_reg            8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_38
+clk_gate_max_reg_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_39
+clk_gate_max_state_reg_reg            8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_40
+clk_gate_n_reg_reg                    8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_41
+clk_gate_outcome_buffer_reg           8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_42
+clk_gate_outcome_idx_reg              8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_43
+clk_gate_path_0_reg                   8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_44
+clk_gate_path_10_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_46
+clk_gate_path_11_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_47
+clk_gate_path_12_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_48
+clk_gate_path_13_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_49
+clk_gate_path_14_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_50
+clk_gate_path_15_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_51
+clk_gate_path_16_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_52
+clk_gate_path_17_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_53
+clk_gate_path_18_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_54
+clk_gate_path_19_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_55
+clk_gate_path_1_reg                   8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_45
+clk_gate_path_20_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_57
+clk_gate_path_21_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_58
+clk_gate_path_22_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_59
+clk_gate_path_23_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_60
+clk_gate_path_24_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_61
+clk_gate_path_25_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_62
+clk_gate_path_26_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_63
+clk_gate_path_27_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_64
+clk_gate_path_28_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_65
+clk_gate_path_29_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_66
+clk_gate_path_2_reg                   8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_56
+clk_gate_path_30_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_68
+clk_gate_path_31_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_69
+clk_gate_path_32_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_70
+clk_gate_path_33_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_71
+clk_gate_path_34_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_72
+clk_gate_path_35_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_73
+clk_gate_path_36_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_74
+clk_gate_path_37_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_75
+clk_gate_path_38_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_76
+clk_gate_path_39_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_77
+clk_gate_path_3_reg                   8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_67
+clk_gate_path_40_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_79
+clk_gate_path_41_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_80
+clk_gate_path_42_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_81
+clk_gate_path_43_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_82
+clk_gate_path_44_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_83
+clk_gate_path_45_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_84
+clk_gate_path_46_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_85
+clk_gate_path_47_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_86
+clk_gate_path_48_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_87
+clk_gate_path_49_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_88
+clk_gate_path_4_reg                   8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_78
+clk_gate_path_50_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_90
+clk_gate_path_51_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_91
+clk_gate_path_52_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_92
+clk_gate_path_53_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_93
+clk_gate_path_54_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_94
+clk_gate_path_55_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_95
+clk_gate_path_56_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_96
+clk_gate_path_57_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_97
+clk_gate_path_58_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_98
+clk_gate_path_59_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_99
+clk_gate_path_5_reg                   8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_89
+clk_gate_path_60_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_101
+clk_gate_path_61_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_102
+clk_gate_path_62_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_103
+clk_gate_path_63_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_104
+clk_gate_path_6_reg                   8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_100
+clk_gate_path_7_reg                   8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_105
+clk_gate_path_8_reg                   8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_106
+clk_gate_path_9_reg                   8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_107
+clk_gate_path_buffer_reg              8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_108
+clk_gate_prev_0_reg                   8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_109
+clk_gate_prev_10_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_111
+clk_gate_prev_11_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_112
+clk_gate_prev_12_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_113
+clk_gate_prev_13_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_114
+clk_gate_prev_14_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_115
+clk_gate_prev_15_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_116
+clk_gate_prev_16_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_117
+clk_gate_prev_17_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_118
+clk_gate_prev_18_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_119
+clk_gate_prev_19_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_120
+clk_gate_prev_1_reg                   8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_110
+clk_gate_prev_20_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_122
+clk_gate_prev_21_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_123
+clk_gate_prev_22_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_124
+clk_gate_prev_23_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_125
+clk_gate_prev_24_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_126
+clk_gate_prev_25_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_127
+clk_gate_prev_26_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_128
+clk_gate_prev_27_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_129
+clk_gate_prev_28_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_130
+clk_gate_prev_29_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_131
+clk_gate_prev_2_reg                   8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_121
+clk_gate_prev_30_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_133
+clk_gate_prev_31_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_134
+clk_gate_prev_3_reg                   8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_132
+clk_gate_prev_4_reg                   8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_135
+clk_gate_prev_5_reg                   8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_136
+clk_gate_prev_6_reg                   8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_137
+clk_gate_prev_7_reg                   8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_138
+clk_gate_prev_8_reg                   8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_139
+clk_gate_prev_9_reg                   8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_140
+clk_gate_t_ctr_reg                    8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_141
+clk_gate_t_start_reg                  8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_142
+clk_gate_transition_buffer_reg        8.3868      0.0      3.3039      5.0829  0.0000  SNPS_CLOCK_GATE_HIGH_mkViterbi_143
+--------------------------------  ----------  -------  ----------  ----------  ------  -----------------------------------
+Total                                                  19841.2764  18594.7005  0.0000
+
+1

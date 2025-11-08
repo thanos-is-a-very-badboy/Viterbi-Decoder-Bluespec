@@ -1,0 +1,130 @@
+ 
+****************************************
+check_design summary:
+Version:     U-2022.12
+Date:        Fri Nov  7 18:23:39 2025
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                     79
+    Unconnected ports (LINT-28)                                    30
+    Shorted outputs (LINT-31)                                      24
+    Constant outputs (LINT-52)                                     25
+
+Cells                                                              13
+    Connected to power or ground (LINT-32)                          9
+    Nets connected to multiple pins on same cell (LINT-33)          4
+
+Nets                                                                2
+    Unloaded nets (LINT-2)                                          2
+--------------------------------------------------------------------------------
+
+Warning: In design 'mkViterbi', net 'adder/SYNOPSYS_UNCONNECTED_2' driven by pin 'adder/rcs2/calculate[8]' has no loads. (LINT-2)
+Warning: In design 'mkViterbi', net 'adder/SYNOPSYS_UNCONNECTED_1' driven by pin 'adder/rcs1/calculate[8]' has no loads. (LINT-2)
+Warning: In design 'mkViterbi', port 'EN_get_n_and_m_loaded' is not connected to any nets. (LINT-28)
+Warning: In design 'mkViterbi', port 'n_and_m_load_m[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'mkViterbi', port 'n_and_m_load_m[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'mkViterbi', port 'n_and_m_load_m[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'mkViterbi', port 'n_and_m_load_m[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'mkViterbi', port 'n_and_m_load_m[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'mkViterbi', port 'send_transition_data_data[31]' is not connected to any nets. (LINT-28)
+Warning: In design 'mkViterbi', port 'send_emission_data_data[31]' is not connected to any nets. (LINT-28)
+Warning: In design 'mkFP32_Adder', port 'match_exponents_num1[31]' is not connected to any nets. (LINT-28)
+Warning: In design 'mkFP32_Adder', port 'match_exponents_num2[31]' is not connected to any nets. (LINT-28)
+Warning: In design 'mkFP32_Adder', port 'RDY_match_exponents' is not connected to any nets. (LINT-28)
+Warning: In design 'mkFP32_Adder', port 'RDY_add_mantissa' is not connected to any nets. (LINT-28)
+Warning: In design 'mkFP32_Adder', port 'RDY_normalise' is not connected to any nets. (LINT-28)
+Warning: In design 'mkFP32_Adder', port 'RDY_get_res' is not connected to any nets. (LINT-28)
+Warning: In design 'mkFP32_Adder', port 'RDY_state_1_done' is not connected to any nets. (LINT-28)
+Warning: In design 'mkFP32_Adder', port 'RDY_state_2_done' is not connected to any nets. (LINT-28)
+Warning: In design 'mkFP32_Adder', port 'RDY_state_3_done' is not connected to any nets. (LINT-28)
+Warning: In design 'mkFP32_Adder', port 'RDY_clear_adder' is not connected to any nets. (LINT-28)
+Warning: In design 'mkBrentKungAdder24', port 'CLK' is not connected to any nets. (LINT-28)
+Warning: In design 'mkBrentKungAdder24', port 'RST_N' is not connected to any nets. (LINT-28)
+Warning: In design 'mkBrentKungAdder24', port 'calculate_cin' is not connected to any nets. (LINT-28)
+Warning: In design 'mkBrentKungAdder24', port 'RDY_calculate' is not connected to any nets. (LINT-28)
+Warning: In design 'mkRippleCarrySubtractor_1', port 'CLK' is not connected to any nets. (LINT-28)
+Warning: In design 'mkRippleCarrySubtractor_1', port 'RST_N' is not connected to any nets. (LINT-28)
+Warning: In design 'mkRippleCarrySubtractor_1', port 'calculate[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'mkRippleCarrySubtractor_1', port 'RDY_calculate' is not connected to any nets. (LINT-28)
+Warning: In design 'mkRippleCarrySubtractor_0', port 'CLK' is not connected to any nets. (LINT-28)
+Warning: In design 'mkRippleCarrySubtractor_0', port 'RST_N' is not connected to any nets. (LINT-28)
+Warning: In design 'mkRippleCarrySubtractor_0', port 'calculate[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'mkRippleCarrySubtractor_0', port 'RDY_calculate' is not connected to any nets. (LINT-28)
+Warning: In design 'mkViterbi', output port 'RDY_get_n_and_m_loaded' is connected directly to output port 'RDY_get_path_ready'. (LINT-31)
+Warning: In design 'mkViterbi', output port 'RDY_get_n_and_m_loaded' is connected directly to output port 'RDY_get_path_buffer'. (LINT-31)
+Warning: In design 'mkViterbi', output port 'RDY_get_n_and_m_loaded' is connected directly to output port 'RDY_send_bt_data'. (LINT-31)
+Warning: In design 'mkViterbi', output port 'RDY_get_n_and_m_loaded' is connected directly to output port 'RDY_get_bt_t_ctr'. (LINT-31)
+Warning: In design 'mkViterbi', output port 'RDY_get_n_and_m_loaded' is connected directly to output port 'RDY_get_read_bt'. (LINT-31)
+Warning: In design 'mkViterbi', output port 'RDY_get_n_and_m_loaded' is connected directly to output port 'RDY_get_max_stage_reg'. (LINT-31)
+Warning: In design 'mkViterbi', output port 'RDY_get_n_and_m_loaded' is connected directly to output port 'RDY_get_write_to_bt_flag'. (LINT-31)
+Warning: In design 'mkViterbi', output port 'RDY_get_n_and_m_loaded' is connected directly to output port 'RDY_get_outcome'. (LINT-31)
+Warning: In design 'mkViterbi', output port 'RDY_get_n_and_m_loaded' is connected directly to output port 'RDY_get_j_ctr'. (LINT-31)
+Warning: In design 'mkViterbi', output port 'RDY_get_n_and_m_loaded' is connected directly to output port 'RDY_get_i_ctr'. (LINT-31)
+Warning: In design 'mkViterbi', output port 'RDY_get_n_and_m_loaded' is connected directly to output port 'RDY_get_init_done_flag'. (LINT-31)
+Warning: In design 'mkViterbi', output port 'RDY_get_n_and_m_loaded' is connected directly to output port 'RDY_get_probab'. (LINT-31)
+Warning: In design 'mkViterbi', output port 'RDY_get_n_and_m_loaded' is connected directly to output port 'RDY_get_num_obs'. (LINT-31)
+Warning: In design 'mkViterbi', output port 'RDY_get_n_and_m_loaded' is connected directly to output port 'RDY_get_print_state'. (LINT-31)
+Warning: In design 'mkViterbi', output port 'RDY_get_n_and_m_loaded' is connected directly to output port 'RDY_get_reset_decoder'. (LINT-31)
+Warning: In design 'mkViterbi', output port 'RDY_get_n_and_m_loaded' is connected directly to output port 'RDY_get_read_outcome'. (LINT-31)
+Warning: In design 'mkViterbi', output port 'RDY_get_n_and_m_loaded' is connected directly to output port 'RDY_get_read_emission'. (LINT-31)
+Warning: In design 'mkViterbi', output port 'RDY_get_n_and_m_loaded' is connected directly to output port 'RDY_set_read_transition'. (LINT-31)
+Warning: In design 'mkViterbi', output port 'RDY_get_n_and_m_loaded' is connected directly to output port 'RDY_get_read_transition'. (LINT-31)
+Warning: In design 'mkViterbi', output port 'RDY_get_n_and_m_loaded' is connected directly to output port 'RDY_send_outcome_data'. (LINT-31)
+Warning: In design 'mkViterbi', output port 'RDY_get_n_and_m_loaded' is connected directly to output port 'RDY_send_emission_data'. (LINT-31)
+Warning: In design 'mkViterbi', output port 'RDY_get_n_and_m_loaded' is connected directly to output port 'RDY_send_transition_data'. (LINT-31)
+Warning: In design 'mkViterbi', output port 'RDY_get_n_and_m_loaded' is connected directly to output port 'RDY_read_outcome_idx'. (LINT-31)
+Warning: In design 'mkViterbi', output port 'RDY_get_n_and_m_loaded' is connected directly to output port 'RDY_n_and_m_load'. (LINT-31)
+Warning: In design 'mkViterbi', a pin on submodule 'adder' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'match_exponents_num1[31]' is connected to logic 0. 
+Warning: In design 'mkViterbi', a pin on submodule 'adder' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'match_exponents_num2[31]' is connected to logic 0. 
+Warning: In design 'mkFP32_Adder', a pin on submodule 'rca' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CLK' is connected to logic 0. 
+Warning: In design 'mkFP32_Adder', a pin on submodule 'rca' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'RST_N' is connected to logic 0. 
+Warning: In design 'mkFP32_Adder', a pin on submodule 'rca' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'calculate_cin' is connected to logic 0. 
+Warning: In design 'mkFP32_Adder', a pin on submodule 'rcs1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CLK' is connected to logic 0. 
+Warning: In design 'mkFP32_Adder', a pin on submodule 'rcs1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'RST_N' is connected to logic 0. 
+Warning: In design 'mkFP32_Adder', a pin on submodule 'rcs2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CLK' is connected to logic 0. 
+Warning: In design 'mkFP32_Adder', a pin on submodule 'rcs2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'RST_N' is connected to logic 0. 
+Warning: In design 'mkViterbi', the same net is connected to more than one pin on submodule 'adder'. (LINT-33)
+   Net 'n1717' is connected to pins 'match_exponents_num1[31]', 'match_exponents_num2[31]''.
+Warning: In design 'mkFP32_Adder', the same net is connected to more than one pin on submodule 'rca'. (LINT-33)
+   Net 'n_Logic0_' is connected to pins 'CLK', 'RST_N'', 'calculate_cin'.
+Warning: In design 'mkFP32_Adder', the same net is connected to more than one pin on submodule 'rcs1'. (LINT-33)
+   Net 'n_Logic0_' is connected to pins 'CLK', 'RST_N''.
+Warning: In design 'mkFP32_Adder', the same net is connected to more than one pin on submodule 'rcs2'. (LINT-33)
+   Net 'n_Logic0_' is connected to pins 'CLK', 'RST_N''.
+Warning: In design 'mkViterbi', output port 'RDY_get_n_and_m_loaded' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'mkViterbi', output port 'RDY_n_and_m_load' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'mkViterbi', output port 'RDY_read_outcome_idx' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'mkViterbi', output port 'RDY_send_transition_data' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'mkViterbi', output port 'RDY_send_emission_data' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'mkViterbi', output port 'RDY_send_outcome_data' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'mkViterbi', output port 'RDY_get_read_transition' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'mkViterbi', output port 'RDY_set_read_transition' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'mkViterbi', output port 'RDY_get_read_emission' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'mkViterbi', output port 'RDY_get_read_outcome' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'mkViterbi', output port 'RDY_get_reset_decoder' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'mkViterbi', output port 'RDY_get_print_state' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'mkViterbi', output port 'RDY_get_num_obs' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'mkViterbi', output port 'RDY_get_probab' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'mkViterbi', output port 'RDY_get_init_done_flag' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'mkViterbi', output port 'RDY_get_i_ctr' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'mkViterbi', output port 'RDY_get_j_ctr' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'mkViterbi', output port 'RDY_get_outcome' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'mkViterbi', output port 'RDY_get_write_to_bt_flag' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'mkViterbi', output port 'RDY_get_max_stage_reg' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'mkViterbi', output port 'RDY_get_read_bt' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'mkViterbi', output port 'RDY_get_bt_t_ctr' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'mkViterbi', output port 'RDY_send_bt_data' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'mkViterbi', output port 'RDY_get_path_buffer' is connected directly to 'logic 1'. (LINT-52)
+Warning: In design 'mkViterbi', output port 'RDY_get_path_ready' is connected directly to 'logic 1'. (LINT-52)
+1
