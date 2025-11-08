@@ -7,19 +7,19 @@ module mkViterbiTestbench();
 
     Ifc_Viterbi viterbi <- mkViterbi();
 
-    RegFile#(Bit#(10), Bit#(32)) p_transition <- mkRegFileLoad("./Inputs/A_small.dat", 0, 1023);
-    RegFile#(Bit#(10), Bit#(32)) p_emission <- mkRegFileLoad("./Inputs/B_small.dat", 0, 1023);
-    RegFile#(Bit#(10), Bit#(32)) inputs <- mkRegFileLoad("./Inputs/input_small.dat", 0, 1023);
-    RegFile#(Bit#(32), Bit#(5)) n_and_m <- mkRegFileLoad("./Inputs/N_small.dat", 0, 1023);
+    // RegFile#(Bit#(10), Bit#(32)) p_transition <- mkRegFileLoad("./Inputs/A_small.dat", 0, 1023);
+    // RegFile#(Bit#(10), Bit#(32)) p_emission <- mkRegFileLoad("./Inputs/B_small.dat", 0, 1023);
+    // RegFile#(Bit#(10), Bit#(32)) inputs <- mkRegFileLoad("./Inputs/input_small.dat", 0, 1023);
+    // RegFile#(Bit#(32), Bit#(5)) n_and_m <- mkRegFileLoad("./Inputs/N_small.dat", 0, 1023);
     
     Vector#(2048, Reg#(Bit#(5))) bt_tb <- replicateM(mkReg(0));
     
     Reg#(File) file <- mkRegU;
 
-    // RegFile#(Bit#(10), Bit#(32)) p_transition <- mkRegFileLoad("./Huge_Ip/A_huge.dat", 0, 1023);
-    // RegFile#(Bit#(10), Bit#(32)) p_emission <- mkRegFileLoad("./Huge_Ip/B_huge.dat", 0, 1023);
-    // RegFile#(Bit#(10), Bit#(32)) inputs <- mkRegFileLoad("./Huge_Ip/input_huge.dat", 0, 1023);
-    // RegFile#(Bit#(32), Bit#(5)) n_and_m <- mkRegFileLoad("./Huge_Ip/N_huge.dat", 0, 1023);
+    RegFile#(Bit#(10), Bit#(32)) p_transition <- mkRegFileLoad("./Huge_Ip/A_huge.dat", 0, 1023);
+    RegFile#(Bit#(10), Bit#(32)) p_emission <- mkRegFileLoad("./Huge_Ip/B_huge.dat", 0, 1023);
+    RegFile#(Bit#(10), Bit#(32)) inputs <- mkRegFileLoad("./Huge_Ip/input_huge.dat", 0, 1023);
+    RegFile#(Bit#(32), Bit#(5)) n_and_m <- mkRegFileLoad("./Huge_Ip/N_huge.dat", 0, 1023);
     
 
     Bit#(5) n = n_and_m.sub(0);

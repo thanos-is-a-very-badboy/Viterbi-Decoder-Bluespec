@@ -17,10 +17,8 @@ interface Ifc_Viterbi;
 
     // --- Optional: read enables (if your TB checks these flags) ---
     method Bool get_read_transition();
-    method Action set_read_transition(Bool val);
     method Bool get_read_emission();
     method Bool get_read_outcome();
-    method Bool get_reset_decoder();
 
     // --- For Final Print ---
     method Print_State get_print_state();
@@ -34,31 +32,37 @@ interface Ifc_Viterbi;
     method Bit#(32) get_outcome();
 
     // --- To Write into BT Memory ---
-    // method State get_machine_state();
     method Bool get_write_to_bt_flag();
-    method Bit#(5) get_max_stage_reg();
+    method Bit#(5) get_max_stage_reg(); 
 
+    // --- To Read data from BT Memory ---
     method Bool get_read_bt();
-
     method Bit#(10) get_bt_t_ctr();
     method Action send_bt_data(Bit#(5) data);
+
+    // --- To Send Path Array Elements ---
     method Bit#(5) get_path_buffer();
     method Bool get_path_ready();
         
+    // --- Write into Curr Array ---
     method Bit#(32) get_curr_buffer();
     method Bool get_write_to_curr_flag();
 
+    // --- To Read Values from Curr ---
     method Bool get_read_curr();
-    method Bool get_read_prev();
-    method Action send_prev_data(Bit#(32) data);
     method Action send_curr_data(Bit#(32) data);
 
-    method Bool get_switch_prev_curr();
+    // --- To Read Values from Prev ---
+    method Bool get_read_prev();
+    method Action send_prev_data(Bit#(32) data);
+    
+    // --- To Write into Prev Buffer ---
     method Bool get_write_to_prev_flag();
     method Bit#(32) get_prev_buffer();
-
-
-
+    
+    // --- Swap Prev and Curr at the End of 2 Inner Loops ---
+    method Bool get_switch_prev_curr();
+    
 endinterface
 
 typedef enum {
@@ -128,7 +132,7 @@ module mkViterbi(Ifc_Viterbi);
     Reg#(Bool) outcome_ready <- mkReg(False);
 
     Reg#(Bool) init_done_flag <- mkReg(False);               
-    Reg#(Bool) reset_machine_flag <- mkReg(False);               
+    // Reg#(Bool) reset_machine_flag <- mkReg(False);               
     Reg#(Bool) loop_done_flag <- mkReg(False);               
     
     Reg#(Bool) read_bt <- mkReg(False);
@@ -240,7 +244,7 @@ module mkViterbi(Ifc_Viterbi);
         end
         else if(machine_state == Load_emission)begin
             if(outcome_buffer==32'hFFFFFFFF)begin
-                reset_machine_flag<=True;
+                // reset_machine_flag<=True;
                 machine_state<=Print_res;
             end
             else begin
@@ -467,9 +471,9 @@ endrule
         return read_transition;
     endmethod
 
-    method Action set_read_transition(Bool val);
-        read_transition <= val;
-    endmethod
+    // method Action set_read_transition(Bool val);
+    //     read_transition <= val;
+    // endmethod
 
     method Bool get_read_emission();
         return read_emission;
@@ -479,9 +483,9 @@ endrule
         return read_outcome;
     endmethod
 
-    method Bool get_reset_decoder();
-        return reset_machine_flag;
-    endmethod
+    // method Bool get_reset_decoder();
+        // return reset_machine_flag;
+    // endmethod
 
     method Print_State get_print_state();
         return print_state;
