@@ -155,69 +155,33 @@ module mkBrentKungAdder24(BrentKungAdder24_IFC);
       
       // --- Step 1: Up-Sweep (Prefix Tree) ---
       
-      // 24 groups of 1-bit
-      Vector#(24, GP) gp0 = calcInitialGP(a, b);
+    //Initial GPs
+    Vector#(24, GP) gp0 = calcInitialGP(a, b);
       
-      // 12 groups of 2-bits
-      Vector#(12, GP) gp1 = mergeLevel_24_to_12(gp0);
+    //1st Level Merged GPs
+    Vector#(12, GP) gp1 = mergeLevel_24_to_12(gp0);
       
-      // 6 groups of 4-bits
-      Vector#(6, GP) gp2 = mergeLevel_12_to_6(gp1);
+    //2nd Level Merged GPs
+    Vector#(6, GP) gp2 = mergeLevel_12_to_6(gp1);
       
-      // 3 groups of 8-bits (Groups 0-7, 8-15, 16-23)
-      Vector#(3, GP) gp3 = mergeLevel_6_to_3(gp2);
+    //3rd Level Merged GPs
+    Vector#(3, GP) gp3 = mergeLevel_6_to_3(gp2);
       
-      // Combine gp3[0] (0-7) and gp3[1] (8-15) -> 1 group of 16-bits
-      // init(gp3) is Vector#(2, GP)
-      Vector#(1, GP) gp4 = mergeLevel_2_to_1(cons(gp3[1], cons(gp3[0], nil))); 
+    //4th Level Merged GPs
+    Vector#(1, GP) gp4 = mergeLevel_2_to_1(cons(gp3[1], cons(gp3[0], nil))); 
       
-      // gp4[0] is (0-15), gp4[1] is (16-23)
-    //   Vector#(2, GP) gp4 = cons(gp4_temp[0], cons(last(gp3), nil)); 
-      
-      // Combine gp4[0] (0-15) and gp4[1] (16-23) -> 1 group of 24-bits
-      // gp4 is Vector#(2, GP)
-    //   Vector#(1, GP) gp5_temp = mergeLevel_2_to_1(gp4);
-    //   GP gp5 = gp5_temp[0]; // This is the final (0-23) GP group
-      
-      // --- Step 2: Down-Sweep (Carry Calculation) ---
+    //Calculate Carries
     Bit#(25) all_carries = calcCarries24(cin, gp0, gp1, gp2, gp3, gp4);
-
-      // Extract carries for sum (C[23:0])
-    //   Vector#(24, Bool) sum_carries = newVector();
-    //   for(Integer i=0; i<24; i=i+1) {
-    //       sum_carries[i] = all_carries[i];
-    //   }
-      // Extract the final Cout (C[24])
+    
+    //Carry Out
     Bit#(1) cout = all_carries[24];
 
-      // --- Step 3: Final Sum ---
+    //Calculate Final Sum
     Bit#(24) sum = calcSum(gp0, all_carries[23:0]);
       
-    // Bit#(24) sum = bitsFromVector(sum_bits);
     return AdderResult24 { sum: sum, cout: cout };
   endmethod
 
 endmodule
-
-// -----------------------------
-// Utility functions (Unchanged)
-// -----------------------------
-// function Vector#(24, Bool) vectorFromBits(Bit#(24) b);
-//   Vector#(24, Bool) v = newVector();
-//   for (Integer i = 0; i < 24; i = i + 1)
-//     v[i] = ((b >> i) & 1) == 1;
-//   return v;
-// endfunction
-
-// function Bit#(1) bitToBit(Bool b);
-//   return b ? 1 : 0;
-// endfunction
-
-// function Bit#(24) bitsFromVector(Vector#(24, Bool) v);
-//   Bit#(24) out = 0;
-//   for (Integer i = 0; i < 24; i = i + 1)
-//     out = out | (bitToBit(v[i]) << i);
-//   return out;
-// endfunction
 
 endpackage

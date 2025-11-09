@@ -96,89 +96,116 @@ module mkViterbi(Ifc_Viterbi);
 
     Ifc_FP32_Adder adder <- mkFP32_Adder(); // internal FP adder
 
+    //N and M
     Reg#(Bit#(5)) n_reg <- mkReg(0);
     Reg#(Bit#(5)) m_reg <- mkReg(0);
+    
+    //Loop Counters
     Reg#(Bit#(5)) i_ctr <- mkReg(0);
     Reg#(Bit#(5)) j_ctr <- mkReg(0);
     Reg#(Bit#(10)) t_ctr <- mkReg(0);
+
+    //t at Beginning of Each Sequence
     Reg#(Bit#(10)) t_start <- mkReg(0);
+
+    //Used in Backtracking
     Reg#(Bit#(10)) bt_t_ctr <- mkReg(0);
+
+    //Maximum Probability and Corresponding Register
     Reg#(Bit#(32)) max_reg <- mkReg(32'hFFFFFFFF);
     Reg#(Bit#(5)) max_state_reg <- mkReg(0);
 
+    //Max Probability Register in BT Stage
     Reg#(Bit#(32)) bt_max <- mkReg(32'hFFFFFFFF);
 
-
+    //Buffer to Read from Transition, Emission, Outcome, BT
     Reg#(Bit#(32)) transition_buffer <- mkReg(0);
     Reg#(Bit#(32)) emission_buffer <- mkReg(0);
     Reg#(Bit#(32)) outcome_buffer <- mkReg(0);
-
     Reg#(Bit#(5)) bt_buffer <- mkReg(0);
 
+    //Index to Read from Outcome (t)
     Reg#(Bit#(10)) outcome_idx <- mkReg(0);
 
+    //Path Array Element for Top Module
     Reg#(Bit#(5)) path_buffer <- mkReg(0);
+    
+    //Indicates path_buffer is to be Read
+    Reg#(Bool) path_ready <- mkReg(False);
+
+    //To Store Path[t+1]   
     Reg#(Bit#(5)) max_path <- mkReg(0);
 
-    // status flags 
+    //Set to Indicate Data is to be Read
     Reg#(Bool) read_transition <- mkReg(False);
     Reg#(Bool) read_emission <- mkReg(False);
     Reg#(Bool) read_outcome <- mkReg(False);
+    Reg#(Bool) read_bt <- mkReg(False);
+    Reg#(Bool) read_curr <- mkReg(False);
+    Reg#(Bool) read_prev <- mkReg(False);
 
+    //Set when n and m are loaded
     Reg#(Bool) n_and_m_loaded <- mkReg(False);
 
+    //Set when Data is Ready
     Reg#(Bool) transition_ready <- mkReg(False);
     Reg#(Bool) emission_ready <- mkReg(False);
     Reg#(Bool) outcome_ready <- mkReg(False);
+    Reg#(Bool) bt_ready <- mkReg(False);
+    Reg#(Bool) curr_ready <- mkReg(False);
+    Reg#(Bool) prev_ready <- mkReg(False);
 
-    Reg#(Bool) init_done_flag <- mkReg(False);               
-    // Reg#(Bool) reset_machine_flag <- mkReg(False);               
+    //Indicates Finishing of Initialization, Loop Completion
+    Reg#(Bool) init_done_flag <- mkReg(False);                       
     Reg#(Bool) loop_done_flag <- mkReg(False);               
     
-    Reg#(Bool) read_bt <- mkReg(False);
-    Reg#(Bool) bt_ready <- mkReg(False);
+    //Indicate Write to Memory
+    Reg#(Bool) write_to_bt_flag <- mkReg(False);  
+    Reg#(Bool) write_to_curr_flag <- mkReg(False);
+    Reg#(Bool) write_to_prev_flag <- mkReg(False);             
 
-    Reg#(Bool) write_to_bt_flag <- mkReg(False);               
-
+    //FSM States for Each Part of Computation
     Reg#(State) machine_state <- mkReg(Load_outcome);
     Reg#(Init_State) init_state <- mkReg(Init_outcome);
-    Reg#(Print_State) print_state <- mkReg(Find_max);
-
-    Reg#(Bool) path_ready <- mkReg(False);
-
+    Reg#(Print_State) backtrack_state <- mkReg(Find_max);
+    
+    //Element of curr and prev; Used for Viterbi-Top and Top-Viterbi Transfer
     Reg#(Bit#(32)) curr_buffer <- mkReg(0);
     Reg#(Bit#(32)) prev_buffer <- mkReg(0);
     
-    Reg#(Bool) write_to_curr_flag <- mkReg(False);
-    Reg#(Bool) write_to_prev_flag <- mkReg(False);
-    Reg#(Bool) curr_ready <- mkReg(False);
-    Reg#(Bool) read_curr <- mkReg(False);
-
-    Reg#(Bool) read_prev <- mkReg(False);
-    Reg#(Bool) prev_ready <- mkReg(False);
+    //prev <- curr Load to be Done
     Reg#(Bool) switch_prev_curr <- mkReg(False);
-
 
     // --- rules ---
 
+    //Initialize (Load Values for t=0)
     rule init_v(!init_done_flag && n_and_m_loaded);
+
+        //Load the First Value from input.dat
         if(init_state==Init_outcome)begin
+            //Read From input.dat values
             if(!read_outcome && !outcome_ready)begin
                 read_outcome<=True;
                 outcome_idx<=t_ctr;
             end
-            if(outcome_ready)begin
+            else if(outcome_ready)begin
                 init_state<=Read_values;
                 outcome_ready<=False;
             end
         end
+        
+        //Read Transition, Emission for 1st Transition
         else if(init_state == Read_values)begin
             write_to_prev_flag <= False;
+
+            //Final Exit Condition (Read 0)
            if(outcome_buffer==0 && t_ctr!=0) begin
                 init_done_flag <= True;
                 loop_done_flag <= True;
-                print_state <= All_done;
+                backtrack_state <= All_done;
            end
+
+           //Read from A Matrix
            else if(!transition_ready &&!read_transition && !emission_ready && !read_emission)begin
                 read_transition<=True;
                 read_emission<=True;
@@ -189,6 +216,8 @@ module mkViterbi(Ifc_Viterbi);
                 emission_ready<=False;
             end
         end
+
+        //Calculate A[0][i] + B[i][Outcome]; Increment i
         else if(init_state == Loop)begin
             let data1 = transition_buffer;
             let data2 = emission_buffer;
@@ -209,8 +238,6 @@ module mkViterbi(Ifc_Viterbi);
                 
                 prev_buffer <= data;
                 write_to_prev_flag <= True;
-                
-                // prev[i_ctr]<=data;
 
                 if(i_ctr<n_reg-1)begin
                     i_ctr<=i_ctr+1;
@@ -227,12 +254,14 @@ module mkViterbi(Ifc_Viterbi);
         end
     endrule 
 
-
+    // All 3 Loops- t, i ,j Loops
     rule loop_rule(init_done_flag && !loop_done_flag);
-
+        
+        //Load input.dat Values
         if(machine_state == Load_outcome) begin
             write_to_prev_flag <= False;
             switch_prev_curr <= False;
+            
             if(!read_outcome && !outcome_ready)begin
                 read_outcome<=True;
                 outcome_idx <= t_ctr;
@@ -242,11 +271,16 @@ module mkViterbi(Ifc_Viterbi);
                 outcome_ready<=False;
             end
         end
+
+        //Load B[i][Output]
         else if(machine_state == Load_emission)begin
+            
+            //Finish of One i Loop - Reset Registers; Go to Initialize
             if(outcome_buffer==32'hFFFFFFFF)begin
-                // reset_machine_flag<=True;
                 machine_state<=Print_res;
             end
+
+            //Load B[i][Output]
             else begin
                 Bit#(32) temp=0;
 
@@ -261,7 +295,9 @@ module mkViterbi(Ifc_Viterbi);
             end
         end
 
+        // Read B[j][i] 
         else if(machine_state==Load_trans) begin
+
             if(!read_transition && !transition_ready)begin
                 read_transition<=True;
             end
@@ -270,47 +306,57 @@ module mkViterbi(Ifc_Viterbi);
                 transition_ready<=False;
             end
         end
+
+        // Calculate prev[j] + B[j][i]; Find Max
         else if(machine_state==Sum_and_max)begin
             
             if(!read_prev && !prev_ready)begin
-                    read_prev <= True;
-                end
+                read_prev <= True;
+            end
                 
-                if(prev_ready)begin
-                    prev_ready <= False;
-                    let data1 = prev_buffer;
-                    let data2 = transition_buffer;
+            else if(prev_ready)begin
+                prev_ready <= False;
+                let data1 = prev_buffer;
+                let data2 = transition_buffer;
 
 
-                    if(!adder.state_1_done())begin
-                        adder.match_exponents(data1, data2);
-                    end
-                    else if(adder.state_1_done() && !adder.state_2_done())begin
-                        adder.add_mantissa();     
-                    end
-                    else if(adder.state_2_done() && !adder.state_3_done())begin
-                        adder.normalise();
-                    end
-                    else if(adder.state_3_done()) begin
-                        let data = adder.get_res();
-                        adder.clear_adder();
-                        if(i_ctr == 0) begin
-                        end
-                        if(data<max_reg && j_ctr<n_reg)begin
-                            max_reg <= data;
-                            max_state_reg <= j_ctr; 
-                        end
-
-                        if(j_ctr<n_reg-1) begin
-                            j_ctr<=j_ctr+1;
-                            machine_state<=Load_trans; //might have to remove
-                        end
-                        else begin
-                            machine_state<=Final_sum;
-                        end
-                    end
+                if(!adder.state_1_done())begin
+                    adder.match_exponents(data1, data2);
                 end
+                else if(adder.state_1_done() && !adder.state_2_done())begin
+                    adder.add_mantissa();     
+                end
+                else if(adder.state_2_done() && !adder.state_3_done())begin
+                    adder.normalise();
+                end
+                else if(adder.state_3_done()) begin
+                    let data = adder.get_res();
+                    adder.clear_adder();
+                    // if(i_ctr == 0) begin
+                    // end
+
+                    //Update Max Probability, Max State
+                    if(data<max_reg && j_ctr<n_reg)begin
+                        max_reg <= data;
+                        max_state_reg <= j_ctr; 
+                    end
+
+                    //Update j Counter; Go Back to Loading A[j][i]
+                    if(j_ctr<n_reg-1) begin
+                        j_ctr<=j_ctr+1;
+                        machine_state<=Load_trans; //might have to remove
+                    end
+                    
+                    //Go to Calculate Max(prev[j] + A[j][i]) + B[i][Outcome]
+                    else begin
+                        machine_state<=Final_sum;
+                    end
+
+                end
+            end
         end
+
+        //Calculate Max(prev[j] + A[j][i]) + B[i][Outcome]
         else if(machine_state==Final_sum)begin
             j_ctr<=0;
 
@@ -329,9 +375,11 @@ module mkViterbi(Ifc_Viterbi);
             else if(adder.state_3_done()) begin
                 let data_dup = adder.get_res();
 
+                //Write Sum to Curr Array
                 curr_buffer <= data_dup;
                 write_to_curr_flag <= True;
                 
+                //Update BT Array
                 write_to_bt_flag <= True;
 
                 max_reg<=32'hFFFFFFFF;
@@ -340,38 +388,48 @@ module mkViterbi(Ifc_Viterbi);
 
             end
         end
+
+        // Update i Counter and/or t Counter
         else if(machine_state==Final_store)begin
+            
             max_state_reg<=0;
             write_to_curr_flag <= False;
             write_to_bt_flag <= False;
+
             if(i_ctr < n_reg - 1) begin
                 machine_state<=Load_emission;
                 i_ctr<=i_ctr+1;
             end
+            
+            //prev <= curr if i Loop Done
             else begin
-                switch_prev_curr <= True;
-                
+                switch_prev_curr <= True;    
                 machine_state<=Load_outcome;
                 i_ctr <=0;
                 t_ctr<=t_ctr+1;
             end
         end
+
+        //Loops Done; Go to Backtracking
         else if(machine_state==Print_res)begin
             loop_done_flag<=True;
             i_ctr <= 0;
-            print_state <= Find_max;
+            backtrack_state <= Find_max;
         end
     endrule
 
-    rule print_rule(loop_done_flag && init_done_flag);
-        if(print_state == Find_max) begin
+    //Backtracking & Finding Path
+    rule backtrack_rule(loop_done_flag && init_done_flag);
+
+        //Find Most Probable Last State
+        if(backtrack_state == Find_max) begin
             if(i_ctr < n_reg - 1) begin
                 
                 if(!read_curr && !curr_ready)begin
                     read_curr <= True;
                 end
                 
-                if(curr_ready)begin
+                else if(curr_ready)begin
                     curr_ready <= False;
                     let currval = curr_buffer;
 
@@ -384,18 +442,20 @@ module mkViterbi(Ifc_Viterbi);
                     end
                     i_ctr <= i_ctr + 1;
                 end
-
-
-                
             end
+
+            //i Loop Done; Begin Making Rest of the Path
             else begin
                 bt_t_ctr <= t_ctr - t_start - 1;
-                print_state <= Make_path;
+                backtrack_state <= Make_path;
                 path_ready <= True;
             end
         end
 
-        else if (print_state == Make_path) begin
+        //Make the Rest of the Path
+        else if (backtrack_state == Make_path) begin
+            
+            //Read from BT Array; Find Next Element of Path
             if(bt_t_ctr > 0) begin
                 if(!read_bt && !bt_ready)begin
                     read_bt <= True;
@@ -412,12 +472,14 @@ module mkViterbi(Ifc_Viterbi);
                 end
             end
             
+            //State before Initializing; Clearing Registers
             else begin                
-                print_state <= Go_init;
+                backtrack_state <= Go_init;
             end
         end
 
-        else if (print_state == Go_init) begin
+        //Reset & Clear Registers
+        else if (backtrack_state == Go_init) begin
             i_ctr <= 0;
             j_ctr <= 0;
             t_ctr <= t_ctr+1;
@@ -432,7 +494,8 @@ module mkViterbi(Ifc_Viterbi);
         end
         
         
-endrule
+    endrule
+    
     // --- methods ---
     
     method ActionValue#(Bool) get_n_and_m_loaded();
@@ -488,7 +551,7 @@ endrule
     // endmethod
 
     method Print_State get_print_state();
-        return print_state;
+        return backtrack_state;
     endmethod
 
     method Bit#(6) get_num_obs();
