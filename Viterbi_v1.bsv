@@ -80,8 +80,7 @@ typedef enum {
 typedef enum {
     Init_outcome,
     Read_values,
-    Loop,
-    Done
+    Loop
 } Init_State deriving (Bits, Eq, FShow);
 
 typedef enum {
@@ -534,10 +533,6 @@ module mkViterbi(Ifc_Viterbi);
         return read_transition;
     endmethod
 
-    // method Action set_read_transition(Bool val);
-    //     read_transition <= val;
-    // endmethod
-
     method Bool get_read_emission();
         return read_emission;
     endmethod
@@ -545,10 +540,6 @@ module mkViterbi(Ifc_Viterbi);
     method Bool get_read_outcome();
         return read_outcome;
     endmethod
-
-    // method Bool get_reset_decoder();
-        // return reset_machine_flag;
-    // endmethod
 
     method Print_State get_print_state();
         return backtrack_state;
@@ -577,11 +568,7 @@ module mkViterbi(Ifc_Viterbi);
     method Bit#(32) get_outcome();
         return outcome_buffer;
     endmethod
-
-    // method State get_machine_state();
-    //     return machine_state;
-    // endmethod
-
+    
     method Bit#(5) get_max_stage_reg();
         return max_state_reg;
     endmethod

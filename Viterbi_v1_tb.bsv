@@ -63,7 +63,7 @@ module mkViterbiTestbench();
         end
     endrule
 
-    rule read_66(viterbi.get_read_transition() && !read_transition_tb);
+    rule read_transition_flag(viterbi.get_read_transition() && !read_transition_tb);
         read_transition_tb <= True;
 
         if(!viterbi.get_init_done_flag()) begin
@@ -83,7 +83,7 @@ module mkViterbiTestbench();
         read_transition_tb <= False;
     endrule
 
-    rule read_77(viterbi.get_read_emission() && !read_emission_tb);
+    rule read_emission_flag(viterbi.get_read_emission() && !read_emission_tb);
         read_emission_tb <= True;
         let i_ctr = viterbi.get_i_ctr();
         let outcome = viterbi.get_outcome();
@@ -153,7 +153,7 @@ module mkViterbiTestbench();
         end
     endrule
 
-    rule read_99(viterbi.get_read_bt() && !read_bt_tb);
+    rule read_bt_flag(viterbi.get_read_bt() && !read_bt_tb);
        read_bt_tb <= True;
        let bt_t_ctr = viterbi.get_bt_t_ctr();
        let path_buffer = viterbi.get_path_buffer() - 1;
@@ -177,7 +177,7 @@ module mkViterbiTestbench();
         curr_tb[i_ctr] <= curr_buffer;
     endrule
 
-    rule read_55(viterbi.get_read_curr() && !read_curr_tb);
+    rule read_curr_flag(viterbi.get_read_curr() && !read_curr_tb);
        read_curr_tb <= True;
        i_reg <= viterbi.get_i_ctr();
     endrule
@@ -188,7 +188,7 @@ module mkViterbiTestbench();
         read_curr_tb <= False;
     endrule
 
-    rule read_44(viterbi.get_read_prev() && !read_prev_tb);
+    rule read_prev_flag(viterbi.get_read_prev() && !read_prev_tb);
         read_prev_tb <= True;
         j_reg <= viterbi.get_j_ctr();
     endrule
