@@ -70,7 +70,6 @@ typedef enum {
     Load_emission,
     Load_trans,
     Sum_and_max,
-    Reset_j_loop,
     Final_sum,
     Final_store,
     Print_res
@@ -293,7 +292,7 @@ module mkViterbi(Ifc_Viterbi);
             end
         end
 
-        // Read B[j][i] 
+        // Read A[j][i] 
         else if(machine_state==Load_trans) begin
 
             if(!read_transition && !transition_ready)begin
@@ -305,7 +304,7 @@ module mkViterbi(Ifc_Viterbi);
             end
         end
 
-        // Calculate prev[j] + B[j][i]; Find Max
+        // Calculate prev[j] + A[j][i]; Find Max
         else if(machine_state==Sum_and_max)begin
             
             if(!read_prev && !prev_ready)begin
