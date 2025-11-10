@@ -73,8 +73,7 @@ typedef enum {
     Reset_j_loop,
     Final_sum,
     Final_store,
-    Print_res,
-    Finish
+    Print_res
 } State deriving (Bits, Eq, FShow);
 
 typedef enum {
@@ -568,7 +567,7 @@ module mkViterbi(Ifc_Viterbi);
     method Bit#(32) get_outcome();
         return outcome_buffer;
     endmethod
-    
+
     method Bit#(5) get_max_stage_reg();
         return max_state_reg;
     endmethod
